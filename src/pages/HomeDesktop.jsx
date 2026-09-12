@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PipelineArticles from "../components/PipelineArticles";
 import GitHubLink, { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
 import StatsBanner from "../components/StatsBanner";
+import SoftwareGrid from "../components/SoftwareGrid";
 
 export default function HomeDesktop() {
   const [sfVideoOpen, setSfVideoOpen] = useState(false);
@@ -364,16 +365,18 @@ export default function HomeDesktop() {
                 Optimizing creative throughput through technical curatorship and
                 precision engineering.
               </p>
-              <Link
-                to="/software"
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-primary font-label uppercase text-xs tracking-widest hover:gap-3 transition-all mb-12"
               >
-                All software
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
+                All repositories
+                <span className="material-symbols-outlined text-sm">arrow_outward</span>
+              </a>
             </div>
             <div className="lg:col-span-8 space-y-4">
-              {/* Software modules — Stockflow lead card (full-width), then UGC + MiroFish 2-up */}
+              {/* Software — Stockflow leads (it carries a video), then the collection grid */}
               <div className="bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 transition-all duration-300 overflow-hidden group">
                 <button
                   type="button"
@@ -421,104 +424,7 @@ export default function HomeDesktop() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a
-                  href="/articles/UGC_Pipeline.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container hover:from-primary/15 transition-all duration-300 border border-primary/35 hover:border-primary/50 group overflow-hidden"
-                >
-                  <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
-                    <img
-                      src="/images/ugc_pipeline.png"
-                      alt="UGC Pipeline · Automated Video Factory"
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                    />
-                  </div>
-                  <div className="p-8 relative">
-                    <span className="absolute top-3 right-3 font-label text-[9px] tracking-[0.3em] uppercase text-primary bg-primary/10 border border-primary/35 px-2 py-1">
-                      Module
-                    </span>
-                    <div className="w-10 h-10 bg-primary/15 border border-primary/30 rounded-xl flex items-center justify-center mb-6">
-                      <span className="material-symbols-outlined text-primary" style={{ fontSize: "22px" }}>autoplay</span>
-                    </div>
-                    <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                      UGC Pipeline
-                    </h4>
-                    <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                      One Google Sheet row in. One finished UGC, ad, or podcast
-                      video out. Vision-graded QA — the factory behind owned +
-                      paid social creative.
-                    </p>
-                  </div>
-                </a>
-                <a
-                  href="/articles/MiroFish.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container hover:from-primary/15 transition-all duration-300 border border-primary/35 hover:border-primary/50 group overflow-hidden"
-                >
-                  <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
-                    <img
-                      src="https://i.ytimg.com/vi/gMHxq5-7Yzg/maxresdefault.jpg"
-                      alt="MiroFish · Audience Simulator"
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                    />
-                  </div>
-                  <div className="p-8 relative">
-                    <span className="absolute top-3 right-3 font-label text-[9px] tracking-[0.3em] uppercase text-primary bg-primary/10 border border-primary/35 px-2 py-1">
-                      Module
-                    </span>
-                    <div className="w-10 h-10 bg-primary/15 border border-primary/30 rounded-xl flex items-center justify-center mb-6">
-                      <span className="material-symbols-outlined text-primary" style={{ fontSize: "22px" }}>diversity_3</span>
-                    </div>
-                    <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                      MiroFish
-                    </h4>
-                    <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                      A million synthetic viewers test-screen your pitch in
-                      twelve minutes — demographic-weighted, opinion-bearing,
-                      brutally honest.
-                    </p>
-                  </div>
-                </a>
-                {/* Third card spans both columns so the row resolves instead of
-                    leaving a half-width gap beside it. */}
-                <a
-                  href="/articles/CreativeFlow.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="sm:col-span-2 block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container hover:from-primary/15 transition-all duration-300 border border-primary/35 hover:border-primary/50 group overflow-hidden"
-                >
-                  <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
-                    <img
-                      src="/images/creativeflow.png"
-                      alt="CreativeFlow · Creative Automation Pipeline"
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                    />
-                  </div>
-                  <div className="p-8 relative">
-                    <span className="absolute top-3 right-3 font-label text-[9px] tracking-[0.3em] uppercase text-primary bg-primary/10 border border-primary/35 px-2 py-1">
-                      Module
-                    </span>
-                    <div className="w-10 h-10 bg-primary/15 border border-primary/30 rounded-xl flex items-center justify-center mb-6">
-                      <span className="material-symbols-outlined text-primary" style={{ fontSize: "22px" }}>auto_awesome_mosaic</span>
-                    </div>
-                    <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                      CreativeFlow
-                    </h4>
-                    <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors max-w-2xl">
-                      One campaign brief in. On-brand, localized ad creatives in
-                      every aspect ratio out — reusing the assets you already own
-                      and generating only what is missing.
-                    </p>
-                  </div>
-                </a>
-              </div>
-
+              <SoftwareGrid />
               {/* Studio capabilities */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
