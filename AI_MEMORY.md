@@ -11,7 +11,7 @@ Last updated: **2026-09-11** (Soft Executive Orange migration).
 - **Type:** Single-Page Application (SPA)
 - **Domain:** `nmediaservices.com` (apex forwards to `www.`)
 - **Hosting:** GitHub Pages via `.github/workflows/deploy.yml` on push-to-main
-- **Repo:** [github.com/NmediaCloud/Nmediaservics](https://github.com/NmediaCloud/Nmediaservics)
+- **Repo:** [github.com/NmediaCloud/nmediaservices-website](https://github.com/NmediaCloud/nmediaservices-website) (renamed from `Nmediaservics` 2026-09-12; GitHub redirects the old URL)
 
 ## Core Design Rules (The "Digital Architect")
 
