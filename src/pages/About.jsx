@@ -78,53 +78,6 @@ export default function About() {
         {/* Photo gallery modal — opens on demand */}
         <PicsModal open={picsOpen} onClose={() => setPicsOpen(false)} pics={ABOUT_PICS} />
 
-        {/* ── BIO ──────────────────────────────────────── */}
-        <section className="px-8 mb-32 max-w-5xl mx-auto">
-          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6">
-            [ BIO ]
-          </p>
-          <div className="space-y-6 text-lg text-on-surface-variant font-light leading-relaxed">
-            <p>
-              Trained as a character animator. Ran the Disney–Pixar composition
-              and layout track. Spent two decades shipping series for
-              broadcasters and OTTs across animation, motion capture, lighting,
-              rendering and technical direction.
-            </p>
-            <p>
-              Nmedia Services is the studio that came out of that — built on
-              the principle that <em className="not-italic text-primary">no
-              hand-off is faster than no hand-off</em>. Every module of the
-              pipeline is operator-runnable from a single browser tab. Every
-              project file is the same project file. The toolchain stops
-              fighting the work.
-            </p>
-            <p>
-              The current work is model-agnostic by construction. The generation
-              layer runs across{" "}
-              <em className="not-italic text-primary">eight frontier models</em>{" "}
-              rather than betting the pipeline on one — swapping a provider is a
-              config change, not a rewrite. Since April 2026 that has meant{" "}
-              <em className="not-italic text-primary">61 million generated tokens</em>{" "}
-              across 61,080 model turns, spanning storyboard generation, animatics,
-              vision-graded QA and reel polish.
-            </p>
-            <p>
-              Some of it is open. {" "}
-              <em className="not-italic text-primary">CreativeFlow</em> turns one
-              campaign brief into on-brand creatives across every aspect ratio and
-              runs on a clean checkout with no API key at all. An{" "}
-              <em className="not-italic text-primary">MCP server</em> puts 15,000+
-              8K stills and 4K clips directly inside Claude Code, Cursor and Codex.
-              The production pipeline itself stays in-house.
-            </p>
-            <p>
-              Adjacent to the animation work: a deliberate stack of credentials
-              in generative AI, data analytics, and digital marketing — all
-              feeding back into how we run client briefs end-to-end.
-            </p>
-          </div>
-        </section>
-
         {/* ── CERTIFICATIONS ─────────────────────────── */}
         <section className="py-32 px-8 max-w-7xl mx-auto">
           <div className="mb-12">
@@ -256,6 +209,53 @@ export default function About() {
                 <p className="text-sm text-on-surface-variant font-light">Camera composition + layouts seminar</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── BIO ──────────────────────────────────────── */}
+        <section className="px-8 mb-32 max-w-5xl mx-auto">
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6">
+            [ BIO ]
+          </p>
+          <div className="space-y-6 text-lg text-on-surface-variant font-light leading-relaxed">
+            <p>
+              Trained as a character animator. Ran the Disney–Pixar composition
+              and layout track. Spent two decades shipping series for
+              broadcasters and OTTs across animation, motion capture, lighting,
+              rendering and technical direction.
+            </p>
+            <p>
+              Nmedia Services is the studio that came out of that — built on
+              the principle that <em className="not-italic text-primary">no
+              hand-off is faster than no hand-off</em>. Every module of the
+              pipeline is operator-runnable from a single browser tab. Every
+              project file is the same project file. The toolchain stops
+              fighting the work.
+            </p>
+            <p>
+              The current work is model-agnostic by construction. The generation
+              layer runs across{" "}
+              <em className="not-italic text-primary">eight frontier models</em>{" "}
+              rather than betting the pipeline on one — swapping a provider is a
+              config change, not a rewrite. Since April 2026 that has meant{" "}
+              <em className="not-italic text-primary">61 million generated tokens</em>{" "}
+              across 61,080 model turns, spanning storyboard generation, animatics,
+              vision-graded QA and reel polish.
+            </p>
+            <p>
+              Some of it is open. {" "}
+              <em className="not-italic text-primary">CreativeFlow</em> turns one
+              campaign brief into on-brand creatives across every aspect ratio and
+              runs on a clean checkout with no API key at all. An{" "}
+              <em className="not-italic text-primary">MCP server</em> puts 15,000+
+              8K stills and 4K clips directly inside Claude Code, Cursor and Codex.
+              The production pipeline itself stays in-house.
+            </p>
+            <p>
+              Adjacent to the animation work: a deliberate stack of credentials
+              in generative AI, data analytics, and digital marketing — all
+              feeding back into how we run client briefs end-to-end.
+            </p>
           </div>
         </section>
 
