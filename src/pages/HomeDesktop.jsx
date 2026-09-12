@@ -360,10 +360,17 @@ export default function HomeDesktop() {
               <h2 className="font-headline text-5xl font-bold tracking-tighter mb-6 text-headline">
                 Capabilities
               </h2>
-              <p className="font-body text-on-surface-variant mb-12 max-w-sm">
+              <p className="font-body text-on-surface-variant mb-6 max-w-sm">
                 Optimizing creative throughput through technical curatorship and
                 precision engineering.
               </p>
+              <Link
+                to="/software"
+                className="inline-flex items-center gap-2 text-primary font-label uppercase text-xs tracking-widest hover:gap-3 transition-all mb-12"
+              >
+                All software
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
             </div>
             <div className="lg:col-span-8 space-y-4">
               {/* Software modules — Stockflow lead card (full-width), then UGC + MiroFish 2-up */}

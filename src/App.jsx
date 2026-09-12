@@ -13,6 +13,7 @@ import WohShaadi from "./pages/WohShaadi";
 import Chimpu from "./pages/Chimpu";
 import Cici from "./pages/Cici";
 import DigitalConversion from "./pages/DigitalConversion";
+import Software from "./pages/Software";
 
 // Reset scroll to top whenever the route changes (unless URL has #anchor).
 function ScrollToTop() {
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/about"                  element={<About />} />
         <Route path="/digital-marketing"      element={<DigitalMarketing />} />
         <Route path="/digital-conversion"     element={<DigitalConversion />} />
+        <Route path="/software"               element={<Software />} />
         <Route path="/ip/tiny-wings-buzz"     element={<TinyWingsBuzz />} />
         <Route path="/ip/world-under-my-bed"  element={<WorldUnderMyBed />} />
         <Route path="/ip/woh-shaadi"          element={<WohShaadi />} />
