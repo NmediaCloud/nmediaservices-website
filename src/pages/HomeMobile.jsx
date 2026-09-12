@@ -99,7 +99,7 @@ export default function HomeMobile() {
           </a>
           <div className="relative aspect-video bg-surface-container-highest group">
             <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <button className="w-16 h-16 bg-primary/90 text-on-primary flex items-center justify-center active:scale-95 transition-transform pointer-events-auto">
+              <button className="w-16 h-16 rounded-full bg-white ring-2 ring-primary text-primary flex items-center justify-center active:scale-95 transition-transform pointer-events-auto">
                 <span className="material-symbols-outlined text-3xl">play_arrow</span>
               </button>
             </div>

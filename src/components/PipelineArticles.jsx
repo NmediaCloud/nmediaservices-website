@@ -174,8 +174,8 @@ export default function PipelineArticles() {
                       className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-primary/90 group-hover:bg-primary flex items-center justify-center shadow-lg shadow-primary/40 transition-all group-hover:scale-110">
-                        <span className="material-symbols-outlined text-on-primary" style={{ fontSize: "22px" }}>play_arrow</span>
+                      <div className="w-10 h-10 rounded-full bg-white ring-2 ring-primary group-hover:bg-primary flex items-center justify-center shadow-lg shadow-primary/40 transition-all group-hover:scale-110">
+                        <span className="material-symbols-outlined text-primary group-hover:text-white transition-colors" style={{ fontSize: "22px" }}>play_arrow</span>
                       </div>
                     </div>
                   </>
