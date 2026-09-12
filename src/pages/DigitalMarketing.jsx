@@ -16,12 +16,7 @@ function Tile({ src, label }) {
   return (
     <div className="bg-surface-container border border-outline-variant hover:border-primary/40 transition-colors group">
       <div className="aspect-[16/10] overflow-hidden bg-surface-container-lowest">
-        <img
-          src={`${IMG}/${src}`}
-          alt={label}
-          loading="lazy"
-          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-        />
+        <img src={`${IMG}/${src}`} alt={label} loading="lazy" className="w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
       </div>
       <p className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant text-center py-3 group-hover:text-primary transition-colors">
         {label}
@@ -62,7 +57,7 @@ export default function DigitalMarketing() {
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4 text-center">
               [ PORTFOLIO // SOCIAL_MEDIA · DIGITAL_MARKETING ]
             </p>
-            <img src={`${IMG}/dm_03.png`} alt="Social Media Digital Marketing" className="w-full max-w-3xl mx-auto opacity-90" />
+            <img src={`${IMG}/dm_03.png`} alt="Social Media Digital Marketing" className="w-full max-w-3xl mx-auto opacity-100" />
           </div>
         </section>
 
@@ -78,7 +73,7 @@ export default function DigitalMarketing() {
                   Sells the <span className="text-primary">idea</span> of a product.
                 </p>
               </div>
-              <img src={`${IMG}/dm_04.png`} alt="" className="mt-6 w-40 opacity-80 self-start" />
+              <img src={`${IMG}/dm_04.png`} alt="" className="mt-6 w-40 opacity-100 self-start" />
             </div>
             <div className="bg-surface-container border border-outline-variant p-10 flex flex-col justify-between">
               <div>
@@ -89,7 +84,7 @@ export default function DigitalMarketing() {
                   Aims to sell the <span className="text-on-surface-variant">product</span>.
                 </p>
               </div>
-              <img src={`${IMG}/dm_07.png`} alt="" className="mt-6 w-40 opacity-80 self-end" />
+              <img src={`${IMG}/dm_07.png`} alt="" className="mt-6 w-40 opacity-100 self-end" />
             </div>
           </div>
         </section>

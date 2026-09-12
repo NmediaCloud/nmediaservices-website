@@ -47,12 +47,7 @@ function VideoTile({ video }) {
       onClick={() => setActive(true)}
       className="group relative aspect-video bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden text-left transition-all"
     >
-      <img
-        src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
-        alt={video.title}
-        loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-      />
+      <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt={video.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-500" />
       <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent"></div>
 
       <div className="absolute inset-0 flex items-center justify-center">

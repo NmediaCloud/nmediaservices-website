@@ -134,12 +134,7 @@ function IPCard({ ip }) {
       {/* Poster — tall, the dominant visual */}
       <div className="relative w-full overflow-hidden bg-gradient-to-br from-surface-container-low to-surface-container-lowest" style={{ aspectRatio: "3 / 4" }}>
         {ip.poster ? (
-          <img
-            src={ip.poster}
-            alt={ip.title}
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
-          />
+          <img src={ip.poster} alt={ip.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.03] transition-all duration-500" />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center opacity-25 group-hover:opacity-40 transition-opacity">
             <span className="material-symbols-outlined text-[140px] text-primary">{ip.icon}</span>

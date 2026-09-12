@@ -93,12 +93,7 @@ export default function PicsModal({ open, onClose, pics, basePath = "/images/pic
                 onClick={() => setZoomed(file)}
                 className="group relative aspect-[4/3] bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all"
               >
-                <img
-                  src={`${basePath}/${file}`}
-                  alt="Studio still"
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                />
+                <img src={`${basePath}/${file}`} alt="Studio still" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-500" />
               </button>
             ))}
           </div>

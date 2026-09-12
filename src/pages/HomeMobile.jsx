@@ -232,11 +232,7 @@ export default function HomeMobile() {
         <section className="py-24 px-6 bg-surface">
           <div className="flex flex-col gap-12">
             <div className="w-full h-64 bg-surface-container-low overflow-hidden">
-              <img
-                className="w-full h-full object-cover opacity-80"
-                alt="About Visual"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKvxRhv3rTfE0jxEV3JWwcwCTRZNb4MvShosNu_ot8-XhRDXis-0__oMGdqIrgFCycYK3BG4LytQf1FJaisFRvc8xy2cyT9kraT5jDXGOd4x_IqZbathAHlObUp_PI49kOya-Ln1vP7GwfnRPYcZoS7iqIHJ3b5rHP1Nrg5CnlXa6buoyFLQhjIM7L3Cw3GSFmnRGglZ74SvqTuSTOPajTjQSfweckjzWDJIqudVkV1MlS-uV9-6AKYmqyPkrNSWX3ZhztrYPhCyk"
-              />
+              <img className="w-full h-full object-cover opacity-100" alt="About Visual" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKvxRhv3rTfE0jxEV3JWwcwCTRZNb4MvShosNu_ot8-XhRDXis-0__oMGdqIrgFCycYK3BG4LytQf1FJaisFRvc8xy2cyT9kraT5jDXGOd4x_IqZbathAHlObUp_PI49kOya-Ln1vP7GwfnRPYcZoS7iqIHJ3b5rHP1Nrg5CnlXa6buoyFLQhjIM7L3Cw3GSFmnRGglZ74SvqTuSTOPajTjQSfweckjzWDJIqudVkV1MlS-uV9-6AKYmqyPkrNSWX3ZhztrYPhCyk" />
             </div>
             <div>
               <span className="font-label text-xs text-primary tracking-[0.2em] block mb-4">

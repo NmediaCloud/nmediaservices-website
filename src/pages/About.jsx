@@ -133,12 +133,7 @@ export default function About() {
                       title={it.label}
                       className="group block bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden aspect-[4/3] relative transition-all"
                     >
-                      <img
-                        src={`/images/certificates/${it.file}`}
-                        alt={it.label}
-                        loading="lazy"
-                        className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                      />
+                      <img src={`/images/certificates/${it.file}`} alt={it.label} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
                         <p className="text-xs text-on-surface font-medium leading-tight line-clamp-2">{it.label}</p>
                       </div>

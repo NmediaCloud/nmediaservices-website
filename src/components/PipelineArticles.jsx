@@ -48,6 +48,16 @@ export default function PipelineArticles() {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
   const stripRef = useRef(null);
+  // Each edge fade only appears when content is actually hidden that way.
+  // Showing them unconditionally washed out the first and last cards' text.
+  const [edges, setEdges] = useState({ left: false, right: true });
+
+  const syncEdges = () => {
+    const el = stripRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setEdges({ left: el.scrollLeft > 4, right: el.scrollLeft < max - 4 });
+  };
 
   // Scroll the strip by ~two card widths on chevron click.
   const nudge = (dir) => {
@@ -57,6 +67,18 @@ export default function PipelineArticles() {
     const step = (card?.offsetWidth || 260) + 4; // card + gap
     el.scrollBy({ left: dir * step * 2, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const el = stripRef.current;
+    if (!el) return undefined;
+    syncEdges();
+    el.addEventListener("scroll", syncEdges, { passive: true });
+    window.addEventListener("resize", syncEdges);
+    return () => {
+      el.removeEventListener("scroll", syncEdges);
+      window.removeEventListener("resize", syncEdges);
+    };
+  }, [articles]);
 
   useEffect(() => {
     fetch(`/articles/articles.json?v=${Date.now()}`, { cache: "no-cache" })
@@ -130,8 +152,12 @@ export default function PipelineArticles() {
           </button>
 
           {/* Edge fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+          <div
+            className={`absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none transition-opacity duration-300 ${edges.left ? "opacity-100" : "opacity-0"}`}
+          />
+          <div
+            className={`absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none transition-opacity duration-300 ${edges.right ? "opacity-100" : "opacity-0"}`}
+          />
 
         <div
           ref={stripRef}
@@ -167,12 +193,7 @@ export default function PipelineArticles() {
               <div className="relative aspect-video bg-surface-container-high overflow-hidden border-b border-outline-variant">
                 {a.youtube_id ? (
                   <>
-                    <img
-                      src={`https://i.ytimg.com/vi/${a.youtube_id}/hqdefault.jpg`}
-                      alt={`${a.title} — video walkthrough`}
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                    />
+                    <img src={`https://i.ytimg.com/vi/${a.youtube_id}/hqdefault.jpg`} alt={`${a.title} — video walkthrough`} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-10 h-10 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-lg shadow-primary/40 transition-all group-hover:scale-110">
                         <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "22px" }}>play_arrow</span>

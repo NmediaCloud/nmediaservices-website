@@ -96,12 +96,7 @@ export default function TinyWingsBuzz() {
                   style={{ aspectRatio: "3 / 4" }}
                   aria-label={`View ${c.name}`}
                 >
-                  <img
-                    src={`${IMG}/${c.file}`}
-                    alt={c.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500"
-                  />
+                  <img src={`${IMG}/${c.file}`} alt={c.name} loading="lazy" className="w-full h-full object-cover opacity-100 transition-opacity duration-500" />
                 </button>
                 <figcaption className="mt-3 text-center group-hover:text-primary transition-colors">
                   <p className="font-label text-xs tracking-[0.2em] uppercase text-on-surface">{c.name}</p>

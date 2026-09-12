@@ -101,12 +101,7 @@ function ToolCard({ tool }) {
     <article className="bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
       {tool.image ? (
         <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
-          <img
-            src={tool.image}
-            alt={tool.name}
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-          />
+          <img src={tool.image} alt={tool.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
         </div>
       ) : (
         <div className="w-full bg-surface-container-high flex items-center justify-center" style={{ aspectRatio: "16 / 9" }}>

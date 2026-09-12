@@ -33,12 +33,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                 style={{ aspectRatio: "3 / 4" }}
                 aria-label={`Zoom ${title} flashcard`}
               >
-                <img
-                  src={flashcard}
-                  alt={`${title} flashcard`}
-                  loading="lazy"
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
-                />
+                <img src={flashcard} alt={`${title} flashcard`} loading="lazy" className="w-full h-full object-cover opacity-100 group-hover:scale-[1.03] transition-all duration-500" />
               </button>
             )}
           </div>
@@ -74,12 +69,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                   className="block w-full bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.005]"
                   aria-label="Zoom image"
                 >
-                  <img
-                    src={`${basePath}/${img}`}
-                    alt=""
-                    loading="lazy"
-                    className="w-full h-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity duration-500 bg-surface-container-high"
-                  />
+                  <img src={`${basePath}/${img}`} alt="" loading="lazy" className="w-full h-auto object-contain opacity-100 transition-opacity duration-500 bg-surface-container-high" />
                 </button>
               ))}
             </div>
@@ -101,12 +91,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                       className="block w-full bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.01]"
                       aria-label="Zoom image"
                     >
-                      <img
-                        src={`${basePath}/${img}`}
-                        alt=""
-                        loading="lazy"
-                        className="w-full h-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity duration-500 bg-white"
-                      />
+                      <img src={`${basePath}/${img}`} alt="" loading="lazy" className="w-full h-auto object-contain opacity-100 transition-opacity duration-500 bg-white" />
                     </button>
                   ))}
                 </div>
@@ -123,12 +108,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                   style={{ aspectRatio: "4 / 3" }}
                   aria-label="Zoom image"
                 >
-                  <img
-                    src={`${basePath}/${img}`}
-                    alt=""
-                    loading="lazy"
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                  />
+                  <img src={`${basePath}/${img}`} alt="" loading="lazy" className="w-full h-full object-cover opacity-100 transition-opacity duration-500" />
                 </button>
               ))}
             </div>
@@ -250,12 +230,7 @@ export default function DigitalConversion() {
                 className="block bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high transition-all group overflow-hidden"
               >
                 <div className="bg-surface-container-high overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
-                  <img
-                    src={i.flashcard}
-                    alt={i.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-500"
-                  />
+                  <img src={i.flashcard} alt={i.title} loading="lazy" className="w-full h-full object-cover opacity-100 group-hover:scale-[1.04] transition-all duration-500" />
                 </div>
                 <div className="p-3">
                   <p className="font-label text-[9px] tracking-[0.3em] text-primary uppercase mb-1">

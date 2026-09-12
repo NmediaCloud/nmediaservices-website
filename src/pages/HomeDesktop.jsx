@@ -190,12 +190,7 @@ export default function HomeDesktop() {
                   className="block w-full relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl group cursor-pointer"
                   aria-label="Play Pipeline Reel"
                 >
-                  <img
-                    src="https://i.ytimg.com/vi/cGGxVzvTbds/maxresdefault.jpg"
-                    alt="Animation, Accelerated · Inside an AI-Native Pipeline"
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                  />
+                  <img src="https://i.ytimg.com/vi/cGGxVzvTbds/maxresdefault.jpg" alt="Animation, Accelerated · Inside an AI-Native Pipeline" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
                       <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "44px" }}>play_arrow</span>
@@ -226,12 +221,7 @@ export default function HomeDesktop() {
                   className="block w-full relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl group cursor-pointer"
                   aria-label="Play podcast Part 01"
                 >
-                  <img
-                    src="https://i.ytimg.com/vi/u_oYE4nzRT8/maxresdefault.jpg"
-                    alt="At the Speed of Generation · Part 01: The Journey In"
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
-                  />
+                  <img src="https://i.ytimg.com/vi/u_oYE4nzRT8/maxresdefault.jpg" alt="At the Speed of Generation · Part 01: The Journey In" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-14 h-14 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
                       <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "32px" }}>play_arrow</span>
@@ -304,12 +294,7 @@ export default function HomeDesktop() {
                       style={{ aspectRatio: "3 / 4" }}
                     >
                       {ip.poster ? (
-                        <img
-                          src={ip.poster}
-                          alt={ip.title}
-                          loading="lazy"
-                          className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                        />
+                        <img src={ip.poster} alt={ip.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-500" />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center opacity-30">
                           <span className="material-symbols-outlined text-[120px] text-primary">{ip.icon}</span>
@@ -385,12 +370,7 @@ export default function HomeDesktop() {
                   style={{ aspectRatio: "16 / 9" }}
                   aria-label="Play Stockflow.Media preview"
                 >
-                  <img
-                    src="https://i.ytimg.com/vi/KfV_Y7hudvM/maxresdefault.jpg"
-                    alt="Stockflow.Media preview"
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover scale-[1.04] opacity-80 group-hover:opacity-100 group-hover:scale-[1.06] transition-all duration-500"
-                  />
+                  <img src="https://i.ytimg.com/vi/KfV_Y7hudvM/maxresdefault.jpg" alt="Stockflow.Media preview" loading="lazy" className="absolute inset-0 w-full h-full object-cover scale-[1.04] opacity-100 group-hover:scale-[1.06] transition-all duration-500" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center transition-all group-hover:scale-110 shadow-xl shadow-primary/40">
                       <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "44px" }}>play_arrow</span>
