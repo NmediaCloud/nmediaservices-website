@@ -51,7 +51,8 @@ export default function About() {
                 Nanda <span className="text-primary">Mohan.</span>
               </h1>
               <p className="font-label text-sm tracking-[0.2em] text-on-surface-variant uppercase">
-                Animation Pipeline Architect · Toronto
+                Creative &amp; Technical Director ·{" "}
+                <span className="text-primary">Forward Deployed Engineer</span> · Toronto
               </p>
               <p className="text-on-surface-variant font-light leading-relaxed text-lg pt-3">
                 Twenty-plus years in animation, lighting and VFX —
@@ -96,6 +97,25 @@ export default function About() {
               pipeline is operator-runnable from a single browser tab. Every
               project file is the same project file. The toolchain stops
               fighting the work.
+            </p>
+            <p>
+              The current work is model-agnostic by construction. The generation
+              layer runs across{" "}
+              <em className="not-italic text-primary">eight frontier models</em>{" "}
+              rather than betting the pipeline on one — swapping a provider is a
+              config change, not a rewrite. Since April 2026 that has meant{" "}
+              <em className="not-italic text-primary">61 million generated tokens</em>{" "}
+              across 61,080 model turns, spanning storyboard generation, animatics,
+              vision-graded QA and reel polish.
+            </p>
+            <p>
+              Some of it is open. {" "}
+              <em className="not-italic text-primary">CreativeFlow</em> turns one
+              campaign brief into on-brand creatives across every aspect ratio and
+              runs on a clean checkout with no API key at all. An{" "}
+              <em className="not-italic text-primary">MCP server</em> puts 15,000+
+              8K stills and 4K clips directly inside Claude Code, Cursor and Codex.
+              The production pipeline itself stays in-house.
             </p>
             <p>
               Adjacent to the animation work: a deliberate stack of credentials
