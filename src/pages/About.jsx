@@ -125,29 +125,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── DISCIPLINES ──────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="mb-12">
-              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-                [ DISCIPLINES ]
-              </p>
-              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
-                What we run.
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-              {DISCIPLINES.map((d) => (
-                <article key={d.title} className="bg-surface-container border border-outline-variant p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
-                  <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{d.icon}</span>
-                  <h3 className="font-headline font-bold text-lg uppercase tracking-tight mb-2">{d.title}</h3>
-                  <p className="text-sm text-on-surface-variant font-light leading-relaxed">{d.body}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── CERTIFICATIONS ─────────────────────────── */}
         <section className="py-32 px-8 max-w-7xl mx-auto">
           <div className="mb-12">
@@ -231,6 +208,29 @@ export default function About() {
           </div>
         </section>
 
+        {/* ── DISCIPLINES ──────────────────────────────── */}
+        <section className="bg-surface-container-lowest py-20 border-y border-outline-variant">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="mb-8">
+              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+                [ DISCIPLINES ]
+              </p>
+              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
+                What we run.
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
+              {DISCIPLINES.map((d) => (
+                <article key={d.title} className="bg-surface-container border border-outline-variant p-5 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+                  <span className="material-symbols-outlined text-primary text-2xl mb-2 block">{d.icon}</span>
+                  <h3 className="font-headline font-bold text-base uppercase tracking-tight mb-1.5">{d.title}</h3>
+                  <p className="text-xs text-on-surface-variant font-light leading-relaxed">{d.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── EDUCATION ───────────────────────────────── */}
         <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center">
@@ -295,12 +295,20 @@ export default function About() {
 }
 
 const DISCIPLINES = [
-  { icon: "person",         title: "Character Animation",  body: "Performance acting, body mechanics, blocking through final polish — across stylised and realistic." },
-  { icon: "videocam",       title: "Motion Graphics",      body: "Editing, compositing, animation, lighting and rendering — full-stack motion craft." },
-  { icon: "view_in_ar",     title: "Polygon Modelling",    body: "Production-grade asset modelling. Props for Disney's Tinker Bell. Game and film pipelines." },
-  { icon: "wb_incandescent", title: "Lighting & Render",   body: "V-Ray, Cycles, Eevee. Look-development through final-frame, broadcast-grade output." },
-  { icon: "videogame_asset", title: "Motion Capture",      body: "Mocap pipeline ownership — solving, retargeting, cleanup, blending into animator finishes." },
-  { icon: "engineering",    title: "Technical Direction",  body: "The role between 'animator' and 'pipeline TD' that keeps shows shipping. End-to-end ownership." },
+  // — Creative technology / current —
+  { icon: "account_tree",    title: "Pipeline Architecture", body: "Eleven modules, brief to finished reel. Format-aware, cast-locked, operator-runnable from a browser tab." },
+  { icon: "hub",             title: "AI Pipeline Engineering", body: "Model-agnostic generation layers across eight frontier models. Swapping a provider is a config change, not a rewrite." },
+  { icon: "smart_toy",       title: "Agent & MCP Tooling",   body: "MCP servers putting live asset catalogues inside Claude Code, Cursor and Codex. Tools agents can actually drive." },
+  { icon: "bolt",            title: "Automation & QA",       body: "Python orchestration, spreadsheet-to-video factories, vision-graded QA. Human review kept where it earns its place." },
+  { icon: "code",            title: "Full-Stack Development", body: "React, Vite, Tailwind, Node, FastAPI. The web, data and delivery layer wrapped around the creative work." },
+  { icon: "engineering",     title: "Technical Direction",   body: "The role between 'animator' and 'pipeline TD' that keeps shows shipping. End-to-end ownership." },
+  // — Production craft —
+  { icon: "person",          title: "Character Animation",   body: "Performance acting, body mechanics, blocking through final polish — across stylised and realistic." },
+  { icon: "videocam",        title: "Motion Graphics",       body: "Editing, compositing, animation, lighting and rendering — full-stack motion craft." },
+  { icon: "view_in_ar",      title: "Polygon Modelling",     body: "Production-grade asset modelling. Props for Disney's Tinker Bell. Game and film pipelines." },
+  { icon: "wb_incandescent", title: "Lighting & Render",     body: "V-Ray, Cycles, Eevee. Look-development through final-frame, broadcast-grade output." },
+  { icon: "videogame_asset", title: "Motion Capture",        body: "Mocap pipeline ownership — solving, retargeting, cleanup, blending into animator finishes." },
+  { icon: "deployed_code",   title: "Real-Time Engines",     body: "Unreal and Unity — animation assets built for immersive, real-time cinematic delivery." },
 ];
 
 // Credentials wall — actual scans/screenshots from the legacy Wix /certi page.
