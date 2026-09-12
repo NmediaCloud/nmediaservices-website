@@ -1,4 +1,5 @@
 import GitHubLink from "../components/GitHubLink";
+import StatsBanner from "../components/StatsBanner";
 import React from "react";
 import PipelineArticles from "../components/PipelineArticles";
 
@@ -25,6 +26,7 @@ export default function HomeMobile() {
         </div>
       </header>
       <main className="pt-16">
+        <StatsBanner />
         {/* Section 1: Hero */}
         <section className="relative min-h-[707px] flex flex-col justify-center px-6 py-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">

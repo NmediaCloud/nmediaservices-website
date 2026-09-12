@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PipelineArticles from "../components/PipelineArticles";
 import GitHubLink, { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
+import StatsBanner from "../components/StatsBanner";
 
 export default function HomeDesktop() {
   const [sfVideoOpen, setSfVideoOpen] = useState(false);
@@ -33,6 +34,8 @@ export default function HomeDesktop() {
       </nav>
 
       <main className="pt-32">
+        <StatsBanner />
+
         {/* Hero Section */}
         <section className="px-8 max-w-[1440px] mx-auto mb-16">
           <div className="editorial-grid gap-y-12">
