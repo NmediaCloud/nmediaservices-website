@@ -1,3 +1,4 @@
+import GitHubLink from "../components/GitHubLink";
 import React from "react";
 import PipelineArticles from "../components/PipelineArticles";
 
@@ -16,9 +17,12 @@ export default function HomeMobile() {
             NMEDIA
           </span>
         </div>
-        <button className="text-on-surface active:scale-95 transition-transform">
-          <span className="material-symbols-outlined">menu</span>
-        </button>
+        <div className="flex items-center gap-4">
+          <GitHubLink showLabel={false} />
+          <button className="text-on-surface active:scale-95 transition-transform">
+            <span className="material-symbols-outlined">menu</span>
+          </button>
+        </div>
       </header>
       <main className="pt-16">
         {/* Section 1: Hero */}

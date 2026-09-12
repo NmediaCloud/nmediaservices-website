@@ -296,6 +296,7 @@ export function SiteFooter() {
         <div>
           <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Channels</p>
           <a href={CHANNEL} target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors">YouTube · @nmediaservices2014</a>
+          <a href="https://github.com/NmediaCloud" target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors mt-1">GitHub · @NmediaCloud</a>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">

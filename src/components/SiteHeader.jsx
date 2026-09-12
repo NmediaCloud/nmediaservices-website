@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GitHubLink from "./GitHubLink";
 
 /**
  * SiteHeader — canonical top banner used on every page.
  *
  * Matches the homepage nav: logo + "Nmedia Services" wordmark on
- * the left, mailto link on the right. Centered, fixed, with a soft
- * orange-tinted bottom border.
+ * the left, GitHub + mailto on the right. Centered, fixed, with a
+ * soft orange-tinted bottom border.
+ *
+ * Every subpage renders this, so the GitHub link here is what
+ * guarantees one on every page of the site.
  */
 export default function SiteHeader() {
   return (
@@ -21,12 +25,15 @@ export default function SiteHeader() {
           Nmedia Services
         </div>
       </Link>
-      <a
-        className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300 hidden md:inline-block"
-        href="mailto:Nanda@nmediaservices.com"
-      >
-        Nanda@nmediaservices.com
-      </a>
+      <div className="flex items-center gap-6">
+        <GitHubLink />
+        <a
+          className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300 hidden md:inline-block"
+          href="mailto:Nanda@nmediaservices.com"
+        >
+          Nanda@nmediaservices.com
+        </a>
+      </div>
     </nav>
   );
 }

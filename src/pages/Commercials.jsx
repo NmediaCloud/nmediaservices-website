@@ -106,6 +106,10 @@ export default function Commercials() {
                  className="block text-sm text-on-surface-variant hover:text-primary transition-colors">
                 YouTube · @nmediaservices2014
               </a>
+              <a href="https://github.com/NmediaCloud" target="_blank" rel="noopener noreferrer"
+                 className="block text-sm text-on-surface-variant hover:text-primary transition-colors mt-1">
+                GitHub · @NmediaCloud
+              </a>
             </div>
           </div>
           <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">

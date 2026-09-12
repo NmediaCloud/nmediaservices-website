@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PipelineArticles from "../components/PipelineArticles";
+import GitHubLink, { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
 
 export default function HomeDesktop() {
   const [sfVideoOpen, setSfVideoOpen] = useState(false);
@@ -20,7 +21,8 @@ export default function HomeDesktop() {
             Nmedia Services
           </div>
         </div>
-        <div className="hidden md:flex gap-12 items-center">
+        <div className="hidden md:flex gap-8 items-center">
+          <GitHubLink />
           <a
             className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300"
             href="mailto:Nanda@nmediaservices.com"
@@ -500,7 +502,7 @@ export default function HomeDesktop() {
                 and the platform we ship media assets through.
               </p>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
                 to="/about"
                 className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
@@ -550,6 +552,26 @@ export default function HomeDesktop() {
                   real-time cinematic content. Motion Capture editing and Facial
                   capture implementation.
                 </p>
+              </a>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <GitHubMark className="w-9 h-9 text-primary mb-6 block" />
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  Code &amp; Systems
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  Open-source tooling and the production pipelines behind the
+                  work — CreativeFlow's campaign automation runs from a clean
+                  checkout with no API key.
+                </p>
+                <span className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary mt-4 group-hover:gap-3 transition-all">
+                  @NmediaCloud
+                  <span className="material-symbols-outlined text-base">arrow_outward</span>
+                </span>
               </a>
             </div>
           </div>
@@ -723,6 +745,14 @@ export default function HomeDesktop() {
             rel="noopener noreferrer"
           >
             Youtube
+          </a>
+          <a
+            className="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-on-surface-variant hover:text-primary underline underline-offset-4 decoration-1 hover:decoration-2 transition-all duration-300"
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
           </a>
         </div>
       </footer>
