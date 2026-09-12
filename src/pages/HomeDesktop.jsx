@@ -427,6 +427,24 @@ export default function HomeDesktop() {
               <SoftwareGrid />
               {/* Studio capabilities */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a
+                href="https://github.com/NmediaCloud/pdf-scripts-toolkit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
+                  digitisation · ocr
+                </span>
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  PDF Scripts Toolkit
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  The toolkit behind it — scanned pages to searchable PDF, with a
+                  vision-language transcription pass for Sanskrit where
+                  conventional OCR fails. Source available.
+                </p>
+              </a>
               <Link
                 to="/digital-conversion"
                 className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"

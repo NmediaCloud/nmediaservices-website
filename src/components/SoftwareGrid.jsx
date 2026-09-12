@@ -15,8 +15,7 @@ import { GitHubMark } from "./GitHubLink";
  * Stockflow leads the section as its own card on the homepage (it carries
  * a video), so it is deliberately not repeated here.
  *
- * Cards render a thumbnail if `image` is set, an icon panel otherwise, and
- * no panel at all when `noGraphic` is true.
+ * Cards render a thumbnail if `image` is set, an icon panel otherwise.
  */
 const TOOLS = [
   {
@@ -94,27 +93,13 @@ const TOOLS = [
     href: "https://github.com/NmediaCloud/smart-mirror-backup",
     cta: "View the source",
   },
-  {
-    name: "PDF Scripts Toolkit",
-    tag: "Digitisation · Low-resource OCR",
-    status: "Source available",
-    // Sits alone in the final row, directly above Digital Conversion.
-    // No graphic panel, so the pairing reads as one block.
-    noGraphic: true,
-    body:
-      "Scanned book pages to searchable PDF — image adjustment, smart cropping and OCR, " +
-      "plus a vision-language transcription pass for Sanskrit, where conventional OCR fails. " +
-      "Built for Tamil, Hindi and Sanskrit printed matter.",
-    href: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
-    cta: "View the source",
-  },
 ];
 
 function ToolCard({ tool }) {
   const external = tool.href.startsWith("http") || tool.href.endsWith(".html");
   return (
     <article className="bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
-      {tool.noGraphic ? null : tool.image ? (
+      {tool.image ? (
         <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
           <img
             src={tool.image}
