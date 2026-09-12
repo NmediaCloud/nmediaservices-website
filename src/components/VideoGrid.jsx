@@ -56,8 +56,8 @@ function VideoTile({ video }) {
       <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent"></div>
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="w-16 h-16 rounded-full bg-white ring-2 ring-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-          <span className="material-symbols-outlined text-primary group-hover:text-white transition-colors text-3xl ml-1">play_arrow</span>
+        <span className="w-16 h-16 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+          <span className="material-symbols-outlined text-primary transition-transform text-3xl ml-1">play_arrow</span>
         </span>
       </div>
 

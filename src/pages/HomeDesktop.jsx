@@ -197,8 +197,8 @@ export default function HomeDesktop() {
                     className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-white ring-2 ring-primary group-hover:bg-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
-                      <span className="material-symbols-outlined text-primary group-hover:text-white transition-colors" style={{ fontSize: "44px" }}>play_arrow</span>
+                    <div className="w-20 h-20 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
+                      <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "44px" }}>play_arrow</span>
                     </div>
                   </div>
                 </button>
@@ -233,8 +233,8 @@ export default function HomeDesktop() {
                     className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-500"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-white ring-2 ring-primary group-hover:bg-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
-                      <span className="material-symbols-outlined text-primary group-hover:text-white transition-colors" style={{ fontSize: "32px" }}>play_arrow</span>
+                    <div className="w-14 h-14 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
+                      <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "32px" }}>play_arrow</span>
                     </div>
                   </div>
                 </button>
@@ -392,8 +392,8 @@ export default function HomeDesktop() {
                     className="absolute inset-0 w-full h-full object-cover scale-[1.04] opacity-80 group-hover:opacity-100 group-hover:scale-[1.06] transition-all duration-500"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-white ring-2 ring-primary group-hover:bg-primary flex items-center justify-center transition-all group-hover:scale-110 shadow-xl shadow-primary/40">
-                      <span className="material-symbols-outlined text-primary group-hover:text-white transition-colors" style={{ fontSize: "44px" }}>play_arrow</span>
+                    <div className="w-20 h-20 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center transition-all group-hover:scale-110 shadow-xl shadow-primary/40">
+                      <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "44px" }}>play_arrow</span>
                     </div>
                   </div>
                 </button>
