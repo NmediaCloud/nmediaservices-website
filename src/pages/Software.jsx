@@ -54,7 +54,8 @@ export default function Software() {
           </div>
         </section>
 
-        {/* ── IN THE WORKS ──────────────────────────────── */}
+        {/* ── IN THE WORKS — renders only when there is something ── */}
+        {UPCOMING.length > 0 && (
         <section className="px-8 max-w-7xl mx-auto mt-20">
           <div className="border-t border-outline-variant pt-12">
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -75,6 +76,7 @@ export default function Software() {
             </div>
           </div>
         </section>
+        )}
       </main>
 
       <SiteFooter />
@@ -201,6 +203,20 @@ const TOOLS = [
     repo: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
   },
   {
+    name: "FX Strategy Research Platform",
+    tag: "Quant research · Source-available",
+    status: "Source available",
+    icon: "query_stats",
+    body:
+      "A validated harness for one question, answered honestly: does this trading idea " +
+      "have an edge? Seventeen research modules — factor scans, pair and lead-lag " +
+      "analysis, regime census, cost accounting, a risk engine and a broker adapter. " +
+      "Paper-first by default; the live path is gated behind two separate opt-ins.",
+    href: "https://github.com/NmediaCloud/fx-strategy-research",
+    cta: "View the source",
+    repo: "https://github.com/NmediaCloud/fx-strategy-research",
+  },
+  {
     name: "UGC Pipeline",
     tag: "Video factory · Source-available",
     status: "In progress",
@@ -242,6 +258,4 @@ const TOOLS = [
 ];
 
 // Named but not yet published. Real projects, not roadmap aspirations.
-const UPCOMING = [
-  "FX Strategy Research Platform",
-];
+const UPCOMING = [];
