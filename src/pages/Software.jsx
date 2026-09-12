@@ -107,7 +107,7 @@ function ToolCard({ tool }) {
 
       <div className="p-7 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-4 mb-3">
-          <p className="font-label text-[10px] tracking-[0.3em] uppercase text-primary">{tool.tag}</p>
+          <p className="font-label text-[10px] tracking-[0.3em] uppercase text-primary leading-tight">{tool.tag}</p>
           <span className="inline-block border border-outline-variant px-2 py-0.5 font-label text-[9px] tracking-widest uppercase text-on-surface-variant shrink-0">
             {tool.status}
           </span>
@@ -125,7 +125,7 @@ function ToolCard({ tool }) {
             {tool.cta}
             <span className="material-symbols-outlined text-base">arrow_outward</span>
           </a>
-          {tool.repo && (
+          {tool.repo && tool.repo !== tool.href && (
             <a
               href={tool.repo}
               target="_blank"
@@ -148,7 +148,7 @@ function ToolCard({ tool }) {
 const TOOLS = [
   {
     name: "Stockflow.Media",
-    tag: "Platform · Live",
+    tag: "Content platform",
     status: "Live",
     icon: "inventory_2",
     body:
@@ -162,7 +162,7 @@ const TOOLS = [
   },
   {
     name: "CreativeFlow",
-    tag: "Campaign automation · Open source",
+    tag: "Campaign automation",
     status: "Open source",
     icon: "auto_awesome_mosaic",
     image: "/images/creativeflow.png",
@@ -176,7 +176,7 @@ const TOOLS = [
   },
   {
     name: "Marketplace Listing Assistant",
-    tag: "Vision + automation · Source-available",
+    tag: "Vision + automation",
     status: "Source available",
     icon: "sell",
     body:
@@ -190,7 +190,7 @@ const TOOLS = [
   },
   {
     name: "PDF Scripts Toolkit",
-    tag: "Digitisation · Source-available",
+    tag: "Digitisation · Low-resource OCR",
     status: "Source available",
     icon: "document_scanner",
     body:
@@ -204,7 +204,7 @@ const TOOLS = [
   },
   {
     name: "FX Strategy Research Platform",
-    tag: "Quant research · Source-available",
+    tag: "Quantitative research",
     status: "Source available",
     icon: "query_stats",
     body:
@@ -218,7 +218,7 @@ const TOOLS = [
   },
   {
     name: "UGC Pipeline",
-    tag: "Video factory · Source-available",
+    tag: "Video factory",
     status: "In progress",
     icon: "autoplay",
     image: "/images/ugc_pipeline.png",
@@ -233,7 +233,7 @@ const TOOLS = [
   },
   {
     name: "Smart Mirror Backup",
-    tag: "Utility · Source-available",
+    tag: "Utility · Zero dependencies",
     status: "Source available",
     icon: "sync_saved_locally",
     body:
@@ -246,7 +246,7 @@ const TOOLS = [
   },
   {
     name: "MiroFish",
-    tag: "Audience simulator · In-house",
+    tag: "Audience simulator",
     status: "In-house",
     icon: "diversity_3",
     body:
