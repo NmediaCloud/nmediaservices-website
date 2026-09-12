@@ -35,7 +35,7 @@ export default function StatsBanner() {
         <dl className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-4">
           {STATS.map((s) => (
             <div key={s.label} className="min-w-0">
-              <dd className="font-headline text-xl md:text-2xl font-bold tracking-tighter text-headline leading-none">
+              <dd className="font-headline text-xl md:text-2xl font-bold tracking-tighter text-on-surface leading-none">
                 {s.value}
               </dd>
               <dt className="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant mt-1.5 leading-tight">
