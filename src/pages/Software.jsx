@@ -151,8 +151,9 @@ const TOOLS = [
     icon: "inventory_2",
     body:
       "A content platform shipping 15,000+ royalty-free 8K stills and 4K clips, " +
-      "with automated delivery pipelines behind it. An MCP server exposes the whole " +
-      "catalogue to AI assistants — searchable from inside Claude Code, Cursor or Codex.",
+      "with automated delivery pipelines behind it. A hosted MCP server exposes the " +
+      "whole catalogue to AI assistants — searchable from inside Claude Code, Cursor " +
+      "or Codex without installing anything.",
     href: "https://stockflow.media/",
     cta: "Visit platform",
     repo: "https://github.com/NmediaCloud/stockflow-mcp",
@@ -172,16 +173,60 @@ const TOOLS = [
     repo: "https://github.com/NmediaCloud/creativeflow",
   },
   {
+    name: "Marketplace Listing Assistant",
+    tag: "Vision + automation · Source-available",
+    status: "Source available",
+    icon: "sell",
+    body:
+      "Photographs in, marketplace listings out. Identifies the product, researches it, " +
+      "compares existing listings, recommends a price and writes the copy — then a local " +
+      "Playwright agent pre-fills the forms on Kijiji, Facebook Marketplace and Karrot " +
+      "and stops before Publish. The final submission stays a human action.",
+    href: "https://github.com/NmediaCloud/marketplace-listing-assistant",
+    cta: "View the source",
+    repo: "https://github.com/NmediaCloud/marketplace-listing-assistant",
+  },
+  {
+    name: "PDF Scripts Toolkit",
+    tag: "Digitisation · Source-available",
+    status: "Source available",
+    icon: "document_scanner",
+    body:
+      "Scanned book pages to searchable PDF — image adjustment, smart cropping, " +
+      "images-to-PDF and OCR, plus a vision-language transcription pass for Sanskrit. " +
+      "Built for Tamil, Hindi and Sanskrit printed matter. Each stage is a " +
+      "self-contained script; nothing to build.",
+    href: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
+    cta: "View the source",
+    repo: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
+  },
+  {
     name: "UGC Pipeline",
-    tag: "Video factory · In-house",
-    status: "In-house",
+    tag: "Video factory · Source-available",
+    status: "In progress",
     icon: "autoplay",
     image: "/images/ugc_pipeline.png",
     body:
-      "One spreadsheet row in, one finished UGC, ad or podcast video out. Vision-graded QA " +
-      "throughout — the factory behind owned and paid social creative.",
+      "One spreadsheet row in, one finished UGC, ad or podcast video out. Nine " +
+      "self-contained modules — script, TTS, lipsync, b-roll, title cards, overlay, " +
+      "SFX, music, compositing — with a vision-graded QA pass. Still under active " +
+      "development; published to be read.",
     href: "/articles/UGC_Pipeline.html",
     cta: "Read the write-up",
+    repo: "https://github.com/NmediaCloud/ugc-tools",
+  },
+  {
+    name: "Smart Mirror Backup",
+    tag: "Utility · Source-available",
+    status: "Source available",
+    icon: "sync_saved_locally",
+    body:
+      "Mirror-backup for Windows with a GUI and a full CLI, written in pure Python " +
+      "standard library — zero third-party dependencies, so it runs on a locked-down " +
+      "or offline machine. Deep-verify hashing, dry-run first, named profiles.",
+    href: "https://github.com/NmediaCloud/smart-mirror-backup",
+    cta: "View the source",
+    repo: "https://github.com/NmediaCloud/smart-mirror-backup",
   },
   {
     name: "MiroFish",
@@ -196,13 +241,7 @@ const TOOLS = [
   },
 ];
 
-// Named but not yet written up. Keep honest — these are real projects,
-// not roadmap aspirations.
+// Named but not yet published. Real projects, not roadmap aspirations.
 const UPCOMING = [
-  "PDF Scripts Toolkit · Sanskrit VLM OCR",
-  "Marketplace Listing Assistant",
-  "Smart Mirror Backup",
   "FX Strategy Research Platform",
-  "UGC Tools",
-  "Text-to-Speech",
 ];
