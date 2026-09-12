@@ -17,30 +17,6 @@ import { GitHubMark } from "./GitHubLink";
  */
 const TOOLS = [
   {
-    name: "Marketplace Listing Assistant",
-    tag: "Vision + automation",
-    status: "Source available",
-    icon: "sell",
-    body:
-      "Photographs in, marketplace listings out. Identifies the product, researches it, " +
-      "recommends a price and writes the copy — then a local agent pre-fills the forms on " +
-      "Kijiji, Facebook Marketplace and Karrot and stops before Publish.",
-    href: "https://github.com/NmediaCloud/marketplace-listing-assistant",
-    cta: "View the source",
-  },
-  {
-    name: "PDF Scripts Toolkit",
-    tag: "Digitisation · Low-resource OCR",
-    status: "Source available",
-    icon: "document_scanner",
-    body:
-      "Scanned book pages to searchable PDF — image adjustment, smart cropping and OCR, " +
-      "plus a vision-language transcription pass for Sanskrit, where conventional OCR fails. " +
-      "Built for Tamil, Hindi and Sanskrit printed matter.",
-    href: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
-    cta: "View the source",
-  },
-  {
     name: "CreativeFlow",
     tag: "Campaign automation",
     status: "Open source",
@@ -69,6 +45,30 @@ const TOOLS = [
     repo: "https://github.com/NmediaCloud/ugc-tools",
   },
   {
+    name: "MiroFish",
+    tag: "Audience simulator",
+    status: "In-house",
+    icon: "diversity_3",
+    image: "https://i.ytimg.com/vi/gMHxq5-7Yzg/maxresdefault.jpg",
+    body:
+      "A million synthetic viewers test-screen your pitch in twelve minutes — " +
+      "demographic-weighted, opinion-bearing, and brutally honest about what does not land.",
+    href: "/articles/MiroFish.html",
+    cta: "Read the write-up",
+  },
+  {
+    name: "Marketplace Listing Assistant",
+    tag: "Vision + automation",
+    status: "Source available",
+    icon: "sell",
+    body:
+      "Photographs in, marketplace listings out. Identifies the product, researches it, " +
+      "recommends a price and writes the copy — then a local agent pre-fills the forms on " +
+      "Kijiji, Facebook Marketplace and Karrot and stops before Publish.",
+    href: "https://github.com/NmediaCloud/marketplace-listing-assistant",
+    cta: "View the source",
+  },
+  {
     name: "FX Strategy Research Platform",
     tag: "Quantitative research",
     status: "Source available",
@@ -93,16 +93,16 @@ const TOOLS = [
     cta: "View the source",
   },
   {
-    name: "MiroFish",
-    tag: "Audience simulator",
-    status: "In-house",
-    icon: "diversity_3",
-    image: "https://i.ytimg.com/vi/gMHxq5-7Yzg/maxresdefault.jpg",
+    name: "PDF Scripts Toolkit",
+    tag: "Digitisation · Low-resource OCR",
+    status: "Source available",
+    icon: "document_scanner",
     body:
-      "A million synthetic viewers test-screen your pitch in twelve minutes — " +
-      "demographic-weighted, opinion-bearing, and brutally honest about what does not land.",
-    href: "/articles/MiroFish.html",
-    cta: "Read the write-up",
+      "Scanned book pages to searchable PDF — image adjustment, smart cropping and OCR, " +
+      "plus a vision-language transcription pass for Sanskrit, where conventional OCR fails. " +
+      "Built for Tamil, Hindi and Sanskrit printed matter.",
+    href: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
+    cta: "View the source",
   },
 ];
 
