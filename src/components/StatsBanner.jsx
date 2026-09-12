@@ -1,8 +1,10 @@
 import React from "react";
 
 /**
- * StatsBanner — a scrolling track-record ticker that sits directly under
- * the nav, mirroring the marquee at the foot of the page.
+ * StatsBanner — a compact, measured track-record strip under the nav.
+ *
+ * Section-oriented rather than scrolling: six figures in a single row that
+ * can be read at a glance instead of waiting for a marquee to come round.
  *
  * Every figure is measured, not estimated:
  *   61.1M   output tokens across 61,080 model turns, aggregated from local
@@ -14,61 +16,34 @@ import React from "react";
  * Deliberate omission: total tokens *processed* is ~22B, but 96% of that is
  * prompt-cache reads. Output tokens is the honest headline.
  */
-const ITEMS = [
+const STATS = [
   { value: "61.1M",   label: "AI tokens generated" },
   { value: "61,080",  label: "Model turns" },
-  { value: "8",       label: "Frontier models · provider-agnostic" },
-  { value: "15,000+", label: "8K stills · 4K video shipped" },
-  { value: "11",      label: "Pipeline modules · brief → final reel" },
-  { value: "20+",     label: "Years in animation & VFX" },
+  { value: "8",       label: "Frontier models" },
+  { value: "15,000+", label: "Assets shipped" },
+  { value: "11",      label: "Pipeline modules" },
+  { value: "20+",     label: "Years animation & VFX" },
 ];
-
-function Track() {
-  return (
-    <div className="flex gap-10 shrink-0 items-center pr-10">
-      {ITEMS.map((s) => (
-        <span key={s.label} className="flex items-baseline gap-2 whitespace-nowrap">
-          <span className="font-headline font-bold text-sm tracking-tight text-headline">
-            {s.value}
-          </span>
-          <span className="font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant">
-            {s.label}
-          </span>
-          <span className="text-primary font-bold ml-8" aria-hidden="true">•</span>
-        </span>
-      ))}
-    </div>
-  );
-}
 
 export default function StatsBanner() {
   return (
     <section
       aria-label="Track record"
-      className="w-full border-y border-outline-variant bg-warm-neutral py-3 overflow-hidden relative"
+      className="w-full border-y border-outline-variant bg-warm-neutral"
     >
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes nm-stats-marquee {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .nm-stats-track {
-          display: flex;
-          white-space: nowrap;
-          width: max-content;
-          animation: nm-stats-marquee 38s linear infinite;
-        }
-        .nm-stats-strip:hover .nm-stats-track { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .nm-stats-track { animation: none; }
-        }
-      `}} />
-      <div className="nm-stats-strip">
-        <div className="nm-stats-track">
-          {/* duplicated so the -50% loop is seamless */}
-          <Track />
-          <Track />
-        </div>
+      <div className="max-w-[1440px] mx-auto px-8 py-5">
+        <dl className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-4">
+          {STATS.map((s) => (
+            <div key={s.label} className="min-w-0">
+              <dd className="font-headline text-xl md:text-2xl font-bold tracking-tighter text-headline leading-none">
+                {s.value}
+              </dd>
+              <dt className="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant mt-1.5 leading-tight">
+                {s.label}
+              </dt>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

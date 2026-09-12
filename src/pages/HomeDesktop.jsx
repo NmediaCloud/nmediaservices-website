@@ -37,7 +37,7 @@ export default function HomeDesktop() {
         <StatsBanner />
 
         {/* Hero Section */}
-        <section className="px-8 max-w-[1440px] mx-auto mb-16">
+        <section className="px-8 max-w-[1440px] mx-auto pt-16 mb-16">
           <div className="editorial-grid gap-y-12">
             <div className="col-span-12 md:col-span-10">
               <span className="font-label text-primary text-xs tracking-[0.3em] uppercase mb-6 block font-bold">

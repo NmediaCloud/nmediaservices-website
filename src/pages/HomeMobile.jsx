@@ -28,7 +28,7 @@ export default function HomeMobile() {
       <main className="pt-16">
         <StatsBanner />
         {/* Section 1: Hero */}
-        <section className="relative min-h-[707px] flex flex-col justify-center px-6 py-20 overflow-hidden">
+        <section className="relative min-h-[707px] flex flex-col justify-center px-6 pt-24 pb-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
             <div className="w-full h-full bg-[radial-gradient(circle_at_50%_50%,#564338_0%,transparent_70%)]"></div>
           </div>
