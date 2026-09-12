@@ -82,29 +82,58 @@ Nmediaservices.com_Website/
 
 ## Articles workflow
 
-The article HTMLs in `public/articles/` are *generated* — never hand-edited. Source of truth lives outside this repo at:
+⚠️ **Do not run the article generator without reading this.** Verified 2026-09-11.
+
+The article HTMLs in `public/articles/` are *generated*, but the published copies
+have since been edited in place and the generator is now **lossy**. Source lives at:
 
 ```
-D:/Projects/2026/Story_Board_Generator/Articles to Publish/
+D:/Projects/2026/01_Pipe_Story_Board_Generator/Articles to Publish/
 ```
 
-To re-stage them after editing:
+(The path in this file previously read `Story_Board_Generator/` — that folder was
+renamed, which left `publish_to_website.py` pointing at a non-existent directory.
+Fixed 2026-09-11.)
+
+### What a full regeneration destroys
+
+Running the chain against the current source will:
+
+- **Wipe all 10 wired YouTube IDs**, resetting every `data-yt-id` to `REPLACE_ME`
+  and every `youtube_id` in `articles.json` to `""`. The videos were wired into the
+  *published* files, never back-ported to source.
+- **Replace two images with much smaller source copies** — `02a.jpg`
+  (4.5 MB → 147 KB) and `ugc_a.png` (4.7 MB → 56 KB).
+- **Not touch** `CreativeFlow.html`, `Pipeline_Production_System.html` or
+  `podcast/*` — those are outside the generator's `ARTICLES` list and are safe.
+
+Before regenerating: back-port the video IDs and images into
+`Articles to Publish/`, or expect to restore from git afterwards.
+
+### The chain (four scripts, not one)
+
+`publish_to_website.py` alone produces articles with **no site header** — the header
+is added by separate post-processors that must run after, in order:
 
 ```bash
-cd D:/Projects/2026/Story_Board_Generator/Marketing
+cd "D:/Projects/2026/01_Pipe_Story_Board_Generator/Marketing"
+export PYTHONIOENCODING=utf-8     # the scripts print → and crash on cp1252
 python publish_to_website.py
+python inject_favicon.py
+python inject_gtag.py
+python inject_header.py
+python inject_home_btn.py         # its OLD_TAIL must match inject_header.py's output
 ```
 
-This injects the YouTube embed slot, copies images + shared CSS, regenerates `articles.json`, and writes everything into `public/articles/`. Re-runs are idempotent.
+`inject_home_btn.py` matches `inject_header.py`'s email anchor as a literal string.
+If you edit the header, re-derive `OLD_TAIL` or the button silently stops injecting.
 
-To wire a YouTube video into an article:
+### Theme status
 
-1. Edit the source `Articles to Publish/<slug>.html` — change `data-yt-id="REPLACE_ME"` to the YouTube video ID (just the ID).
-2. Update the matching `youtube_id` field in `public/articles/articles.json` so the homepage card shows a `▶ video` badge.
-3. Re-run `publish_to_website.py`.
-4. Commit + push — GitHub Pages auto-deploys.
-
-The inline hydration script in every article auto-swaps the iframe src on load when `data-yt-id` is anything other than `REPLACE_ME`.
+The generator chain was migrated to Soft Executive Orange on 2026-09-11 —
+`Articles to Publish/_shared/article.css`, `_apply_branding.py`, `inject_header.py`
+and `inject_home_btn.py` all carry the light palette. **That folder is not a git
+repo**, so those edits are unversioned and on disk only. See [THEME.md](THEME.md).
 
 ## Deploy
 

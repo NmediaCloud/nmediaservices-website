@@ -21,70 +21,19 @@
 @import "tailwindcss";
 
 /* =========================================================
-   SOFT EXECUTIVE ORANGE — the single source of colour truth
-   for THIS site. The portable copy of the same system lives in
-   ../theme/soft-executive-orange.css and is what you drop into
-   other projects; THEME.md documents it. The two are currently
-   duplicated rather than imported — if you change a value here,
-   change it there too.
-   ---------------------------------------------------------
-   Every surface, text and border colour on the site resolves
-   back to one of these eight values. Change them here and the
-   whole site follows; do not hard-code hexes in components.
+   Site styles. The colour system itself lives in
+   ../theme/soft-executive-orange.css — the portable house
+   theme, documented in THEME.md. Edit the palette THERE,
+   not here, so other projects stay in sync.
+
+   This file adds only what is specific to this codebase:
+   the Material-scheme token aliases its components were
+   originally built against, and the editorial grid.
    ========================================================= */
-:root {
-  --bg-primary:      #FAF8F5;  /* soft warm white — page canvas   */
-  --bg-surface:      #FFFFFF;  /* pure white — cards, panels      */
-  --brand-primary:   #BF4E10;  /* executive orange — deep + vivid */
-  --brand-secondary: #E7B79A;  /* pastel sandal orange            */
-  --bg-warm-neutral: #F3E7DC;  /* soft sand — alternate sections  */
+@import "../theme/soft-executive-orange.css";
 
-  --text-headline:   #000000;  /* display h1/h2 — true black ink  */
-  --text-title:      #2A2622;  /* h3/h4 card + sub headings       */
-  --text-primary:    #4E4A46;  /* warm charcoal — body copy       */
-  --text-secondary:  #6E6862;  /* warm grey — meta, captions      */
-
-  /* One orange, used for fills, icons, borders and text alike.
-     Same hue as the palette card's #D9895B (21° vs 22°) but taken
-     from 62% to 85% saturation and dropped in lightness — deeper and
-     considerably fresher. The pale original could not carry a white
-     button label (2.73:1) or work as small text (2.58:1); this one
-     clears AA both ways: 4.59:1 on canvas, 4.87:1 reversed. */
-
-  --border-primary:  #DDD6CF;  /* warm light grey                 */
-
-  /* Derived — kept here so hovers stay inside the orange family. */
-  --brand-primary-hover: #A0400C;
-  --shadow-card: 0 8px 28px rgba(78, 74, 70, 0.06);
-  --shadow-card-hover: 0 14px 40px rgba(78, 74, 70, 0.10);
-}
-
-/* ---------------------------------------------------------
-   Tailwind theme — the token names the components already use
-   are re-pointed at the palette above. This is what flips the
-   site from dark to light without touching most markup.
-   --------------------------------------------------------- */
 @theme {
-  /* Canvas + surfaces ------------------------------------- */
-  --color-background: #FAF8F5;
-  --color-surface: #FAF8F5;
-  --color-surface-dim: #F3E7DC;
-  --color-surface-bright: #F3E7DC;          /* card hover tint   */
-  --color-surface-variant: #F3E7DC;
-  --color-surface-container-lowest: #FFFFFF;
-  --color-surface-container-low: #FFFFFF;
-  --color-surface-container: #FFFFFF;
-  --color-surface-container-high: #F3E7DC;
-  --color-surface-container-highest: #F3E7DC;
-
-  /* Direct palette aliases — bg-warm-neutral, text-brand-secondary… */
-  --color-warm-neutral: #F3E7DC;
-  --color-brand-secondary: #E7B79A;
-  --color-primary-hover: #A0400C;
-
-  /* Brand ------------------------------------------------- */
-  --color-primary: #BF4E10;
-  --color-on-primary: #FFFFFF;
+  /* Aliases retained because components reference them directly. */
   --color-primary-container: #F3E7DC;
   --color-on-primary-container: #8F3A0B;
   --color-primary-fixed: #F3E7DC;
@@ -94,15 +43,6 @@
   --color-inverse-primary: #D9895B;
   --color-surface-tint: #A0400C;
 
-  /* Text — a four-step ramp so hierarchy comes from tone, not
-     size alone: headline / title / body / secondary. */
-  --color-headline: #000000;
-  --color-title: #2A2622;
-  --color-on-background: #4E4A46;
-  --color-on-surface: #4E4A46;
-  --color-on-surface-variant: #6E6862;
-
-  /* Secondary / tertiary neutrals ------------------------- */
   --color-secondary: #6E6862;
   --color-on-secondary: #FFFFFF;
   --color-secondary-container: #F3E7DC;
@@ -121,17 +61,8 @@
   --color-on-tertiary-fixed: #4E4A46;
   --color-on-tertiary-fixed-variant: #6E6862;
 
-  /* Lines ------------------------------------------------- */
-  --color-outline: #9A918A;
-  --color-outline-variant: #DDD6CF;
-
-  /* Inverse (tooltips, scrims) ---------------------------- */
   --color-inverse-surface: #4E4A46;
   --color-inverse-on-surface: #FAF8F5;
-
-  /* Status ------------------------------------------------ */
-  --color-error: #B3261E;
-  --color-on-error: #FFFFFF;
   --color-error-container: #F9DEDC;
   --color-on-error-container: #8C1D18;
 
@@ -141,49 +72,7 @@
 }
 
 @layer base {
-  body {
-    background-color: var(--color-background);
-    color: var(--color-on-surface);
-    font-family: var(--font-body);
-  }
-
-  /* Display headings carry true black; sub-headings a near-black
-     step below it. 85 of the site's headings set no colour class at
-     all, so the ramp lands on them here. An explicit text-* utility
-     on a heading still wins — utilities outrank the base layer. */
-  h1, h2 {
-    color: var(--text-headline);
-  }
-  h3, h4 {
-    color: var(--text-title);
-  }
-
-  /* Keep form controls inside the warm palette instead of
-     falling back to the browser's cold default chrome. */
-  input,
-  textarea,
-  select {
-    background-color: var(--bg-surface);
-    color: var(--text-primary);
-    border: 1px solid var(--border-primary);
-  }
-
-  input::placeholder,
-  textarea::placeholder {
-    color: var(--text-secondary);
-  }
-
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    outline: 2px solid var(--brand-primary);
-    outline-offset: 1px;
-  }
-
-  ::selection {
-    background-color: var(--brand-primary);
-    color: #ffffff;
-  }
+  body { font-family: var(--font-body); }
 }
 
 @layer components {
@@ -191,73 +80,4 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
   }
-
-  /* Card surface — white panel, hairline warm border, whisper
-     of a shadow. Established, not "dark application window". */
-  .nm-card {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-primary);
-    box-shadow: var(--shadow-card);
-    transition: box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .nm-card:hover {
-    border-color: var(--brand-secondary);
-    box-shadow: var(--shadow-card-hover);
-  }
-
-  /* The wordmark PNG is white line-art drawn for the old black
-     canvas — invisible on warm white. Darken it to the charcoal the
-     wordmark beside it uses, rather than shipping a second asset. */
-  .nm-logo {
-    filter: brightness(0);
-    opacity: 0.72;
-  }
-
-  /* Primary CTA — solid brand orange, white label at 4.82:1. */
-  .nm-btn-primary {
-    background-color: var(--brand-primary);
-    color: #ffffff;
-    border: 1px solid var(--brand-primary);
-    transition: background-color 300ms cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .nm-btn-primary:hover {
-    background-color: var(--brand-primary-hover);
-    border-color: var(--brand-primary-hover);
-  }
-
-  /* Secondary CTA — white, charcoal label, warm hairline. */
-  .nm-btn-secondary {
-    background-color: var(--bg-surface);
-    color: var(--text-primary);
-    border: 1px solid var(--border-primary);
-    transition: background-color 300ms cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .nm-btn-secondary:hover {
-    background-color: var(--bg-warm-neutral);
-    border-color: var(--brand-secondary);
-  }
-}
-
-/* =========================================================
-   Sand-surface exception — unlayered so it outranks utilities.
-   ---------------------------------------------------------
-   #BF4E10 clears AA on the warm-white canvas (4.59:1) and on
-   white (4.87:1), but only reaches 4.01:1 on the soft-sand
-   band. Rather than dull the brand orange everywhere, or alter
-   the approved #F3E7DC, orange TEXT sitting on sand steps down
-   to the hover tone — 5.34:1, same hue, reads identically.
-   Fills, borders and icons are unaffected.
-   ========================================================= */
-.bg-primary\/10, .bg-primary\/15, .bg-primary\/20, .bg-primary\/30,
-.bg-primary\/10 .text-primary, .bg-primary\/15 .text-primary,
-.bg-primary\/20 .text-primary, .bg-primary\/30 .text-primary,
-.bg-warm-neutral :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
-.bg-surface-container-high :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
-.bg-surface-bright :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
-.hover\:bg-surface-bright:hover :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
-.hover\:bg-surface-container-high:hover :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary) {
-  color: var(--brand-primary-hover);
 }
