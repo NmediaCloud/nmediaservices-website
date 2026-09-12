@@ -41,10 +41,10 @@ export default function HomeDesktop() {
                 [Animation <span style={{ letterSpacing: "3.6px" }}>Creative +</span> Production + Tech]
               </span>
               <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter leading-[0.95] text-headline mb-8 max-w-5xl">
-                Creative and Technical Director,<br />
-                Pipeline Implementation,<br />
-                Animation Series, Movies, VFX and Game Assets<br />
-                and Full-stack Development.
+                Creative &amp; Technical Director.<br />
+                <span className="text-primary">Forward Deployed Engineer.</span><br />
+                Pipelines, animation, VFX, game assets<br />
+                and full-stack production systems.
               </h1>
               <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
                 From Story to Final Render. From Idea to Scalable Production
@@ -52,6 +52,111 @@ export default function HomeDesktop() {
                 execution. Experienced building scalable content pipelines,
                 automation scripts, and production tools
               </p>
+              <div className="flex flex-wrap items-center gap-3 mt-8">
+                <a
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nm-btn-secondary inline-flex items-center gap-2.5 px-5 py-3 font-label text-[11px] tracking-[0.2em] uppercase font-bold"
+                >
+                  <GitHubMark className="w-[18px] h-[18px]" />
+                  Code &amp; Contributions
+                  <span className="material-symbols-outlined text-base">arrow_outward</span>
+                </a>
+                <span className="font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant">
+                  Open source · pipelines · production systems
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Credentials & Platforms — split from capability services */}
+        <section className="py-24 px-8 bg-warm-neutral border-y border-outline-variant">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1440px] mx-auto">
+            <div className="lg:col-span-4">
+              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+                [ THE_RECORD // EXTERNAL ]
+              </p>
+              <h2 className="font-headline text-4xl font-bold tracking-tighter mb-6 text-headline">
+                Credentials &<br />Platforms
+              </h2>
+              <p className="font-body text-on-surface-variant max-w-sm">
+                The longer record — public credits, the principal's profile,
+                and the platform we ship media assets through.
+              </p>
+            </div>
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                to="/about"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <span className="material-symbols-outlined text-primary mb-6 block" style={{ fontSize: "36px" }}>
+                  verified
+                </span>
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  Creative–Technical Director
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  Full-stack media tech, AI-native pipelines, motion-graphics
+                  + data-science credentials. The pipeline architect's record.
+                </p>
+              </Link>
+              <a
+                href="https://www.imdb.com/name/nm12576040/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
+                  Imdb credit listing
+                </span>
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  Animation and Visual FX
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  Nandakumar Mohan · IMDb. Visual Effects: PAW Patrol. Known for
+                  high-quality production across global animated series.
+                </p>
+              </a>
+              <a
+                href="https://www.einpresswire.com/article/592919633/utherverse-hires-3d-animation-veteran-nandakumar-mohan-to-develop-full-motion-hd-animation-for-metaverse-platform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
+                  Utherverse_Press
+                </span>
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  Game Animation / AR / VR
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  Animation Assets development for Unity deployment for immersive,
+                  real-time cinematic content. Motion Capture editing and Facial
+                  capture implementation.
+                </p>
+              </a>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <GitHubMark className="w-9 h-9 text-primary mb-6 block" />
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  Code &amp; Systems
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  Open-source tooling and the production pipelines behind the
+                  work — CreativeFlow's campaign automation runs from a clean
+                  checkout with no API key.
+                </p>
+                <span className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary mt-4 group-hover:gap-3 transition-all">
+                  @NmediaCloud
+                  <span className="material-symbols-outlined text-base">arrow_outward</span>
+                </span>
+              </a>
             </div>
           </div>
         </section>
@@ -483,96 +588,6 @@ export default function HomeDesktop() {
                 </p>
               </Link>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Credentials & Platforms — split from capability services */}
-        <section className="py-24 px-8 bg-warm-neutral border-y border-outline-variant">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1440px] mx-auto">
-            <div className="lg:col-span-4">
-              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-                [ THE_RECORD // EXTERNAL ]
-              </p>
-              <h2 className="font-headline text-4xl font-bold tracking-tighter mb-6 text-headline">
-                Credentials &<br />Platforms
-              </h2>
-              <p className="font-body text-on-surface-variant max-w-sm">
-                The longer record — public credits, the principal's profile,
-                and the platform we ship media assets through.
-              </p>
-            </div>
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link
-                to="/about"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <span className="material-symbols-outlined text-primary mb-6 block" style={{ fontSize: "36px" }}>
-                  verified
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Creative–Technical Director
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Full-stack media tech, AI-native pipelines, motion-graphics
-                  + data-science credentials. The pipeline architect's record.
-                </p>
-              </Link>
-              <a
-                href="https://www.imdb.com/name/nm12576040/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  Imdb credit listing
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Animation and Visual FX
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Nandakumar Mohan · IMDb. Visual Effects: PAW Patrol. Known for
-                  high-quality production across global animated series.
-                </p>
-              </a>
-              <a
-                href="https://www.einpresswire.com/article/592919633/utherverse-hires-3d-animation-veteran-nandakumar-mohan-to-develop-full-motion-hd-animation-for-metaverse-platform"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  Utherverse_Press
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Game Animation / AR / VR
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Animation Assets development for Unity deployment for immersive,
-                  real-time cinematic content. Motion Capture editing and Facial
-                  capture implementation.
-                </p>
-              </a>
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <GitHubMark className="w-9 h-9 text-primary mb-6 block" />
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Code &amp; Systems
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Open-source tooling and the production pipelines behind the
-                  work — CreativeFlow's campaign automation runs from a clean
-                  checkout with no API key.
-                </p>
-                <span className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary mt-4 group-hover:gap-3 transition-all">
-                  @NmediaCloud
-                  <span className="material-symbols-outlined text-base">arrow_outward</span>
-                </span>
-              </a>
             </div>
           </div>
         </section>
