@@ -14,7 +14,7 @@ const IMG = "/images/digital-marketing";
 // Tile component for a channel screenshot with a caption.
 function Tile({ src, label }) {
   return (
-    <div className="bg-surface-container border border-outline-variant/10 hover:border-primary/40 transition-colors group">
+    <div className="bg-surface-container border border-outline-variant hover:border-primary/40 transition-colors group">
       <div className="aspect-[16/10] overflow-hidden bg-surface-container-lowest">
         <img
           src={`${IMG}/${src}`}
@@ -40,7 +40,7 @@ export default function DigitalMarketing() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <header className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="border-b border-outline-variant/20 pb-12">
+          <div className="border-b border-outline-variant pb-12">
             <span className="font-label text-primary text-sm tracking-[0.3em] uppercase block mb-4">
               MARKETING STRATEGY // PAID · OWNED · EARNED
             </span>
@@ -58,8 +58,8 @@ export default function DigitalMarketing() {
 
         {/* ── PORTFOLIO BANNER ──────────────────────────── */}
         <section className="px-8 mb-24 max-w-7xl mx-auto">
-          <div className="bg-[#1a1a1a] border border-outline-variant/10 p-6 md:p-10">
-            <p className="font-label text-[10px] tracking-[0.4em] text-primary/70 uppercase mb-4 text-center">
+          <div className="bg-surface-container-high border border-outline-variant p-6 md:p-10">
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4 text-center">
               [ PORTFOLIO // SOCIAL_MEDIA · DIGITAL_MARKETING ]
             </p>
             <img src={`${IMG}/dm_03.png`} alt="Social Media Digital Marketing" className="w-full max-w-3xl mx-auto opacity-90" />
@@ -67,7 +67,7 @@ export default function DigitalMarketing() {
         </section>
 
         {/* ── CONTENT VS TRADITIONAL ────────────────────── */}
-        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-1 items-stretch">
             <div className="bg-surface-container border border-primary/30 p-10 flex flex-col justify-between">
               <div>
@@ -80,13 +80,13 @@ export default function DigitalMarketing() {
               </div>
               <img src={`${IMG}/dm_04.png`} alt="" className="mt-6 w-40 opacity-80 self-start" />
             </div>
-            <div className="bg-surface-container border border-outline-variant/10 p-10 flex flex-col justify-between">
+            <div className="bg-surface-container border border-outline-variant p-10 flex flex-col justify-between">
               <div>
                 <p className="font-label text-[10px] tracking-[0.4em] text-on-surface-variant uppercase mb-3">
                   TRADITIONAL
                 </p>
                 <p className="text-2xl md:text-3xl font-headline font-bold tracking-tight leading-tight">
-                  Aims to sell the <span className="text-on-surface-variant/70">product</span>.
+                  Aims to sell the <span className="text-on-surface-variant">product</span>.
                 </p>
               </div>
               <img src={`${IMG}/dm_07.png`} alt="" className="mt-6 w-40 opacity-80 self-end" />
@@ -108,13 +108,13 @@ export default function DigitalMarketing() {
               loop every campaign runs through.
             </p>
           </div>
-          <div className="bg-[#0f0f0f] border border-outline-variant/10 p-8 md:p-16">
+          <div className="bg-surface-container border border-outline-variant p-8 md:p-16">
             <img src={`${IMG}/dm_06.png`} alt="Digital marketing strategy framework" className="w-full max-w-4xl mx-auto" />
           </div>
         </section>
 
         {/* ── PILLAR 1 · PAID MEDIA ───────────────────── */}
-        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -129,7 +129,7 @@ export default function DigitalMarketing() {
               </p>
             </div>
 
-            <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Social Ads</p>
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Social Ads</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
               <Tile src="dm_14.png" label="LinkedIn Ads" />
               <Tile src="dm_15.png" label="Facebook Ads" />
@@ -137,7 +137,7 @@ export default function DigitalMarketing() {
               <Tile src="dm_17.png" label="Twitter Ads" />
             </div>
 
-            <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Video & Display</p>
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Video & Display</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
               <Tile src="dm_20.png" label="YouTube Ads" />
               <Tile src="dm_21.png" label="YouTube Display" />
@@ -145,7 +145,7 @@ export default function DigitalMarketing() {
               <Tile src="dm_23.png" label="Yahoo Mail Ads" />
             </div>
 
-            <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Influencers & Content</p>
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Influencers & Content</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
               <Tile src="dm_26.png" label="Who Are Influencers" />
               <Tile src="dm_27.png" label="Social Media Influencers" />
@@ -153,7 +153,7 @@ export default function DigitalMarketing() {
               <Tile src="dm_29.png" label="Content Strategy" />
             </div>
 
-            <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Search & Retargeting</p>
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Search & Retargeting</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <Tile src="dm_34.jpg" label="AdWords" />
               <Tile src="dm_35.png" label="Paid Search Ads" />
@@ -178,7 +178,7 @@ export default function DigitalMarketing() {
             </p>
           </div>
 
-          <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Web · Blog · CRM · Email</p>
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Web · Blog · CRM · Email</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
             <Tile src="dm_44.png" label="Responsive Web" />
             <Tile src="dm_45.png" label="Blogs · Articles" />
@@ -186,7 +186,7 @@ export default function DigitalMarketing() {
             <Tile src="dm_47.png" label="Email Campaigns" />
           </div>
 
-          <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Social Pages</p>
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Social Pages</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <Tile src="dm_50.png" label="Google+ Profile" />
             <Tile src="dm_49.png" label="LinkedIn Page" />
@@ -196,7 +196,7 @@ export default function DigitalMarketing() {
         </section>
 
         {/* ── PILLAR 3 · EARNED MEDIA ─────────────────── */}
-        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -238,7 +238,7 @@ export default function DigitalMarketing() {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
                 {["Clicks", "Traffic", "Comments", "Shares"].map((m) => (
-                  <div key={m} className="bg-surface-container border border-outline-variant/10 p-4 text-center">
+                  <div key={m} className="bg-surface-container border border-outline-variant p-4 text-center">
                     <p className="font-headline text-2xl text-primary font-bold mb-1">·</p>
                     <p className="font-label text-[10px] tracking-widest uppercase text-on-surface-variant">{m}</p>
                   </div>
@@ -246,13 +246,13 @@ export default function DigitalMarketing() {
               </div>
             </div>
             <div className="lg:col-span-7">
-              <div className="bg-[#0f0f0f] border border-outline-variant/10 p-6">
+              <div className="bg-surface-container border border-outline-variant p-6">
                 <img src={`${IMG}/dm_62.jpg`} alt="Analysis Strategy" className="w-full" />
               </div>
             </div>
           </div>
 
-          <p className="font-label text-[10px] tracking-[0.4em] text-primary/60 uppercase mb-4">// Analytics Stack</p>
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">// Analytics Stack</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Tile src="dm_66.jpg" label="Google Analytics" />
             <Tile src="dm_65.png" label="Hootsuite Core" />
@@ -261,7 +261,7 @@ export default function DigitalMarketing() {
         </section>
 
         {/* ── RELATED PIPELINES ─────────────────────── */}
-        <section className="bg-surface-container-lowest py-24 px-8 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 px-8 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto">
             <div className="mb-10">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -280,7 +280,7 @@ export default function DigitalMarketing() {
                 href="/articles/UGC_Pipeline.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-surface-container border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container-high p-8 transition-all group"
+                className="block bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high p-8 transition-all group"
               >
                 <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
                   [ FIELD_NOTE // SOCIAL_MEDIA_CONTENT ]
@@ -296,7 +296,7 @@ export default function DigitalMarketing() {
               </a>
               <Link
                 to="/commercials"
-                className="block bg-surface-container border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container-high p-8 transition-all group"
+                className="block bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high p-8 transition-all group"
               >
                 <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
                   [ PORTFOLIO // PAID_MEDIA ]
@@ -320,10 +320,10 @@ export default function DigitalMarketing() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/30 blur-[140px] rounded-full"></div>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-white uppercase">
+            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-headline uppercase">
               Need a campaign that<br />actually closes the loop?
             </h2>
-            <a href="mailto:nanda@nmediaservices.com" className="inline-block bg-primary text-on-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest hover:bg-[#ff8a3d] transition-all">
+            <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
               Brief the Studio →
             </a>
           </div>
@@ -338,7 +338,7 @@ export default function DigitalMarketing() {
 function SiteFooter() {
   const CHANNEL = "https://www.youtube.com/@nmediaservices2014";
   return (
-    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant/10">
+    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
           <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Contact</p>
@@ -354,8 +354,8 @@ function SiteFooter() {
           <a href={CHANNEL} target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors">YouTube · @nmediaservices2014</a>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
-        <p className="text-xs text-on-surface-variant/50 font-label">© Nmedia Inc. · Digital Marketing Strategy</p>
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">
+        <p className="text-xs text-on-surface-variant font-label">© Nmedia Inc. · Digital Marketing Strategy</p>
       </div>
     </footer>
   );

@@ -1,0 +1,169 @@
+/* =========================================================
+   SOFT EXECUTIVE ORANGE — Nmedia house theme
+   ---------------------------------------------------------
+   Portable. Drop this file into any project and import it
+   before your own styles. Framework-agnostic custom
+   properties first; the Tailwind v4 @theme block is optional
+   and only needed if the project uses Tailwind.
+
+   Every value below is measured against WCAG 2.1 AA. Do not
+   substitute "nicer looking" lighter tints for the text and
+   button colours — the lighter members of this hue family
+   fail on a warm-white ground. See THEME.md for the numbers.
+   ========================================================= */
+
+:root {
+  /* ── Surfaces ─────────────────────────────────────────
+     Roughly 65-70% of the page should be canvas or surface,
+     15-20% warm neutral, 10-15% brand accent. */
+  --bg-primary:      #FAF8F5;  /* page canvas — soft warm white  */
+  --bg-surface:      #FFFFFF;  /* cards, panels, forms, modals   */
+  --bg-warm-neutral: #F3E7DC;  /* alternate section bands, hover */
+
+  /* ── Brand ────────────────────────────────────────────
+     One orange for fills, icons, borders AND text. */
+  --brand-primary:   #BF4E10;  /* 4.59:1 on canvas, 4.87:1 rev.  */
+  --brand-hover:     #A0400C;  /* also: orange text on sand      */
+  --brand-secondary: #E7B79A;  /* pastel — DECORATIVE ONLY,
+                                  never text, never a text bg    */
+
+  /* ── Text ramp ────────────────────────────────────────
+     Four steps. Hierarchy comes from tone, not size alone. */
+  --text-headline:   #000000;  /* display h1/h2      19.81:1     */
+  --text-title:      #2A2622;  /* h3/h4              15.01:1     */
+  --text-primary:    #4E4A46;  /* body                8.28:1     */
+  --text-secondary:  #6E6862;  /* meta, captions      5.19:1     */
+
+  /* ── Lines ────────────────────────────────────────────  */
+  --border-primary:  #DDD6CF;
+
+  /* ── Elevation — restrained, warm-tinted, never heavy ─ */
+  --shadow-card:       0 8px 28px rgba(78, 74, 70, 0.06);
+  --shadow-card-hover: 0 14px 40px rgba(78, 74, 70, 0.10);
+
+  /* ── Motion ──────────────────────────────────────────  */
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------------------------------------------------------
+   Tailwind v4 only. Delete this block in non-Tailwind
+   projects. Token names follow Material's scheme because
+   that is what the Nmedia site was already built against.
+   --------------------------------------------------------- */
+@theme {
+  --color-background: #FAF8F5;
+  --color-surface: #FAF8F5;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #FFFFFF;
+  --color-surface-container: #FFFFFF;
+  --color-surface-container-high: #F3E7DC;
+  --color-surface-container-highest: #F3E7DC;
+  --color-surface-bright: #F3E7DC;
+  --color-surface-dim: #F3E7DC;
+  --color-surface-variant: #F3E7DC;
+  --color-warm-neutral: #F3E7DC;
+
+  --color-primary: #BF4E10;
+  --color-on-primary: #FFFFFF;
+  --color-primary-hover: #A0400C;
+  --color-brand-secondary: #E7B79A;
+
+  --color-headline: #000000;
+  --color-title: #2A2622;
+  --color-on-background: #4E4A46;
+  --color-on-surface: #4E4A46;
+  --color-on-surface-variant: #6E6862;
+
+  --color-outline: #9A918A;
+  --color-outline-variant: #DDD6CF;
+
+  --color-error: #B3261E;
+  --color-on-error: #FFFFFF;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  /* 85%+ of headings in a typical build set no colour class,
+     so the ramp lands on them here. An explicit utility still
+     wins — utilities outrank the base layer. */
+  h1, h2 { color: var(--text-headline); }
+  h3, h4 { color: var(--text-title); }
+
+  input, textarea, select {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+  }
+  input::placeholder, textarea::placeholder { color: var(--text-secondary); }
+  input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 1px;
+  }
+  ::selection { background-color: var(--brand-primary); color: #fff; }
+}
+
+@layer components {
+  .nm-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 300ms var(--ease-brand),
+                border-color 300ms var(--ease-brand);
+  }
+  .nm-card:hover {
+    border-color: var(--brand-secondary);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .nm-btn-primary {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    border: 1px solid var(--brand-primary);
+    transition: background-color 300ms var(--ease-brand),
+                border-color 300ms var(--ease-brand);
+  }
+  .nm-btn-primary:hover {
+    background-color: var(--brand-hover);
+    border-color: var(--brand-hover);
+  }
+
+  .nm-btn-secondary {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    transition: background-color 300ms var(--ease-brand),
+                border-color 300ms var(--ease-brand);
+  }
+  .nm-btn-secondary:hover {
+    background-color: var(--bg-warm-neutral);
+    border-color: var(--brand-secondary);
+  }
+
+  /* White line-art logos drawn for a dark canvas go invisible
+     here. Darken in CSS rather than shipping a second asset. */
+  .nm-logo { filter: brightness(0); opacity: 0.72; }
+}
+
+/* =========================================================
+   Sand-surface exception — UNLAYERED so it outranks utilities.
+   ---------------------------------------------------------
+   The brand orange clears AA on canvas (4.59:1) and on white
+   (4.87:1) but only reaches 4.01:1 on the soft-sand band and
+   on tinted orange chips. Orange TEXT on those surfaces steps
+   down to the hover tone (5.34:1) — same hue, reads identical.
+   Fills, borders and icons are untouched.
+   ========================================================= */
+.bg-primary\/10, .bg-primary\/15, .bg-primary\/20, .bg-primary\/30,
+.bg-primary\/10 .text-primary, .bg-primary\/15 .text-primary,
+.bg-primary\/20 .text-primary, .bg-primary\/30 .text-primary,
+.bg-warm-neutral :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
+.bg-surface-container-high :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
+.bg-surface-bright :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
+.hover\:bg-surface-bright:hover :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary),
+.hover\:bg-surface-container-high:hover :is(.text-primary, .hover\:text-primary:hover, .group-hover\:text-primary) {
+  color: var(--brand-hover);
+}

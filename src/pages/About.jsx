@@ -25,9 +25,9 @@ export default function About() {
 
         {/* ── HERO (photo + intro) ───────────────────────── */}
         <header className="px-8 mb-24 max-w-7xl mx-auto">
-          <div className="border-b border-outline-variant/20 pb-16 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="border-b border-outline-variant pb-16 grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
-              <div className="relative aspect-video bg-surface-container border border-outline-variant/10 overflow-hidden">
+              <div className="relative aspect-video bg-surface-container border border-outline-variant overflow-hidden">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src="https://player.vimeo.com/video/1078876514?h=615f148fb2"
@@ -106,7 +106,7 @@ export default function About() {
         </section>
 
         {/* ── DISCIPLINES ──────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -118,7 +118,7 @@ export default function About() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
               {DISCIPLINES.map((d) => (
-                <article key={d.title} className="bg-surface-container border border-outline-variant/10 p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+                <article key={d.title} className="bg-surface-container border border-outline-variant p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
                   <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{d.icon}</span>
                   <h3 className="font-headline font-bold text-lg uppercase tracking-tight mb-2">{d.title}</h3>
                   <p className="text-sm text-on-surface-variant font-light leading-relaxed">{d.body}</p>
@@ -145,7 +145,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             {CERT_GROUPS.map((g) => (
-              <div key={g.label} className="bg-surface-container-lowest border border-outline-variant/10 p-8">
+              <div key={g.label} className="bg-surface-container-lowest border border-outline-variant p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="material-symbols-outlined text-primary">{g.icon}</span>
                   <h3 className="font-headline font-bold text-xl uppercase tracking-tight">{g.label}</h3>
@@ -153,7 +153,7 @@ export default function About() {
                 <ul className="space-y-2">
                   {g.items.map((it) => (
                     <li key={it} className="text-sm text-on-surface-variant font-light flex gap-2">
-                      <span className="text-primary/50">·</span>{it}
+                      <span className="text-primary">·</span>{it}
                     </li>
                   ))}
                 </ul>
@@ -163,7 +163,7 @@ export default function About() {
         </section>
 
         {/* ── CREDENTIALS WALL (cert thumbnails) ─────────── */}
-        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
@@ -192,7 +192,7 @@ export default function About() {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={it.label}
-                      className="group block bg-surface-container border border-outline-variant/10 hover:border-primary/40 overflow-hidden aspect-[4/3] relative transition-all"
+                      className="group block bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden aspect-[4/3] relative transition-all"
                     >
                       <img
                         src={`/images/certificates/${it.file}`}
@@ -201,7 +201,7 @@ export default function About() {
                         className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
-                        <p className="text-xs text-white font-medium leading-tight line-clamp-2">{it.label}</p>
+                        <p className="text-xs text-on-surface font-medium leading-tight line-clamp-2">{it.label}</p>
                       </div>
                     </a>
                   ))}
@@ -212,7 +212,7 @@ export default function About() {
         </section>
 
         {/* ── EDUCATION ───────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -223,15 +223,15 @@ export default function About() {
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-4">
-              <div className="bg-surface-container border border-outline-variant/10 p-6">
+              <div className="bg-surface-container border border-outline-variant p-6">
                 <h4 className="font-headline font-bold text-base uppercase tracking-tight mb-1">MBA</h4>
                 <p className="text-sm text-on-surface-variant font-light">Master of Business Administration</p>
               </div>
-              <div className="bg-surface-container border border-outline-variant/10 p-6">
+              <div className="bg-surface-container border border-outline-variant p-6">
                 <h4 className="font-headline font-bold text-base uppercase tracking-tight mb-1">PGDCA</h4>
                 <p className="text-sm text-on-surface-variant font-light">Post-Graduate Diploma in Computer Applications</p>
               </div>
-              <div className="bg-surface-container border border-outline-variant/10 p-6">
+              <div className="bg-surface-container border border-outline-variant p-6">
                 <h4 className="font-headline font-bold text-base uppercase tracking-tight mb-1">Disney–Pixar Animation Composition</h4>
                 <p className="text-sm text-on-surface-variant font-light">Camera composition + layouts seminar</p>
               </div>
@@ -250,17 +250,17 @@ export default function About() {
             </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://www.imdb.com/name/nm12576040/" target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant/20 hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
+                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
                 IMDb · Filmography
                 <span className="material-symbols-outlined text-base">arrow_outward</span>
               </a>
               <a href="https://www.linkedin.com/in/mnkmars/" target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant/20 hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
+                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
                 LinkedIn · Profile
                 <span className="material-symbols-outlined text-base">arrow_outward</span>
               </a>
               <Link to="/digital-marketing"
-                 className="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-8 py-4 font-label font-bold text-sm tracking-widest uppercase hover:bg-[#ff8a3d] transition-colors">
+                 className="nm-btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 font-label font-bold text-sm tracking-widest uppercase">
                 Marketing Strategy
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>

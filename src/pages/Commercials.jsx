@@ -22,7 +22,7 @@ export default function Commercials() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <section className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="border-b border-outline-variant/20 pb-12 text-center">
+          <div className="border-b border-outline-variant pb-12 text-center">
             <h1 className="font-headline text-3xl md:text-5xl font-bold tracking-tight leading-tight uppercase mb-6">
               Ads · Commercial Promos · Trailer Visualization
             </h1>
@@ -77,19 +77,19 @@ export default function Commercials() {
         </section>
 
         {/* ── CTA ───────────────────────────────────────── */}
-        <section className="py-20 px-8 text-center bg-surface relative overflow-hidden border-t border-outline-variant/10">
-          <div className="absolute inset-0 opacity-30 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/20 blur-[120px] rounded-full"></div>
-          </div>
+        <section
+          className="py-20 px-8 text-center relative overflow-hidden border-y border-outline-variant"
+          style={{ background: "linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%)" }}
+        >
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-headline">
               Got a campaign? Let's visualise it.
             </h2>
           </div>
         </section>
 
         {/* ── FOOTER ────────────────────────────────────── */}
-        <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant/10">
+        <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant">
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
             <div>
               <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Contact</p>
@@ -108,8 +108,8 @@ export default function Commercials() {
               </a>
             </div>
           </div>
-          <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
-            <p className="text-xs text-on-surface-variant/50 font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
+          <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">
+            <p className="text-xs text-on-surface-variant font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
           </div>
         </footer>
 

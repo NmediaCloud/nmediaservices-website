@@ -22,7 +22,7 @@ export default function AnimationVFX() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <section className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="border-b border-outline-variant/20 pb-12">
+          <div className="border-b border-outline-variant pb-12">
             <h1 className="font-headline text-3xl md:text-5xl font-bold tracking-tight leading-tight uppercase">
               3D Char <span className="text-primary">Animation</span>
             </h1>
@@ -36,8 +36,8 @@ export default function AnimationVFX() {
         </section>
 
         {/* ── STATUS TICKER ─────────────────────────────── */}
-        <div className="w-full overflow-hidden bg-surface-container-low py-3 mb-24 whitespace-nowrap border-y border-outline-variant/10">
-          <div className="flex gap-12 font-label text-[10px] tracking-[0.4em] text-primary/50 uppercase">
+        <div className="w-full overflow-hidden bg-surface-container-low py-3 mb-24 whitespace-nowrap border-y border-outline-variant">
+          <div className="flex gap-12 font-label text-[10px] tracking-[0.4em] text-primary uppercase">
             <span className="block">
               MOCAP · FACIAL_CAPTURE · ANIMATION · LIGHTING · RENDERING ·
               RIGGING · RETOPOLOGY · UV_UNWRAP · TRANSFER · TECHNICAL_DIRECTION
@@ -67,7 +67,7 @@ export default function AnimationVFX() {
 
         {/* ── LIGHTING & RENDER GALLERY TRIGGER ─────────── */}
         <section className="px-8 max-w-7xl mx-auto mb-32">
-          <div className="border border-outline-variant/10 bg-surface-container-low p-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="border border-outline-variant bg-surface-container-low p-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2">
                 [ STILLS · {RENDER_LIGHT_PICS.length} ]
@@ -83,7 +83,7 @@ export default function AnimationVFX() {
             <button
               type="button"
               onClick={() => setRenderModalOpen(true)}
-              className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 font-label font-bold text-sm tracking-widest uppercase hover:bg-[#ff8a3d] transition-colors cursor-pointer self-start md:self-auto"
+              className="nm-btn-primary inline-flex items-center gap-3 px-8 py-4 font-label font-bold text-sm tracking-widest uppercase cursor-pointer self-start md:self-auto"
             >
               View Gallery · {RENDER_LIGHT_PICS.length}
               <span className="material-symbols-outlined text-base">photo_library</span>
@@ -116,7 +116,7 @@ export default function AnimationVFX() {
             </div>
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-1">
               {DISCIPLINES.map((d) => (
-                <div key={d.id} className="bg-surface-container border border-outline-variant/10 p-8 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+                <div key={d.id} className="bg-surface-container border border-outline-variant p-8 hover:bg-surface-container-high hover:border-primary/30 transition-all">
                   <p className="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">{d.id}</p>
                   <h3 className="font-headline font-bold text-xl uppercase tracking-tight mb-3">{d.title}</h3>
                   <p className="text-sm text-on-surface-variant font-light leading-relaxed">{d.body}</p>
@@ -127,14 +127,14 @@ export default function AnimationVFX() {
         </section>
 
         {/* ── PROJECTS / CREDITS ──────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
                 <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
                   [ CREDITS // SELECTED_WORKS ]
                 </p>
-                <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight text-white leading-none uppercase">
+                <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight text-headline leading-none uppercase">
                   Projects.
                 </h2>
               </div>
@@ -145,7 +145,7 @@ export default function AnimationVFX() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
               {PROJECTS.map((p, i) => (
-                <article key={p.title} className="group bg-surface-container p-8 border border-outline-variant/5 hover:bg-surface-container-high hover:border-primary/20 transition-all">
+                <article key={p.title} className="group bg-surface-container p-8 border border-outline-variant hover:bg-surface-container-high hover:border-primary/35 transition-all">
                   <p className="font-label text-[10px] text-primary mb-3 tracking-widest uppercase">
                     Entry {String(i + 1).padStart(3, "0")}
                   </p>
@@ -153,7 +153,7 @@ export default function AnimationVFX() {
                     {p.title}
                   </h3>
                   <p className="text-xs text-on-surface-variant font-light mb-4">{p.studio}</p>
-                  <div className="flex items-center justify-between border-t border-outline-variant/10 pt-3 mt-auto">
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-3 mt-auto">
                     <span className="font-label text-[9px] tracking-widest uppercase text-on-surface-variant group-hover:text-primary transition-colors">
                       {p.role}
                     </span>
@@ -175,17 +175,17 @@ export default function AnimationVFX() {
             </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://www.imdb.com/name/nm12576040/" target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant/20 hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
+                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
                 IMDb · Full Filmography
                 <span className="material-symbols-outlined text-base">arrow_outward</span>
               </a>
               <a href="https://www.linkedin.com/in/mnkmars/" target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant/20 hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
+                 className="inline-flex items-center justify-center gap-3 bg-surface-container border border-outline-variant hover:border-primary/40 text-on-surface px-8 py-4 font-label text-sm tracking-widest uppercase transition-all">
                 LinkedIn · Profile
                 <span className="material-symbols-outlined text-base">arrow_outward</span>
               </a>
               <a href="https://www.youtube.com/@nmediaservices2014" target="_blank" rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-8 py-4 font-label font-bold text-sm tracking-widest uppercase hover:bg-[#ff8a3d] transition-colors">
+                 className="nm-btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 font-label font-bold text-sm tracking-widest uppercase">
                 Watch Reel
                 <span className="material-symbols-outlined text-base">play_arrow</span>
               </a>
@@ -194,12 +194,12 @@ export default function AnimationVFX() {
         </section>
 
         {/* ── CTA (minimal pull-quote) ──────────────────────── */}
-        <section className="py-20 px-8 text-center bg-surface relative overflow-hidden border-t border-outline-variant/10">
-          <div className="absolute inset-0 opacity-30 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/20 blur-[120px] rounded-full"></div>
-          </div>
+        <section
+          className="py-20 px-8 text-center relative overflow-hidden border-y border-outline-variant"
+          style={{ background: "linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%)" }}
+        >
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-headline">
               Got a character pipeline that needs steering?
             </h2>
           </div>
@@ -264,7 +264,7 @@ const PROJECTS = [
 function SiteFooter() {
   const CHANNEL = "https://www.youtube.com/@nmediaservices2014";
   return (
-    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant/10">
+    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
           <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Contact</p>
@@ -280,8 +280,8 @@ function SiteFooter() {
           <a href={CHANNEL} target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors">YouTube · @nmediaservices2014</a>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
-        <p className="text-xs text-on-surface-variant/50 font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">
+        <p className="text-xs text-on-surface-variant font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
       </div>
     </footer>
   );

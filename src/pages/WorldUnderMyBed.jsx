@@ -37,12 +37,12 @@ export default function WorldUnderMyBed() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <header className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-end border-b border-outline-variant/20 pb-16">
+          <div className="grid lg:grid-cols-12 gap-12 items-end border-b border-outline-variant pb-16">
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-3 text-primary font-label text-xs tracking-[0.3em] uppercase flex-wrap">
                 <span className="px-2 py-1 bg-primary/10 border border-primary/30">VOL. 04</span>
                 <span>Development</span>
-                <span className="text-on-surface-variant/60">·</span>
+                <span className="text-on-surface-variant">·</span>
                 <span>Bedtime SEL</span>
               </div>
               <h1 className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-[0.95] uppercase">
@@ -60,7 +60,7 @@ export default function WorldUnderMyBed() {
               </p>
             </div>
             <div className="lg:col-span-5">
-              <div className="bg-surface-container-low border border-outline-variant/10 overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
+              <div className="bg-surface-container-low border border-outline-variant overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
                 <img src={`${IMG}/wub_01.jpg`} alt="The World Under My Bed · Lumi" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function WorldUnderMyBed() {
                 <button
                   type="button"
                   onClick={() => openCast(c.file)}
-                  className="block w-full bg-surface-container border border-outline-variant/10 group-hover:border-primary/40 overflow-hidden transition-all duration-500 cursor-zoom-in transform-gpu group-hover:scale-[1.06] group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:z-10 relative"
+                  className="block w-full bg-surface-container border border-outline-variant group-hover:border-primary/40 overflow-hidden transition-all duration-500 cursor-zoom-in transform-gpu group-hover:scale-[1.06] group-hover:shadow-xl group-hover:shadow-primary/20 group-hover:z-10 relative"
                   style={{ aspectRatio: "3 / 4" }}
                   aria-label={`View ${c.name}`}
                 >
@@ -99,8 +99,8 @@ export default function WorldUnderMyBed() {
                   />
                 </button>
                 <figcaption className="mt-3 text-center group-hover:text-primary transition-colors">
-                  <p className="font-label text-xs tracking-[0.2em] uppercase text-white">{c.name}</p>
-                  {c.role && <p className="font-body text-[11px] text-on-surface-variant/70 mt-1">{c.role}</p>}
+                  <p className="font-label text-xs tracking-[0.2em] uppercase text-on-surface">{c.name}</p>
+                  {c.role && <p className="font-body text-[11px] text-on-surface-variant mt-1">{c.role}</p>}
                 </figcaption>
               </figure>
             ))}
@@ -118,7 +118,7 @@ export default function WorldUnderMyBed() {
 
         {/* ── KEY ART ───────────────────────────────────── */}
         <section className="px-8 mb-32 max-w-6xl mx-auto">
-          <div className="bg-[#0f0f0f] border border-outline-variant/10 p-6 md:p-10">
+          <div className="bg-surface-container border border-outline-variant p-6 md:p-10">
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6 text-center">
               [ KEY ART // YOUR CHILD'S NIGHTLY PROTECTORS ]
             </p>
@@ -127,7 +127,7 @@ export default function WorldUnderMyBed() {
         </section>
 
         {/* ── PITCH VIDEO ────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-5xl mx-auto px-8">
             <div className="mb-12">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -137,7 +137,7 @@ export default function WorldUnderMyBed() {
                 Watch the pitch.
               </h2>
             </div>
-            <div className="aspect-video bg-black border border-outline-variant/10 overflow-hidden">
+            <div className="aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/f9ztBzwGzJw?rel=0&modestbranding=1"
@@ -164,7 +164,7 @@ export default function WorldUnderMyBed() {
         </section>
 
         {/* ── CONCEPT ──────────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -208,7 +208,7 @@ export default function WorldUnderMyBed() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {HELPERS.map((c) => (
-              <article key={c.name} className="bg-surface-container border border-outline-variant/10 p-8 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+              <article key={c.name} className="bg-surface-container border border-outline-variant p-8 hover:bg-surface-container-high hover:border-primary/30 transition-all">
                 <span className="material-symbols-outlined text-primary text-5xl mb-4 block">{c.icon}</span>
                 <h3 className="font-headline font-bold text-2xl uppercase tracking-tight mb-1">{c.name}</h3>
                 <p className="font-label text-[10px] text-primary tracking-widest uppercase mb-4">{c.role}</p>
@@ -219,7 +219,7 @@ export default function WorldUnderMyBed() {
         </section>
 
         {/* ── THEMES ──────────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -231,7 +231,7 @@ export default function WorldUnderMyBed() {
             </div>
             <div className="lg:col-span-7 space-y-1">
               {THEMES.map((t) => (
-                <div key={t.title} className="bg-surface-container border border-outline-variant/10 p-6 flex gap-4 items-start">
+                <div key={t.title} className="bg-surface-container border border-outline-variant p-6 flex gap-4 items-start">
                   <span className="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-1">{t.icon}</span>
                   <div>
                     <h4 className="font-headline font-bold text-base uppercase tracking-tight mb-1">{t.title}</h4>
@@ -249,14 +249,14 @@ export default function WorldUnderMyBed() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/30 blur-[140px] rounded-full"></div>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-white uppercase">
+            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-headline uppercase">
               Pitch deck.<br />Series bible. Look-dev.
             </h2>
             <p className="text-on-surface-variant max-w-md mx-auto mb-10 font-light">
               Available for broadcasters, distributors and OTT acquisition teams.
               Pilot in active development.
             </p>
-            <a href="mailto:nanda@nmediaservices.com" className="inline-block bg-primary text-on-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest hover:bg-[#ff8a3d] transition-all">
+            <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
               Request Materials →
             </a>
           </div>

@@ -18,7 +18,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
   return (
     <section
       id={id}
-      className={`scroll-mt-32 py-32 px-8 ${alt ? "bg-surface-container-lowest border-y border-outline-variant/10" : ""}`}
+      className={`scroll-mt-32 py-32 px-8 ${alt ? "bg-surface-container-lowest border-y border-outline-variant" : ""}`}
     >
       <div className="max-w-7xl mx-auto">
 
@@ -29,7 +29,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
               <button
                 type="button"
                 onClick={() => onZoom(flashcard)}
-                className="block w-full bg-surface-container border border-outline-variant/10 hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all group"
+                className="block w-full bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all group"
                 style={{ aspectRatio: "3 / 4" }}
                 aria-label={`Zoom ${title} flashcard`}
               >
@@ -71,14 +71,14 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                   key={img}
                   type="button"
                   onClick={() => onZoom(`${basePath}/${img}`)}
-                  className="block w-full bg-surface-container border border-outline-variant/10 hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.005]"
+                  className="block w-full bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.005]"
                   aria-label="Zoom image"
                 >
                   <img
                     src={`${basePath}/${img}`}
                     alt=""
                     loading="lazy"
-                    className="w-full h-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity duration-500 bg-black"
+                    className="w-full h-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity duration-500 bg-surface-container-high"
                   />
                 </button>
               ))}
@@ -98,7 +98,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                       key={img}
                       type="button"
                       onClick={() => onZoom(`${basePath}/${img}`)}
-                      className="block w-full bg-surface-container border border-outline-variant/10 hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.01]"
+                      className="block w-full bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.01]"
                       aria-label="Zoom image"
                     >
                       <img
@@ -119,7 +119,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                   key={img}
                   type="button"
                   onClick={() => onZoom(`${basePath}/${img}`)}
-                  className="block bg-surface-container border border-outline-variant/10 hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.02]"
+                  className="block bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all duration-500 group transform-gpu hover:scale-[1.02]"
                   style={{ aspectRatio: "4 / 3" }}
                   aria-label="Zoom image"
                 >
@@ -142,7 +142,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
               {points.map((pt) => (
                 <li key={pt} className="text-sm text-on-surface-variant font-light leading-relaxed flex gap-2">
-                  <span className="text-primary/60">·</span>{pt}
+                  <span className="text-primary">·</span>{pt}
                 </li>
               ))}
             </ul>
@@ -151,7 +151,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
           <div className="grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-7">
               {videoId ? (
-                <div className="aspect-video bg-black border border-outline-variant/10 overflow-hidden">
+                <div className="aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
                   <iframe
                     className="w-full h-full"
                     src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
@@ -162,15 +162,15 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
                   />
                 </div>
               ) : (
-                <div className="aspect-video bg-[#0a0a0a] border border-outline-variant/10 flex flex-col items-center justify-center text-center p-8 relative overflow-hidden">
+                <div className="aspect-video bg-background border border-outline-variant flex flex-col items-center justify-center text-center p-8 relative overflow-hidden">
                   <div className="absolute inset-0 opacity-20 pointer-events-none">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-primary/30 blur-[120px] rounded-full"></div>
                   </div>
-                  <span className="material-symbols-outlined text-primary/50 text-[64px] mb-4 relative">play_circle</span>
-                  <p className="font-label text-[10px] tracking-[0.4em] text-primary/70 uppercase relative">
+                  <span className="material-symbols-outlined text-primary text-[64px] mb-4 relative">play_circle</span>
+                  <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase relative">
                     [ VIDEO_WALKTHROUGH // COMING_SOON ]
                   </p>
-                  <p className="font-body text-xs text-on-surface-variant/60 mt-2 relative">
+                  <p className="font-body text-xs text-on-surface-variant mt-2 relative">
                     Process reel for {title.toLowerCase().replace(/\.$/, "")} drops here.
                   </p>
                 </div>
@@ -181,7 +181,7 @@ function ServiceSection({ id, kicker, title, subtitle, intro, images, basePath, 
               <ul className="space-y-3">
                 {points.map((pt) => (
                   <li key={pt} className="text-sm text-on-surface-variant font-light leading-relaxed flex gap-2">
-                    <span className="text-primary/60">·</span>{pt}
+                    <span className="text-primary">·</span>{pt}
                   </li>
                 ))}
               </ul>
@@ -221,7 +221,7 @@ export default function DigitalConversion() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <header className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="border-b border-outline-variant/20 pb-12">
+          <div className="border-b border-outline-variant pb-12">
             <span className="font-label text-primary text-sm tracking-[0.3em] uppercase block mb-4">
               SERVICE // PHYSICAL → DIGITAL
             </span>
@@ -247,9 +247,9 @@ export default function DigitalConversion() {
               <a
                 key={i.id}
                 href={`#${i.id}`}
-                className="block bg-surface-container border border-outline-variant/10 hover:border-primary/40 hover:bg-surface-container-high transition-all group overflow-hidden"
+                className="block bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high transition-all group overflow-hidden"
               >
-                <div className="bg-white/5 overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
+                <div className="bg-surface-container-high overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
                   <img
                     src={i.flashcard}
                     alt={i.title}
@@ -258,10 +258,10 @@ export default function DigitalConversion() {
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-label text-[9px] tracking-[0.3em] text-primary/60 uppercase mb-1">
+                  <p className="font-label text-[9px] tracking-[0.3em] text-primary uppercase mb-1">
                     0{idx + 1}
                   </p>
-                  <p className="font-headline text-xs font-bold uppercase tracking-tight text-white group-hover:text-primary transition-colors leading-tight">
+                  <p className="font-headline text-xs font-bold uppercase tracking-tight text-on-surface group-hover:text-primary transition-colors leading-tight">
                     {i.title}
                   </p>
                 </div>
@@ -271,10 +271,10 @@ export default function DigitalConversion() {
         </section>
 
         {/* ── PROMISE STRIP ────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-20 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-20 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
             {PROMISE.map((p) => (
-              <div key={p.title} className="bg-surface-container border border-outline-variant/10 p-7">
+              <div key={p.title} className="bg-surface-container border border-outline-variant p-7">
                 <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{p.icon}</span>
                 <h3 className="font-headline font-bold text-base uppercase tracking-tight mb-2">{p.title}</h3>
                 <p className="text-sm text-on-surface-variant font-light leading-relaxed">{p.body}</p>
@@ -446,27 +446,27 @@ export default function DigitalConversion() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
             {OUTPUTS.map((o) => (
-              <div key={o} className="bg-surface-container border border-outline-variant/10 p-4 text-sm text-on-surface-variant font-light flex gap-2">
-                <span className="text-primary/60">·</span>{o}
+              <div key={o} className="bg-surface-container border border-outline-variant p-4 text-sm text-on-surface-variant font-light flex gap-2">
+                <span className="text-primary">·</span>{o}
               </div>
             ))}
           </div>
         </section>
 
         {/* ── CTA ──────────────────────────────────────── */}
-        <section className="py-32 px-8 text-center bg-surface relative overflow-hidden border-t border-outline-variant/10">
+        <section className="py-32 px-8 text-center bg-surface relative overflow-hidden border-t border-outline-variant">
           <div className="absolute inset-0 opacity-30 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/30 blur-[140px] rounded-full"></div>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-white uppercase">
+            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-headline uppercase">
               Got a shelf<br />that needs digitising?
             </h2>
             <p className="text-on-surface-variant max-w-md mx-auto mb-10 font-light">
               Quotes scoped to volume, source format, fragility and delivery
               spec. Pickup, on-site, or shipped — whichever protects the asset.
             </p>
-            <a href="mailto:nanda@nmediaservices.com" className="inline-block bg-primary text-on-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest hover:bg-[#ff8a3d] transition-all">
+            <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
               Request a Quote →
             </a>
           </div>
@@ -524,7 +524,7 @@ const OUTPUTS = [
 function SiteFooter() {
   const CHANNEL = "https://www.youtube.com/@nmediaservices2014";
   return (
-    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant/10">
+    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
           <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Contact</p>
@@ -540,8 +540,8 @@ function SiteFooter() {
           <a href={CHANNEL} target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors">YouTube · @nmediaservices2014</a>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
-        <p className="text-xs text-on-surface-variant/50 font-label">© Nmedia Inc. · Digital Conversion Services</p>
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">
+        <p className="text-xs text-on-surface-variant font-label">© Nmedia Inc. · Digital Conversion Services</p>
       </div>
     </footer>
   );

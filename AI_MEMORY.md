@@ -2,7 +2,7 @@
 
 This file serves as persistent memory and project context for the AI assistant. It ensures that across different sessions, the core project rules, design instructions, and ongoing tasks are easily accessible.
 
-Last updated: **2026-04-26**.
+Last updated: **2026-09-11** (Soft Executive Orange migration).
 
 ## Project Overview
 
@@ -20,14 +20,23 @@ Last updated: **2026-04-26**.
 - **Typography Engine:** Space Grotesk for Headings/Display (editorial impact) and Inter for Body/Label text (legibility).
 - **Depth & Layers:** Use surface-container nesting to simulate depth. Instead of flat dropshadows, use the "Glass & Gradient" rule with high-blur (e.g., `backdrop-filter: blur(20px)` at 60% opacity) or subtle scaling.
 - **Fluid UI:** All interactive elements must bounce/scale slightly on hover/action using a crisp transition curve: `cubic-bezier(0.16, 1, 0.3, 1)`.
-- **Single accent:** Brand orange `#ff6a00` only — never multi-colour. Used sparingly for pills, dividers, hover accents, CTAs.
+- **Single accent:** Brand orange `#BF4E10` only — never multi-colour, never blue or
+  navy. Used for pills, dividers, hover accents, CTAs, icons and accent text alike.
+- **Type ramp:** display `h1`/`h2` `#000000`, `h3`/`h4` `#2A2622`, body `#4E4A46`,
+  secondary `#6E6862`. Hierarchy comes from tone as well as size.
+- **Accessibility is a hard constraint:** every pair is WCAG AA verified. Never use a
+  pale orange for text or as a button fill, and never dim text with opacity
+  modifiers — THEME.md records exactly what fails and why.
 
 ## Folder structure (current)
 
 ```
 Nmediaservices.com_Website/
 ├── AI_MEMORY.md          ← you are here
-├── DESIGN.md             ← deeper design tokens + rules
+├── THEME.md              ← AUTHORITATIVE palette + contrast rules
+├── theme/                ← portable house theme, reusable in other projects
+│   └── soft-executive-orange.css
+├── DESIGN.md             ← structural design rules (colour sections superseded)
 ├── README.md             ← public-facing project intro
 ├── Assets/               ← brand logos (Nmedia_logo.png, logo.png)
 ├── Pages/                ← content-folder placeholders (Analyst Skills, Marketing
@@ -120,7 +129,8 @@ upload dist/ → deploy-pages
 
 ## Core invariants (do not break)
 
-- Brand orange is `#ff6a00`. Don't use any other accent colour.
+- Brand orange is `#BF4E10`. Don't use any other accent colour, and don't lighten it
+  — the pale variants fail contrast on the warm-white canvas.
 - Headlines: Space Grotesk Bold. Body: Inter. No third font.
 - Articles' brand chip (`<a class="nm-brand">`) uses no `target` attribute — clicks navigate in-place so the chip works as a "back to home" link.
 - The `articles.json` manifest is the public API the homepage depends on. Don't rename fields without updating `src/components/PipelineArticles.jsx`.

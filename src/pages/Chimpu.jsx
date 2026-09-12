@@ -38,12 +38,12 @@ export default function Chimpu() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <header className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-end border-b border-outline-variant/20 pb-16">
+          <div className="grid lg:grid-cols-12 gap-12 items-end border-b border-outline-variant pb-16">
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-3 text-primary font-label text-xs tracking-[0.3em] uppercase flex-wrap">
                 <span className="px-2 py-1 bg-primary/10 border border-primary/30">VOL. 03</span>
                 <span>Development</span>
-                <span className="text-on-surface-variant/60">·</span>
+                <span className="text-on-surface-variant">·</span>
                 <span>Pre-K Slapstick</span>
               </div>
               <h1 className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-[0.95] uppercase">
@@ -62,7 +62,7 @@ export default function Chimpu() {
               </p>
             </div>
             <div className="lg:col-span-5">
-              <div className="bg-surface-container-low border border-outline-variant/10 overflow-hidden" style={{ aspectRatio: "1 / 1" }}>
+              <div className="bg-surface-container-low border border-outline-variant overflow-hidden" style={{ aspectRatio: "1 / 1" }}>
                 <img src={`${IMG}/ch_07.png`} alt="Chimpu · Mann Ki Masti — Key Art" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function Chimpu() {
                 <button
                   type="button"
                   onClick={() => openCast(c.file)}
-                  className="block w-full bg-surface-container border border-outline-variant/10 group-hover:border-primary/40 overflow-hidden transition-all duration-500 cursor-zoom-in transform-gpu group-hover:scale-[1.06] group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:z-10 relative"
+                  className="block w-full bg-surface-container border border-outline-variant group-hover:border-primary/40 overflow-hidden transition-all duration-500 cursor-zoom-in transform-gpu group-hover:scale-[1.06] group-hover:shadow-xl group-hover:shadow-primary/20 group-hover:z-10 relative"
                   style={{ aspectRatio: "3 / 4" }}
                   aria-label={`View ${c.name}`}
                 >
@@ -101,8 +101,8 @@ export default function Chimpu() {
                   />
                 </button>
                 <figcaption className="mt-3 text-center group-hover:text-primary transition-colors">
-                  <p className="font-label text-xs tracking-[0.2em] uppercase text-white">{c.name}</p>
-                  {c.role && <p className="font-body text-[11px] text-on-surface-variant/70 mt-1">{c.role}</p>}
+                  <p className="font-label text-xs tracking-[0.2em] uppercase text-on-surface">{c.name}</p>
+                  {c.role && <p className="font-body text-[11px] text-on-surface-variant mt-1">{c.role}</p>}
                 </figcaption>
               </figure>
             ))}
@@ -119,7 +119,7 @@ export default function Chimpu() {
         />
 
         {/* ── PILOT + PITCH VIDEOS ──────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -131,10 +131,10 @@ export default function Chimpu() {
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <p className="font-label text-[10px] tracking-[0.3em] text-primary/70 uppercase mb-3">
+                <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-3">
                   Pilot · Chimpu Mann Ki Masti
                 </p>
-                <div className="aspect-video bg-black border border-outline-variant/10 overflow-hidden">
+                <div className="aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
                   <iframe
                     className="w-full h-full"
                     src="https://www.youtube.com/embed/MOMNbJIP3vk?rel=0&modestbranding=1"
@@ -146,10 +146,10 @@ export default function Chimpu() {
                 </div>
               </div>
               <div>
-                <p className="font-label text-[10px] tracking-[0.3em] text-primary/70 uppercase mb-3">
+                <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-3">
                   Pitch Video · Chimpu
                 </p>
-                <div className="aspect-video bg-black border border-outline-variant/10 overflow-hidden">
+                <div className="aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
                   <iframe
                     className="w-full h-full"
                     src="https://www.youtube.com/embed/G8nhgC0trDM?rel=0&modestbranding=1"
@@ -189,7 +189,7 @@ export default function Chimpu() {
                 cat, Tiger, makes it his life's mission to chase Chimpu out —
                 and fails, gloriously, every time.
               </p>
-              <p className="italic text-on-surface-variant/80">
+              <p className="italic text-on-surface-variant">
                 Pre-K slapstick — exaggerated cause-and-effect comedy with
                 character-led mischief and zero dialogue dependency.
               </p>
@@ -198,7 +198,7 @@ export default function Chimpu() {
         </section>
 
         {/* ── LOGLINE ──────────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-5xl mx-auto px-8">
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6">
               [ LOGLINE ]
@@ -223,7 +223,7 @@ export default function Chimpu() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {CRAFT.map((c) => (
-              <article key={c.title} className="bg-surface-container border border-outline-variant/10 p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+              <article key={c.title} className="bg-surface-container border border-outline-variant p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
                 <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{c.icon}</span>
                 <h3 className="font-headline font-bold text-lg uppercase tracking-tight mb-3">{c.title}</h3>
                 <p className="text-sm text-on-surface-variant font-light leading-relaxed">{c.body}</p>
@@ -238,14 +238,14 @@ export default function Chimpu() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/30 blur-[140px] rounded-full"></div>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-white uppercase">
+            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-headline uppercase">
               Pitch deck. Pilot.<br />Series bible.
             </h2>
             <p className="text-on-surface-variant max-w-md mx-auto mb-10 font-light">
               Available for broadcasters, distributors, and OTT acquisition
               teams. Pre-K slapstick that travels without translation.
             </p>
-            <a href="mailto:nanda@nmediaservices.com" className="inline-block bg-primary text-on-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest hover:bg-[#ff8a3d] transition-all">
+            <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
               Request Materials →
             </a>
           </div>

@@ -3,20 +3,20 @@ import PipelineArticles from "../components/PipelineArticles";
 
 export default function HomeMobile() {
   return (
-    <div className="bg-[#131313] text-[#e5e2e1] font-['Inter'] selection:bg-primary selection:text-on-primary">
+    <div className="bg-surface-container text-on-surface font-['Inter'] selection:bg-primary selection:text-on-primary">
       {/* TopAppBar */}
-      <header className="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md flex justify-between items-center px-6 h-16">
+      <header className="fixed top-0 w-full z-50 bg-surface-container/70 backdrop-blur-md flex justify-between items-center px-6 h-16">
         <div className="flex items-center gap-3">
           <img
             src="https://stockflow.media/assets/Nmedia_logo.png"
             alt="Nmedia Services Logo"
-            className="h-8 w-auto object-contain"
+            className="nm-logo h-8 w-auto object-contain"
           />
-          <span className="font-['Space_Grotesk'] tracking-tighter uppercase text-xl font-bold text-[#E5E2E1]">
+          <span className="font-['Space_Grotesk'] tracking-tighter uppercase text-xl font-bold text-on-surface">
             NMEDIA
           </span>
         </div>
-        <button className="text-[#E5E2E1] active:scale-95 transition-transform">
+        <button className="text-on-surface active:scale-95 transition-transform">
           <span className="material-symbols-outlined">menu</span>
         </button>
       </header>
@@ -29,13 +29,13 @@ export default function HomeMobile() {
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="w-2 h-2 bg-primary"></div>
-              <span className="font-label text-xs tracking-[0.3em] text-outline uppercase">
+              <span className="font-label text-xs tracking-[0.3em] text-on-surface-variant uppercase">
                 Established 2014
               </span>
             </div>
             <h1 className="font-headline text-5xl font-bold tracking-tighter leading-[0.9] mb-8">
               Creative + Technical{" "}
-              <span className="bg-gradient-to-br from-[#FFB68D] to-[#FF8A3D] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br from-[#A0400C] to-primary bg-clip-text text-transparent">
                 Direction Development
               </span>
             </h1>
@@ -46,14 +46,14 @@ export default function HomeMobile() {
             <div className="flex flex-col gap-4">
               <a
                 href="mailto:Nanda@nmediaservices.com"
-                className="bg-primary text-[#532200] px-8 py-4 font-label font-bold text-sm tracking-widest uppercase active:scale-[0.98] transition-all text-center block"
+                className="nm-btn-primary px-8 py-4 font-label font-bold text-sm tracking-widest uppercase active:scale-[0.98] transition-all text-center block"
               >
                 EXPLORE SYSTEMS
               </a>
             </div>
           </div>
           {/* Kinetic Marquee */}
-          <div className="absolute bottom-0 left-0 w-full py-4 border-t border-outline-variant/15 overflow-hidden bg-surface-container-lowest flex whitespace-nowrap">
+          <div className="absolute bottom-0 left-0 w-full py-4 border-t border-outline-variant overflow-hidden bg-surface-container-lowest flex whitespace-nowrap">
             <style dangerouslySetInnerHTML={{__html: `
               @keyframes mobile-marquee {
                   0% { transform: translateX(0); }
@@ -67,7 +67,7 @@ export default function HomeMobile() {
             `}} />
             <div className="animate-mobile-marquee">
                 {Array(2).fill(0).map((_, i) => (
-                    <div key={i} className="font-label text-[10px] tracking-[0.2em] text-primary/60 px-4 shrink-0">
+                    <div key={i} className="font-label text-[10px] tracking-[0.2em] text-primary px-4 shrink-0">
                         LIVE UPDATES // SYSTEM STATUS: NOMINAL // CORE LOADED // ARCHITECTING FUTURE // 01010101 // LIVE UPDATES //
                     </div>
                 ))}
@@ -86,7 +86,7 @@ export default function HomeMobile() {
             <span className="font-label text-xs text-primary tracking-[0.2em] block mb-4">
               [ 01 ]
             </span>
-            <h2 className="font-headline text-xl font-bold tracking-tight text-on-surface uppercase leading-snug">
+            <h2 className="font-headline text-xl font-bold tracking-tight text-headline uppercase leading-snug">
               PIPELINE PRODUCTION TECH
             </h2>
           </a>
@@ -108,13 +108,13 @@ export default function HomeMobile() {
           </div>
           <div className="mt-8 grid grid-cols-2 gap-8">
             <div>
-              <span className="font-label text-[10px] text-outline block mb-1 uppercase tracking-widest">
+              <span className="font-label text-[10px] text-on-surface-variant block mb-1 uppercase tracking-widest">
                 Client
               </span>
               <span className="font-body text-sm font-medium">Global Nexus Group</span>
             </div>
             <div>
-              <span className="font-label text-[10px] text-outline block mb-1 uppercase tracking-widest">
+              <span className="font-label text-[10px] text-on-surface-variant block mb-1 uppercase tracking-widest">
                 Year
               </span>
               <span className="font-body text-sm font-medium">2014</span>
@@ -216,7 +216,7 @@ export default function HomeMobile() {
           <h2 className="font-headline text-3xl font-bold tracking-tighter mb-8 max-w-xs uppercase leading-none">
             Have a project or pipeline challenge? Let’s build it.
           </h2>
-          <button className="w-full bg-primary text-[#532200] py-5 font-label font-bold tracking-[0.2em] active:opacity-80 transition-all font-bold">
+          <button className="nm-btn-primary w-full py-5 font-label font-bold tracking-[0.2em] active:opacity-80 transition-all font-bold">
             CONNECT WITH US
           </button>
         </section>
@@ -263,27 +263,27 @@ export default function HomeMobile() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-[#564338]/15 bg-[#0E0E0E] flex flex-col items-center py-12 px-6 gap-8 text-center">
+      <footer className="w-full border-t border-outline-variant bg-warm-neutral flex flex-col items-center py-12 px-6 gap-8 text-center">
         <div className="flex flex-col items-center gap-2">
-          <span className="material-symbols-outlined text-[#FFB68D]">
+          <span className="material-symbols-outlined text-primary">
             terminal
           </span>
-          <span className="text-[#E5E2E1] font-bold font-['Space_Grotesk'] tracking-tighter uppercase">
+          <span className="text-on-surface font-bold font-['Space_Grotesk'] tracking-tighter uppercase">
             NMEDIA
           </span>
         </div>
         <nav className="flex flex-col gap-4">
-          <a className="text-[#A58C7F] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] hover:text-[#FFB68D] transition-all" href="#">
+          <a className="text-on-surface-variant font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] hover:text-primary transition-all" href="#">
             STATIONS
           </a>
-          <a className="text-[#A58C7F] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] hover:text-[#FFB68D] transition-all" href="#">
+          <a className="text-on-surface-variant font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] hover:text-primary transition-all" href="#">
             PROJECTS
           </a>
-          <a className="text-[#A58C7F] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] hover:text-[#FFB68D] transition-all" href="#">
+          <a className="text-on-surface-variant font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] hover:text-primary transition-all" href="#">
             CORE_SYSTEM
           </a>
         </nav>
-        <div className="text-[#A58C7F] font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] pt-8">
+        <div className="text-on-surface-variant font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] pt-8">
           © 2024 NMEDIA [ TECHNICAL_CURATOR ]
         </div>
       </footer>

@@ -26,7 +26,7 @@ export default function IPSeries() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <header className="px-8 mb-24 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant/20 pb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant pb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-4 text-primary font-label text-sm tracking-[0.3em]">
                 <span className="material-symbols-outlined text-xs" style={{ fontVariationSettings: "'FILL' 1" }}>terminal</span>
@@ -41,7 +41,7 @@ export default function IPSeries() {
                 broadcast, and cross-platform distribution.
               </p>
             </div>
-            <div className="text-on-surface-variant font-label text-xs tracking-widest border-l border-outline-variant/30 pl-6 pb-2 hidden lg:block">
+            <div className="text-on-surface-variant font-label text-xs tracking-widest border-l border-outline-variant pl-6 pb-2 hidden lg:block">
               SLATE: 05 ACTIVE<br />
               FOCUS: 2–8 YR<br />
               CORE: NM_ORIGINALS_V4
@@ -50,7 +50,7 @@ export default function IPSeries() {
         </header>
 
         {/* ── STATUS TICKER ─────────────────────────────── */}
-        <section className="bg-surface-container-low py-4 overflow-hidden border-y border-outline-variant/10 mb-24">
+        <section className="bg-surface-container-low py-4 overflow-hidden border-y border-outline-variant mb-24">
           <div className="flex whitespace-nowrap gap-12 items-center">
             <span className="font-label text-[10px] tracking-[0.4em] text-primary uppercase block max-w-full overflow-hidden truncate">
               SLATE: 05 ACTIVE // PRE-SCHOOL · MICRO · COMEDY //
@@ -69,7 +69,7 @@ export default function IPSeries() {
         </section>
 
         {/* ── ENGINEERING PRECISION ──────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -106,14 +106,14 @@ export default function IPSeries() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/30 blur-[140px] rounded-full"></div>
           </div>
           <div className="relative z-10 max-w-4xl mx-auto">
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-8 leading-none text-white uppercase">
+            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-8 leading-none text-headline uppercase">
               Distribution. Co-production. Original IP.
             </h2>
             <p className="text-on-surface-variant max-w-xl mx-auto mb-10 font-light">
               For broadcasters, OTTs, distributors and co-production partners —
               full pitch decks and pilot materials available on request.
             </p>
-            <a href="mailto:nanda@nmediaservices.com" className="bg-primary text-on-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest hover:bg-[#ff8a3d] transition-all inline-block">
+            <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest inline-block">
               Request Pitch Deck
             </a>
           </div>
@@ -130,7 +130,7 @@ export default function IPSeries() {
 // ─────────────────────────────────────────────────────────────────
 function IPCard({ ip }) {
   const Body = (
-    <article className={`group relative bg-surface-container overflow-hidden border border-outline-variant/10 hover:border-primary/30 transition-all duration-500 flex flex-col ${ip.translateY ? "md:translate-y-12" : ""}`}>
+    <article className={`group relative bg-surface-container overflow-hidden border border-outline-variant hover:border-primary/30 transition-all duration-500 flex flex-col ${ip.translateY ? "md:translate-y-12" : ""}`}>
       {/* Poster — tall, the dominant visual */}
       <div className="relative w-full overflow-hidden bg-gradient-to-br from-surface-container-low to-surface-container-lowest" style={{ aspectRatio: "3 / 4" }}>
         {ip.poster ? (
@@ -145,10 +145,10 @@ function IPCard({ ip }) {
             <span className="material-symbols-outlined text-[140px] text-primary">{ip.icon}</span>
           </div>
         )}
-        <span className="absolute top-3 left-3 font-label text-[10px] tracking-[0.3em] text-white uppercase bg-black/50 backdrop-blur-sm px-2 py-1">
+        <span className="absolute top-3 left-3 font-label text-[10px] tracking-[0.3em] text-white uppercase bg-[#4E4A46]/55 backdrop-blur-sm px-2 py-1">
           {ip.version}
         </span>
-        <span className={`absolute top-3 right-3 font-label text-[9px] tracking-[0.25em] uppercase px-2 py-1 backdrop-blur-sm ${ip.status_active ? "bg-primary/30 text-primary border border-primary/40" : "bg-black/50 text-on-surface-variant border border-outline-variant/20"}`}>
+        <span className={`absolute top-3 right-3 font-label text-[9px] tracking-[0.25em] uppercase px-2 py-1 backdrop-blur-sm ${ip.status_active ? "bg-primary text-white border border-primary" : "bg-[#4E4A46]/55 text-white border border-white/30"}`}>
           {ip.status}
         </span>
       </div>
@@ -157,15 +157,15 @@ function IPCard({ ip }) {
         <p className="font-label text-[10px] text-primary mb-1 tracking-widest uppercase">{ip.id}</p>
         <h3 className="font-headline font-bold text-lg uppercase tracking-tight leading-tight mb-1">{ip.title}</h3>
         {ip.subtitle && (
-          <p className="text-xs text-on-surface-variant/70 mb-4 font-label tracking-wider">{ip.subtitle}</p>
+          <p className="text-xs text-on-surface-variant mb-4 font-label tracking-wider">{ip.subtitle}</p>
         )}
         <p className="text-sm text-on-surface-variant line-clamp-3 font-light leading-relaxed mb-5">{ip.body}</p>
         {ip.detail_url ? (
-          <span className="block w-full py-3 bg-gradient-to-r from-primary to-[#FF8A3D] text-on-primary font-label font-bold text-xs tracking-widest uppercase text-center group-hover:opacity-90 transition-opacity">
+          <span className="block w-full py-3 bg-gradient-to-r from-[#A0400C] to-primary text-on-primary font-label font-bold text-xs tracking-widest uppercase text-center group-hover:opacity-90 transition-opacity">
             Open Series →
           </span>
         ) : (
-          <span className="block w-full py-3 bg-surface-container-low border border-outline-variant/20 text-on-surface-variant font-label font-bold text-xs tracking-widest uppercase text-center">
+          <span className="block w-full py-3 bg-surface-container-low border border-outline-variant text-on-surface-variant font-label font-bold text-xs tracking-widest uppercase text-center">
             Pitch on Request
           </span>
         )}
@@ -256,23 +256,23 @@ export function SiteNav({ active }) {
     return (
       <Link
         to={to}
-        className={`font-['Space_Grotesk'] tracking-tight uppercase text-sm font-bold transition-colors duration-300 ${isActive ? "text-primary border-b-2 border-primary pb-1" : "text-[#E5E2E1]/60 hover:text-primary"}`}
+        className={`font-['Space_Grotesk'] tracking-tight uppercase text-sm font-bold transition-colors duration-300 ${isActive ? "text-primary border-b-2 border-primary pb-1" : "text-on-surface/60 hover:text-primary"}`}
       >
         {label}
       </Link>
     );
   };
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-8 py-6 max-w-full mx-auto">
-      <Link to="/" className="text-xl font-black tracking-tighter text-[#E5E2E1] font-headline">NMEDIA INC.</Link>
+    <nav className="fixed top-0 w-full z-50 bg-surface-container/70 backdrop-blur-xl flex justify-between items-center px-8 py-6 max-w-full mx-auto">
+      <Link to="/" className="text-xl font-black tracking-tighter text-on-surface font-headline">NMEDIA INC.</Link>
       <div className="hidden md:flex items-center space-x-10">
         {link("animation", "Animation VFX", "/animation-vfx")}
         {link("commercials", "Gallery", "/commercials")}
         {link("studio", "Studio", "/ip-series")}
         {link("motion", "Motion FX", "/motion-graphics")}
-        <a className="font-['Space_Grotesk'] tracking-tight uppercase text-sm font-bold text-[#E5E2E1]/60 hover:text-primary transition-colors duration-300" href="mailto:nanda@nmediaservices.com">Contact</a>
+        <a className="font-['Space_Grotesk'] tracking-tight uppercase text-sm font-bold text-on-surface/60 hover:text-primary transition-colors duration-300" href="mailto:nanda@nmediaservices.com">Contact</a>
       </div>
-      <a href="mailto:nanda@nmediaservices.com" className="bg-primary text-on-primary px-6 py-2 font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest hover:scale-95 transition-transform duration-200 active:scale-90">
+      <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary px-6 py-2 font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest hover:scale-95 transition-transform duration-200 active:scale-90">
         Start Project
       </a>
     </nav>
@@ -282,7 +282,7 @@ export function SiteNav({ active }) {
 export function SiteFooter() {
   const CHANNEL = "https://www.youtube.com/@nmediaservices2014";
   return (
-    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant/10">
+    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
           <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Contact</p>
@@ -298,8 +298,8 @@ export function SiteFooter() {
           <a href={CHANNEL} target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors">YouTube · @nmediaservices2014</a>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
-        <p className="text-xs text-on-surface-variant/50 font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">
+        <p className="text-xs text-on-surface-variant font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
       </div>
     </footer>
   );

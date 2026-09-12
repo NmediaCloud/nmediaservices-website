@@ -41,12 +41,12 @@ export default function PicsModal({ open, onClose, pics, basePath = "/images/pic
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-[#0a0a0a]/95 backdrop-blur-sm flex flex-col"
+      className="fixed inset-0 z-[100] bg-[#4E4A46]/92 backdrop-blur-sm flex flex-col"
       onClick={onClose}
     >
       {/* ── Header bar ─────────────────────────────────── */}
       <div
-        className="flex items-center justify-between px-8 py-5 border-b border-primary/10"
+        className="flex items-center justify-between px-8 py-5 border-b border-primary/30"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3">
@@ -61,7 +61,7 @@ export default function PicsModal({ open, onClose, pics, basePath = "/images/pic
           type="button"
           onClick={onClose}
           aria-label="Close gallery"
-          className="font-label text-xs tracking-widest text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 cursor-pointer"
+          className="font-label text-xs tracking-widest text-white/70 hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
         >
           CLOSE
           <span className="material-symbols-outlined text-base">close</span>
@@ -91,7 +91,7 @@ export default function PicsModal({ open, onClose, pics, basePath = "/images/pic
                 key={file}
                 type="button"
                 onClick={() => setZoomed(file)}
-                className="group relative aspect-[4/3] bg-surface-container border border-outline-variant/10 hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all"
+                className="group relative aspect-[4/3] bg-surface-container border border-outline-variant hover:border-primary/40 overflow-hidden cursor-zoom-in transition-all"
               >
                 <img
                   src={`${basePath}/${file}`}
@@ -106,8 +106,8 @@ export default function PicsModal({ open, onClose, pics, basePath = "/images/pic
       )}
 
       {/* ── Footer hint ───────────────────────────────── */}
-      <div className="px-8 py-3 border-t border-primary/10 text-center" onClick={(e) => e.stopPropagation()}>
-        <p className="font-label text-[10px] tracking-[0.3em] text-on-surface-variant/60 uppercase">
+      <div className="px-8 py-3 border-t border-primary/30 text-center" onClick={(e) => e.stopPropagation()}>
+        <p className="font-label text-[10px] tracking-[0.3em] text-on-surface-variant uppercase">
           {zoomed ? "Click image · Esc to close zoom" : "Click image to enlarge · Esc to close gallery"}
         </p>
       </div>

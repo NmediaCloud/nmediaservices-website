@@ -68,7 +68,7 @@ export default function PipelineArticles() {
   if (error || articles.length === 0) return null;   // fail quiet — strip just doesn't render
 
   return (
-    <section className="py-24 px-8 bg-surface-container-lowest border-y border-white/5">
+    <section className="py-24 px-8 bg-background border-y border-outline-variant">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Section heading — matches the Capabilities header rhythm */}
@@ -77,7 +77,7 @@ export default function PipelineArticles() {
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
               [ FIELD_NOTES // ANIMATION_PIPELINE_V1.1 ]
             </p>
-            <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-white leading-none">
+            <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-headline leading-none">
               How we built it.
             </h2>
             <p className="mt-4 text-on-surface-variant max-w-xl text-sm leading-relaxed">
@@ -89,18 +89,18 @@ export default function PipelineArticles() {
             href="/articles/Pipeline_Production_System.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/20 hover:border-primary/50 hover:from-primary/15 transition-all duration-300 p-5 group max-w-sm"
+            className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 hover:from-primary/15 transition-all duration-300 p-5 group max-w-sm"
           >
-            <p className="font-label text-[9px] tracking-[0.3em] text-primary/70 uppercase mb-2">
+            <p className="font-label text-[9px] tracking-[0.3em] text-primary uppercase mb-2">
               [ READ THE FULL SYSTEM ]
             </p>
-            <h3 className="font-headline font-bold text-base text-white leading-tight tracking-tight mb-2">
+            <h3 className="font-headline font-bold text-base text-title leading-tight tracking-tight mb-2">
               Pipeline Production System →
             </h3>
             <p className="text-xs text-on-surface-variant leading-relaxed mb-3">
               Eleven panels walked end-to-end. One source of truth. Format-aware. Cast-locked. Model-agnostic.
             </p>
-            <p className="font-label text-[9px] tracking-[0.3em] uppercase text-on-surface-variant/60">
+            <p className="font-label text-[9px] tracking-[0.3em] uppercase text-on-surface-variant">
               {articles.length} articles · video walkthroughs in progress
             </p>
           </a>
@@ -114,9 +114,9 @@ export default function PipelineArticles() {
             type="button"
             onClick={() => nudge(-1)}
             aria-label="Scroll left"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-surface-container/80 hover:bg-primary border border-white/10 hover:border-primary backdrop-blur-md flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 cursor-pointer shadow-2xl shadow-black/40"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-surface-container/90 hover:bg-primary text-on-surface hover:text-white border border-outline-variant hover:border-primary backdrop-blur-md flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 cursor-pointer shadow-xl shadow-[#4E4A46]/15"
           >
-            <span className="material-symbols-outlined text-white" style={{ fontSize: "28px" }}>chevron_left</span>
+            <span className="material-symbols-outlined" style={{ fontSize: "28px" }}>chevron_left</span>
           </button>
 
           {/* Right chevron */}
@@ -124,14 +124,14 @@ export default function PipelineArticles() {
             type="button"
             onClick={() => nudge(1)}
             aria-label="Scroll right"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 rounded-full bg-surface-container/80 hover:bg-primary border border-white/10 hover:border-primary backdrop-blur-md flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 cursor-pointer shadow-2xl shadow-black/40"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 rounded-full bg-surface-container/90 hover:bg-primary text-on-surface hover:text-white border border-outline-variant hover:border-primary backdrop-blur-md flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 cursor-pointer shadow-xl shadow-[#4E4A46]/15"
           >
-            <span className="material-symbols-outlined text-white" style={{ fontSize: "28px" }}>chevron_right</span>
+            <span className="material-symbols-outlined" style={{ fontSize: "28px" }}>chevron_right</span>
           </button>
 
           {/* Edge fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-surface-container-lowest to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-surface-container-lowest to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
 
         <div
           ref={stripRef}
@@ -151,7 +151,7 @@ export default function PipelineArticles() {
                 group flex-shrink-0 snap-start
                 w-[240px] md:w-[260px]
                 bg-surface-container hover:bg-surface-container-high
-                border border-outline-variant/10 hover:border-primary/40
+                border border-outline-variant hover:border-primary/40
                 relative
                 transition-all duration-300 flex flex-col overflow-hidden
               "
@@ -164,7 +164,7 @@ export default function PipelineArticles() {
               " />
 
               {/* Video thumbnail / placeholder — visual cue, click still goes to article */}
-              <div className="relative aspect-video bg-black overflow-hidden border-b border-white/5">
+              <div className="relative aspect-video bg-surface-container-high overflow-hidden border-b border-outline-variant">
                 {a.youtube_id ? (
                   <>
                     <img
@@ -180,9 +180,9 @@ export default function PipelineArticles() {
                     </div>
                   </>
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0a0a0a] text-center px-3">
-                    <span className="material-symbols-outlined text-primary/40" style={{ fontSize: "32px" }}>play_circle</span>
-                    <p className="font-label text-[8px] tracking-[0.3em] text-primary/60 uppercase mt-1.5">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-background text-center px-3">
+                    <span className="material-symbols-outlined text-primary" style={{ fontSize: "32px" }}>play_circle</span>
+                    <p className="font-label text-[8px] tracking-[0.3em] text-primary uppercase mt-1.5">
                       Video · Coming Soon
                     </p>
                   </div>
@@ -196,7 +196,7 @@ export default function PipelineArticles() {
                 </p>
 
                 {/* Headline */}
-                <h3 className="font-headline font-bold text-base text-white leading-tight tracking-tight mb-3 line-clamp-3">
+                <h3 className="font-headline font-bold text-base text-title leading-tight tracking-tight mb-3 line-clamp-3">
                   {a.title}
                 </h3>
 
@@ -206,7 +206,7 @@ export default function PipelineArticles() {
                 </p>
 
                 {/* Footer row */}
-                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                <div className="mt-4 pt-3 border-t border-outline-variant flex items-center justify-between">
                   <span className="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant group-hover:text-primary transition-colors">
                     Read field note →
                   </span>
@@ -224,7 +224,7 @@ export default function PipelineArticles() {
         </div>
 
         {/* Scroll-hint footer */}
-        <p className="mt-4 text-on-surface-variant/40 text-[10px] font-label tracking-widest uppercase text-right">
+        <p className="mt-4 text-on-surface-variant text-[10px] font-label tracking-widest uppercase text-right">
           Click chevrons · scroll · {articles.length} field notes
         </p>
       </div>

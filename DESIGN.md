@@ -1,5 +1,9 @@
 # Design System: High-End Editorial Technicality
 
+> **Palette: see [THEME.md](THEME.md).** The site migrated from dark mode to the
+> Soft Executive Orange light palette. The structural principles below still hold;
+> the colour rules marked **superseded** do not.
+
 ## 1. Overview & Creative North Star
 **Creative North Star: The Digital Architect**
 
@@ -12,21 +16,28 @@ While the source inspiration established a foundation of professional service, t
 ## 2. Colors
 Our palette is a sophisticated interplay of deep charcoals, stark whites, and subtle metallic greys. It is designed to be high-contrast yet easy on the eyes, favoring tonal depth over vibrant hues.
 
-### The "No-Line" Rule
+### The "No-Line" Rule — SUPERSEDED
+*Applied to dark mode only. On the light palette, 1px `#DDD6CF` hairlines are the
+standard for cards, sections, forms and navigation — a 10%-opacity ghost line is
+mathematically invisible on warm white. The original rule read:*
+
 To maintain a high-end editorial feel, **1px solid borders are strictly prohibited for sectioning.** Boundaries must never be structural "lines." Instead, define logical breaks through background color shifts. For instance, a `surface-container-low` section should sit directly against the `background`, or a `surface-container-high` card should be placed on a `surface-container-low` section. The transition of tone is the only divider permitted.
 
-### Surface Hierarchy & Nesting
-Treat the UI as a series of physical layers. Use the surface-container tiers to create "nested" importance:
-- **Surface (`#121317`):** The canvas.
-- **Surface-Container-Low (`#1a1b1f`):** For secondary content areas.
-- **Surface-Container-High (`#292a2e`):** For primary interactive elements or "elevated" cards.
-- **Surface-Container-Highest (`#343539`):** Reserved for popovers or elements that require maximum proximity to the user.
+### Surface Hierarchy & Nesting — CURRENT
+Layering still drives hierarchy; the tiers are now light:
+- **Canvas (`#FAF8F5`):** The page ground.
+- **Surface (`#FFFFFF`):** Cards, panels, forms, elevated content.
+- **Warm neutral (`#F3E7DC`):** Alternate section bands and hover states.
+
+Alternate bands rather than making every section white.
 
 ### The "Glass & Gradient" Rule
 To avoid a flat, "out-of-the-box" appearance, floating elements (modals, navigation bars, tooltips) should utilize **Glassmorphism**. Use semi-transparent surface colors (e.g., `surface-variant` at 60% opacity) with a `backdrop-filter: blur(20px)`. 
 
-### Signature Textures
-Main CTAs and Hero backgrounds should utilize subtle gradients transitioning from `primary` (`#ffffff`) to `primary-container` (`#e2e2e2`). This adds a "soul" to the technicality, preventing the design from feeling sterile.
+### Signature Textures — CURRENT
+Hero and CTA backgrounds use a very subtle warm wash:
+`linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%)`. Keep gradients
+restrained — no neon, cyber-blue, terminal-green or black-to-orange drama.
 
 ---
 
@@ -79,18 +90,23 @@ Depth is achieved through **Tonal Layering** rather than traditional drop shadow
 
 ### Don’t:
 - **Don't use 1px solid borders.** It breaks the premium "surface-layer" illusion.
-- **Don't use pure black (#000000).** It feels "cheap" in modern dark mode. Use our `background` (`#121317`).
+- **Don't use pure black as a *background*.** (On the light palette, pure black is
+  the correct colour for display `h1`/`h2` **text** — on a warm ground it reads as
+  ink on paper, and it is what gives the type ramp its top step.)
 - **Don't crowd the screen.** If you feel you need a divider line, you actually need more whitespace (`spacing-8` or higher).
 - **Don't use standard easing.** Avoid "linear" or "ease-in-out." Use `cubic-bezier(0.16, 1, 0.3, 1)` for that "expensive" snappiness.
 
 ---
-## Color Tokens (Generated)
-- Primary: `#ffffff`
-- Primary Container: `#e2e2e2`
-- Background: `#121317`
-- Surface: `#121317`
-- Surface Container Low: `#1a1b1f`
-- Surface Container High: `#292a2e`
-- Surface Container Highest: `#343539`
-- Outline Variant (Ghost Lines): `#444748`
-- Error: `#ffb4ab`
+## Color Tokens — see THEME.md
+
+The generated dark tokens that stood here are retired. The authoritative palette is
+[THEME.md](THEME.md), implemented in [`theme/soft-executive-orange.css`](theme/soft-executive-orange.css)
+and wired into `src/index.css`.
+
+- Canvas `#FAF8F5` · Surface `#FFFFFF` · Warm neutral `#F3E7DC`
+- Brand `#BF4E10` (hover `#A0400C`) · Pastel `#E7B79A` (decorative only)
+- Headline `#000000` · Title `#2A2622` · Body `#4E4A46` · Secondary `#6E6862`
+- Hairline `#DDD6CF`
+
+Every pair is WCAG AA verified. Do not substitute lighter tints for text or button
+colours — THEME.md records which ones fail and by how much.

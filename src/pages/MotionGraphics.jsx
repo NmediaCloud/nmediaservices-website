@@ -22,7 +22,7 @@ export default function MotionGraphics() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <section className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="border-b border-outline-variant/20 pb-12">
+          <div className="border-b border-outline-variant pb-12">
             <h1 className="font-headline text-3xl md:text-5xl font-bold tracking-tight leading-tight uppercase">
               Motion <span className="text-primary">Graphics</span> VFX
             </h1>
@@ -35,8 +35,8 @@ export default function MotionGraphics() {
         </section>
 
         {/* ── STATUS TICKER ─────────────────────────────── */}
-        <div className="w-full overflow-hidden bg-surface-container-low py-3 mb-24 whitespace-nowrap border-y border-outline-variant/10">
-          <div className="flex gap-12 font-label text-[10px] tracking-[0.4em] text-primary/50 uppercase">
+        <div className="w-full overflow-hidden bg-surface-container-low py-3 mb-24 whitespace-nowrap border-y border-outline-variant">
+          <div className="flex gap-12 font-label text-[10px] tracking-[0.4em] text-primary uppercase">
             <span className="block">
               MAYA · 3DS_MAX · BLENDER · NUKE · AFTER_EFFECTS · V-RAY · CYCLES ·
               EEVEE · RED_GIANT · BORIS_FX · MOCHA · ELEMENT_3D · TOPAZ_AI
@@ -66,7 +66,7 @@ export default function MotionGraphics() {
 
         {/* ── ARCHITECTURAL RENDER GALLERY TRIGGER ──────── */}
         <section className="px-8 max-w-7xl mx-auto mb-32">
-          <div className="border border-outline-variant/10 bg-surface-container-low p-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="border border-outline-variant bg-surface-container-low p-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2">
                 [ STILLS · {ARCHI_RENDER_PICS.length} ]
@@ -82,7 +82,7 @@ export default function MotionGraphics() {
             <button
               type="button"
               onClick={() => setArchiOpen(true)}
-              className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 font-label font-bold text-sm tracking-widest uppercase hover:bg-[#ff8a3d] transition-colors cursor-pointer self-start md:self-auto"
+              className="nm-btn-primary inline-flex items-center gap-3 px-8 py-4 font-label font-bold text-sm tracking-widest uppercase cursor-pointer self-start md:self-auto"
             >
               View Gallery · {ARCHI_RENDER_PICS.length}
               <span className="material-symbols-outlined text-base">photo_library</span>
@@ -105,7 +105,7 @@ export default function MotionGraphics() {
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
                 [ DISCIPLINES // FULL_STACK ]
               </p>
-              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight text-white leading-none uppercase">
+              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight text-headline leading-none uppercase">
                 What we craft.
               </h2>
             </div>
@@ -116,7 +116,7 @@ export default function MotionGraphics() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {SERVICES.map((s) => (
-              <article key={s.id} className="group bg-surface-container border border-outline-variant/10 p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+              <article key={s.id} className="group bg-surface-container border border-outline-variant p-7 hover:bg-surface-container-high hover:border-primary/30 transition-all">
                 <p className="font-label text-[10px] text-primary mb-2 tracking-widest uppercase">{s.id}</p>
                 <h3 className="font-headline font-bold text-lg uppercase tracking-tight mb-3 leading-tight">{s.title}</h3>
                 <p className="text-sm text-on-surface-variant font-light leading-relaxed">{s.body}</p>
@@ -126,13 +126,13 @@ export default function MotionGraphics() {
         </section>
 
         {/* ── TOOLS / PIPELINE ──────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-16">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
                 [ TOOLCHAIN // PRODUCTION_GRADE ]
               </p>
-              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight text-white leading-none uppercase mb-6">
+              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight text-headline leading-none uppercase mb-6">
                 The Stack.
               </h2>
               <p className="text-on-surface-variant font-light max-w-xl">
@@ -147,7 +147,7 @@ export default function MotionGraphics() {
                   <ul className="space-y-2">
                     {g.tools.map((t) => (
                       <li key={t} className="text-sm text-on-surface-variant font-light flex gap-2">
-                        <span className="text-primary/50">·</span>{t}
+                        <span className="text-primary">·</span>{t}
                       </li>
                     ))}
                   </ul>
@@ -158,7 +158,7 @@ export default function MotionGraphics() {
         </section>
 
         {/* ── NOTABLE ─────────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -175,7 +175,7 @@ export default function MotionGraphics() {
                 output. Look-development, lighting, compositing and final cut
                 handled inside one pipeline.
               </p>
-              <p className="text-sm text-on-surface-variant/70">
+              <p className="text-sm text-on-surface-variant">
                 Tools: Blender Cycles · Eevee · Nuke · After Effects ·
                 Topaz AI suite.
               </p>
@@ -184,12 +184,12 @@ export default function MotionGraphics() {
         </section>
 
         {/* ── CTA (minimal pull-quote) ──────────────────────── */}
-        <section className="py-20 px-8 text-center bg-surface relative overflow-hidden border-t border-outline-variant/10">
-          <div className="absolute inset-0 opacity-30 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/20 blur-[120px] rounded-full"></div>
-          </div>
+        <section
+          className="py-20 px-8 text-center relative overflow-hidden border-y border-outline-variant"
+          style={{ background: "linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%)" }}
+        >
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-white">
+            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-headline">
               Need a render that survives every channel?
             </h2>
           </div>
@@ -268,7 +268,7 @@ const MFX_VIDEOS = [
 function SiteFooter() {
   const CHANNEL = "https://www.youtube.com/@nmediaservices2014";
   return (
-    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant/10">
+    <footer className="bg-surface-container-lowest py-16 px-8 border-t border-outline-variant">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
           <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4">Contact</p>
@@ -284,8 +284,8 @@ function SiteFooter() {
           <a href={CHANNEL} target="_blank" rel="noopener noreferrer" className="block text-sm text-on-surface-variant hover:text-primary transition-colors">YouTube · @nmediaservices2014</a>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10">
-        <p className="text-xs text-on-surface-variant/50 font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant">
+        <p className="text-xs text-on-surface-variant font-label">© Nmedia Inc. · Animation Production Pipeline v1.1</p>
       </div>
     </footer>
   );

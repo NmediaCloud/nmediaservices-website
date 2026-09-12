@@ -41,12 +41,12 @@ export default function TinyWingsBuzz() {
 
         {/* ── HERO ──────────────────────────────────────── */}
         <header className="px-8 mb-16 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-end border-b border-outline-variant/20 pb-16">
+          <div className="grid lg:grid-cols-12 gap-12 items-end border-b border-outline-variant pb-16">
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-3 text-primary font-label text-xs tracking-[0.3em] uppercase flex-wrap">
                 <span className="px-2 py-1 bg-primary/10 border border-primary/30">VOL. 01</span>
                 <span>Pilot Complete</span>
-                <span className="text-on-surface-variant/60">·</span>
+                <span className="text-on-surface-variant">·</span>
                 <span>54 EP · 4 Seasons</span>
               </div>
               <h1 className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-[0.95] uppercase">
@@ -65,7 +65,7 @@ export default function TinyWingsBuzz() {
               </p>
             </div>
             <div className="lg:col-span-5">
-              <div className="bg-surface-container-low border border-outline-variant/10 overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
+              <div className="bg-surface-container-low border border-outline-variant overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
                 <img src={`${IMG}/tw_02.jpg`} alt="Buzz · Tiny Wings, Big Job" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function TinyWingsBuzz() {
                 <button
                   type="button"
                   onClick={() => openCast(c.file)}
-                  className="block w-full bg-surface-container border border-outline-variant/10 group-hover:border-primary/40 overflow-hidden transition-all duration-500 cursor-zoom-in transform-gpu group-hover:scale-[1.06] group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:z-10 relative"
+                  className="block w-full bg-surface-container border border-outline-variant group-hover:border-primary/40 overflow-hidden transition-all duration-500 cursor-zoom-in transform-gpu group-hover:scale-[1.06] group-hover:shadow-xl group-hover:shadow-primary/20 group-hover:z-10 relative"
                   style={{ aspectRatio: "3 / 4" }}
                   aria-label={`View ${c.name}`}
                 >
@@ -104,8 +104,8 @@ export default function TinyWingsBuzz() {
                   />
                 </button>
                 <figcaption className="mt-3 text-center group-hover:text-primary transition-colors">
-                  <p className="font-label text-xs tracking-[0.2em] uppercase text-white">{c.name}</p>
-                  {c.role && <p className="font-body text-[11px] text-on-surface-variant/70 mt-1">{c.role}</p>}
+                  <p className="font-label text-xs tracking-[0.2em] uppercase text-on-surface">{c.name}</p>
+                  {c.role && <p className="font-body text-[11px] text-on-surface-variant mt-1">{c.role}</p>}
                 </figcaption>
               </figure>
             ))}
@@ -123,7 +123,7 @@ export default function TinyWingsBuzz() {
 
         {/* ── KEY ART ───────────────────────────────────── */}
         <section className="px-8 mb-32 max-w-6xl mx-auto">
-          <div className="bg-[#0f0f0f] border border-outline-variant/10 p-6 md:p-10">
+          <div className="bg-surface-container border border-outline-variant p-6 md:p-10">
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6 text-center">
               [ KEY ART // A TINY HERO'S PURPOSE ]
             </p>
@@ -132,7 +132,7 @@ export default function TinyWingsBuzz() {
         </section>
 
         {/* ── PILOT + PITCH VIDEO ───────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -144,10 +144,10 @@ export default function TinyWingsBuzz() {
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <p className="font-label text-[10px] tracking-[0.3em] text-primary/70 uppercase mb-3">
+                <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-3">
                   Pilot · Episode 1 · "What's My Job?"
                 </p>
-                <div className="aspect-video bg-black border border-outline-variant/10 overflow-hidden">
+                <div className="aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
                   <iframe
                     className="w-full h-full"
                     src="https://www.youtube.com/embed/tNR547OKgaA?rel=0&modestbranding=1"
@@ -159,10 +159,10 @@ export default function TinyWingsBuzz() {
                 </div>
               </div>
               <div>
-                <p className="font-label text-[10px] tracking-[0.3em] text-primary/70 uppercase mb-3">
+                <p className="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-3">
                   Pitch Video · Tiny Wings, Big Job
                 </p>
-                <div className="aspect-video bg-black border border-outline-variant/10 overflow-hidden">
+                <div className="aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
                   <iframe
                     className="w-full h-full"
                     src="https://www.youtube.com/embed/Gg8gb52E5O0?rel=0&modestbranding=1"
@@ -192,7 +192,7 @@ export default function TinyWingsBuzz() {
         </section>
 
         {/* ── PILOT EPISODE ──────────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -243,24 +243,24 @@ export default function TinyWingsBuzz() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
             {SEASONS.map((s) => (
-              <article key={s.title} className="bg-surface-container border border-outline-variant/10 p-8 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+              <article key={s.title} className="bg-surface-container border border-outline-variant p-8 hover:bg-surface-container-high hover:border-primary/30 transition-all">
                 <div className="flex items-baseline justify-between mb-3">
                   <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase">{s.label}</p>
-                  <span className="font-label text-[10px] tracking-[0.3em] text-on-surface-variant/60 uppercase">{s.episodes}</span>
+                  <span className="font-label text-[10px] tracking-[0.3em] text-on-surface-variant uppercase">{s.episodes}</span>
                 </div>
                 <h3 className="font-headline font-bold text-2xl uppercase tracking-tight mb-4">{s.title}</h3>
                 <p className="text-sm text-on-surface-variant font-light leading-relaxed mb-5">{s.body}</p>
                 <div className="grid grid-cols-3 gap-3 text-[10px] font-label tracking-widest uppercase">
                   <div>
-                    <p className="text-on-surface-variant/50 mb-1">Mood</p>
+                    <p className="text-on-surface-variant mb-1">Mood</p>
                     <p className="text-on-surface">{s.mood}</p>
                   </div>
                   <div>
-                    <p className="text-on-surface-variant/50 mb-1">Palette</p>
+                    <p className="text-on-surface-variant mb-1">Palette</p>
                     <p className="text-on-surface">{s.palette}</p>
                   </div>
                   <div>
-                    <p className="text-on-surface-variant/50 mb-1">Theme</p>
+                    <p className="text-on-surface-variant mb-1">Theme</p>
                     <p className="text-primary">{s.theme}</p>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export default function TinyWingsBuzz() {
         </section>
 
         {/* ── EPISODE LIST · S1 ──────────────────────── */}
-        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant/10">
+        <section className="bg-surface-container-lowest py-32 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
@@ -287,7 +287,7 @@ export default function TinyWingsBuzz() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
               {S1_EPISODES.map((e) => (
-                <article key={e.n} className="bg-surface-container border border-outline-variant/5 p-5 hover:bg-surface-container-high hover:border-primary/20 transition-all">
+                <article key={e.n} className="bg-surface-container border border-outline-variant p-5 hover:bg-surface-container-high hover:border-primary/35 transition-all">
                   <div className="flex items-baseline gap-3 mb-2">
                     <span className="font-label text-[10px] tracking-widest text-primary">EP {String(e.n).padStart(2, "0")}</span>
                   </div>
@@ -296,7 +296,7 @@ export default function TinyWingsBuzz() {
                 </article>
               ))}
             </div>
-            <p className="mt-10 font-label text-[10px] tracking-[0.3em] uppercase text-on-surface-variant/60">
+            <p className="mt-10 font-label text-[10px] tracking-[0.3em] uppercase text-on-surface-variant">
               Seasons 2–4 episode lists available in the full series bible · 54 episodes total.
             </p>
           </div>
@@ -319,22 +319,22 @@ export default function TinyWingsBuzz() {
               </p>
             </div>
             <div className="lg:col-span-7 grid grid-cols-2 gap-1">
-              <div className="bg-surface-container border border-outline-variant/10 p-6">
+              <div className="bg-surface-container border border-outline-variant p-6">
                 <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">Backgrounds</p>
                 <ul className="space-y-2 text-sm text-on-surface-variant font-light">
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Honeycomb tunnels glowing softly</li>
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Wide flower fields with oversized petals</li>
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Sunny skies with drifting pollen</li>
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Cozy hive interiors filled with light</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Honeycomb tunnels glowing softly</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Wide flower fields with oversized petals</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Sunny skies with drifting pollen</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Cozy hive interiors filled with light</li>
                 </ul>
               </div>
-              <div className="bg-surface-container border border-outline-variant/10 p-6">
+              <div className="bg-surface-container border border-outline-variant p-6">
                 <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">Signature Props</p>
                 <ul className="space-y-2 text-sm text-on-surface-variant font-light">
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Glowing pollen dust</li>
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Honey droplets in leaf cups</li>
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Flower maps marked with nectar spots</li>
-                  <li className="flex gap-2"><span className="text-primary/60">·</span>Wax cells storing golden honey</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Glowing pollen dust</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Honey droplets in leaf cups</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Flower maps marked with nectar spots</li>
+                  <li className="flex gap-2"><span className="text-primary">·</span>Wax cells storing golden honey</li>
                 </ul>
               </div>
             </div>
@@ -347,13 +347,13 @@ export default function TinyWingsBuzz() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/30 blur-[140px] rounded-full"></div>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-white uppercase">
+            <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6 leading-tight text-headline uppercase">
               Pitch deck. Pilot screener.<br />Series bible.
             </h2>
             <p className="text-on-surface-variant max-w-md mx-auto mb-10 font-light">
               Available on request for broadcasters, distributors, OTT acquisition teams.
             </p>
-            <a href="mailto:nanda@nmediaservices.com" className="inline-block bg-primary text-on-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest hover:bg-[#ff8a3d] transition-all">
+            <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
               Request Materials →
             </a>
           </div>

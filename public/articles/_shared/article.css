@@ -7,20 +7,25 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --orange:    #ff6a00;
-  --orange-lt: #ff8a3d;
-  --black:     #0a0a0a;
-  --surface:   #111111;
-  --surface-2: #161616;
-  --warm:      #ddc1b3;
-  --muted:     #9ca3af;
-  --border:    #2a2018;
-  --text:      #1a1a1a;
-  --text-soft: #4a4a4a;
+  /* Soft Executive Orange — matches src/index.css on the main site. */
+  --orange:    #BF4E10;   /* brand primary — deep + vivid */
+  --orange-lt: #E7B79A;   /* pastel sandal                */
+  --orange-dk: #A0400C;   /* hover                        */
+  --canvas:    #FAF8F5;   /* page background              */
+  --surface:   #FFFFFF;   /* cards, frames                */
+  --surface-2: #F3E7DC;   /* soft sand band               */
+  --ink:       #000000;   /* display headline — true black*/
+  --title:     #2A2622;   /* sub-headings                 */
+  --orange-ink:#BF4E10;   /* one orange — text and fill   */
+  --warm:      #6E6862;   /* supporting copy              */
+  --muted:     #6E6862;   /* metadata                     */
+  --border:    #DDD6CF;   /* hairlines                    */
+  --text:      #4E4A46;   /* warm charcoal — body         */
+  --text-soft: #6E6862;   /* warm grey                    */
 }
 
 body {
-  background: #fff;
+  background: var(--canvas);
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 17px;
@@ -28,15 +33,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--orange); text-decoration: none; }
+a { color: var(--orange-ink); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ── HERO ─────────────────────────────────────────────── */
 .hero {
-  background: var(--black);
-  background-image:
-    radial-gradient(ellipse at 30% 60%, #2a0f00 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, #1a0500 0%, transparent 50%);
+  background:
+    linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%);
+  border-bottom: 1px solid var(--border);
   min-height: 520px;
   display: flex; align-items: center;
   padding: 80px 6%;
@@ -46,8 +50,8 @@ a:hover { text-decoration: underline; }
 .hero-content { max-width: 720px; position: relative; z-index: 2; }
 .hero-tag {
   display: inline-block;
-  background: transparent;
-  color: #fff;
+  background: #fff;
+  color: var(--orange-ink);
   border: 1px solid var(--orange);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 10px; font-weight: 700;
@@ -59,10 +63,10 @@ a:hover { text-decoration: underline; }
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(30px, 4.4vw, 52px);
   font-weight: 700; line-height: 1.15;
-  color: #fff; margin-bottom: 20px;
+  color: var(--ink); margin-bottom: 20px;
   letter-spacing: -0.5px;
 }
-.hero h1 em { color: var(--orange); font-style: normal; }
+.hero h1 em { color: var(--orange-ink); font-style: normal; }
 .hero-sub {
   font-size: 17px; color: var(--warm);
   line-height: 1.7; margin-bottom: 36px;
@@ -70,33 +74,33 @@ a:hover { text-decoration: underline; }
 }
 .author-bar {
   display: flex; align-items: center; gap: 14px;
-  padding-top: 24px; border-top: 1px solid #222;
+  padding-top: 24px; border-top: 1px solid var(--border);
 }
 .author-avatar {
   width: 48px; height: 48px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--orange), var(--orange-lt));
+  background: linear-gradient(135deg, var(--orange-dk), var(--orange));
   display: flex; align-items: center; justify-content: center;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700; font-size: 18px;
-  color: #0a0a0a; flex-shrink: 0;
+  color: #fff; flex-shrink: 0;
 }
-.author-name  { font-weight: 600; color: #fff; font-size: 14px; }
+.author-name  { font-weight: 600; color: var(--text); font-size: 14px; }
 .author-title { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
 /* ── STATS BAR ────────────────────────────────────────── */
 .stats-bar {
-  background: var(--surface);
+  background: var(--surface-2);
   padding: 28px 6%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1px;
-  border-bottom: 1px solid #1f1f1f;
+  border-bottom: 1px solid var(--border);
 }
 .stat-item { text-align: center; padding: 14px 8px; }
 .stat-n {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 34px; font-weight: 700;
-  color: var(--orange); display: block; line-height: 1;
+  color: var(--orange-dk); display: block; line-height: 1;
 }
 .stat-l {
   font-size: 11px; color: var(--muted);
@@ -113,7 +117,7 @@ a:hover { text-decoration: underline; }
   "Video walkthrough · coming soon".
 */
 .video-embed {
-  background: var(--black);
+  background: var(--canvas);
   padding: 32px 6% 48px;
   display: flex; justify-content: center;
 }
@@ -122,12 +126,11 @@ a:hover { text-decoration: underline; }
   width: 100%;
   max-width: 960px;
   aspect-ratio: 16 / 9;
-  background: #161616;
-  border: 1px solid #2a2018;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4),
-              0 0 0 1px rgba(255, 106, 0, 0.08);
+  box-shadow: 0 8px 28px rgba(78, 74, 70, 0.08);
 }
 .video-frame iframe {
   position: absolute; inset: 0;
@@ -140,22 +143,20 @@ a:hover { text-decoration: underline; }
   align-items: center; justify-content: center;
   text-align: center; padding: 24px;
   background:
-    radial-gradient(ellipse at 30% 60%, #2a0f00 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 20%, #1a0500 0%, transparent 50%),
-    #0a0a0a;
+    linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%);
 }
 .video-poster .video-play {
   width: 72px; height: 72px; border-radius: 50%;
-  background: var(--orange); color: #0a0a0a;
+  background: var(--orange); color: #fff;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 16px;
-  box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.6);
+  box-shadow: 0 0 0 0 rgba(191, 78, 16, 0.6);
   animation: pulseRing 2.4s ease-out infinite;
 }
 .video-poster .video-play svg { width: 28px; height: 28px; margin-left: 4px; }
 .video-poster .video-tag {
   display: inline-block;
-  background: var(--orange); color: #0a0a0a;
+  background: var(--orange); color: #fff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 10px; font-weight: 700;
   letter-spacing: 2px; text-transform: uppercase;
@@ -167,9 +168,9 @@ a:hover { text-decoration: underline; }
   font-weight: 500; max-width: 480px; margin: 0;
 }
 @keyframes pulseRing {
-  0%   { box-shadow: 0 0 0 0   rgba(255, 106, 0, 0.5); }
-  70%  { box-shadow: 0 0 0 22px rgba(255, 106, 0, 0); }
-  100% { box-shadow: 0 0 0 0   rgba(255, 106, 0, 0); }
+  0%   { box-shadow: 0 0 0 0   rgba(191, 78, 16, 0.5); }
+  70%  { box-shadow: 0 0 0 22px rgba(191, 78, 16, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(191, 78, 16, 0); }
 }
 
 /* ── BODY ─────────────────────────────────────────────── */
@@ -178,13 +179,13 @@ a:hover { text-decoration: underline; }
 .body h2 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 28px; font-weight: 700;
-  color: var(--text); margin: 48px 0 18px;
+  color: var(--ink); margin: 48px 0 18px;
   letter-spacing: -0.3px;
 }
 .body h2:first-child { margin-top: 0; }
 .body h2 .num {
   display: inline-block; min-width: 36px;
-  color: var(--orange);
+  color: var(--orange-ink);
   font-size: 22px; font-weight: 700;
   margin-right: 6px;
 }
@@ -192,7 +193,7 @@ a:hover { text-decoration: underline; }
 .body h3 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 19px; font-weight: 600;
-  color: var(--text); margin: 28px 0 10px;
+  color: var(--title); margin: 28px 0 10px;
 }
 
 .body p { margin-bottom: 18px; color: var(--text-soft); }
@@ -203,27 +204,27 @@ a:hover { text-decoration: underline; }
 
 .lede {
   font-size: 19px; line-height: 1.65;
-  color: var(--text); font-weight: 500;
+  color: var(--title); font-weight: 500;
   border-left: 3px solid var(--orange);
   padding: 4px 0 4px 18px;
   margin-bottom: 36px;
 }
 
 .callout {
-  background: #fff7f0;
-  border: 1px solid #ffd9b8;
+  background: #FDF7F2;
+  border: 1px solid var(--orange-lt);
   border-left: 3px solid var(--orange);
   padding: 18px 22px;
   border-radius: 6px;
   margin: 28px 0;
   font-size: 16px;
 }
-.callout b { color: var(--orange); font-weight: 700; }
+.callout b { color: var(--orange-ink); font-weight: 700; }
 
 blockquote {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 22px; font-weight: 500;
-  color: var(--text); line-height: 1.4;
+  color: var(--title); line-height: 1.4;
   border-left: 4px solid var(--orange);
   padding: 12px 0 12px 22px;
   margin: 32px 0;
@@ -231,14 +232,15 @@ blockquote {
 }
 
 code {
-  background: #f4f1ee; color: var(--text);
+  background: #F3EFEA; color: var(--text);
   padding: 2px 6px; border-radius: 3px;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 14px;
 }
 
 pre {
-  background: #0a0a0a; color: #ddc1b3;
+  background: #F5F1EC; color: var(--text);
+  border: 1px solid var(--border);
   padding: 20px 24px; border-radius: 6px;
   overflow-x: auto; margin: 22px 0;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -249,22 +251,22 @@ pre code { background: transparent; color: inherit; padding: 0; }
 /* ── FIGURES ──────────────────────────────────────────── */
 figure {
   margin: 32px 0;
-  background: var(--surface-2);
+  background: var(--surface);
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #e5dfd7;
+  border: 1px solid var(--border);
 }
 figure img {
   display: block;
   width: 100%;
   height: auto;
-  background: #1a1410;
+  background: var(--surface-2);
 }
 figcaption {
   padding: 12px 18px;
   font-size: 13px; color: var(--muted);
-  background: #161616;
-  border-top: 1px solid #222;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
 }
 
 /* ── TAG ROW (chips below stat bar) ───────────────────── */
@@ -274,15 +276,18 @@ figcaption {
 }
 .tag {
   display: inline-block;
-  background: #f4f1ee; color: var(--text-soft);
+  background: var(--surface-2); color: var(--text-soft);
   padding: 4px 12px; border-radius: 12px;
   font-size: 12px; font-weight: 500;
 }
 
 /* ── FOOTER / CTA ─────────────────────────────────────── */
 .cta {
-  background: var(--black);
-  color: #fff;
+  background:
+    linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   text-align: center;
   padding: 64px 6%;
   margin-top: 64px;
@@ -290,26 +295,27 @@ figcaption {
 .cta h3 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 28px; font-weight: 700;
+  color: var(--ink);
   margin-bottom: 14px;
 }
 .cta p { color: var(--warm); max-width: 520px; margin: 0 auto 28px; }
 .cta-btn {
   display: inline-block;
-  background: var(--orange); color: #0a0a0a;
+  background: var(--orange); color: #fff;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700; font-size: 14px;
   letter-spacing: 1px; text-transform: uppercase;
   padding: 14px 32px; border-radius: 4px;
   text-decoration: none;
 }
-.cta-btn:hover { background: var(--orange-lt); text-decoration: none; }
+.cta-btn:hover { background: var(--orange-dk); text-decoration: none; }
 
 .footer {
-  background: #050505; color: var(--muted);
+  background: var(--surface-2); color: var(--muted);
   padding: 24px 6%; text-align: center;
   font-size: 12px; letter-spacing: 0.5px;
 }
-.footer a { color: var(--warm); }
+.footer a { color: var(--orange-dk); }
 
 /* ── BRAND CHIP (matches control panels) ──────────────── */
 .nm-brand {
@@ -317,12 +323,12 @@ figcaption {
   padding: 4px 10px 4px 4px;
   text-decoration: none;
   font: 500 11px/1 'Inter', system-ui, sans-serif;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 24px;
 }
 .nm-brand:hover { opacity: 0.8; text-decoration: none; }
 .nm-mark { width: 28px; height: 19px; color: var(--orange); }
-.nm-wordmark { font-weight: 500; letter-spacing: -0.1px; color: #fff; }
+.nm-wordmark { font-weight: 500; letter-spacing: -0.1px; color: var(--text); }
 .nm-wordmark b { font-weight: 700; }
 .nm-version {
   font: 700 9px/1 system-ui;

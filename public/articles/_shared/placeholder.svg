@@ -5,13 +5,13 @@
       <stop offset="1" stop-color="#0a0a0a"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff6a00" stroke-width="0.5" opacity="0.08"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#BF4E10" stroke-width="0.5" opacity="0.08"/>
     </pattern>
   </defs>
   <rect width="1600" height="900" fill="url(#bg)"/>
   <rect width="1600" height="900" fill="url(#grid)"/>
   <g transform="translate(800 410)">
-    <g transform="translate(-90 -50)" fill="none" stroke="#ff6a00" stroke-width="4" stroke-linejoin="round">
+    <g transform="translate(-90 -50)" fill="none" stroke="#BF4E10" stroke-width="4" stroke-linejoin="round">
       <polygon points="90,12 168,108 12,108"/>
       <polygon points="48,60 90,108 12,108"/>
       <polygon points="132,60 168,108 90,108"/>
