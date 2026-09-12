@@ -78,37 +78,26 @@ export default function About() {
         {/* Photo gallery modal — opens on demand */}
         <PicsModal open={picsOpen} onClose={() => setPicsOpen(false)} pics={ABOUT_PICS} />
 
-        {/* ── CERTIFICATIONS ─────────────────────────── */}
-        <section className="py-32 px-8 max-w-7xl mx-auto">
-          <div className="mb-12">
-            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-              [ CREDENTIALS // ONGOING ]
-            </p>
-            <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
-              The Stack.
-            </h2>
-            <p className="mt-4 text-on-surface-variant font-light max-w-xl">
-              Animation craft anchored in two decades of broadcast credits,
-              extended into adjacent domains the modern studio needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
-            {CERT_GROUPS.map((g) => (
-              <div key={g.label} className="bg-surface-container-lowest border border-outline-variant p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="material-symbols-outlined text-primary">{g.icon}</span>
-                  <h3 className="font-headline font-bold text-xl uppercase tracking-tight">{g.label}</h3>
-                </div>
-                <ul className="space-y-2">
-                  {g.items.map((it) => (
-                    <li key={it} className="text-sm text-on-surface-variant font-light flex gap-2">
-                      <span className="text-primary">·</span>{it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        {/* ── DISCIPLINES ──────────────────────────────── */}
+        <section className="bg-surface-container-lowest py-20 border-y border-outline-variant">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="mb-8">
+              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+                [ DISCIPLINES ]
+              </p>
+              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
+                What we build.
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
+              {DISCIPLINES.map((d) => (
+                <article key={d.title} className="bg-surface-container border border-outline-variant p-5 hover:bg-surface-container-high hover:border-primary/30 transition-all">
+                  <span className="material-symbols-outlined text-primary text-2xl mb-2 block">{d.icon}</span>
+                  <h3 className="font-headline font-bold text-base uppercase tracking-tight mb-1.5">{d.title}</h3>
+                  <p className="text-xs text-on-surface-variant font-light leading-relaxed">{d.body}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -161,26 +150,37 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── DISCIPLINES ──────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-20 border-y border-outline-variant">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="mb-8">
-              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-                [ DISCIPLINES ]
-              </p>
-              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
-                What we run.
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
-              {DISCIPLINES.map((d) => (
-                <article key={d.title} className="bg-surface-container border border-outline-variant p-5 hover:bg-surface-container-high hover:border-primary/30 transition-all">
-                  <span className="material-symbols-outlined text-primary text-2xl mb-2 block">{d.icon}</span>
-                  <h3 className="font-headline font-bold text-base uppercase tracking-tight mb-1.5">{d.title}</h3>
-                  <p className="text-xs text-on-surface-variant font-light leading-relaxed">{d.body}</p>
-                </article>
-              ))}
-            </div>
+        {/* ── CERTIFICATIONS ─────────────────────────── */}
+        <section className="py-32 px-8 max-w-7xl mx-auto">
+          <div className="mb-12">
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+              [ CREDENTIALS // ONGOING ]
+            </p>
+            <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
+              The Stack.
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-light max-w-xl">
+              Animation craft anchored in two decades of broadcast credits,
+              extended into adjacent domains the modern studio needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
+            {CERT_GROUPS.map((g) => (
+              <div key={g.label} className="bg-surface-container-lowest border border-outline-variant p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="material-symbols-outlined text-primary">{g.icon}</span>
+                  <h3 className="font-headline font-bold text-xl uppercase tracking-tight">{g.label}</h3>
+                </div>
+                <ul className="space-y-2">
+                  {g.items.map((it) => (
+                    <li key={it} className="text-sm text-on-surface-variant font-light flex gap-2">
+                      <span className="text-primary">·</span>{it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
 
