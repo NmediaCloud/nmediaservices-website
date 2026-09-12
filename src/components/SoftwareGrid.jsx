@@ -97,6 +97,7 @@ const TOOLS = [
     tag: "Audience simulator",
     status: "In-house",
     icon: "diversity_3",
+    image: "https://i.ytimg.com/vi/gMHxq5-7Yzg/maxresdefault.jpg",
     body:
       "A million synthetic viewers test-screen your pitch in twelve minutes — " +
       "demographic-weighted, opinion-bearing, and brutally honest about what does not land.",
