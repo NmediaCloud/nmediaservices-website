@@ -145,7 +145,9 @@
 
   /* White line-art logos drawn for a dark canvas go invisible
      here. Darken in CSS rather than shipping a second asset. */
-  .nm-logo { filter: brightness(0); opacity: 0.72; }
+  /* The mark now ships in the brand colour (public/images/nmedia_mark.png),
+     so the old brightness(0) hack — which existed only to darken the pale
+     grey logo that was built for dark backgrounds — is no longer needed. */
 }
 
 /* =========================================================

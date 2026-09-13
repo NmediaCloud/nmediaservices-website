@@ -19,7 +19,7 @@ export default function SiteHeader() {
         <img
           alt="Nmedia Services Logo"
           className="nm-logo w-auto object-contain h-10"
-          src="https://stockflow.media/assets/Nmedia_logo.png"
+          src="/images/nmedia_mark.png"
         />
         <div className="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-on-surface">
           Nmedia Services
