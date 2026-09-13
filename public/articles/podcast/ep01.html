@@ -23,6 +23,10 @@
     --orange: #BF4E10;
     --orange-ink: #BF4E10;
     --orange-soft: rgba(191,78,16,0.12);
+    /* Flat fill. #BF4E10 is 4.87:1 with white — the label is 14px bold, which
+       is not WCAG "large text", so it needs 4.5:1. Anything yellower fails as
+       a flat fill (#C55A0C is 4.34, #D97706 is 3.19). */
+    --orange-hover: #A0400C;
     --line: rgba(78,74,70,0.18);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,6 +55,10 @@
     display: flex; align-items: center; gap: 0.75rem;
     font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em;
   }
+  /* The supplied Nmedia_logo.png is the real mark, but it ships pale grey for
+     a dark background. Recoloured to the brand tone (the colour the inline SVG
+     was rendering at) and served from /images/nmedia_mark.png. */
+  .site-hdr .brand-mark { width: 32px; height: auto; display: block; }
   .site-hdr svg { width: 32px; height: 22px; color: var(--orange); }
   .site-hdr .mail {
     font-size: 0.875rem; color: #6E6862; font-weight: 400;
@@ -71,7 +79,7 @@
 
   /* ── Hero ────────────────────────────────────────────────── */
   .hero {
-    padding: 7rem 2rem 4rem;
+    padding: 1rem 2rem 3rem;
     max-width: 1100px; margin: 0 auto;
     border-bottom: 1px solid var(--line);
     position: relative;
@@ -122,7 +130,7 @@
     gap: 2rem; align-items: center;
   }
   .face {
-    width: 140px; height: 140px; border-radius: 50%;
+    width: 200px; height: 200px; border-radius: 50%;
     background: var(--panel); border: 3px solid var(--orange);
     overflow: hidden; justify-self: end;
   }
@@ -265,14 +273,29 @@
   }
   .cta p { color: var(--muted); margin-bottom: 1.75rem; max-width: 540px; margin-left: auto; margin-right: auto; position: relative; }
   .cta-btn {
+    /* House button style — the same outlined overlay used across the sites:
+       a 12% wash of the SF mark's orange (#FF7001) rather than a solid fill,
+       with the label in the deeper brand tone. #FF7001 is only 2.77:1 on
+       white so it cannot carry text; #A0400C on the wash is 5.7:1. */
     display: inline-block;
-    background: var(--orange); color: #ffffff;
+    background: rgba(255, 112, 1, 0.12);
+    color: var(--orange-hover);
+    border: 1px solid var(--orange);
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700; font-size: 0.875rem;
     letter-spacing: 3px; text-transform: uppercase;
-    padding: 1rem 2rem; border-radius: 3px;
-    transition: background 0.2s; position: relative;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   }
+  .cta-btn:hover {
+    background: rgba(255, 112, 1, 0.24);
+    border-color: var(--orange-hover);
+    color: #8F3A0B;
+    transform: translateY(-1px);
+  }
+  .cta-btn:active { transform: translateY(0); }
   .cta-btn:hover { background: #A0400C; text-decoration: none; }
 
   /* ── Footer ──────────────────────────────────────────────── */
@@ -303,11 +326,7 @@
 <!-- ── Site header ──────────────────────────────────────────── -->
 <nav class="site-hdr">
   <a class="brand" href="https://nmediaservices.com">
-    <svg viewBox="0 0 64 44" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round">
-      <polygon points="32,4 60,40 4,40"/>
-      <polygon points="18,18 32,40 4,40"/>
-      <polygon points="46,18 60,40 32,40"/>
-    </svg>
+    <img class="brand-mark" src="/images/nmedia_mark.png" alt="" width="32" height="22">
     <span>Nmedia Services</span>
   </a>
   <div class="right">
@@ -322,18 +341,122 @@
 </nav>
 
 <!-- ── Hero ─────────────────────────────────────────────────── -->
-<header class="hero">
-  <span class="kicker">At the Speed of Generation · Part 01 of 03</span>
-  <h1>Twenty-Five <em>Years</em>.</h1>
-  <p class="sub">The opening conversation of a three-part series with Nmedia Services founder Nanda Mohan, hosted by Ravi. The lessons of a quarter-century inside the animation industry — apprenticeship, big-show grind, and the moment he stopped working inside someone else's pipeline.</p>
-  <div class="author-bar">
-    <div class="author-avatar">N</div>
-    <div class="author-info">
-      <b>Nanda Mohan with Ravi</b>
-      <span>Animation Production Pipeline · Series · Part 01 / 03</span>
+
+
+<!-- Moved above the intro row: the videos are the reason people arrive
+     here from the homepage tiles, so they sit under the banner rather
+     than below the article body. -->
+<!-- ── Continue the series · embedded videos ──────────────── -->
+<section class="continuity">
+  <div class="continuity-head">
+    <p class="kicker-tiny">[ CONTINUE THE CONVERSATION ]</p>
+    <h2 class="continuity-title">The series, end to end.</h2>
+    <p class="continuity-sub">Three parts, one through-line. Part 01 sets up the journey. Part 02 picks up where the tools changed. Part 03 looks at what comes next.</p>
+  </div>
+  <div class="continuity-grid">
+    <div class="part-card current">
+      <div class="part-tag">Part 01 · Now Playing</div>
+      <div class="part-frame">
+        <iframe src="https://www.youtube.com/embed/u_oYE4nzRT8?rel=0&modestbranding=1"
+                title="Part 01 · The Journey In"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <h3 class="part-h">The Journey In</h3>
+      <p class="part-d">Twenty-five years of animation. Apprenticeship, big-show grind, and what the industry got right and wrong.</p>
+    </div>
+    <div class="part-card">
+      <div class="part-tag">Part 02 · Available Now</div>
+      <div class="part-frame">
+        <iframe src="https://www.youtube.com/embed/ynPxHRSeSo0?rel=0&modestbranding=1"
+                title="Part 02 · When The Tools Changed"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <h3 class="part-h">When The Tools Changed</h3>
+      <p class="part-d">The AI reckoning. Continuity drift, multi-model strategy, and the eleven-panel pipeline as the working answer.</p>
+    </div>
+    <div class="part-card">
+      <div class="part-tag">Part 03 · Available Now</div>
+      <div class="part-frame">
+        <iframe src="https://www.youtube.com/embed/xV0D9hW2Hyw?rel=0&modestbranding=1"
+                title="Part 03 · What Comes Next"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <h3 class="part-h">What Comes Next</h3>
+      <p class="part-d">The vision forward. The studio of 2030, and the closing thesis.</p>
     </div>
   </div>
-</header>
+</section>
+
+<style>
+  .continuity {
+    /* First block on the page now, so it owns the clearance for the fixed
+       topbar that .hero used to provide with its 7rem padding-top. */
+    max-width: 1200px; margin: 0 auto 4rem; padding: 7rem 2rem 0;
+  }
+  .continuity-head { text-align: center; margin-bottom: 2.5rem; }
+  .continuity-head .kicker-tiny {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; color: var(--orange);
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .continuity-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .continuity-sub {
+    color: var(--muted); max-width: 640px; margin: 0 auto;
+    font-size: 1rem; line-height: 1.55;
+  }
+  .continuity-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .part-card {
+    background: var(--panel); border: 1px solid var(--line);
+    overflow: hidden; transition: border-color 0.2s, transform 0.2s;
+  }
+  .part-card:hover { border-color: #DDD6CF; transform: translateY(-2px); }
+  .part-card.current { border-color: rgba(255,106,0,0.5); box-shadow: 0 0 0 1px rgba(255,106,0,0.25); }
+  .part-card.upcoming { opacity: 0.85; }
+  .part-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange); padding: 1rem 1.25rem 0.75rem;
+  }
+  .part-frame {
+    position: relative; width: 100%; aspect-ratio: 16 / 9;
+    background: #000; overflow: hidden;
+  }
+  .part-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .part-frame.placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #FFFFFF, #F3E7DC);
+    color: var(--orange); gap: 0.5rem;
+  }
+  .part-frame.placeholder .part-icon { font-size: 3rem; opacity: 0.6; }
+  .part-frame.placeholder .part-soon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .part-h {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem; font-weight: 700;
+    padding: 1rem 1.25rem 0.5rem; line-height: 1.2;
+  }
+  .part-d {
+    color: var(--muted); font-size: 0.9rem; line-height: 1.5;
+    padding: 0 1.25rem 1.5rem;
+  }
+</style>
 
 <!-- ── Intro row: hosts + episode chip ──────────────────────── -->
 <section class="intro-row">
@@ -350,6 +473,19 @@
     <p class="face-name">Nanda Mohan <span>Founder, Nmedia Services</span></p>
   </div>
 </section>
+
+<header class="hero">
+  <span class="kicker">At the Speed of Generation · Part 01 of 03</span>
+  <h1>Twenty-Five <em>Years</em>.</h1>
+  <p class="sub">The opening conversation of a three-part series with Nmedia Services founder Nanda Mohan, hosted by Ravi. The lessons of a quarter-century inside the animation industry — apprenticeship, big-show grind, and the moment he stopped working inside someone else's pipeline.</p>
+  <div class="author-bar">
+    <div class="author-avatar">N</div>
+    <div class="author-info">
+      <b>Nanda Mohan with Ravi</b>
+      <span>Animation Production Pipeline · Series · Part 01 / 03</span>
+    </div>
+  </div>
+</header>
 
 <!-- ── Article body ─────────────────────────────────────────── -->
 <article class="body">
@@ -430,115 +566,7 @@
   </div>
 </section>
 
-<!-- ── Continue the series · embedded videos ──────────────── -->
-<section class="continuity">
-  <div class="continuity-head">
-    <p class="kicker-tiny">[ CONTINUE THE CONVERSATION ]</p>
-    <h2 class="continuity-title">The series, end to end.</h2>
-    <p class="continuity-sub">Three parts, one through-line. Part 01 sets up the journey. Part 02 picks up where the tools changed. Part 03 looks at what comes next.</p>
-  </div>
-  <div class="continuity-grid">
-    <div class="part-card current">
-      <div class="part-tag">Part 01 · Now Playing</div>
-      <div class="part-frame">
-        <iframe src="https://www.youtube.com/embed/u_oYE4nzRT8?rel=0&modestbranding=1"
-                title="Part 01 · The Journey In"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-      </div>
-      <h3 class="part-h">The Journey In</h3>
-      <p class="part-d">Twenty-five years of animation. Apprenticeship, big-show grind, and what the industry got right and wrong.</p>
-    </div>
-    <div class="part-card">
-      <div class="part-tag">Part 02 · Available Now</div>
-      <div class="part-frame">
-        <iframe src="https://www.youtube.com/embed/ynPxHRSeSo0?rel=0&modestbranding=1"
-                title="Part 02 · When The Tools Changed"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-      </div>
-      <h3 class="part-h">When The Tools Changed</h3>
-      <p class="part-d">The AI reckoning. Continuity drift, multi-model strategy, and the eleven-panel pipeline as the working answer.</p>
-    </div>
-    <div class="part-card">
-      <div class="part-tag">Part 03 · Available Now</div>
-      <div class="part-frame">
-        <iframe src="https://www.youtube.com/embed/xV0D9hW2Hyw?rel=0&modestbranding=1"
-                title="Part 03 · What Comes Next"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-      </div>
-      <h3 class="part-h">What Comes Next</h3>
-      <p class="part-d">The vision forward. The studio of 2030, and the closing thesis.</p>
-    </div>
-  </div>
-</section>
 
-<style>
-  .continuity {
-    max-width: 1200px; margin: 4rem auto; padding: 0 2rem;
-  }
-  .continuity-head { text-align: center; margin-bottom: 2.5rem; }
-  .continuity-head .kicker-tiny {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; color: var(--orange);
-    letter-spacing: 3px; text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
-  .continuity-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
-  }
-  .continuity-sub {
-    color: var(--muted); max-width: 640px; margin: 0 auto;
-    font-size: 1rem; line-height: 1.55;
-  }
-  .continuity-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-  .part-card {
-    background: var(--panel); border: 1px solid var(--line);
-    overflow: hidden; transition: border-color 0.2s, transform 0.2s;
-  }
-  .part-card:hover { border-color: #DDD6CF; transform: translateY(-2px); }
-  .part-card.current { border-color: rgba(255,106,0,0.5); box-shadow: 0 0 0 1px rgba(255,106,0,0.25); }
-  .part-card.upcoming { opacity: 0.85; }
-  .part-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase;
-    color: var(--orange); padding: 1rem 1.25rem 0.75rem;
-  }
-  .part-frame {
-    position: relative; width: 100%; aspect-ratio: 16 / 9;
-    background: #000; overflow: hidden;
-  }
-  .part-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .part-frame.placeholder {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, #FFFFFF, #F3E7DC);
-    color: var(--orange); gap: 0.5rem;
-  }
-  .part-frame.placeholder .part-icon { font-size: 3rem; opacity: 0.6; }
-  .part-frame.placeholder .part-soon {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--muted);
-  }
-  .part-h {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.25rem; font-weight: 700;
-    padding: 1rem 1.25rem 0.5rem; line-height: 1.2;
-  }
-  .part-d {
-    color: var(--muted); font-size: 0.9rem; line-height: 1.5;
-    padding: 0 1.25rem 1.5rem;
-  }
-</style>
 
 <!-- ── CTA ─────────────────────────────────────────────────── -->
 <section class="cta">
