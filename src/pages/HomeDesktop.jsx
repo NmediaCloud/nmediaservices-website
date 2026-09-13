@@ -363,20 +363,18 @@ export default function HomeDesktop() {
             <div className="lg:col-span-8 space-y-4">
               {/* Software — Stockflow leads (it carries a video), then the collection grid */}
               <div className="bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 transition-all duration-300 overflow-hidden group">
-                <button
-                  type="button"
-                  onClick={() => setSfVideoOpen(true)}
+                {/* The shot is of the live storefront, so it leads there.
+                    The walkthrough moved to its own button below. */}
+                <a
+                  href="https://stockflow.media/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full relative bg-surface-container-high cursor-pointer"
                   style={{ aspectRatio: "16 / 9" }}
-                  aria-label="Play Stockflow.Media preview"
+                  aria-label="Visit Stockflow.Media"
                 >
                   <img src="/images/stockflow_preview.webp" alt="Stockflow.Media — the storefront homepage" loading="lazy" className="absolute inset-0 w-full h-full object-cover scale-[1.04] opacity-100 group-hover:scale-[1.06] transition-all duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center transition-all group-hover:scale-110 shadow-xl shadow-primary/40">
-                      <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "44px" }}>play_arrow</span>
-                    </div>
-                  </div>
-                </button>
+                </a>
                 <div className="p-8 relative">
                   <span className="absolute top-3 right-3 font-label text-[9px] tracking-[0.3em] uppercase text-primary bg-primary/10 border border-primary/35 px-2 py-1">
                     Module
@@ -392,15 +390,14 @@ export default function HomeDesktop() {
                     assets and automated pipelines for creators, marketers,
                     and production teams.
                   </p>
-                  <a
-                    href="https://stockflow.media/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary hover:gap-3 transition-all"
+                  <button
+                    type="button"
+                    onClick={() => setSfVideoOpen(true)}
+                    className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary hover:gap-3 transition-all cursor-pointer"
                   >
-                    Visit Site
-                    <span className="material-symbols-outlined text-base">arrow_outward</span>
-                  </a>
+                    <span className="material-symbols-outlined text-base">play_circle</span>
+                    Watch the Walkthrough
+                  </button>
                 </div>
               </div>
 
