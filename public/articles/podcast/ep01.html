@@ -57,7 +57,7 @@
   }
   /* The supplied Nmedia_logo.png is the real mark, but it ships pale grey for
      a dark background. Recoloured to the brand tone (the colour the inline SVG
-     was rendering at) and served from /images/nmedia_mark.png. */
+     was rendering at) and served from /images/nmedia_mark.svg. */
   .site-hdr .brand-mark { width: 32px; height: auto; display: block; }
   .site-hdr svg { width: 32px; height: 22px; color: var(--orange); }
   .site-hdr .mail {
@@ -326,7 +326,7 @@
 <!-- ── Site header ──────────────────────────────────────────── -->
 <nav class="site-hdr">
   <a class="brand" href="https://nmediaservices.com">
-    <img class="brand-mark" src="/images/nmedia_mark.png" alt="" width="32" height="22">
+    <img class="brand-mark" src="/images/nmedia_mark.svg" alt="" width="32" height="22">
     <span>Nmedia Services</span>
   </a>
   <div class="right">
@@ -416,8 +416,11 @@
     font-size: 1rem; line-height: 1.55;
   }
   .continuity-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
+    /* 320px could not fit three across until ~1050px, so the series broke to
+       2 + 1. At 240px the three line up from ~830px down, and the cards are
+       smaller with it. */
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
   }
   .part-card {
     background: var(--panel); border: 1px solid var(--line);

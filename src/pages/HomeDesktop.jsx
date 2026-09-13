@@ -5,10 +5,10 @@ import GitHubLink, { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
 import StatsBanner from "../components/StatsBanner";
 import SoftwareGrid from "../components/SoftwareGrid";
 
+const PODCAST_ARTICLE = "/articles/podcast/ep01.html";
+
 export default function HomeDesktop() {
   const [sfVideoOpen, setSfVideoOpen] = useState(false);
-  const [pipelineOpen, setPipelineOpen] = useState(false);
-  const [podcastOpen, setPodcastOpen] = useState(false);
   return (
     <div className="selection:bg-primary selection:text-on-primary bg-background min-h-screen text-on-surface font-['Inter']">
       {/* Top Navigation Bar */}
@@ -17,7 +17,7 @@ export default function HomeDesktop() {
           <img
             alt="Nmedia Services Logo"
             className="nm-logo w-auto object-contain h-10"
-            src="https://stockflow.media/assets/Nmedia_logo.png"
+            src="/images/nmedia_mark.svg"
           />
           <div className="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-on-surface">
             Nmedia Services
@@ -167,100 +167,121 @@ export default function HomeDesktop() {
 
         {/* Recent Project Video Embed */}
         <section className="max-w-[1440px] mx-auto px-8 mb-24">
+          {/* The interview — three parts. The tiles are stills, not players:
+              every one of them opens the article, which carries all three videos. */}
           <div className="mb-12">
-            <a 
-              href="/articles/podcast/ep01.html" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block border border-primary px-8 py-4 mb-8 hover:bg-primary/10 transition-colors"
-            >
-              <h2 className="font-['Space_Grotesk'] text-primary text-sm tracking-[0.3em] uppercase font-bold">
-                Pipeline Production Tech
-              </h2>
-            </a>
-            <div className="grid lg:grid-cols-3 gap-4">
-              {/* Pipeline reel — large (2 cols) */}
-              <div className="lg:col-span-2">
-                <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-                  // Pipeline Reel
+            <div className="flex items-center justify-between mb-3 gap-3 min-h-[26px] max-w-6xl">
+              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase">
+                // Podcast · At the Speed of Generation
+              </p>
+              <a
+                href={PODCAST_ARTICLE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-label text-[10px] tracking-[0.25em] uppercase text-primary hover:text-primary border border-primary/30 hover:border-primary/60 px-2.5 py-1 transition-all"
+              >
+                <span className="material-symbols-outlined text-xs" style={{ fontSize: "12px" }}>article</span>
+                Read Article
+              </a>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4 items-start max-w-6xl">
+              <a
+                href={PODCAST_ARTICLE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+                aria-label="Read the interview — Part 01"
+              >
+                <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
+                  <img
+                    src="https://i.ytimg.com/vi/u_oYE4nzRT8/maxresdefault.jpg"
+                    alt="The Journey In"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                  />
+                </div>
+                <p className="font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant group-hover:text-primary transition-colors mt-2">
+                  Part 01 · The Journey In
                 </p>
-                <button
-                  type="button"
-                  onClick={() => setPipelineOpen(true)}
-                  className="block w-full relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl group cursor-pointer"
-                  aria-label="Play Pipeline Reel"
-                >
-                  <img src="https://i.ytimg.com/vi/cGGxVzvTbds/maxresdefault.jpg" alt="Animation, Accelerated · Inside an AI-Native Pipeline" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
-                      <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "44px" }}>play_arrow</span>
-                    </div>
-                  </div>
-                </button>
-              </div>
-
-              {/* Podcast — At the Speed of Generation, Part 01 (smaller, 1 col, anchored to bottom) */}
-              <div className="flex flex-col justify-end">
-                <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase">
-                    // Podcast · Part 01 of 03
-                  </p>
-                  <a
-                    href="/articles/podcast/ep01.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-label text-[10px] tracking-[0.25em] uppercase text-primary hover:text-primary border border-primary/30 hover:border-primary/60 px-2.5 py-1 transition-all"
-                  >
-                    <span className="material-symbols-outlined text-xs" style={{ fontSize: "12px" }}>article</span>
-                    Read Article
-                  </a>
+              </a>
+              <a
+                href={PODCAST_ARTICLE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+                aria-label="Read the interview — Part 02"
+              >
+                <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
+                  <img
+                    src="https://i.ytimg.com/vi/ynPxHRSeSo0/maxresdefault.jpg"
+                    alt="When the Tools Changed"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                  />
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setPodcastOpen(true)}
-                  className="block w-full relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl group cursor-pointer"
-                  aria-label="Play podcast Part 01"
-                >
-                  <img src="https://i.ytimg.com/vi/u_oYE4nzRT8/maxresdefault.jpg" alt="At the Speed of Generation · Part 01: The Journey In" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-xl shadow-primary/40 transition-all group-hover:scale-110">
-                      <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "32px" }}>play_arrow</span>
-                    </div>
-                  </div>
-                </button>
-
-                {/* Speaker LinkedIn chips — Ravi (left) + Nanda (right) */}
-                <div className="grid grid-cols-2 gap-2 mt-2">
-                  <a
-                    href="https://www.linkedin.com/in/raviharsh/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high transition-all group"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-on-surface-variant group-hover:text-primary transition-colors flex-shrink-0">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface group-hover:text-primary transition-colors">Ravi</span>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/mnkmars/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high transition-all group"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-on-surface-variant group-hover:text-primary transition-colors flex-shrink-0">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface group-hover:text-primary transition-colors">Nanda Mohan</span>
-                  </a>
+                <p className="font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant group-hover:text-primary transition-colors mt-2">
+                  Part 02 · When the Tools Changed
+                </p>
+              </a>
+              <a
+                href={PODCAST_ARTICLE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+                aria-label="Read the interview — Part 03"
+              >
+                <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
+                  <img
+                    src="https://i.ytimg.com/vi/xV0D9hW2Hyw/maxresdefault.jpg"
+                    alt="What Comes Next"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500"
+                  />
                 </div>
+                <p className="font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant group-hover:text-primary transition-colors mt-2">
+                  Part 03 · What Comes Next
+                </p>
+              </a>
+            </div>
+
+            {/* Speakers — centred under the three tiles. The outer max-w-6xl
+                matches the tile row, so mx-auto centres against the tiles
+                rather than against the full page width. */}
+            <div className="max-w-6xl mt-4">
+              <div className="grid grid-cols-2 gap-2 max-w-md mx-auto">
+                <a
+                  href="https://www.linkedin.com/in/raviharsh/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-3 py-2 bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high transition-all group"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-on-surface-variant group-hover:text-primary transition-colors flex-shrink-0">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  <span className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface group-hover:text-primary transition-colors">Ravi</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/mnkmars/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-3 py-2 bg-surface-container border border-outline-variant hover:border-primary/40 hover:bg-surface-container-high transition-all group"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-on-surface-variant group-hover:text-primary transition-colors flex-shrink-0">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  <span className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface group-hover:text-primary transition-colors">Nanda Mohan</span>
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pipeline Field Notes — moved up to sit directly under the hero video */}
-        <PipelineArticles />
+        {/* Pipeline Field Notes — moved up to sit directly under the hero video.
+            The "Pipeline Production Tech" heading came down from the interview
+            block: it titles this section, not the podcast. Passed as a prop so
+            HomeMobile, which renders this same component, keeps its own. */}
+        <PipelineArticles title="Pipeline Production Tech" />
 
         {/* Original IP — Slate (lifted above Capabilities) */}
         <section className="py-24 px-8 bg-surface-container border-y border-outline-variant">
@@ -572,7 +593,7 @@ export default function HomeDesktop() {
               <div className="h-14 w-14 border-2 border-primary flex items-center justify-center bg-primary/5 shrink-0 mt-2 p-2">
                 <img
                   alt="Nmedia Services Logo"
-                  src="https://stockflow.media/assets/Nmedia_logo.png"
+                  src="/images/nmedia_mark.svg"
                   className="nm-logo w-full h-full object-contain"
                 />
               </div>
@@ -627,22 +648,6 @@ export default function HomeDesktop() {
         onClose={() => setSfVideoOpen(false)}
         src="https://www.youtube.com/embed/KfV_Y7hudvM?autoplay=1&rel=0&modestbranding=1"
         title="Stockflow.Media · Preview"
-      />
-
-      {/* Pipeline Reel modal */}
-      <VideoModal
-        open={pipelineOpen}
-        onClose={() => setPipelineOpen(false)}
-        src="https://www.youtube.com/embed/cGGxVzvTbds?autoplay=1&rel=0&modestbranding=1"
-        title="Pipeline Reel · Frictionless Production"
-      />
-
-      {/* Podcast Part 01 modal */}
-      <VideoModal
-        open={podcastOpen}
-        onClose={() => setPodcastOpen(false)}
-        src="https://www.youtube.com/embed/u_oYE4nzRT8?autoplay=1&rel=0&modestbranding=1"
-        title="At the Speed of Generation · Part 01: The Journey In"
       />
 
       {/* Footer */}

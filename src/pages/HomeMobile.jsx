@@ -10,7 +10,7 @@ export default function HomeMobile() {
       <header className="fixed top-0 w-full z-50 bg-surface-container/70 backdrop-blur-md flex justify-between items-center px-6 h-16">
         <div className="flex items-center gap-3">
           <img
-            src="/images/nmedia_mark.png"
+            src="/images/nmedia_mark.svg"
             alt="Nmedia Services Logo"
             className="nm-logo h-8 w-auto object-contain"
           />

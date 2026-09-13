@@ -44,7 +44,7 @@ const INTROS = {
     "One campaign brief in. On-brand, localized ad creatives in every aspect ratio out.",
 };
 
-export default function PipelineArticles() {
+export default function PipelineArticles({ title }) {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
   const stripRef = useRef(null);
@@ -96,6 +96,15 @@ export default function PipelineArticles() {
         {/* Section heading — matches the Capabilities header rhythm */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
+            {/* Optional section heading. Passed by HomeDesktop only — HomeMobile
+                renders this same component and already carries its own. */}
+            {title && (
+              <div className="inline-block border border-primary px-8 py-4 mb-8">
+                <h2 className="font-['Space_Grotesk'] text-primary text-sm tracking-[0.3em] uppercase font-bold">
+                  {title}
+                </h2>
+              </div>
+            )}
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
               [ FIELD_NOTES // ANIMATION_PIPELINE_V1.1 ]
             </p>
