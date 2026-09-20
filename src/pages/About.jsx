@@ -67,7 +67,7 @@ export default function About() {
                 an AI-native production studio out of one toolchain.
               </p>
               {/* A row of stills is a better hook than a line of text: the
-                  thumbnails are 128px WebP crops, about 3KB each, so the
+                  thumbnails are 192px WebP crops, a few KB each, so the
                   whole stack costs less than one of the full images. */}
               <button
                 type="button"
@@ -82,13 +82,13 @@ export default function About() {
                       src={`/images/pics/micro/${file}`}
                       alt=""
                       loading="lazy"
-                      className="w-10 h-10 object-cover border-2 border-surface shadow-sm transition-transform duration-300 group-hover/stills:translate-x-0"
-                      style={{ marginLeft: i === 0 ? 0 : "-0.6rem", zIndex: PIC_PEEK.length - i }}
+                      className="w-20 h-20 object-cover border-2 border-surface shadow-md transition-transform duration-300 group-hover/stills:-translate-y-0.5"
+                      style={{ marginLeft: i === 0 ? 0 : "-1rem", zIndex: PIC_PEEK.length - i }}
                     />
                   ))}
                   <span
-                    className="w-10 h-10 flex items-center justify-center border-2 border-surface bg-primary text-on-primary font-label text-[10px] tracking-tight"
-                    style={{ marginLeft: "-0.6rem" }}
+                    className="w-20 h-20 flex items-center justify-center border-2 border-surface bg-primary text-on-primary font-label text-sm tracking-tight shadow-md"
+                    style={{ marginLeft: "-1rem" }}
                   >
                     +{ABOUT_PICS.length - PIC_PEEK.length}
                   </span>
