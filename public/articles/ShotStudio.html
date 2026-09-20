@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thirty-Nine Shots, One Desk · Nmedia Services</title>
+<meta name="description" content="Shot Studio is the local production desk behind a 39-shot AI-performed address by Tholkappiyar. Versioned takes, progress and cost planning on one screen.">
+<meta property="og:title" content="Thirty-Nine Shots, One Desk · Nmedia Services">
+<meta property="og:description" content="Shot Studio is the local production desk behind a 39-shot AI-performed address by Tholkappiyar. Versioned takes, progress and cost planning on one screen.">
+<meta property="og:image" content="./images/shotstudio_closeup.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./_shared/article.css">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google Analytics (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPSQHGJ273"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZPSQHGJ273');
+</script>
+<style>
+  /* Page-scoped additions — house tokens only (see THEME.md). */
+  .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; background: #000; }
+  .video-note { text-align: center; font-size: 13px; color: var(--muted); margin: -32px auto 40px; padding: 0 24px; }
+  .reel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .reel img { aspect-ratio: 16 / 9; object-fit: cover; }
+  .seq { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; margin: 28px 0; }
+  .seq-cells { display: grid; grid-template-columns: repeat(39, 1fr); gap: 3px; }
+  .seq-cells span { height: 22px; border-radius: 2px; background: var(--surface-2); }
+  .seq-cells span.done { background: var(--orange); }
+  .seq-key { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: var(--muted); }
+  .tamil { font-size: 15px; color: var(--muted); margin: -8px 0 24px; }
+  @media (max-width: 640px) {
+    .reel { grid-template-columns: 1fr 1fr; }
+    .seq-cells { gap: 2px; }
+    .seq-cells span { height: 16px; }
+  }
+</style>
+</head>
+<body>
+<!-- ── SITE HEADER (injected for back-nav) ────────────────── -->
+<nav class="nm-site-header" style="position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;background:rgba(250, 248, 245, 0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #DDD6CF;z-index:1000;font-family:'Space Grotesk','Inter',system-ui,sans-serif;">
+  <a href="https://nmediaservices.com" style="display:flex;align-items:center;gap:0.75rem;color:#4E4A46;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+    <img src="/images/nmedia_mark.svg" alt="" width="32" height="22" style="display:block;width:32px;height:auto;">
+    <span style="font-weight:700;font-size:1.125rem;letter-spacing:-0.02em;">Nmedia Services</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:1.25rem;"><a href="https://nmediaservices.com" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:#4E4A46;text-decoration:none;border:1px solid #DDD6CF;padding:0.4rem 0.85rem;border-radius:3px;background:transparent;transition:all .2s;font-weight:600;" onmouseover="this.style.background='#F3E7DC';this.style.borderColor='#BF4E10'" onmouseout="this.style.background='transparent';this.style.borderColor='#DDD6CF'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="mailto:Nanda@nmediaservices.com" style="font-size:0.875rem;color:#6E6862;text-decoration:none;letter-spacing:-0.01em;transition:color .2s;" onmouseover="this.style.color='#BF4E10'" onmouseout="this.style.color='#6E6862'">Nanda@nmediaservices.com</a></div>
+</nav>
+<!-- ── END SITE HEADER ─────────────────────────────────────── -->
+
+
+<section class="hero" style="padding-top:6rem;">
+  <div class="hero-content">
+    <a class="nm-brand" href="https://nmediaservices.com" rel="noopener">
+      <img src="/images/nmedia_mark.svg" alt="" width="32" height="22" style="display:block;width:32px;height:auto;">
+      <span class="nm-wordmark">Nmedia <b>Services</b></span>
+      <span class="nm-version">v1.0</span>
+    </a>
+    <span class="hero-tag">Shot Studio · AI Video Production Desk</span>
+    <h1>Thirty-Nine Shots, <em>One Desk</em>.</h1>
+    <p class="tamil" lang="ta">தொல்காப்பியர் பேசுகிறார் · Tholkappiyar speaking</p>
+    <p class="hero-sub">An ancient Tamil grammarian takes the stage at a Canadian conference. Behind the nine-minute performance sit 39 shots, 18 recorded speeches and a growing pile of AI takes, so we built a production desk to direct all of it from one screen.</p>
+    <div class="author-bar">
+      <div class="author-avatar">N</div>
+      <div class="author-info">
+        <div class="author-name">Nmedia Services</div>
+        <div class="author-title">Shot Studio · v1.0 · September 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEO SLOT · TEASER ───────────────────────────────────
+     Self-hosted teaser (no YouTube ID yet). To switch to YouTube,
+     set data-yt-id and replace the <video> with the standard
+     iframe + poster markup used by the other articles.
+     ─────────────────────────────────────────────────────── -->
+<section class="video-embed" data-yt-id="">
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline poster="./images/shotstudio_poster.jpg">
+      <source src="./media/shotstudio_teaser.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+<p class="video-note">Teaser · 30 seconds from the current 9:17 edit, with the original Tamil voice</p>
+
+<section class="stats-bar">
+  <div class="stat-item"><span class="stat-n">39</span><span class="stat-l">Shots in sequence</span></div>
+  <div class="stat-item"><span class="stat-n">18</span><span class="stat-l">Script sections</span></div>
+  <div class="stat-item"><span class="stat-n">9:17</span><span class="stat-l">Current edit</span></div>
+  <div class="stat-item"><span class="stat-n">0</span><span class="stat-l">Paid calls in tests</span></div>
+</section>
+
+<div class="tag-row">
+  <span class="tag">AI video</span>
+  <span class="tag">Lip sync</span>
+  <span class="tag">Tamil</span>
+  <span class="tag">Production tooling</span>
+  <span class="tag">Cost planning</span>
+</div>
+
+<article class="body">
+
+  <p class="lede">Generating one AI video is a web form. Directing thirty-nine of them into a single performance is a production, and productions need a desk, not a folder of batch files.</p>
+
+  <h2><span class="num">01</span>The brief</h2>
+  <p>Tholkappiyar wrote the <em>Tholkappiyam</em>, the oldest surviving grammar of the Tamil language. The Tholkappiya Mantram in Canada wanted him to address their conference in person: welcoming the hall, explaining why he wrote, walking through letters, words and literary convention, and handing the tradition on to the diaspora's young readers.</p>
+  <p>The address was recorded in Tamil, split into 18 sections and storyboarded into 39 shots. Each shot is <strong>a reference image, a clip of the real voice performance and a written direction</strong> for camera and body.</p>
+
+  <figure>
+    <div class="reel">
+      <img src="./images/shotstudio_statue.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="A bronze statue of Tholkappiyar seated cross-legged against a dark field">
+      <img src="./images/shotstudio_welcome.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Tholkappiyar seated on stage, gesturing with an open hand">
+      <img src="./images/shotstudio_heart.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Tholkappiyar with his hand on his chest">
+      <img src="./images/shotstudio_stage.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Wide stage shot from the audience with the Canadian flag">
+      <img src="./images/shotstudio_profile.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Profile view of Tholkappiyar addressing a seated audience">
+      <img src="./images/shotstudio_listeners.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="An older man and a young student listening in the audience">
+    </div>
+    <figcaption>From the current edit: the statue that opens the film, the speaker on stage, and a voice-over shot on the listeners.</figcaption>
+  </figure>
+
+  <h2><span class="num">02</span>One clip is easy. Thirty-nine is a production.</h2>
+  <p>A sequence is a stack of decisions: which image is current, which prompt produced which take, whether a shot is lip-synced or a voice-over on the audience, what fits the budget, and which take is actually good enough to cut.</p>
+  <p>Before Shot Studio that lived in folder names, batch files and memory. <strong>Now it lives on one screen.</strong></p>
+
+  <div class="seq" role="img" aria-label="Sequence strip of 39 shots; shot 02 has generated takes in Shot Studio">
+    <div class="seq-cells" id="seq"></div>
+    <div class="seq-key"><span>Shot 02 → 40</span><span>Orange: takes generated in Shot Studio so far</span></div>
+  </div>
+
+  <h2><span class="num">03</span>Built around the shot</h2>
+  <p>The shot list keeps the running order. Select a shot and its reference image, recorded voice and every saved take appear together. Rewrite the direction beside the preview and queue a new take. Earlier takes are never overwritten.</p>
+  <p>Shots are flagged as <strong>speaking</strong> or <strong>voice-over</strong>, so listeners and manuscript close-ups keep the narration without being lip-synced into talking.</p>
+
+  <figure>
+    <img src="./images/shotstudio_workspace.png" onerror="this.src='./_shared/placeholder.svg'" alt="Shot Studio workspace: shot list, current image, saved versions and animation prompt">
+    <figcaption>The shot workspace. Current image, saved takes, original audio and the next prompt, side by side.</figcaption>
+  </figure>
+
+  <blockquote>"A prompt edit should shape the next take, not quietly change one already waiting in the queue."</blockquote>
+
+  <h2><span class="num">04</span>Every take is recoverable</h2>
+  <p>Each queued job freezes its own copy of the image, audio and prompt. Progress is recorded as the job runs, so an interrupted job <strong>resumes instead of being paid for twice</strong>. If a submission's result is uncertain, the desk stops and asks rather than silently resubmitting.</p>
+
+  <h2><span class="num">05</span>See the bill before you press the button</h2>
+  <p>The top of the studio answers two questions: how far along is the sequence, and what will the rest cost? A colour strip shows every shot as ready, running, queued, needing attention or pending. Duration coverage sits beside the shot count, because a three-second insert and a thirty-second speech are not equal work.</p>
+  <p>The budget panel compares saved attempts, the shots still missing and a full new pass, using a dated price catalogue. Every paid generation gets its own estimate and confirmation before anything is spent.</p>
+
+  <figure>
+    <img src="./images/shotstudio_dashboard.png" onerror="this.src='./_shared/placeholder.svg'" alt="Shot Studio dashboard with sequence cost cards and sequence progress">
+    <figcaption>Sequence cost and progress at the start of the generation pass. Figures are planning estimates, not billed spend.</figcaption>
+  </figure>
+
+  <h2><span class="num">06</span>Built for the production desk</h2>
+  <p>Shot Studio is a lightweight web app that runs on the production machine. Generations run one at a time in a managed queue, and long speeches are covered in full <strong>without ever speeding up the voice</strong>.</p>
+  <p>Nothing is exposed beyond the studio machine, and credentials never reach the browser. An offline test suite checks estimates, versioning and recovery without spending a cent. Chosen takes export in running order, ready for the editor.</p>
+
+  <div class="callout">
+    <b>Where it stands →</b> Shot Studio is running on the production machine and the generation pass is under way. Lip-sync quality on Tamil speech, continuity between shots and client approval are still judged by eye, the desk is built to support that review, not replace it. The next step, if it grows beyond one workstation, is sign-in, durable job workers and shared media storage.
+  </div>
+
+</article>
+
+<section class="cta" style="padding-top:2rem;">
+  <h3>The code stays in the studio</h3>
+  <p>Shot Studio's source is private. This page shows the product and the production it serves, not the client's working files.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:0.9rem;justify-content:center;margin-top:1.5rem;">
+    <a class="cta-btn" href="mailto:Nanda@nmediaservices.com?subject=Shot%20Studio">Ask about a demo →</a>
+  </div>
+</section>
+
+<section class="cta" style="margin-top:0;">
+  <h3>Directing an AI-performed piece?</h3>
+  <p>If your production has more shots than your team has hours to track, this desk can be adapted to your script, your voices and your review process. Let's talk.</p>
+  <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
+</section>
+
+<footer class="footer">© Nmedia Services · Shot Studio v1.0 · <a href="https://nmediaservices.com">nmediaservices.com</a></footer>
+
+<script>
+  // Sequence strip: shot folders 02–40; shot 02 has generated takes.
+  (function () {
+    var seq = document.getElementById('seq');
+    for (var n = 2; n <= 40; n++) {
+      var s = document.createElement('span');
+      if (n === 2) s.className = 'done';
+      s.title = 'Shot ' + (n < 10 ? '0' : '') + n;
+      seq.appendChild(s);
+    }
+  })();
+</script>
+</body>
+</html>

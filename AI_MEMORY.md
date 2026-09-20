@@ -104,8 +104,14 @@ Running the chain against the current source will:
   *published* files, never back-ported to source.
 - **Replace two images with much smaller source copies** — `02a.jpg`
   (4.5 MB → 147 KB) and `ugc_a.png` (4.7 MB → 56 KB).
-- **Not touch** `CreativeFlow.html`, `Pipeline_Production_System.html` or
-  `podcast/*` — those are outside the generator's `ARTICLES` list and are safe.
+- **Not touch** `CreativeFlow.html`, `Pipeline_Production_System.html`,
+  `ShotStudio.html` or `podcast/*` — those are outside the generator's `ARTICLES`
+  list and are safe. Their `articles.json` entries (CreativeFlow, ShotStudio) are
+  hand-added, so re-add them if the manifest is regenerated.
+- `ShotStudio.html` (added 2026-09-16) self-hosts its teaser at
+  `articles/media/shotstudio_teaser.mp4` instead of a YouTube ID. With an empty
+  `youtube_id`, `PipelineArticles.jsx` shows the manifest `thumbnail` instead of
+  the "coming soon" placeholder.
 
 Before regenerating: back-port the video IDs and images into
 `Articles to Publish/`, or expect to restore from git afterwards.
