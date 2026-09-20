@@ -66,8 +66,9 @@ const TOOLS = [
       "Photographs in, marketplace listings out. Identifies the product, researches it, " +
       "recommends a price and writes the copy, then a local agent pre-fills the forms on " +
       "Kijiji, Facebook Marketplace and Karrot and stops before Publish.",
-    href: "https://github.com/NmediaCloud/marketplace-listing-assistant",
-    cta: "View the source",
+    href: "/articles/Marketplace_Listing_Assistant.html",
+    repo: "https://github.com/NmediaCloud/marketplace-listing-assistant",
+    cta: "Read the write-up",
   },
   {
     name: "FX Strategy Research Platform",
