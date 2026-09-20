@@ -23,7 +23,7 @@ const TOOLS = [
     tag: "Campaign automation",
     status: "Open source",
     icon: "auto_awesome_mosaic",
-    image: "/images/creativeflow.png",
+    image: "/images/creativeflow.webp",
     body:
       "One campaign brief in; on-brand, localized ad creatives in every aspect ratio out, " +
       "reusing the assets you already own and generating only what is missing. Runs on a " +
@@ -37,7 +37,7 @@ const TOOLS = [
     tag: "Video factory",
     status: "In progress",
     icon: "autoplay",
-    image: "/images/ugc_pipeline.png",
+    image: "/images/ugc_pipeline.webp",
     body:
       "One spreadsheet row in, one finished UGC, ad or podcast video out. Nine self-contained " +
       "modules. Script, TTS, lipsync, b-roll, title cards, overlay, SFX, music, compositing, " +
@@ -51,6 +51,7 @@ const TOOLS = [
     tag: "Audience simulator",
     status: "In-house",
     icon: "diversity_3",
+    image: "/images/cards/mirofish.svg",
     body:
       "A million synthetic viewers test-screen your pitch in twelve minutes, " +
       "demographic-weighted, opinion-bearing, and brutally honest about what does not land.",
@@ -62,6 +63,7 @@ const TOOLS = [
     tag: "Vision + automation",
     status: "Source available",
     icon: "sell",
+    image: "/images/cards/marketplace-listing-assistant.svg",
     body:
       "Photographs in, marketplace listings out. Identifies the product, researches it, " +
       "recommends a price and writes the copy, then a local agent pre-fills the forms on " +
@@ -74,6 +76,7 @@ const TOOLS = [
     tag: "Quantitative research",
     status: "Source available",
     icon: "query_stats",
+    image: "/images/cards/fx-strategy-research.svg",
     body:
       "A validated harness for one question, answered honestly: does this trading idea have an " +
       "edge? Seventeen research modules, explicit cost accounting, a risk engine and a broker " +
@@ -86,6 +89,7 @@ const TOOLS = [
     tag: "Utility · Zero dependencies",
     status: "Source available",
     icon: "sync_saved_locally",
+    image: "/images/cards/smart-mirror-backup.svg",
     body:
       "Mirror-backup for Windows with a GUI and a full CLI, in pure Python standard library, " +
       "no pip, no virtualenv, so it runs on a locked-down or offline machine. Deep-verify " +
@@ -99,17 +103,26 @@ function ToolCard({ tool }) {
   const external = tool.href.startsWith("http") || tool.href.endsWith(".html");
   return (
     <article className="bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
-      {tool.image ? (
-        <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
-          <img src={tool.image} alt={tool.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
-        </div>
-      ) : (
-        <div className="w-full bg-surface-container-high flex items-center justify-center" style={{ aspectRatio: "16 / 9" }}>
-          <span className="material-symbols-outlined text-primary" style={{ fontSize: "48px" }}>
-            {tool.icon}
-          </span>
-        </div>
-      )}
+      {/* The artwork is the biggest target on the card, so it links where the
+          card's own call to action does rather than sitting there inert. */}
+      <a
+        href={tool.href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        aria-label={`${tool.name}: ${tool.cta}`}
+        className="block"
+      >
+        {tool.image ? (
+          <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
+            <img src={tool.image} alt={tool.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-[1.02] transition-all duration-500" />
+          </div>
+        ) : (
+          <div className="w-full bg-surface-container-high flex items-center justify-center group-hover:bg-surface-container transition-colors" style={{ aspectRatio: "16 / 9" }}>
+            <span className="material-symbols-outlined text-primary" style={{ fontSize: "48px" }}>
+              {tool.icon}
+            </span>
+          </div>
+        )}
+      </a>
 
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-3 mb-2">
@@ -121,7 +134,15 @@ function ToolCard({ tool }) {
           </span>
         </div>
 
-        <h4 className="font-headline text-lg font-bold mb-2 text-title">{tool.name}</h4>
+        <h4 className="font-headline text-lg font-bold mb-2 text-title">
+          <a
+            href={tool.href}
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="hover:text-primary transition-colors"
+          >
+            {tool.name}
+          </a>
+        </h4>
         <p className="font-body text-sm text-on-surface-variant leading-relaxed flex-1">{tool.body}</p>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4">
