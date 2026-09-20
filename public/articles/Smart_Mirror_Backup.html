@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Backup Tool With Zero Dependencies · Nmedia Services</title>
+<meta name="description" content="Mirror-backup for Windows with a GUI and a full CLI, written in pure Python standard library. No pip, no virtualenv, no supply chain, so it runs on a locked-down or offline machine.">
+<meta property="og:title" content="A Backup Tool With Zero Dependencies · Nmedia Services">
+<meta property="og:description" content="Mirror-backup for Windows with a GUI and a full CLI, written in pure Python standard library. No pip, no virtualenv, no supply chain, so it runs on a locked-down or offline machine.">
+<meta property="og:image" content="/images/cards/smart-mirror-backup.svg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./_shared/article.css">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google Analytics (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPSQHGJ273"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZPSQHGJ273');
+</script>
+<style>
+  /* Plain comparison tables, styled to the article rather than the browser. */
+  .body table { width:100%; border-collapse:collapse; margin:1.75rem 0; font-size:0.95rem; }
+  .body th, .body td { text-align:left; padding:0.7rem 0.9rem; border-bottom:1px solid var(--line); }
+  .body th { font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:1.5px;
+             text-transform:uppercase; color:var(--orange); font-weight:500; }
+  .body td code { font-size:0.85rem; }
+  .body tr:last-child td { border-bottom:none; }
+</style>
+</head>
+<body>
+<!-- ── SITE HEADER (injected for back-nav) ────────────────── -->
+<nav class="nm-site-header" style="position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;background:rgba(250, 248, 245, 0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #DDD6CF;z-index:1000;font-family:'Space Grotesk','Inter',system-ui,sans-serif;">
+  <a href="https://nmediaservices.com" style="display:flex;align-items:center;gap:0.75rem;color:#4E4A46;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+    <img src="/images/nmedia_mark.svg" alt="" width="32" height="22" style="display:block;width:32px;height:auto;">
+    <span style="font-weight:700;font-size:1.125rem;letter-spacing:-0.02em;">Nmedia Services</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:1.25rem;"><a href="https://nmediaservices.com" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:#4E4A46;text-decoration:none;border:1px solid #DDD6CF;padding:0.4rem 0.85rem;border-radius:3px;background:transparent;transition:all .2s;font-weight:600;" onmouseover="this.style.background='#F3E7DC';this.style.borderColor='#BF4E10'" onmouseout="this.style.background='transparent';this.style.borderColor='#DDD6CF'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="mailto:Nanda@nmediaservices.com" style="font-size:0.875rem;color:#6E6862;text-decoration:none;letter-spacing:-0.01em;transition:color .2s;" onmouseover="this.style.color='#BF4E10'" onmouseout="this.style.color='#6E6862'">Nanda@nmediaservices.com</a></div>
+</nav>
+<!-- ── END SITE HEADER ─────────────────────────────────────── -->
+
+<section class="hero" style="padding-top:6rem;">
+  <div class="hero-content">
+    <a class="nm-brand" href="https://nmediaservices.com" rel="noopener">
+      <img src="/images/nmedia_mark.svg" alt="" width="32" height="22" style="display:block;width:32px;height:auto;">
+      <span class="nm-wordmark">Nmedia <b>Services</b></span>
+      <span class="nm-version">v1.1</span>
+    </a>
+    <span class="hero-tag">Smart Mirror Backup · Utility</span>
+    <h1>A backup tool with <em>zero dependencies</em>.</h1>
+    <p class="hero-sub">Mirror-backup for Windows with a Tkinter GUI and a full CLI, written in pure Python standard library. The constraint is the point: no pip, no virtualenv, no supply chain.</p>
+    <div class="author-bar">
+      <div class="author-avatar">N</div>
+      <div class="author-info">
+        <div class="author-name">Nmedia Services</div>
+        <div class="author-title">Utility · Source available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure style="max-width:680px;margin:0 auto 2.5rem;padding:0 2rem;">
+  <img src="/images/cards/smart-mirror-backup.svg" alt="A hash-verified mirror between two drives" style="width:100%;height:auto;border:1px solid var(--line);display:block;">
+</figure>
+
+<section class="stats-bar">
+  <div class="stat-item"><span class="stat-n">0</span><span class="stat-l">Third-party deps</span></div>
+  <div class="stat-item"><span class="stat-n">3</span><span class="stat-l">Operating systems</span></div>
+  <div class="stat-item"><span class="stat-n">SHA</span><span class="stat-l">Deep verify</span></div>
+  <div class="stat-item"><span class="stat-n">Dry run</span><span class="stat-l">Before anything moves</span></div>
+</section>
+
+<div class="tag-row">
+  <span class="tag">Pure stdlib</span>
+  <span class="tag">Offline capable</span>
+  <span class="tag">Hash verification</span>
+  <span class="tag">Named profiles</span>
+  <span class="tag">Cross-platform</span>
+</div>
+
+<article class="body">
+
+  <p class="lede">Backup tools tend to arrive with a dependency tree. This one arrives with none. It is a mirror-backup utility for Windows with a Tkinter GUI and a full CLI, written entirely against the Python standard library, and that restriction is the whole design rather than an accident of scope.</p>
+
+  <h2><span class="num">01</span>Why zero dependencies matters</h2>
+  <p>No <code>pip install</code>. No virtualenv. No supply chain to audit or to be compromised. It runs on a locked-down corporate machine, an air-gapped machine, or a fresh Windows install with nothing on it but Python. Everything it uses, <code>tkinter</code>, <code>pathlib</code>, <code>hashlib</code>, <code>argparse</code>, <code>json</code>, <code>logging</code> and <code>shutil</code>, ships with Python and is cross-platform, so the same single file runs unchanged on macOS and Linux.</p>
+  <blockquote>"The machines that most need a backup tool are often the ones you are least allowed to install software on."</blockquote>
+
+  <h2><span class="num">02</span>What it does</h2>
+  <table>
+    <tr><th>Capability</th><th>Behaviour</th></tr>
+    <tr><td>Mirror a folder tree</td><td>Copies only what changed, to a second location</td></tr>
+    <tr><td>Deep verify</td><td>Hashes the copy, so corruption is detected rather than assumed away</td></tr>
+    <tr><td>Dry run</td><td>Reports exactly what would be copied, replaced and deleted, before anything happens</td></tr>
+    <tr><td>Delete extras</td><td>Optional, making the destination a true mirror rather than an accumulating pile</td></tr>
+    <tr><td>Exclusions</td><td>Junk and chosen formats stay out: thumbnails, caches, whatever you name</td></tr>
+    <tr><td>Named profiles</td><td>Define a source and destination pair once, then run it by name from the GUI or the CLI</td></tr>
+    <tr><td>Index, plan, history</td><td>Written to disk, so a run is inspectable afterwards and repeatable</td></tr>
+  </table>
+
+  <h2><span class="num">03</span>The honest warning</h2>
+  <p>A true mirror deletes. <code>--delete-extra</code> makes the destination match the source, which means removing things the source no longer has. That is the feature, and it is also the way to lose data if you point it at the wrong pair. Dry-run an unfamiliar pair first, read what it reports, and keep a second copy of anything you cannot lose. The tool will tell you what it is about to do; it will not decide for you whether you meant it.</p>
+
+  <h2><span class="num">04</span>Running it</h2>
+  <p>The GUI launches from the same file as the CLI. A profile is a named source and destination pair, so a routine backup becomes one command or one click, and an unfamiliar one stays a deliberate act with a dry run in front of it. Configuration lives in two local JSON files that hold real drive paths and are deliberately never published.</p>
+
+</article>
+
+<section class="cta">
+  <h3>Need a tool that runs where nothing else can install?</h3>
+  <p>Source available. Read it, audit it, run it privately. For anything beyond that, just ask.</p>
+  <a class="cta-btn" href="https://github.com/NmediaCloud/smart-mirror-backup" target="_blank" rel="noopener">View the source →</a>
+</section>
+
+<footer class="footer">© Nmedia Services · Animation Production Pipeline v1.1 · <a href="https://nmediaservices.com">nmediaservices.com</a></footer>
+</body>
+</html>

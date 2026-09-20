@@ -507,7 +507,7 @@ export default function HomeDesktop() {
               {/* Studio capabilities */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a
-                href="https://github.com/NmediaCloud/pdf-scripts-toolkit"
+                href="/articles/PDF_Scripts_Toolkit.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden"
@@ -528,23 +528,24 @@ export default function HomeDesktop() {
                 </span>
               </a>
               <a
-                href="/articles/ShotStudio.html"
+                href="/articles/UGC_Pipeline.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden"
               >
-                <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/articles/images/shotstudio_closeup.jpg" alt="Tholkappiyar, performed shot from the conference address" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
+                <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/images/cards/ugc-pipeline.svg" alt="A spreadsheet row becoming a finished video" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
                 <span className="block p-8">
                 <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  recent project &middot; ai performance
+                  video factory
                 </span>
                 <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Tholkappiyar &middot; Thirty-Nine Shots
+                  UGC Pipeline
                 </h4>
                 <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  An ancient Tamil grammarian takes the stage at a Canadian
-                  conference. Thirty-nine shots and eighteen recorded speeches,
-                  with Tamil lip sync, directed from one production desk.
+                  One spreadsheet row in, one finished UGC, ad or podcast video
+                  out. Nine self-contained modules. Script, TTS, lipsync, b-roll,
+                  title cards, overlay, SFX, music and compositing, with a
+                  vision-graded QA pass.
                 </p>
                 </span>
               </a>

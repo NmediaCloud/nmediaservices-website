@@ -353,21 +353,20 @@ export default function HomeMobile() {
           </h2>
           <div className="grid grid-cols-1 gap-3">
             <a
-              href="/articles/ShotStudio.html"
+              href="/articles/UGC_Pipeline.html"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-surface-container border border-outline-variant active:border-primary/40 transition-all overflow-hidden"
             >
-              <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/articles/images/shotstudio_closeup.jpg" alt="Tholkappiyar, performed shot from the conference address" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
+              <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/images/cards/ugc-pipeline.svg" alt="A spreadsheet row becoming a finished video" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
               <span className="block p-6">
               <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
-                recent project &middot; ai performance
+                video factory
               </span>
-              <h4 className="font-headline text-lg font-bold mb-2 text-title">Tholkappiyar &middot; Thirty-Nine Shots</h4>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">UGC Pipeline</h4>
               <p className="font-body text-sm text-on-surface-variant">
-                An ancient Tamil grammarian takes the stage at a Canadian
-                conference. Thirty-nine shots and eighteen recorded speeches,
-                with Tamil lip sync, directed from one production desk.
+                One spreadsheet row in, one finished UGC, ad or podcast video
+                out. Nine self-contained modules, with a vision-graded QA pass.
               </p>
               </span>
             </a>

@@ -33,18 +33,17 @@ const TOOLS = [
     repo: "https://github.com/NmediaCloud/creativeflow",
   },
   {
-    name: "UGC Pipeline",
-    tag: "Video factory",
-    status: "In progress",
-    icon: "autoplay",
-    image: "/images/ugc_pipeline.webp",
+    name: "Tholkappiyar · Thirty-Nine Shots",
+    tag: "Recent project · AI performance",
+    status: "In-house",
+    icon: "movie",
+    image: "/articles/images/shotstudio_closeup.jpg",
     body:
-      "One spreadsheet row in, one finished UGC, ad or podcast video out. Nine self-contained " +
-      "modules. Script, TTS, lipsync, b-roll, title cards, overlay, SFX, music, compositing, " +
-      "with a vision-graded QA pass.",
-    href: "/articles/UGC_Pipeline.html",
+      "An ancient Tamil grammarian takes the stage at a Canadian conference. Thirty-nine " +
+      "shots and eighteen recorded speeches, with Tamil lip sync, directed from one " +
+      "production desk.",
+    href: "/articles/ShotStudio.html",
     cta: "Read the write-up",
-    repo: "https://github.com/NmediaCloud/ugc-tools",
   },
   {
     name: "MiroFish",
@@ -79,10 +78,11 @@ const TOOLS = [
     image: "/images/cards/fx-strategy-research.svg",
     body:
       "A validated harness for one question, answered honestly: does this trading idea have an " +
-      "edge? Seventeen research modules, explicit cost accounting, a risk engine and a broker " +
-      "adapter. Paper-first; the live path is gated behind two separate opt-ins.",
-    href: "https://github.com/NmediaCloud/fx-strategy-research",
-    cta: "View the source",
+      "edge? Nineteen hypotheses tested across six asset classes, all nineteen dead. Nothing " +
+      "is trading, and the later phases stay gated until something earns them.",
+    href: "/articles/FX_Strategy_Research.html",
+    repo: "https://github.com/NmediaCloud/fx-strategy-research",
+    cta: "Read the write-up",
   },
   {
     name: "Smart Mirror Backup",
@@ -94,8 +94,9 @@ const TOOLS = [
       "Mirror-backup for Windows with a GUI and a full CLI, in pure Python standard library, " +
       "no pip, no virtualenv, so it runs on a locked-down or offline machine. Deep-verify " +
       "hashing, dry-run first, named profiles.",
-    href: "https://github.com/NmediaCloud/smart-mirror-backup",
-    cta: "View the source",
+    href: "/articles/Smart_Mirror_Backup.html",
+    repo: "https://github.com/NmediaCloud/smart-mirror-backup",
+    cta: "Read the write-up",
   },
 ];
 
