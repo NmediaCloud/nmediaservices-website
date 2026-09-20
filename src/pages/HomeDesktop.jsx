@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ShowreelStrip from "../components/ShowreelStrip";
 import PipelineArticles from "../components/PipelineArticles";
+import { FB_VIDEOS, BIOMED_VIDEOS } from "../data/commercials";
+import { ANIM_VIDEOS } from "../data/animationVfx";
+import { MFX_VIDEOS } from "../data/motionGraphics";
 import GitHubLink, { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
 import StatsBanner from "../components/StatsBanner";
 import SoftwareGrid from "../components/SoftwareGrid";
 
 const PODCAST_ARTICLE = "/articles/podcast/ep01.html";
+
+// Named in the hero so the studio is not mistaken for image/video
+// generation alone. Each one is backed by work shown further down.
+const CAPABILITIES = [
+  "Production Automation",
+  "Animation & VFX",
+  "E-commerce Catalogue Generation",
+  "Websites & Storefronts",
+  "Stock Media Libraries",
+  "Game Assets",
+];
 
 export default function HomeDesktop() {
   const [sfVideoOpen, setSfVideoOpen] = useState(false);
@@ -45,15 +60,30 @@ export default function HomeDesktop() {
               <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter leading-[0.95] text-headline mb-8 max-w-5xl">
                 Creative &amp; Technical Director.<br />
                 <span className="text-primary">Forward Deployed Engineer.</span><br />
-                Pipelines, animation, VFX, game assets<br />
-                and full-stack production systems.
+                Animation, VFX, game assets,<br />
+                <span className="whitespace-nowrap">e-commerce</span> catalogues, websites<br />
+                and stock media at scale.
               </h1>
               <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
-                From Story to Final Render. From Idea to Scalable Production
-                Systems. We architect high-fidelity, Storytelling for next-gen
-                execution. Experienced building scalable content pipelines,
-                automation scripts, and production tools
+                From story to final render, and from idea to scalable
+                production system. We build the pipelines behind animation and
+                VFX, <span className="whitespace-nowrap">e-commerce</span> catalogue
+                generation, product and brand websites, and a 15,000-asset stock
+                media library. Not just the images and videos that come out of them.
               </p>
+              {/* Capability chips. People kept reading the studio as image and
+                  video generation only; naming the domains is the fastest fix. */}
+              <div className="flex flex-wrap items-center gap-2 mt-8">
+                {CAPABILITIES.map((c) => (
+                  <span
+                    key={c}
+                    className="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant border border-outline-variant bg-surface-container px-3 py-2"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+
               <div className="flex flex-wrap items-center gap-3 mt-8">
                 <a
                   href={GITHUB_URL}
@@ -86,7 +116,7 @@ export default function HomeDesktop() {
                 Credentials &<br />Platforms
               </h2>
               <p className="font-body text-on-surface-variant max-w-sm">
-                The longer record — public credits, the principal's profile,
+                The longer record. Public credits, the principal's profile,
                 and the platform we ship media assets through.
               </p>
             </div>
@@ -153,7 +183,7 @@ export default function HomeDesktop() {
                 </h4>
                 <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
                   Open-source tooling and the production pipelines behind the
-                  work — CreativeFlow's campaign automation runs from a clean
+                  work. CreativeFlow's campaign automation runs from a clean
                   checkout with no API key.
                 </p>
                 <span className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary mt-4 group-hover:gap-3 transition-all">
@@ -191,7 +221,7 @@ export default function HomeDesktop() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"
-                aria-label="Read the interview — Part 01"
+                aria-label="Read the interview, Part 01"
               >
                 <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
                   <img
@@ -210,7 +240,7 @@ export default function HomeDesktop() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"
-                aria-label="Read the interview — Part 02"
+                aria-label="Read the interview, Part 02"
               >
                 <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
                   <img
@@ -229,7 +259,7 @@ export default function HomeDesktop() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"
-                aria-label="Read the interview — Part 03"
+                aria-label="Read the interview, Part 03"
               >
                 <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
                   <img
@@ -277,10 +307,77 @@ export default function HomeDesktop() {
           </div>
         </section>
 
-        {/* Pipeline Field Notes — moved up to sit directly under the hero video.
-            The "Pipeline Production Tech" heading came down from the interview
-            block: it titles this section, not the podcast. Passed as a prop so
-            HomeMobile, which renders this same component, keeps its own. */}
+        {/* Portfolio showreels. The work comes first, the technology that
+            made it second. Client campaign reels lead; the two artist reels
+            follow. Alternating bands keep them reading as separate sections
+            rather than one endless scroll. */}
+        <ShowreelStrip
+          title="Ad Commercials · Trailers"
+          videos={FB_VIDEOS}
+          kicker="[ SHOWREEL // AD_COMMERCIALS_TRAILERS ]"
+          headline="Ads that move."
+          blurb="Ad commercials, brand promos, and game and movie trailer
+                 visualisation. Cinematic 3D, animated VFX and motion graphics
+                 for finance, food service, games and film."
+          ctaTitle="Ads · Promos · Trailer Visualization →"
+          ctaBlurb="Every commercial and trailer in one place, plus the
+                    biomedical visualisation reel."
+          ctaMeta={`${FB_VIDEOS.length} films · ad & trailer reel`}
+          ctaTo="/commercials"
+          bg="bg-background"
+        />
+
+        <ShowreelStrip
+          title="BioMedical Visualization"
+          videos={BIOMED_VIDEOS}
+          kicker="[ SHOWREEL // BIOMEDICAL_VISUALIZATION ]"
+          headline="Science, made visible."
+          blurb="3D medical animation, microscopic biology and explainer media
+                 for medtech, pharma and science communication. The invisible,
+                 rendered accurately enough to teach from."
+          ctaTitle="BioMedical Visualization →"
+          ctaBlurb="The full science reel, alongside the ad commercials and
+                    trailer visualisation work."
+          ctaMeta={`${BIOMED_VIDEOS.length} films · science reel`}
+          ctaTo="/commercials"
+          bg="bg-surface-container"
+        />
+
+        <ShowreelStrip
+          title="Animation & VFX"
+          videos={ANIM_VIDEOS}
+          kicker="[ SHOWREEL // ANIMATION_VFX_CREDITS ]"
+          headline="Shows you already know."
+          blurb="Character animation and VFX on broadcast series and features.
+                 Paw Patrol, Tinker Bell, Puppy Dog Pals, Lego Marvel and
+                 Nickelodeon, shipped inside the studios that made them."
+          ctaTitle="Animation & VFX Credits →"
+          ctaBlurb="The full credit reel, plus the disciplines and projects
+                    behind it."
+          ctaMeta={`${ANIM_VIDEOS.length} films · credit reel`}
+          ctaTo="/animation-vfx"
+          bg="bg-background"
+        />
+
+        <ShowreelStrip
+          title="Motion Graphics & Craft"
+          videos={MFX_VIDEOS}
+          kicker="[ SHOWREEL // MOTION_GRAPHICS_VFX ]"
+          headline="The craft reel."
+          blurb="Editing, compositing, lighting and rendering across medical,
+                 architectural, product, automotive and broadcast. Twenty-five
+                 years of hands-on craft, out of one technical hand."
+          ctaTitle="Motion Graphics & VFX →"
+          ctaBlurb="The full craft reel, plus the toolchain and services behind
+                    it."
+          ctaMeta={`${MFX_VIDEOS.length} films · craft reel`}
+          ctaTo="/motion-graphics"
+          bg="bg-surface-container"
+        />
+
+        {/* Pipeline field notes. The technology comes after the work.
+            The heading is passed as a prop so HomeMobile, which renders this
+            same component, can carry its own section rhythm. */}
         <PipelineArticles title="Pipeline Production Tech" />
 
         {/* Original IP — Slate (lifted above Capabilities) */}
@@ -294,7 +391,7 @@ export default function HomeDesktop() {
                 IP Slate
               </h2>
               <p className="font-body text-on-surface-variant mb-6 max-w-sm">
-                Original animated series — concept to screen. Toddler SEL,
+                Original animated series. Concept to screen. Toddler SEL,
                 pre-school comedy, bedtime worlds and short-form cultural
                 comedy.
               </p>
@@ -346,11 +443,10 @@ export default function HomeDesktop() {
                 );
                 const className =
                   "block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden";
-                return ip.detail_url ? (
-                  <Link key={ip.title} to={ip.detail_url} className={className}>
-                    {Inner}
-                  </Link>
-                ) : (
+                // Every card lands on the slate, not on a single show. The
+                // slate carries the same cards through to each series page,
+                // so the reader meets the whole slate before one title.
+                return (
                   <Link key={ip.title} to="/ip-series" className={className}>
                     {Inner}
                   </Link>
@@ -394,7 +490,7 @@ export default function HomeDesktop() {
                   style={{ aspectRatio: "16 / 9" }}
                   aria-label="Visit Stockflow.Media"
                 >
-                  <img src="/images/stockflow_preview.webp" alt="Stockflow.Media — the storefront homepage" loading="lazy" className="absolute inset-0 w-full h-full object-cover scale-[1.04] opacity-100 group-hover:scale-[1.06] transition-all duration-500" />
+                  <img src="/images/stockflow_preview.webp" alt="Stockflow.Media, the storefront homepage" loading="lazy" className="absolute inset-0 w-full h-full object-cover scale-[1.04] opacity-100 group-hover:scale-[1.06] transition-all duration-500" />
                 </a>
                 <div className="p-8 relative">
                   <span className="absolute top-3 right-3 font-label text-[9px] tracking-[0.3em] uppercase text-primary bg-primary/10 border border-primary/35 px-2 py-1">
@@ -438,9 +534,27 @@ export default function HomeDesktop() {
                   PDF Scripts Toolkit
                 </h4>
                 <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  The toolkit behind it — scanned pages to searchable PDF, with a
+                  The toolkit behind it. Scanned pages to searchable PDF, with a
                   vision-language transcription pass for Sanskrit where
                   conventional OCR fails. Source available.
+                </p>
+              </a>
+              <a
+                href="/articles/ShotStudio.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+              >
+                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
+                  recent project &middot; ai performance
+                </span>
+                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                  Tholkappiyar &middot; Thirty-Nine Shots
+                </h4>
+                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                  An ancient Tamil grammarian takes the stage at a Canadian
+                  conference. Thirty-nine shots and eighteen recorded speeches,
+                  with Tamil lip sync, directed from one production desk.
                 </p>
               </a>
               <Link
@@ -455,53 +569,8 @@ export default function HomeDesktop() {
                 </h4>
                 <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
                   Books, documents, microfilm, palm scripts, photos and 3D
-                  objects — converted to searchable, archivable digital
+                  objects. Converted to searchable, archivable digital
                   formats. Asset-safe handling.
-                </p>
-              </Link>
-              <Link
-                to="/commercials"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  previs-storytelling
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Ad Commercials Trailers
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  High-impact visual storytelling crafted for brands cinematic
-                  ads and trailers designed to engage, convert, and leave a
-                  lasting impression.
-                </p>
-              </Link>
-              <Link
-                to="/animation-vfx"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  3d Animation showreel
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  3D Animation &amp; VFX
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  High-quality character and environment execution across
-                  cinematic pipelines.
-                </p>
-              </Link>
-              <Link
-                to="/motion-graphics"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
-              >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  MOTION-GRAFIX-REEL
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  Motion-graphics Vfx Reels
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Editing, Compositing, Animation, Lighting and Rendering
                 </p>
               </Link>
               <Link
@@ -515,7 +584,7 @@ export default function HomeDesktop() {
                   Digital Marketing
                 </h4>
                 <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Three-pillar content marketing strategy — selling the idea,
+                  Three-pillar content marketing strategy, selling the idea,
                   not the product. Wired through a single analytics layer.
                 </p>
               </Link>
@@ -569,7 +638,7 @@ export default function HomeDesktop() {
                     quality.
                   </p>
                   <p className="font-body text-on-surface-variant leading-relaxed">
-                    We specialize in pipeline development and automation—creating
+                    We specialize in pipeline development and automation, creating
                     custom tools, scripting systems, and full-stack solutions
                     tailored for animation, VFX, and game studios. Our expertise
                     also includes motion capture and facial data processing,
@@ -752,7 +821,7 @@ const IP_SLATE_HOME = [
     version: "VOL. 01",
     status: "Pilot Complete",
     status_active: true,
-    body: "Buzz, a small bee, learns his place in the wide world — every tiny flutter helps the Earth bloom. 54 EP · 4 seasons.",
+    body: "Buzz, a small bee, learns his place in the wide world, every tiny flutter helps the Earth bloom. 54 EP · 4 seasons.",
     detail_url: "/ip/tiny-wings-buzz",
     poster: "/images/ip/tiny-wings.jpg",
   },
@@ -763,7 +832,7 @@ const IP_SLATE_HOME = [
     version: "VOL. 04",
     status: "Development",
     status_active: true,
-    body: "Lumi, Patch and Whisp turn night-time worry into morning calm — bedtime SEL for toddlers 2-6.",
+    body: "Lumi, Patch and Whisp turn night-time worry into morning calm. Bedtime SEL for toddlers 2-6.",
     detail_url: "/ip/world-under-my-bed",
     poster: "/images/ip/world-under-bed.png",
   },
@@ -773,7 +842,7 @@ const IP_SLATE_HOME = [
     icon: "set_meal",
     version: "VOL. 02",
     status: "Development",
-    body: "Cici reports live from the coral reef — ages 4-8 underwater adventure. Friendship, growth, planet. 26 EP × 7 min.",
+    body: "Cici reports live from the coral reef. Ages 4-8 underwater adventure. Friendship, growth, planet. 26 EP × 7 min.",
     detail_url: "/ip/cici",
     poster: "/images/ip/cici.jpg",
   },
@@ -783,7 +852,7 @@ const IP_SLATE_HOME = [
     icon: "sentiment_very_satisfied",
     version: "VOL. 03",
     status: "Development",
-    body: "Bouncy pre-K slapstick — exaggerated cause-and-effect comedy with character-led mischief and zero dialogue dependency.",
+    body: "Bouncy pre-K slapstick. Exaggerated cause-and-effect comedy with character-led mischief and zero dialogue dependency.",
     detail_url: "/ip/chimpu",
     poster: "/images/ip/chimpu.jpg",
   },

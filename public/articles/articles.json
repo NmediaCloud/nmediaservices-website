@@ -6,7 +6,8 @@
     "stage": "Pre-Production",
     "thumbnail": "./images/00a.jpg",
     "url": "./00_Info_Input_Collection.html",
-    "youtube_id": "FS2_Nv_dsUM"
+    "youtube_id": "FS2_Nv_dsUM",
+    "intro": "Client briefs become a structured project manifest the rest of the pipeline reads."
   },
   {
     "slug": "01_Asset_Design",
@@ -15,7 +16,8 @@
     "stage": "Pre-Production",
     "thumbnail": "./images/01a.jpg",
     "url": "./01_Asset_Design.html",
-    "youtube_id": "8Zqxx1QqgJA"
+    "youtube_id": "8Zqxx1QqgJA",
+    "intro": "Sheet the cast first (characters, props, environments) before a single shot is drawn."
   },
   {
     "slug": "02_Story_Script_Development",
@@ -24,7 +26,8 @@
     "stage": "Pre-Production",
     "thumbnail": "./images/02a.jpg",
     "url": "./02_Story_Script_Development.html",
-    "youtube_id": "FwMOikJqy0c"
+    "youtube_id": "FwMOikJqy0c",
+    "intro": "One engine, five formats: series, movie, musical, documentary, ad. Format-aware from line one."
   },
   {
     "slug": "03_Episodic_Asset_Development",
@@ -33,7 +36,8 @@
     "stage": "Pre-Production",
     "thumbnail": "./images/03_a.jpg",
     "url": "./03_Episodic_Asset_Development.html",
-    "youtube_id": "V3IhX6TxRp4"
+    "youtube_id": "V3IhX6TxRp4",
+    "intro": "Variants as deltas, not duplicates. The face stays. The wardrobe changes."
   },
   {
     "slug": "04_Storyboard_Generator",
@@ -42,7 +46,8 @@
     "stage": "Production",
     "thumbnail": "./images/04_a.jpg",
     "url": "./04_Storyboard_Generator.html",
-    "youtube_id": "UgdeF7GYeK4"
+    "youtube_id": "UgdeF7GYeK4",
+    "intro": "Scene → shot decomposition with cast-aware prompt enrichment. Boards as data."
   },
   {
     "slug": "05_Animatics_Workshop",
@@ -51,7 +56,8 @@
     "stage": "Production",
     "thumbnail": "./images/05b.jpg",
     "url": "./05_Animatics_Workshop.html",
-    "youtube_id": "D2QxfssqSTo"
+    "youtube_id": "D2QxfssqSTo",
+    "intro": "Boards + voice clones + music bed. Re-cut faster than opening Premiere."
   },
   {
     "slug": "06_Animation_Sandbox",
@@ -60,7 +66,8 @@
     "stage": "Production",
     "thumbnail": "./images/06a.jpg",
     "url": "./06_Animation_Sandbox.html",
-    "youtube_id": "WZCil1jiLW0"
+    "youtube_id": "WZCil1jiLW0",
+    "intro": "Veo, Kling, Runway, open-source. Same prompt, every backend, audited takes."
   },
   {
     "slug": "06_Comic_Book_Generator",
@@ -69,7 +76,8 @@
     "stage": "Production",
     "thumbnail": "./images/comic_a.jpg",
     "url": "./06_Comic_Book_Generator.html",
-    "youtube_id": "9sxxPEkRylY"
+    "youtube_id": "9sxxPEkRylY",
+    "intro": "Same cast, same boards, different deliverable. Print-ready CMYK pages."
   },
   {
     "slug": "07_Reel_Polish",
@@ -78,7 +86,8 @@
     "stage": "Post-Production",
     "thumbnail": "./images/07a.jpg",
     "url": "./07_Reel_Polish.html",
-    "youtube_id": "phVQs_pFviQ"
+    "youtube_id": "phVQs_pFviQ",
+    "intro": "Upscale, interpolate, repack. One queue. One kill switch. Production-grade output."
   },
   {
     "slug": "CreativeFlow",
@@ -87,6 +96,17 @@
     "stage": "Production",
     "thumbnail": "./images/creativeflow_a.png",
     "url": "./CreativeFlow.html",
-    "youtube_id": "aVP41pk1HL4"
+    "youtube_id": "aVP41pk1HL4",
+    "intro": "One campaign brief in. On-brand, localized ad creatives in every aspect ratio out."
+  },
+  {
+    "slug": "ShotStudio",
+    "title": "Thirty-Nine Shots, One Desk",
+    "tag": "Shot Studio · AI Video Production Desk",
+    "stage": "Production",
+    "thumbnail": "./images/shotstudio_closeup.jpg",
+    "url": "./ShotStudio.html",
+    "youtube_id": "",
+    "intro": "39 AI shots, one desk. Versioned takes, Tamil lip sync and the bill before you press go."
   }
 ]

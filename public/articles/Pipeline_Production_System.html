@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Rebuilt Animation Production From Scratch — Nmedia Services</title>
-<meta name="description" content="An eleven-panel pipeline that takes animation from a one-paragraph email to a finished, ready-to-ship reel — format-aware, cast-locked, model-agnostic, production-grade.">
-<meta property="og:title" content="I Rebuilt Animation Production From Scratch — Nmedia Services">
+<title>I Rebuilt Animation Production From Scratch · Nmedia Services</title>
+<meta name="description" content="An eleven-panel pipeline that takes animation from a one-paragraph email to a finished, ready-to-ship reel. Format-aware, cast-locked, model-agnostic, production-grade.">
+<meta property="og:title" content="I Rebuilt Animation Production From Scratch · Nmedia Services">
 <meta property="og:description" content="Eleven control panels. One source of truth. Animation at the speed of generation.">
 <meta property="og:image" content="./images/pipeline_banner.png">
 <meta property="og:type" content="article">
@@ -25,6 +25,77 @@
   gtag('js', new Date());
   gtag('config', 'G-ZPSQHGJ273');
 </script>
+<style>
+  /* Module rail — the eleven field notes, reachable straight from the hero. */
+  .modules { max-width: 1100px; margin: 0 auto 3.5rem; padding: 0 2rem; }
+  .modules-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem;
+  }
+  .modules-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; color: var(--orange);
+    letter-spacing: 3px; text-transform: uppercase;
+  }
+  .modules-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+    margin-top: 0.4rem;
+  }
+  .modules-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .modules-rail {
+    display: flex; gap: 4px; overflow-x: auto; padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .modules-rail::-webkit-scrollbar { display: none; }
+  .module-card {
+    flex: 0 0 210px; scroll-snap-align: start;
+    background: var(--panel); border: 1px solid var(--line);
+    display: flex; flex-direction: column; overflow: hidden;
+    color: inherit;
+    transition: border-color .2s, transform .2s;
+  }
+  /* The shared article stylesheet underlines links on hover. A whole card is
+     not a run of prose, so that has to be suppressed here. */
+  .module-card,
+  .module-card:hover,
+  .module-card:focus,
+  .module-card * { text-decoration: none; }
+  .module-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+  .module-shot {
+    position: relative; width: 100%; aspect-ratio: 16 / 9;
+    background: #EDE7E1; overflow: hidden; border-bottom: 1px solid var(--line);
+  }
+  .module-shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .module-body { padding: 0.9rem 1rem 1rem; display: flex; flex-direction: column; flex: 1; }
+  .module-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 0.5rem;
+  }
+  .module-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 700; line-height: 1.25;
+    margin-bottom: 0.45rem;
+  }
+  .module-intro { font-size: 0.78rem; color: var(--muted); line-height: 1.45; flex: 1; }
+  .module-go {
+    margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .module-card:hover .module-go { color: var(--orange); }
+  @media (max-width: 640px) {
+    .modules { padding: 0 1.25rem; }
+    .module-card { flex-basis: 175px; }
+  }
+</style>
 </head>
 <body>
 <!-- ── SITE HEADER (injected for back-nav) ────────────────── -->
@@ -47,7 +118,7 @@
     </a>
     <span class="hero-tag">Pipeline Production System · Overview</span>
     <h1>I rebuilt animation production <em>from scratch</em>.</h1>
-    <p class="hero-sub">Twenty years in the industry taught me one thing: the bottleneck is never the frame. It's everything around the frame. So I built an eleven-panel pipeline that fixes the part that actually breaks.</p>
+    <p class="hero-sub">Twenty years in the industry taught me one thing: the bottleneck is never the frame. It's everything in the pre-production. So I built an eleven-panel pipeline that fixes the part that actually breaks.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -57,6 +128,90 @@
     </div>
   </div>
 </section>
+
+<!-- ── MODULE RAIL ───────────────────────────────────────────
+     Sits above the video on purpose: the reader meets the eleven
+     modules before any player. Built from articles.json at runtime
+     so it cannot drift from the homepage strip. -->
+<section class="modules" id="modules" hidden>
+  <div class="modules-head">
+    <div>
+      <p class="modules-kicker">[ THE ELEVEN PANELS ]</p>
+      <h2 class="modules-title">Start with a module.</h2>
+    </div>
+    <p class="modules-hint" id="modules-hint">Swipe or scroll</p>
+  </div>
+  <div class="modules-rail" id="modules-rail"></div>
+</section>
+
+<script>
+  /* Build the module rail from the shared manifest. Anything that goes
+     wrong leaves the section hidden rather than showing an empty rail. */
+  (function () {
+    var host = document.getElementById('modules-rail');
+    var sect = document.getElementById('modules');
+    if (!host || !sect) return;
+
+    fetch('./articles.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (list) {
+        if (!Array.isArray(list) || !list.length) return;
+
+        list.forEach(function (a) {
+          var href = (a.url || '').indexOf('./') === 0 ? a.url : './' + a.url;
+          var card = document.createElement('a');
+          card.className = 'module-card';
+          card.href = href;
+
+          var shot = document.createElement('div');
+          shot.className = 'module-shot';
+          var src = a.youtube_id
+            ? 'https://i.ytimg.com/vi/' + a.youtube_id + '/hqdefault.jpg'
+            : (a.thumbnail || '');
+          if (src) {
+            var img = document.createElement('img');
+            img.src = src;
+            img.alt = a.title || '';
+            img.loading = 'lazy';
+            img.onerror = function () { this.remove(); };
+            shot.appendChild(img);
+          }
+
+          var body = document.createElement('div');
+          body.className = 'module-body';
+
+          var tag = document.createElement('p');
+          tag.className = 'module-tag';
+          tag.textContent = a.tag || '';
+
+          var name = document.createElement('h3');
+          name.className = 'module-name';
+          name.textContent = a.title || '';
+
+          var intro = document.createElement('p');
+          intro.className = 'module-intro';
+          intro.textContent = a.intro || '';
+
+          var go = document.createElement('p');
+          go.className = 'module-go';
+          go.textContent = 'Read the field note \u2192';
+
+          body.appendChild(tag);
+          body.appendChild(name);
+          body.appendChild(intro);
+          body.appendChild(go);
+          card.appendChild(shot);
+          card.appendChild(body);
+          host.appendChild(card);
+        });
+
+        var hint = document.getElementById('modules-hint');
+        if (hint) hint.textContent = list.length + ' modules \u00b7 swipe or scroll';
+        sect.hidden = false;
+      })
+      .catch(function () { /* leave the rail hidden */ });
+  })();
+</script>
 
 <!-- ── YOUTUBE EMBED SLOT ────────────────────────────────────── -->
 <section class="video-embed" data-yt-id="cGGxVzvTbds">
@@ -97,7 +252,7 @@
 
 <article class="body">
 
-  <p class="lede">Generative AI made making frames easy. It did not make making animation easy. The bottleneck moved upstream — into briefs, references, character continuity, episode variants, board approvals, animatic re-cuts, finishing, QA. So I built the part that actually breaks.</p>
+  <p class="lede">Generative AI made making frames easy. It did not make making animation easy. The bottleneck moved upstream, into briefs, references, character continuity, episode variants, board approvals, animatic re-cuts, finishing, QA. So I built the part that actually breaks.</p>
 
   <figure>
     <img src="./images/pipeline_banner.png" onerror="this.src='./_shared/placeholder.svg'" alt="Nmedia Services Animation Production Pipeline overview banner.">
@@ -107,10 +262,10 @@
   <h2><span class="num">01</span>The problem I was solving</h2>
   <p>A typical pre-production starts the same way every time. A pitch arrives as a Word doc, a deck, three voice notes, a Pinterest board, and a screenshot of a competitor's trailer. The producer types it into a brief. The director re-types it into a treatment. The art director re-types it into a style frame request. The writer re-types it into a beat sheet. By the time the script reaches the storyboard team, the original idea has been reformatted seven times by seven different humans, and continuity has already started to drift.</p>
   <p>Now layer generative tools on top of that. Every model is happy to invent a hero on the fly. Hair colour shifts between shots, the dog grows a tail it didn't have last episode, the wardrobe is right for episode 3 and wrong for episode 7. Continuity used to be a department. With generative tools it has become an emergency.</p>
-  <p>I wanted a pipeline where the cast was sheeted before the script was locked, the script was format-aware before the boards were drawn, the boards were data before the animatic was cut, and the animatic was a daily tool — not a Friday-evening render job. So I built one.</p>
+  <p>I wanted a pipeline where the cast was sheeted before the script was locked, the script was format-aware before the boards were drawn, the boards were data before the animatic was cut, and the animatic was a daily tool, not a Friday-evening render job. So I built one.</p>
 
   <h2><span class="num">02</span>Architecture: eleven panels, one manifest</h2>
-  <p>Every project in the studio is born inside <strong>Module 00 — the Content Input System</strong>. The operator drags in messy client material — emails, voice notes, decks, Pinterest boards. Picks a content format. Layers in seven taxonomy axes for tone, audience, and style.</p>
+  <p>Every project in the studio is born inside <strong>Module 00, the Content Input System</strong>. The operator drags in messy client material, emails, voice notes, decks, Pinterest boards. Picks a content format. Layers in seven taxonomy axes for tone, audience, and style.</p>
   <p>The output is a single <code>PROJECT.json</code> manifest. That manifest is the source of truth for the next ten panels.</p>
   <p>There is no re-typing anywhere downstream. Every module reads the manifest, knows what it is making, and writes its results back into the same structured layer. When a producer says "we are pivoting from a series to a 90-minute feature," it is one field change. The whole pipeline reroutes.</p>
 
@@ -120,24 +275,24 @@
   </figure>
 
   <h2><span class="num">03</span>Cast first. Write into the world.</h2>
-  <p><strong>Module 01 — Asset Design</strong> does the swap that most studios are afraid to make. It sheets the cast first, then the script gets written into the world.</p>
+  <p><strong>Module 01. Asset Design</strong> does the swap that most studios are afraid to make. It sheets the cast first, then the script gets written into the world.</p>
   <p>Characters get full turnarounds, expression sheets, silhouette tests. Props get three-views. Environments get establishing plates. Every asset is text-described first and image-rendered second, so when continuity drifts mid-production we re-roll the image without re-rolling the design. The text is the contract. The image is the latest render of it.</p>
   <p>Writers and directors compose against actual visuals, not blank squares. The world stays coherent. The downstream pipeline never has to guess what a character looks like.</p>
 
   <blockquote>"The cast becomes the contract. Every other module signs it before it makes a frame."</blockquote>
 
   <h2><span class="num">04</span>One engine. Five story formats.</h2>
-  <p><strong>Module 02 — Story / Script Development</strong> is format-aware from line one. Series, movie, musical, documentary, ad — same engine, different beat grammar.</p>
+  <p><strong>Module 02. Story / Script Development</strong> is format-aware from line one. Series, movie, musical, documentary, ad, same engine, different beat grammar.</p>
   <p>A 22-minute episodic act-break feels nothing like a 90-minute feature, and a 30-second commercial feels nothing like either. Most pipelines force a choice up front and rebuild everything if the format changes. This one does not. The same project can flip from a series treatment to a feature outline without a rewrite, because the manifest carries the format and the engine adjusts pacing, structure, and dialogue cadence accordingly.</p>
-  <p>Voice-locked dialogue respects character age, tone, and arc — anchored to the sheets that already exist in the visual bible.</p>
+  <p>Voice-locked dialogue respects character age, tone, and arc. Anchored to the sheets that already exist in the visual bible.</p>
 
   <h2><span class="num">05</span>Variants as deltas, not duplicates</h2>
   <p>Episodic animation breaks because every episode generates new costumes, new accessories, new prop variants, and continuity drifts shot by shot.</p>
-  <p><strong>Module 03 — Episodic Asset Development</strong> treats each variant as a delta on the locked base sheet. <strong>The face stays. The wardrobe changes.</strong> The hairstyle shifts for the rainy episode. The scarf comes out for winter. Identity is enforced by the data layer, not by hope.</p>
+  <p><strong>Module 03. Episodic Asset Development</strong> treats each variant as a delta on the locked base sheet. <strong>The face stays. The wardrobe changes.</strong> The hairstyle shifts for the rainy episode. The scarf comes out for winter. Identity is enforced by the data layer, not by hope.</p>
   <p>Visual diff checks run against the base before any variant ships downstream. The cast does not change. The world does. And the pipeline knows the difference.</p>
 
   <h2><span class="num">06</span>Boards as data</h2>
-  <p><strong>Module 04 — Storyboard Generator</strong> turns the scene list into shot-decomposed panels in minutes. Every panel pulls the locked character sheets from Module 01 and the right episodic variant from Module 03.</p>
+  <p><strong>Module 04. Storyboard Generator</strong> turns the scene list into shot-decomposed panels in minutes. Every panel pulls the locked character sheets from Module 01 and the right episodic variant from Module 03.</p>
   <ul>
     <li><strong>Scene to shot decomposition.</strong> Beats become numbered panels with action notes.</li>
     <li><strong>Cast-aware panels.</strong> Characters render in their locked design and correct episode wardrobe.</li>
@@ -151,13 +306,13 @@
   </figure>
 
   <h2><span class="num">07</span>Animatics at daily speed</h2>
-  <p><strong>Module 05 — Animatics Workshop</strong> is the place that traditionally kills schedules. Someone opens Premiere, drags boards onto a timeline, lines them up to a temp track, exports, ships, gets notes, redoes it.</p>
-  <p>This module treats the animatic as a generated artefact. Boards from Module 04, voice clones speaking the Module 02 dialogue, and a music bed scoped to the project's tone — assembled, timed, and ready to re-cut in a single pass. Director re-pacing becomes a parameter change, not a manual re-edit.</p>
+  <p><strong>Module 05. Animatics Workshop</strong> is the place that traditionally kills schedules. Someone opens Premiere, drags boards onto a timeline, lines them up to a temp track, exports, ships, gets notes, redoes it.</p>
+  <p>This module treats the animatic as a generated artefact. Boards from Module 04, voice clones speaking the Module 02 dialogue, and a music bed scoped to the project's tone. Assembled, timed, and ready to re-cut in a single pass. Director re-pacing becomes a parameter change, not a manual re-edit.</p>
   <p>The animatic stops being a render job. It becomes a daily tool.</p>
 
   <h2><span class="num">08</span>Model-agnostic generation</h2>
-  <p><strong>Module 06 — Animation Sandbox</strong> is where the actual moving frames get made.</p>
-  <p>Most AI animation pipelines marry you to one model. When the next breakthrough drops six weeks later, you rebuild. This sandbox treats the model layer as pluggable. Veo, Kling, Runway, Sora, open-source — same prompt, every backend, side-by-side comparable takes.</p>
+  <p><strong>Module 06. Animation Sandbox</strong> is where the actual moving frames get made.</p>
+  <p>Most AI animation pipelines marry you to one model. When the next breakthrough drops six weeks later, you rebuild. This sandbox treats the model layer as pluggable. Veo, Kling, Runway, Sora, open-source. Same prompt, every backend, side-by-side comparable takes.</p>
   <p>The sandbox auto-resolves the cast sheet, episodic variant, and storyboard panel into a model-agnostic prompt, fans it out to selected providers, and returns audited, labelled takes ready for the director's pick.</p>
 
   <div class="callout">
@@ -165,11 +320,11 @@
   </div>
 
   <h2><span class="num">09</span>Same pipeline. Different deliverable.</h2>
-  <p>Once the cast is sheeted, the script is locked, and the boards are decomposed, the same data describes a comic. <strong>Module 06 — Comic Book Generator</strong> repackages the pipeline output as print-ready CMYK pages. Same characters. Same panels. Different deliverable.</p>
+  <p>Once the cast is sheeted, the script is locked, and the boards are decomposed, the same data describes a comic. <strong>Module 06. Comic Book Generator</strong> repackages the pipeline output as print-ready CMYK pages. Same characters. Same panels. Different deliverable.</p>
   <p>The animation does not have to ship first. The comic does not have to wait. Same pipeline. Two products.</p>
 
   <h2><span class="num">10</span>Production-grade finishing</h2>
-  <p><strong>Module 07 — Reel Polish</strong> is the post-production queue that turns raw generative takes into shippable masters at production speed.</p>
+  <p><strong>Module 07. Reel Polish</strong> is the post-production queue that turns raw generative takes into shippable masters at production speed.</p>
   <ul>
     <li><strong>Resolution upscale.</strong> Sub-1080p generations to 4K cleanly.</li>
     <li><strong>Frame interpolation.</strong> 24fps to 60fps for high-motion deliverables.</li>
@@ -181,13 +336,13 @@
 
   <h2><span class="num">11</span>The two outliers: MiroFish &amp; UGC Pipeline</h2>
   <p>Two more panels round out the system, and they are the ones that surprise people.</p>
-  <p><strong>MiroFish</strong> is an audience simulator. A million synthetic viewers, demographically tuned, read your treatment, your pitch deck, your trailer cut. Each carries a profile of age, market, taste, and comp-show familiarity. Twelve minutes later, you have sentiment scores, comprehension flags, pull-quote responses, and the rough shape of where the deck loses the room — before any real human reads it. <a href="./MiroFish.html">Read more →</a></p>
-  <p><strong>UGC Pipeline</strong> is the inverse — not the long form, but the volume play. One Google Sheet row in. One finished UGC, ad, or podcast video out. Avatar, voice, B-roll, captions, brand stings, and a vision-graded QA gate. All wired into a Sheet-driven pipeline that runs on a GPU instead of a junior editor. The factory behind owned and paid social creative. <a href="./UGC_Pipeline.html">Read more →</a></p>
+  <p><strong>MiroFish</strong> is an audience simulator. A million synthetic viewers, demographically tuned, read your treatment, your pitch deck, your trailer cut. Each carries a profile of age, market, taste, and comp-show familiarity. Twelve minutes later, you have sentiment scores, comprehension flags, pull-quote responses, and the rough shape of where the deck loses the room, before any real human reads it. <a href="./MiroFish.html">Read more →</a></p>
+  <p><strong>UGC Pipeline</strong> is the inverse, not the long form, but the volume play. One Google Sheet row in. One finished UGC, ad, or podcast video out. Avatar, voice, B-roll, captions, brand stings, and a vision-graded QA gate. All wired into a Sheet-driven pipeline that runs on a GPU instead of a junior editor. The factory behind owned and paid social creative. <a href="./UGC_Pipeline.html">Read more →</a></p>
   <p>Different problems. Same backbone. Same source of truth.</p>
 
   <h2><span class="num">12</span>Why this matters</h2>
   <p>I did not build this to be impressive. I built it because the alternative was burning a junior editor every six weeks and watching continuity drift kill three projects in a row.</p>
-  <p>The thesis is simple. Generative tools made the unit cost of a frame trivial. They did not make the cost of a project trivial. The work moved upstream — into briefs, references, continuity, format pivots, audience testing, finishing, QA. The pipeline that wins is the one that treats every one of those stages as <strong>structured data passing through a single manifest</strong>, not as a series of human hand-offs writing things into Word documents.</p>
+  <p>The thesis is simple. Generative tools made the unit cost of a frame trivial. They did not make the cost of a project trivial. The work moved upstream, into briefs, references, continuity, format pivots, audience testing, finishing, QA. The pipeline that wins is the one that treats every one of those stages as <strong>structured data passing through a single manifest</strong>, not as a series of human hand-offs writing things into Word documents.</p>
   <p>Eleven panels. One source of truth. Format-aware from line one. Cast-locked through final delivery. Model-agnostic at the generation layer. Audited at every step. Production-grade at the output.</p>
 
   <blockquote>Animation, accelerated. Pipeline, automated. <em>At the speed of generation.</em></blockquote>
@@ -196,7 +351,7 @@
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>If you run an animation studio, a content team, or a marketing pipeline that ships motion at scale, and any of this resonated — let's talk. Open to studio commissions, advisory engagements, and co-development on bespoke pipeline builds.</p>
+  <p>If you run an animation studio, a content team, or a marketing pipeline that ships motion at scale, and any of this resonated. Let's talk. Open to studio commissions, advisory engagements, and co-development on bespoke pipeline builds.</p>
   <a class="cta-btn" href="mailto:nanda@nmediaservices.com">Get in touch →</a>
 </section>
 

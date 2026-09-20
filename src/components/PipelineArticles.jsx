@@ -14,35 +14,10 @@
  */
 import React, { useEffect, useRef, useState } from "react";
 
-// One-line intro per article. Hand-written to be punchy at thumbnail size.
-// (Could be moved into articles.json as an `intro` field later, but for
-// now hard-coded per-slug keeps the manifest clean.)
-const INTROS = {
-  "00_Info_Input_Collection":
-    "Client briefs become a structured project manifest the rest of the pipeline reads.",
-  "01_Asset_Design":
-    "Sheet the cast first — characters, props, environments — before a single shot is drawn.",
-  "02_Story_Script_Development":
-    "One engine, five formats: series, movie, musical, documentary, ad. Format-aware from line one.",
-  "03_Episodic_Asset_Development":
-    "Variants as deltas, not duplicates. The face stays. The wardrobe changes.",
-  "04_Storyboard_Generator":
-    "Scene → shot decomposition with cast-aware prompt enrichment. Boards as data.",
-  "05_Animatics_Workshop":
-    "Boards + voice clones + music bed. Re-cut faster than opening Premiere.",
-  "06_Animation_Sandbox":
-    "Veo, Kling, Runway, open-source — same prompt, every backend, audited takes.",
-  "06_Comic_Book_Generator":
-    "Same cast, same boards, different deliverable. Print-ready CMYK pages.",
-  "07_Reel_Polish":
-    "Upscale, interpolate, repack. One queue. One kill switch. Production-grade output.",
-  "MiroFish":
-    "A million synthetic viewers test-screen your pitch in twelve minutes.",
-  "UGC_Pipeline":
-    "One Google Sheet row in. One finished UGC, ad, or podcast video out. Vision-graded QA.",
-  "CreativeFlow":
-    "One campaign brief in. On-brand, localized ad creatives in every aspect ratio out.",
-};
+// Every click in this section lands here. The modules are reachable
+// from the overview itself, so the reader meets the argument before
+// any video player.
+const LANDING = "/articles/Pipeline_Production_System.html";
 
 export default function PipelineArticles({ title }) {
   const [articles, setArticles] = useState([]);
@@ -87,7 +62,7 @@ export default function PipelineArticles({ title }) {
       .catch((e) => setError(String(e)));
   }, []);
 
-  if (error || articles.length === 0) return null;   // fail quiet — strip just doesn't render
+  if (error || articles.length === 0) return null;   // fail quiet. Strip just doesn't render
 
   return (
     <section className="py-24 px-8 bg-background border-y border-outline-variant">
@@ -105,6 +80,7 @@ export default function PipelineArticles({ title }) {
                 </h2>
               </div>
             )}
+            <a href={LANDING} className="block group/head">
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
               [ FIELD_NOTES // ANIMATION_PIPELINE_V1.1 ]
             </p>
@@ -113,8 +89,9 @@ export default function PipelineArticles({ title }) {
             </h2>
             <p className="mt-4 text-on-surface-variant max-w-xl text-sm leading-relaxed">
               Eleven control panels. One source of truth. Each module gets its own
-              field note — what the problem was, how the panel works, what it ships.
+              field note. What the problem was, how the panel works, what it ships.
             </p>
+            </a>
           </div>
           <a
             href="/articles/Pipeline_Production_System.html"
@@ -179,7 +156,7 @@ export default function PipelineArticles({ title }) {
           {articles.map((a) => (
             <a
               key={a.slug}
-              href={a.url.startsWith("./") ? `/articles/${a.url.slice(2)}` : a.url}
+              href={LANDING}
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -198,23 +175,16 @@ export default function PipelineArticles({ title }) {
                 group-hover:w-full
               " />
 
-              {/* Video thumbnail / placeholder — visual cue, click still goes to article */}
+              {/* Still, not a player. The card opens the system overview, so a
+                  play badge here would promise something the click does not do. */}
               <div className="relative aspect-video bg-surface-container-high overflow-hidden border-b border-outline-variant">
                 {a.youtube_id ? (
-                  <>
-                    <img src={`https://i.ytimg.com/vi/${a.youtube_id}/hqdefault.jpg`} alt={`${a.title} — video walkthrough`} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-white/65 backdrop-blur-sm ring-2 ring-primary/60 group-hover:bg-white group-hover:ring-primary flex items-center justify-center shadow-lg shadow-primary/40 transition-all group-hover:scale-110">
-                        <span className="material-symbols-outlined text-primary transition-transform" style={{ fontSize: "22px" }}>play_arrow</span>
-                      </div>
-                    </div>
-                  </>
+                  <img src={`https://i.ytimg.com/vi/${a.youtube_id}/hqdefault.jpg`} alt={a.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                ) : a.thumbnail ? (
+                  <img src={a.thumbnail.startsWith("./") ? `/articles/${a.thumbnail.slice(2)}` : a.thumbnail} alt={a.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 ) : (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-background text-center px-3">
-                    <span className="material-symbols-outlined text-primary" style={{ fontSize: "32px" }}>play_circle</span>
-                    <p className="font-label text-[8px] tracking-[0.3em] text-primary uppercase mt-1.5">
-                      Video · Coming Soon
-                    </p>
+                    <span className="material-symbols-outlined text-primary" style={{ fontSize: "32px" }}>article</span>
                   </div>
                 )}
               </div>
@@ -232,19 +202,17 @@ export default function PipelineArticles({ title }) {
 
                 {/* Intro */}
                 <p className="text-xs text-on-surface-variant leading-relaxed flex-1 line-clamp-4">
-                  {INTROS[a.slug] || ""}
+                  {a.intro || ""}
                 </p>
 
                 {/* Footer row */}
                 <div className="mt-4 pt-3 border-t border-outline-variant flex items-center justify-between">
                   <span className="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant group-hover:text-primary transition-colors">
-                    Read field note →
+                    Open the system →
                   </span>
-                  {a.youtube_id && (
-                    <span className="font-label text-[9px] text-primary uppercase tracking-wider">
-                      ▶ video
-                    </span>
-                  )}
+                  <span className="font-label text-[9px] text-on-surface-variant uppercase tracking-wider">
+                    {a.stage}
+                  </span>
                 </div>
               </div>
             </a>
@@ -255,7 +223,7 @@ export default function PipelineArticles({ title }) {
 
         {/* Scroll-hint footer */}
         <p className="mt-4 text-on-surface-variant text-[10px] font-label tracking-widest uppercase text-right">
-          Click chevrons · scroll · {articles.length} field notes
+          Every card opens the full system · {articles.length} modules
         </p>
       </div>
     </section>

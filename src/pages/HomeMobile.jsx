@@ -1,7 +1,23 @@
 import GitHubLink from "../components/GitHubLink";
 import StatsBanner from "../components/StatsBanner";
+import SoftwareGrid from "../components/SoftwareGrid";
 import React from "react";
+import { Link } from "react-router-dom";
+import ShowreelStrip from "../components/ShowreelStrip";
 import PipelineArticles from "../components/PipelineArticles";
+import { FB_VIDEOS, BIOMED_VIDEOS } from "../data/commercials";
+import { ANIM_VIDEOS } from "../data/animationVfx";
+import { MFX_VIDEOS } from "../data/motionGraphics";
+
+// Mirrors the desktop hero — see HomeDesktop.jsx.
+const CAPABILITIES = [
+  "Production Automation",
+  "Animation & VFX",
+  "E-commerce Catalogues",
+  "Websites & Storefronts",
+  "Stock Media",
+  "Game Assets",
+];
 
 export default function HomeMobile() {
   return (
@@ -45,9 +61,22 @@ export default function HomeMobile() {
               </span>
             </h1>
             <p className="font-body text-on-surface-variant max-w-sm mb-12 text-lg leading-relaxed">
-              Precision-engineered digital experiences for modern brands and
-              technical infrastructures.
+              Animation and VFX, e-commerce catalogue generation, websites and
+              storefronts, and a 15,000-asset stock media library, with the
+              production pipelines behind all of it.
             </p>
+            {/* Capability chips, mirroring the desktop hero. */}
+            <div className="flex flex-wrap gap-2 mb-10">
+              {CAPABILITIES.map((c) => (
+                <span
+                  key={c}
+                  className="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant border border-outline-variant bg-surface-container px-2.5 py-1.5"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+
             <div className="flex flex-col gap-4">
               <a
                 href="mailto:Nanda@nmediaservices.com"
@@ -81,6 +110,77 @@ export default function HomeMobile() {
         </section>
 
         <StatsBanner />
+
+        {/* Credentials & Platforms. Desktop carried these trust signals and
+            mobile did not, so on a phone the record was invisible. */}
+        <section className="py-20 px-6 bg-warm-neutral border-y border-outline-variant">
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+            [ THE_RECORD // EXTERNAL ]
+          </p>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter mb-4 text-headline">
+            Credentials &amp;<br />Platforms
+          </h2>
+          <p className="font-body text-sm text-on-surface-variant mb-8">
+            Public credits, the principal&apos;s profile, and the platform we
+            ship media assets through.
+          </p>
+          <div className="grid grid-cols-1 gap-3">
+            <Link
+              to="/about"
+              className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all"
+            >
+              <span className="material-symbols-outlined text-primary mb-4 block" style={{ fontSize: "30px" }}>verified</span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">Creative, Technical Director</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                Full-stack media tech, AI-native pipelines, motion-graphics and
+                data-science credentials.
+              </p>
+            </Link>
+            <a
+              href="https://www.imdb.com/name/nm12576040/"
+              target="_blank" rel="noopener noreferrer"
+              className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all"
+            >
+              <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
+                IMDb credit listing
+              </span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">Animation and Visual FX</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                Nandakumar Mohan on IMDb. Visual effects, Paw Patrol. Known for
+                high-quality production across global animated series.
+              </p>
+            </a>
+            <a
+              href="https://www.utherverse.com/"
+              target="_blank" rel="noopener noreferrer"
+              className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all"
+            >
+              <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
+                Utherverse_Press
+              </span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">Game Animation / AR / VR</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                Animation assets for Unity deployment, immersive real-time
+                cinematic content. Motion and facial capture implementation.
+              </p>
+            </a>
+            <a
+              href="https://github.com/NmediaCloud"
+              target="_blank" rel="noopener noreferrer"
+              className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all"
+            >
+              <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
+                Code &amp; Systems
+              </span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">@NmediaCloud</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                Open-source tooling and the production pipelines behind the
+                work. CreativeFlow runs from a clean checkout with no API key.
+              </p>
+            </a>
+          </div>
+        </section>
+
 
         {/* Section 2: Recent Project */}
         <section className="bg-surface-container-low py-24 px-6">
@@ -130,7 +230,167 @@ export default function HomeMobile() {
         </section>
 
         {/* Pipeline Field Notes — moved up to sit directly under the hero video */}
+        {/* Portfolio showreels. Client campaign reels lead, artist reels
+            follow, technology last. Alternating bands keep them distinct. */}
+        <ShowreelStrip
+          videos={FB_VIDEOS}
+          kicker="[ SHOWREEL // AD_COMMERCIALS_TRAILERS ]"
+          headline="Ads that move."
+          blurb="Ad commercials, brand promos, and game and movie trailer
+                 visualisation. Cinematic 3D, animated VFX and motion graphics."
+          ctaTitle="Ads · Promos · Trailer Visualization →"
+          ctaBlurb="Every commercial and trailer in one place, plus the
+                    biomedical visualisation reel."
+          ctaMeta={`${FB_VIDEOS.length} films · ad & trailer reel`}
+          ctaTo="/commercials"
+          bg="bg-background"
+        />
+
+        <ShowreelStrip
+          videos={BIOMED_VIDEOS}
+          kicker="[ SHOWREEL // BIOMEDICAL_VISUALIZATION ]"
+          headline="Science, made visible."
+          blurb="3D medical animation, microscopic biology and explainer media
+                 for medtech, pharma and science communication."
+          ctaTitle="BioMedical Visualization →"
+          ctaBlurb="The full science reel, alongside the ad commercials and
+                    trailer visualisation work."
+          ctaMeta={`${BIOMED_VIDEOS.length} films · science reel`}
+          ctaTo="/commercials"
+          bg="bg-surface-container"
+        />
+
+        <ShowreelStrip
+          videos={ANIM_VIDEOS}
+          kicker="[ SHOWREEL // ANIMATION_VFX_CREDITS ]"
+          headline="Shows you already know."
+          blurb="Character animation and VFX on broadcast series and features.
+                 Paw Patrol, Tinker Bell, Lego Marvel and Nickelodeon."
+          ctaTitle="Animation & VFX Credits →"
+          ctaBlurb="The full credit reel, plus the disciplines behind it."
+          ctaMeta={`${ANIM_VIDEOS.length} films · credit reel`}
+          ctaTo="/animation-vfx"
+          bg="bg-background"
+        />
+
+        <ShowreelStrip
+          videos={MFX_VIDEOS}
+          kicker="[ SHOWREEL // MOTION_GRAPHICS_VFX ]"
+          headline="The craft reel."
+          blurb="Editing, compositing, lighting and rendering across medical,
+                 architectural, product, automotive and broadcast."
+          ctaTitle="Motion Graphics & VFX →"
+          ctaBlurb="The full craft reel, plus the toolchain behind it."
+          ctaMeta={`${MFX_VIDEOS.length} films · craft reel`}
+          ctaTo="/motion-graphics"
+          bg="bg-surface-container"
+        />
+
         <PipelineArticles />
+
+        {/* Original IP slate. Desktop-only until now. */}
+        <section className="py-20 px-6 bg-surface-container border-y border-outline-variant">
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+            [ ORIGINAL_IP // ANIMATION_SERIES ]
+          </p>
+          <h2 className="font-headline text-4xl font-bold tracking-tighter mb-4 text-headline">
+            IP Slate
+          </h2>
+          <p className="font-body text-sm text-on-surface-variant mb-8">
+            Original animated series, concept to screen. Toddler SEL, pre-school
+            comedy, bedtime worlds and short-form cultural comedy.
+          </p>
+          <Link
+            to="/ip-series"
+            className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary"
+          >
+            See the slate
+            <span className="material-symbols-outlined text-base">arrow_outward</span>
+          </Link>
+        </section>
+
+        {/* Software collection. The Stockflow storefront leads, then the grid. */}
+        <section className="py-20 px-6 bg-surface">
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+            [ SOFTWARE // SHIPPED ]
+          </p>
+          <h2 className="font-headline text-4xl font-bold tracking-tighter mb-8 text-headline">
+            What we ship.
+          </h2>
+          <a
+            href="https://stockflow.media/"
+            target="_blank" rel="noopener noreferrer"
+            className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 overflow-hidden mb-4"
+          >
+            <span className="block relative w-full bg-surface-container-high" style={{ aspectRatio: "16 / 9" }}>
+              <img
+                src="/images/stockflow_preview.webp"
+                alt="Stockflow.Media storefront homepage"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </span>
+            <span className="block p-6">
+              <span className="font-headline text-lg font-bold mb-2 text-title block">Stockflow.Media</span>
+              <span className="font-body text-sm text-on-surface-variant block">
+                A scalable content platform offering ready-to-use media assets
+                and automated pipelines for creators, marketers and production
+                teams.
+              </span>
+            </span>
+          </a>
+          <SoftwareGrid />
+        </section>
+
+        {/* Studio services. Mirrors the desktop cards, minus the three now
+            covered by the showreel strips above. */}
+        <section className="py-20 px-6 bg-surface-container-low border-y border-outline-variant">
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+            [ STUDIO // SERVICES ]
+          </p>
+          <h2 className="font-headline text-4xl font-bold tracking-tighter mb-8 text-headline">
+            Also on the desk.
+          </h2>
+          <div className="grid grid-cols-1 gap-3">
+            <a
+              href="/articles/ShotStudio.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all"
+            >
+              <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
+                recent project &middot; ai performance
+              </span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">Tholkappiyar &middot; Thirty-Nine Shots</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                An ancient Tamil grammarian takes the stage at a Canadian
+                conference. Thirty-nine shots and eighteen recorded speeches,
+                with Tamil lip sync, directed from one production desk.
+              </p>
+            </a>
+            <Link to="/digital-conversion" className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all">
+              <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
+                physical &rarr; digital
+              </span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">Digital Conversion</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                Books, documents, microfilm, palm scripts, photos and 3D objects.
+                Converted to searchable, archivable digital formats.
+              </p>
+            </Link>
+            <Link to="/digital-marketing" className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all">
+              <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
+                paid &middot; owned &middot; earned
+              </span>
+              <h4 className="font-headline text-lg font-bold mb-2 text-title">Digital Marketing</h4>
+              <p className="font-body text-sm text-on-surface-variant">
+                Three-pillar content marketing strategy, selling the idea, not
+                the product. Wired through a single analytics layer.
+              </p>
+            </Link>
+          </div>
+        </section>
+
 
         {/* Section 3: Capabilities Grid */}
         <section className="py-24 px-6 bg-surface">
