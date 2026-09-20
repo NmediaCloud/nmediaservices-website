@@ -65,7 +65,7 @@ export default function Commercials() {
         <section className="px-8 max-w-7xl mx-auto mb-32">
           <Link
             to="/biomedical"
-            className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 transition-all duration-300 p-8 group"
+            className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/40 group rounded-xl shadow-[0_4px_20px_-6px_rgb(191_78_16_/_0.35)] hover:shadow-[0_10px_34px_-6px_rgb(191_78_16_/_0.55)] hover:border-primary/70 hover:from-primary/20 hover:-translate-y-1 transition-all duration-300 ease-out p-8"
           >
             <p className="font-label text-[9px] tracking-[0.3em] text-primary uppercase mb-2">
               [ ALSO ON THE REEL ]

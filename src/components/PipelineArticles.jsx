@@ -100,12 +100,12 @@ export default function PipelineArticles({ title }) {
             href="/articles/Pipeline_Production_System.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 hover:from-primary/15 transition-all duration-300 p-5 group max-w-sm"
+            className="block rounded-xl bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/40 p-5 group max-w-sm shadow-[0_4px_20px_-6px_rgb(191_78_16_/_0.35)] hover:shadow-[0_10px_34px_-6px_rgb(191_78_16_/_0.55)] hover:border-primary/70 hover:from-primary/20 hover:-translate-y-1 transition-all duration-300 ease-out"
           >
             <p className="font-label text-[9px] tracking-[0.3em] text-primary uppercase mb-2">
               [ READ THE FULL SYSTEM ]
             </p>
-            <h3 className="font-headline font-bold text-base text-title leading-tight tracking-tight mb-2">
+            <h3 className="font-headline font-bold text-base text-title leading-tight tracking-tight mb-2 group-hover:text-primary transition-colors">
               Pipeline Production System →
             </h3>
             <p className="text-xs text-on-surface-variant leading-relaxed mb-3">

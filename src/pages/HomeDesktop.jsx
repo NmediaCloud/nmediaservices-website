@@ -452,7 +452,7 @@ export default function HomeDesktop() {
             </div>
             <div className="lg:col-span-8 space-y-4">
               {/* Software — Stockflow leads (it carries a video), then the collection grid */}
-              <div className="bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 transition-all duration-300 overflow-hidden group">
+              <div className="bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/40 group rounded-xl shadow-[0_4px_20px_-6px_rgb(191_78_16_/_0.35)] hover:shadow-[0_10px_34px_-6px_rgb(191_78_16_/_0.55)] hover:border-primary/70 hover:from-primary/20 hover:-translate-y-1 transition-all duration-300 ease-out overflow-hidden">
                 {/* The shot is of the live storefront, so it leads there.
                     The walkthrough moved to its own button below. */}
                 <a
