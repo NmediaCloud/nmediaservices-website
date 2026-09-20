@@ -14,6 +14,10 @@ import { SiteFooter } from "./IPSeries";
  * Cast in the site's design system. Acts as the "About" page reachable
  * from the footer or any nav link added later.
  */
+// The five stills that peek out of the gallery button. Micro crops live in
+// /images/pics/micro and exist only for this hook.
+const PIC_PEEK = ["pic_01.webp", "pic_05.webp", "pic_09.webp", "pic_14.webp", "pic_20.webp"];
+
 export default function About() {
   const [picsOpen, setPicsOpen] = useState(false);
   return (
@@ -62,14 +66,37 @@ export default function About() {
                 <span className="text-primary"> Paw Patrol</span>, now running
                 an AI-native production studio out of one toolchain.
               </p>
+              {/* A row of stills is a better hook than a line of text: the
+                  thumbnails are 128px WebP crops, about 3KB each, so the
+                  whole stack costs less than one of the full images. */}
               <button
                 type="button"
                 onClick={() => setPicsOpen(true)}
-                className="inline-flex items-center gap-2 mt-2 font-label text-xs tracking-[0.2em] uppercase text-primary hover:gap-3 transition-all cursor-pointer"
+                aria-label={`View studio stills, ${ABOUT_PICS.length} photographs`}
+                className="group/stills inline-flex items-center gap-3 mt-4 cursor-pointer text-left"
               >
-                <span className="material-symbols-outlined text-base">photo_library</span>
-                View Studio Stills · {ABOUT_PICS.length}
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <span className="flex items-center">
+                  {PIC_PEEK.map((file, i) => (
+                    <img
+                      key={file}
+                      src={`/images/pics/micro/${file}`}
+                      alt=""
+                      loading="lazy"
+                      className="w-10 h-10 object-cover border-2 border-surface shadow-sm transition-transform duration-300 group-hover/stills:translate-x-0"
+                      style={{ marginLeft: i === 0 ? 0 : "-0.6rem", zIndex: PIC_PEEK.length - i }}
+                    />
+                  ))}
+                  <span
+                    className="w-10 h-10 flex items-center justify-center border-2 border-surface bg-primary text-on-primary font-label text-[10px] tracking-tight"
+                    style={{ marginLeft: "-0.6rem" }}
+                  >
+                    +{ABOUT_PICS.length - PIC_PEEK.length}
+                  </span>
+                </span>
+                <span className="inline-flex items-center gap-2 font-label text-xs tracking-[0.2em] uppercase text-primary group-hover/stills:gap-3 transition-all">
+                  View Studio Stills · {ABOUT_PICS.length}
+                  <span className="material-symbols-outlined text-base">arrow_forward</span>
+                </span>
               </button>
             </div>
           </div>
