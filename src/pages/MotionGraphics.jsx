@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import VideoGrid from "../components/VideoGrid";
+import { MFX_VIDEOS } from "../data/motionGraphics";
 import PicsModal, { ARCHI_RENDER_PICS } from "../components/PicsModal";
 
 /**
@@ -29,7 +30,7 @@ export default function MotionGraphics() {
             <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl text-lg">
               Editing. Compositing. Animation. Lighting. Rendering. End-to-end
               motion-graphics craft across medical, architectural, product,
-              automotive and broadcast — delivered out of one technical hand.
+              automotive and broadcast. Delivered out of one technical hand.
             </p>
           </div>
         </section>
@@ -75,7 +76,7 @@ export default function MotionGraphics() {
                 Architectural Render Gallery
               </h2>
               <p className="mt-4 text-on-surface-variant font-light max-w-xl">
-                Interior, exterior and product visualisation stills — V-Ray and
+                Interior, exterior and product visualisation stills, V-Ray and
                 Corona renders across residential, commercial and concept work.
               </p>
             </div>
@@ -170,7 +171,7 @@ export default function MotionGraphics() {
             </div>
             <div className="lg:col-span-7 text-on-surface-variant font-light leading-relaxed space-y-4">
               <p>
-                Gaia client demo reel + explainer graphics — rendered in Blender
+                Gaia client demo reel + explainer graphics, rendered in Blender
                 across two 1080Ti GPUs. 350 production hours into a 20-minute
                 output. Look-development, lighting, compositing and final cut
                 handled inside one pipeline.
@@ -206,14 +207,14 @@ export default function MotionGraphics() {
 
 const SERVICES = [
   { id: "MFX-01", title: "Medical Animation",          body: "Mechanism-of-action, anatomy, surgical procedure walk-throughs. Peer-review-grade accuracy." },
-  { id: "MFX-02", title: "Architectural Viz",          body: "Architectural perspective, lighting and projection — interior and exterior render passes." },
-  { id: "MFX-03", title: "Product Rendering",          body: "Hero product shots, 360° turntables, exploded views — PBR shaders, real-world calibrated." },
+  { id: "MFX-02", title: "Architectural Viz",          body: "Architectural perspective, lighting and projection. Interior and exterior render passes." },
+  { id: "MFX-03", title: "Product Rendering",          body: "Hero product shots, 360° turntables, exploded views. PBR shaders, real-world calibrated." },
   { id: "MFX-04", title: "Rota-Mation (3D Rotation)",  body: "Camera-driven product rotation reels for ad and e-commerce. Continuous lighting, broadcast loops." },
-  { id: "MFX-05", title: "VFX Animation",              body: "Motion-design VFX, explainer overlays, kinetic typography, branded stings — built for cuts." },
+  { id: "MFX-05", title: "VFX Animation",              body: "Motion-design VFX, explainer overlays, kinetic typography, branded stings. Built for cuts." },
   { id: "MFX-06", title: "AI-Guided Restoration",      body: "Film and video restoration with AI-assisted colour grading. Topaz AI suite + manual retouch." },
-  { id: "MFX-07", title: "Visualisation & Camera",     body: "Camera animation, look-development, virtual camera blocking — pre-vis through final." },
+  { id: "MFX-07", title: "Visualisation & Camera",     body: "Camera animation, look-development, virtual camera blocking. Pre-vis through final." },
   { id: "MFX-08", title: "Texturing & Shaders",        body: "UV unwrap, texture authoring, shader build-out across V-Ray, Cycles, Eevee." },
-  { id: "MFX-09", title: "Vehicle / Prop Animation",   body: "Car animation, mechanical prop work — physics-aware rigs and engine-ready exports." },
+  { id: "MFX-09", title: "Vehicle / Prop Animation",   body: "Car animation, mechanical prop work. Physics-aware rigs and engine-ready exports." },
 ];
 
 const TOOL_GROUPS = [
@@ -235,34 +236,6 @@ const TOOL_GROUPS = [
 ];
 
 // Video reel — extracted from mnkmars.wixsite.com/grafix/motion-graphics
-const MFX_VIDEOS = [
-  { id: "b8UPY9rjlrs", title: "VFX Demo Reel · 2021 HD" },
-  { id: "nxTnRqdpPHk", title: "Motion Graphics Demo" },
-  { id: "LuiYYaAt25U", title: "Motion Graphics · Demo Reel 1" },
-  { id: "kHQ1pkRylh4", title: "VFX Animation · Shallows (movie)" },
-  { id: "AI2mrdHQw38", title: "Blender Eevee Lighting" },
-  { id: "OhxO1qIRPS0", title: "V-Ray vs Chaos Vantage · Render Compare" },
-  { id: "Zv0MH0oaYCw", title: "Maya · Animation" },
-  { id: "EOqZrNMbTPo", title: "Gaia 01 · Demo Reel" },
-  { id: "6LQcNk8D8oE", title: "Gaia 02 · Demo Reel" },
-  { id: "DwM-MNxhrBk", title: "Product Render Reel" },
-  { id: "ImaQ5uUw8w0", title: "Architectural Renders" },
-  { id: "D1J9dFpbEFo", title: "Interior Lighting Render" },
-  { id: "GQYPvs7hxUo", title: "House · Projection Animation" },
-  { id: "62-rFxpMgZE", title: "Audi MFI · Automotive Render" },
-  { id: "OmVuDU-EzAY", title: "Film Colorization" },
-  { id: "9XiSwH_g4fU", title: "Paper Mill · Overview" },
-  { id: "74vyNfIkBT0", title: "RajTV · Motion Graphics 2004" },
-  { id: "607iGob7JOU", title: "Montage · Motion Gfx + AfterEffects" },
-  { id: "u4xIs7M3jrA", title: "Medical Animation" },
-  { id: "W99UN6bWrbo", title: "Medical Animation · Explainer" },
-  { id: "jd-3X9jSLSY", title: "Medical Explainer" },
-  { id: "4H2TgCJNq40", title: "Cell · Microscopic 01" },
-  { id: "SbDR4Zco4Ks", title: "Cell · Microscopic 02" },
-  { id: "n8ZvCtbwlzI", title: "Virus on Membrane" },
-  { id: "t3m1w21hMvQ", title: "Reel 03" },
-  { id: "A8TujFQAFOw", title: "Vertical Reel" },
-];
 
 
 function SiteFooter() {

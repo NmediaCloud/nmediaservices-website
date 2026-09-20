@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import VideoGrid from "../components/VideoGrid";
+import { ANIM_VIDEOS } from "../data/animationVfx";
 import PicsModal, { RENDER_LIGHT_PICS } from "../components/PicsModal";
 
 /**
@@ -27,7 +28,7 @@ export default function AnimationVFX() {
               3D Char <span className="text-primary">Animation</span>
             </h1>
             <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl text-lg">
-              Character and environment execution across cinematic pipelines —
+              Character and environment execution across cinematic pipelines,
               motion capture, facial capture, animation, lighting and rendering.
               Two decades of credits across Disney, Nickelodeon, Lego, Paw Patrol
               and the global animated-series circuit.
@@ -76,7 +77,7 @@ export default function AnimationVFX() {
                 Lighting & Render Gallery
               </h2>
               <p className="mt-4 text-on-surface-variant font-light max-w-xl">
-                Look-development frames — V-Ray, Blender Cycles & Eevee — across
+                Look-development frames (V-Ray, Blender Cycles & Eevee) across
                 character, environment and product pipelines.
               </p>
             </div>
@@ -110,7 +111,7 @@ export default function AnimationVFX() {
                 Technical Animation Direction.
               </h2>
               <p className="mt-6 text-on-surface-variant font-light leading-relaxed max-w-sm">
-                The full character pipeline — from re-topology through delivery —
+                The full character pipeline, from re-topology through delivery,
                 handled by one technical hand. No hand-offs. No drift.
               </p>
             </div>
@@ -217,44 +218,28 @@ export default function AnimationVFX() {
 // Video reel — extracted from mnkmars.wixsite.com/demo/video (14 videos).
 // Ordered: brand-recognition first (Disney / Paw Patrol official trailers),
 // then series + studio work, then animator demos.
-const ANIM_VIDEOS = [
-  { id: "169jD2LiH1A", title: "Paw Patrol · Jet to the Rescue — Paramount Trailer" },
-  { id: "2HMbcoV25ss", title: "Tinker Bell (2008) · Disney Trailer" },
-  { id: "Evwn1oDgiRU", title: "Puppy Dog Pals · Disney Kids" },
-  { id: "0c4cQUmFbCE", title: "Paw Patrol · Big Movie Special" },
-  { id: "21LEzxC2lac", title: "Paw Patrol · Series" },
-  { id: "CTneVWp_NNM", title: "Butterfly Tale · Trailer" },
-  { id: "5xitBfO2Ln8", title: "Lego Thor · Marvel" },
-  { id: "bnsQG2SzHsw", title: "Nickelodeon · Ready Set Dance" },
-  { id: "Cn1JWvVQK3c", title: "Weather Hunters" },
-  { id: "2B6NC1PTMkc", title: "Laidback Lama · NFT Animation" },
-  { id: "v-DrUY9hPRk", title: "Animation Demo Reel · v03" },
-  { id: "CHC2yiJ520g", title: "Animation Demo Reel · v04" },
-  { id: "sbk-vX8oRyI", title: "Animation Demo Reel · v04 (alt)" },
-  { id: "JRHyRJgZVZ0", title: "Animator Playblast" },
-];
 
 const DISCIPLINES = [
-  { id: "DIS-01", title: "Character Animation", body: "Body mechanics, performance acting, blocking through final polish — across stylised and realistic registers." },
+  { id: "DIS-01", title: "Character Animation", body: "Body mechanics, performance acting, blocking through final polish, across stylised and realistic registers." },
   { id: "DIS-02", title: "Facial Capture", body: "Capture-driven facial animation including model retopology, UV unwrapping and rig transfer for production." },
-  { id: "DIS-03", title: "Lighting & Rendering", body: "Cinematic lighting and render passes — V-Ray, Blender Cycles/Eevee. Look-development across pipelines." },
-  { id: "DIS-04", title: "Motion Capture", body: "Mocap pipeline ownership end-to-end — solving, retargeting, cleanup, blending into animator-finished takes." },
+  { id: "DIS-03", title: "Lighting & Rendering", body: "Cinematic lighting and render passes. V-Ray, Blender Cycles/Eevee. Look-development across pipelines." },
+  { id: "DIS-04", title: "Motion Capture", body: "Mocap pipeline ownership end-to-end. Solving, retargeting, cleanup, blending into animator-finished takes." },
   { id: "DIS-05", title: "Texturing & Shaders", body: "Texturing, UV unwrapping, shader build-out for production-grade asset pipelines." },
-  { id: "DIS-06", title: "Technical Direction", body: "Pipeline-level decisions — the role between 'animator' and 'pipeline TD' that keeps shows shipping." },
+  { id: "DIS-06", title: "Technical Direction", body: "Pipeline-level decisions, the role between 'animator' and 'pipeline TD' that keeps shows shipping." },
 ];
 
 const PROJECTS = [
   { title: "Puppy Pals (Disney)",                 studio: "Snowball Studios",          role: "Animation" },
   { title: "Paw Patrol Series",                   studio: "Guru Studios",              role: "Animation" },
-  { title: "Paw Patrol — Jet to the Rescue",      studio: "Guru Studios",              role: "Trailer Animation" },
-  { title: "Paw Patrol — Big Movie Special",      studio: "Guru Studios",              role: "Animation" },
+  { title: "Paw Patrol. Jet to the Rescue",      studio: "Guru Studios",              role: "Trailer Animation" },
+  { title: "Paw Patrol. Big Movie Special",      studio: "Guru Studios",              role: "Animation" },
   { title: "Weather Hunters / Proud Family",      studio: "Guru Studios",              role: "Animation" },
   { title: "Tinker Bell (2006–2008)",             studio: "Disney",                    role: "Animator" },
   { title: "Lego Thor",                           studio: "Marks SGSCO",               role: "Animation · Texturing · Lighting" },
   { title: "Nickelodeon Ready Set Dance",         studio: "DarkSlope Studios · Toronto",role: "Animation · Blender Eevee Lighting" },
-  { title: "Butterfly Tale Trailer",              studio: "—",                         role: "Technical Animation Director" },
+  { title: "Butterfly Tale Trailer",              studio: ", ",                         role: "Technical Animation Director" },
   { title: "Lady Lama Animation · Facial Render", studio: "NFT Creators · Toronto",    role: "Facial Animation · Render" },
-  { title: "Shallows (Movie VFX)",                studio: "—",                         role: "Animator" },
+  { title: "Shallows (Movie VFX)",                studio: ", ",                         role: "Animator" },
   { title: "Canada Dry",                          studio: "Tantrum Studios",           role: "Animation" },
   { title: "Real-Estate Motion Graphics",         studio: "Independent",               role: "Motion Graphics Animation" },
 ];

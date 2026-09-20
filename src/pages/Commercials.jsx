@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import VideoGrid from "../components/VideoGrid";
+import { PLAYLIST_FB, PLAYLIST_BIOMED, FB_VIDEOS, BIOMED_VIDEOS } from "../data/commercials";
 
 /**
  * Commercials — Ad / Promo / Trailer Visualisation portfolio.
@@ -125,43 +126,3 @@ export default function Commercials() {
 
 
 
-// ─────────────────────────────────────────────────────────────────
-// Video data — auto-extracted from the two YouTube playlists
-// referenced on the legacy Wix Commercials page.
-// (regenerable: see docs in HANDOVER.md if/when videos change)
-// ─────────────────────────────────────────────────────────────────
-const PLAYLIST_FB     = "PLee8tHW01hSOeY10Pe4P3rr9o1Xgnoq18";
-const PLAYLIST_BIOMED = "PLee8tHW01hSNpJUqfVfYrkWIPe85ksY4v";
-
-const FB_VIDEOS = [
-  { id: "lCslscd4DMM", title: "Ad commercials · Visual Trust & Clarity" },
-  { id: "iPRsQSYeMuM", title: "Ad commercials · Visual Trust & Clarity (alt cut)" },
-  { id: "OVmfQTDJUUI", title: "Powering Financial Institutions with Visual Trust & Clarity" },
-  { id: "iF7iSkC9RSo", title: "The Martian Robot · Depreciative Savings Scheme — Animated VFX Ad" },
-  { id: "jWHqDxd_T7c", title: "3D Animated Commercial Production — Banking" },
-  { id: "eusKt9p1nJU", title: "Cooking Trailer Previsuals" },
-  { id: "X0iTBt7sExA", title: "3D Game Trailer Previsuals" },
-  { id: "RFV0U1Usv10", title: "Pervis Promo · Culinary Title Concept" },
-  { id: "jGnZJu6tAlc", title: "Restaurant Promo · Short — 3D Animated, Cinematic 3D" },
-  { id: "6oIGo579VAI", title: "Restaurant Promo · Bringing Ideas to Life — Cinematic 3D" },
-  { id: "_TBdjQUnw28", title: "Motion Graphics · Visual Storytelling" },
-  { id: "g2U088jnNZk", title: "Epic Trailer V3 · Pervis Visualization — 3D Game / Animation / Movies" },
-];
-
-const BIOMED_VIDEOS = [
-  { id: "bp_OY_HU7tI", title: "01 · 3D Medical Animation Explainer Media" },
-  { id: "D5Qu7auYzTw", title: "02 · Microscopic Biological Science · Underwater Visualization" },
-  { id: "dD8pYOd1WoU", title: "03 · Microscopic Biological Science Visualization" },
-  { id: "soY--V7Z1mQ", title: "04 · Journey Into the Microscopic World — 3D Biology Animation" },
-  { id: "mpVdxyxRtHM", title: "05 · Microscopic Biological Science Visualization" },
-  { id: "WPmF9wP1ORg", title: "06 · Microscopic Biological Science Visualization" },
-  { id: "b_lw8r6ykkk", title: "07 · Visualization & Explainer Media" },
-  { id: "0NCcFMX9z0I", title: "08 · Microscopic Biological Science Visualization" },
-  { id: "YLTT6H2sPsw", title: "09 · Microscopic Biological Science Visualization" },
-  { id: "EdHxp6LnQyw", title: "10 · Microscopic Biological Science Visualization" },
-  { id: "9KCEFECvkTA", title: "11 · Microscopic Biological Science Visualization" },
-  { id: "wRAa9Qx586w", title: "12 · Microscopic Biological Science Visualization" },
-  { id: "KPvdSZJC9c4", title: "13 · Microscopic Biological Science Visualization" },
-  { id: "rOwt0Q7HwRY", title: "14 · Microscopic Biological Science Visualization" },
-  { id: "FtRUkCvWiHA", title: "15 · Microscopic Biological Science Visualization" },
-];
