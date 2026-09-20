@@ -64,13 +64,6 @@ export default function HomeDesktop() {
                 <span className="whitespace-nowrap">e-commerce</span> catalogues, websites<br />
                 and stock media at scale.
               </h1>
-              <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
-                From story to final render, and from idea to scalable
-                production system. We build the pipelines behind animation and
-                VFX, <span className="whitespace-nowrap">e-commerce</span> catalogue
-                generation, product and brand websites, and a 15,000-asset stock
-                media library. Not just the images and videos that come out of them.
-              </p>
               {/* Capability chips. People kept reading the studio as image and
                   video generation only; naming the domains is the fastest fix. */}
               <div className="flex flex-wrap items-center gap-2 mt-8">
@@ -166,11 +159,6 @@ export default function HomeDesktop() {
                 <h4 className="font-headline text-xl font-bold mb-2 text-title">
                   Code &amp; Systems
                 </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  Open-source tooling and the production pipelines behind the
-                  work. CreativeFlow's campaign automation runs from a clean
-                  checkout with no API key.
-                </p>
                 <span className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary mt-4 group-hover:gap-3 transition-all">
                   @NmediaCloud
                   <span className="material-symbols-outlined text-base">arrow_outward</span>
