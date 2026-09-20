@@ -115,6 +115,11 @@
   <p>The production queue lives in a Google Sheet. Each row is one video. Dropdowns pick voice, avatar, animation style, format (UGC / Ad / Podcast) and two-speaker mode. The operator ticks a <code>START</code> checkbox; the pipeline picks the row up on the next cycle, writes status back to the Sheet as it works, and posts the rendered MP4 to a finished folder when it's done.</p>
   <p>Under the hood it's a chain of small, replaceable modules. TTS, lip-sync, B-roll fetch, caption render, brand sting, final composite. Each module reads from a shared cache so the same voice or avatar never gets regenerated twice. A pipeline-wide <strong>kill switch</strong> writes a stop flag to disk and every module checks it between steps, so a runaway render never costs more than the current shot.</p>
 
+  <figure>
+    <img src="./images/ugc_console.webp" alt="The Video Factory operations console: produce, poll, re-composite, reset, generate scripts, podcast voice and QA, each one card">
+    <figcaption>The operations console. Every stage of the factory is one card: produce, poll the Sheet, re-composite from cache, reset failed rows, write scripts, voice a podcast, run QA. Click any card to launch it in a terminal.</figcaption>
+  </figure>
+
   <blockquote>"The Sheet is the UI. The pipeline is the renderer. Editors became reviewers, and weekly throughput went up 5×."</blockquote>
 
   <h2><span class="num">03</span>Three output styles, one pipeline</h2>
@@ -125,6 +130,11 @@
     <li><strong>Ad.</strong> Text animations with voiceover over B-roll. No avatar. Clean commercial pacing for product or campaign work.</li>
     <li><strong>Podcast.</strong> Multi-speaker discussion with two avatar circles (male + female) facing each other. The audio is <em>diarised by pitch analysis</em> before lip-sync, so each speaker drives their own avatar independently.</li>
   </ul>
+
+  <figure>
+    <img src="./images/ugc_monitor.webp" alt="The pipeline monitor: start queue, kill switch, sync sheet, and nine stages from script to final">
+    <figcaption>The pipeline monitor. Nine stages from script to final render, a queue you can start from the dashboard, and a kill switch that stops everything.</figcaption>
+  </figure>
 
   <h2><span class="num">04</span>Automated quality control</h2>
   <p>Every video passes through a vision-AI gate before being marked done. The system extracts representative frames and scores them against design criteria. Typography, contrast, framing, brand consistency, motion smoothness.</p>
