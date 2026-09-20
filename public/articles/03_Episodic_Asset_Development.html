@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Episodic Variants Without Breaking Continuity — Nmedia Services</title>
-<meta name="description" content="Module 03 keeps the cast canonical while letting each episode have its own outfits, props and locations — variants that point back to the source of truth.">
-<meta property="og:title" content="Episodic Variants Without Breaking Continuity — Nmedia Services">
-<meta property="og:description" content="Module 03 keeps the cast canonical while letting each episode have its own outfits, props and locations — variants that point back to the source of truth.">
+<title>Episodic Variants Without Breaking Continuity · Nmedia Services</title>
+<meta name="description" content="Module 03 keeps the cast canonical while letting each episode have its own outfits, props and locations. Variants that point back to the source of truth.">
+<meta property="og:title" content="Episodic Variants Without Breaking Continuity · Nmedia Services">
+<meta property="og:description" content="Module 03 keeps the cast canonical while letting each episode have its own outfits, props and locations. Variants that point back to the source of truth.">
 <meta property="og:image" content="./images/03_a.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,16 +102,16 @@
   <p class="lede">A character bible says who someone <em>is</em>. An episode says what they're <em>wearing today</em>. Most pipelines collapse those two things into one folder. We keep them separate and let the data do the joining.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>Module 01 produces a canonical cast — the show's visual contract. But real episodic production needs <strong>variants</strong>: a wedding suit, a hospital gown, a winter coat, a prop that breaks, a kitchen that gets redecorated mid-season. If you re-roll the whole character every time you need a costume change, you've thrown the contract away.</p>
+  <p>Module 01 produces a canonical cast, the show's visual contract. But real episodic production needs <strong>variants</strong>: a wedding suit, a hospital gown, a winter coat, a prop that breaks, a kitchen that gets redecorated mid-season. If you re-roll the whole character every time you need a costume change, you've thrown the contract away.</p>
   <p>The opposite mistake is just as bad: hand-painting variants disconnected from the canonical sheet. By episode six, nobody can remember which jacket is "real" and which was a one-off. The face starts to drift along with the wardrobe.</p>
 
   <figure>
     <img src="./images/03_episodic_hero.webp" onerror="this.src='./images/03_a.jpg'" alt="Module 03 control panel showing the canonical cast on the left and per-episode variants on the right." loading="lazy">
-    <figcaption>Canonical on the left, episode variants on the right — bound together by reference, not by copy.</figcaption>
+    <figcaption>Canonical on the left, episode variants on the right. Bound together by reference, not by copy.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>Variants in Module 03 are <strong>references plus deltas</strong>. Each variant points at its canonical asset (face, build, palette) and stores only what changes — outfit description, prop set, environmental modifiers. Generation conditions on the canonical sheet first, the delta second. The face stays. The clothes change.</p>
+  <p>Variants in Module 03 are <strong>references plus deltas</strong>. Each variant points at its canonical asset (face, build, palette) and stores only what changes. Outfit description, prop set, environmental modifiers. Generation conditions on the canonical sheet first, the delta second. The face stays. The clothes change.</p>
   <p>Episodes themselves carry a small bible: which characters appear, which variants apply, which props are in play. That bible is just JSON the rest of the pipeline can read. Module 04 (Storyboard) auto-pulls the right outfits. Module 05 (Animatics) gets the right voice clones. Module 07 (Polish) doesn't have to think about it.</p>
 
   <blockquote>"Variants are deltas, not duplicates. That single shift made every downstream tool simpler."</blockquote>
@@ -121,18 +121,18 @@
 
   <ul>
     <li><strong>Variant inheritance.</strong> A variant cites its parent asset by ID. Edit the parent's face and every variant updates on the next render.</li>
-    <li><strong>Episode bibles.</strong> Per-episode JSON listing the cast, variants, props and environments in use — auto-generated from Module 02's script scan.</li>
-    <li><strong>Wardrobe diff.</strong> Side-by-side comparison of two variants on the same character — useful for art-direction sign-off.</li>
+    <li><strong>Episode bibles.</strong> Per-episode JSON listing the cast, variants, props and environments in use. Auto-generated from Module 02's script scan.</li>
+    <li><strong>Wardrobe diff.</strong> Side-by-side comparison of two variants on the same character. Useful for art-direction sign-off.</li>
     <li><strong>Bulk relink.</strong> Move a canonical sheet, every variant follows. No broken references.</li>
   </ul>
 
   <figure>
     <img src="./images/03_b.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Wardrobe diff between two episode variants of the same character.">
-    <figcaption>Wardrobe diff — same face, different week, signed-off in one click.</figcaption>
+    <figcaption>Wardrobe diff. Same face, different week, signed-off in one click.</figcaption>
   </figure>
 
   <div class="callout">
-    <b>Why it matters →</b> A 13-episode season can have hundreds of variant assets. The studios that ship on time are the ones whose tooling treats variants as data — searchable, diffable, regenerable — instead of as a folder of one-off PNGs nobody dares move.
+    <b>Why it matters →</b> A 13-episode season can have hundreds of variant assets. The studios that ship on time are the ones whose tooling treats variants as data (searchable, diffable, regenerable) instead of as a folder of one-off PNGs nobody dares move.
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
@@ -142,7 +142,7 @@
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

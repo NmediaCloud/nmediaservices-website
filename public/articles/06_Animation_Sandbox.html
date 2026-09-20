@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>An Animation Sandbox That Doesn't Lock You to One Model — Nmedia Services</title>
-<meta name="description" content="Module 06 lets the team try Veo, Kling, Runway and the open-source pack side by side — same shot, same prompt, different engines, one operator-friendly panel.">
-<meta property="og:title" content="An Animation Sandbox That Doesn't Lock You to One Model — Nmedia Services">
-<meta property="og:description" content="Module 06 lets the team try Veo, Kling, Runway and the open-source pack side by side — same shot, same prompt, different engines, one operator-friendly panel.">
+<title>An Animation Sandbox That Doesn't Lock You to One Model · Nmedia Services</title>
+<meta name="description" content="Module 06 lets the team try Veo, Kling, Runway and the open-source pack side by side. Same shot, same prompt, different engines, one operator-friendly panel.">
+<meta property="og:title" content="An Animation Sandbox That Doesn't Lock You to One Model · Nmedia Services">
+<meta property="og:description" content="Module 06 lets the team try Veo, Kling, Runway and the open-source pack side by side. Same shot, same prompt, different engines, one operator-friendly panel.">
 <meta property="og:image" content="./images/06a.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 06 · Animation Sandbox</span>
     <h1>An animation sandbox that <em>doesn't lock you to one model</em>.</h1>
-    <p class="hero-sub">The state of the art changes every six weeks. Module 06 is the panel that lets your studio change with it — without rewriting the pipeline every time a new model lands.</p>
+    <p class="hero-sub">The state of the art changes every six weeks. Module 06 is the panel that lets your studio change with it, without rewriting the pipeline every time a new model lands.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -100,50 +100,50 @@
 
 <article class="body">
 
-  <p class="lede">Picking "the AI animation tool" used to be a 12-month commitment. Today it's a Tuesday afternoon decision — and a different one next month. Your pipeline has to be built for that pace.</p>
+  <p class="lede">Picking "the AI animation tool" used to be a 12-month commitment. Today it's a Tuesday afternoon decision, and a different one next month. Your pipeline has to be built for that pace.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>Every generative video model has its own quirks. One handles motion well but mangles faces. One nails style but caps at five seconds. One is brilliant on close-ups, one only works on landscape. The right answer for any given <em>shot</em> is usually a different model — and the right answer for the show next quarter is a model that doesn't exist yet.</p>
+  <p>Every generative video model has its own quirks. One handles motion well but mangles faces. One nails style but caps at five seconds. One is brilliant on close-ups, one only works on landscape. The right answer for any given <em>shot</em> is usually a different model, and the right answer for the show next quarter is a model that doesn't exist yet.</p>
   <p>Hard-wiring a single backend into your storyboard tool is technical debt with a six-week half-life. We refused to do that.</p>
 
   <figure>
     <img src="./images/06a.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Animation sandbox showing the same shot rendered side by side across multiple backends.">
-    <figcaption>Same shot, same prompt, four backends — pick the best take, archive the rest.</figcaption>
+    <figcaption>Same shot, same prompt, four backends. Pick the best take, archive the rest.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>Module 06 is built around a <strong>backend abstraction</strong>. Each provider — Veo, Kling, Runway, an open-source local runner — implements the same submit / poll / fetch interface. The control panel lets the operator pick a backend per shot, or fan a single shot out to all backends and compare results. The prompt graph stays identical.</p>
+  <p>Module 06 is built around a <strong>backend abstraction</strong>. Each provider (Veo, Kling, Runway, an open-source local runner) implements the same submit / poll / fetch interface. The control panel lets the operator pick a backend per shot, or fan a single shot out to all backends and compare results. The prompt graph stays identical.</p>
   <p>Failed renders don't crash the panel; they're recorded against the shot ID and the operator can retry on a different backend with one click. Successful takes are versioned automatically, so the team can step backwards if the "improved" prompt produced a worse result.</p>
 
   <blockquote>"The pipeline survives the model churn. That's the whole point."</blockquote>
 
   <h2><span class="num">03</span>Inside the control panel</h2>
-  <p>Each shot card is a small bench — pick a backend, watch the queue, audition takes, lock a winner.</p>
+  <p>Each shot card is a small bench. Pick a backend, watch the queue, audition takes, lock a winner.</p>
 
   <ul>
     <li><strong>Backend roster.</strong> Add a new model by writing one adapter; the panel picks it up automatically. No core code changes.</li>
-    <li><strong>Same-prompt fan-out.</strong> One click renders the shot across every backend on the roster — A/B/C/D in a single pass.</li>
+    <li><strong>Same-prompt fan-out.</strong> One click renders the shot across every backend on the roster, A/B/C/D in a single pass.</li>
     <li><strong>Take versioning.</strong> Every render is archived with its prompt, seed and backend. Stepping back is always possible.</li>
-    <li><strong>Cost tracking.</strong> Per-backend cost per shot logged to the project manifest — a producer's-eye view of where the budget is going.</li>
+    <li><strong>Cost tracking.</strong> Per-backend cost per shot logged to the project manifest, a producer's-eye view of where the budget is going.</li>
   </ul>
 
   <figure>
     <img src="./images/06b.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Take selector showing multiple versions of the same shot with seed and backend metadata.">
-    <figcaption>Every take stores its provenance — backend, seed, prompt, cost — so picking a winner is auditable.</figcaption>
+    <figcaption>Every take stores its provenance (backend, seed, prompt, cost) so picking a winner is auditable.</figcaption>
   </figure>
 
   <div class="callout">
-    <b>Why it matters →</b> A studio that can swap backends in an afternoon is a studio that always uses the best available tech. Lock-in is the most expensive form of technical debt in this industry — and the easiest one to avoid by design.
+    <b>Why it matters →</b> A studio that can swap backends in an afternoon is a studio that always uses the best available tech. Lock-in is the most expensive form of technical debt in this industry, and the easiest one to avoid by design.
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>We're adding <strong>auto-routing</strong> — a small classifier that picks the right backend per shot based on the prompt's content (close-up vs wide, dialogue vs action, photoreal vs stylised). The operator stays in control, but the default choice gets smarter as the show progresses.</p>
+  <p>We're adding <strong>auto-routing</strong>, a small classifier that picks the right backend per shot based on the prompt's content (close-up vs wide, dialogue vs action, photoreal vs stylised). The operator stays in control, but the default choice gets smarter as the show progresses.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

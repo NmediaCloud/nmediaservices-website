@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Pipeline, Five Story Formats — Nmedia Services</title>
-<meta name="description" content="How Module 02 expands a one-line pitch into series episodes, movies, musical sections, documentaries or commercials — using the same engine, the same files, different rules.">
-<meta property="og:title" content="One Pipeline, Five Story Formats — Nmedia Services">
-<meta property="og:description" content="How Module 02 expands a one-line pitch into series episodes, movies, musical sections, documentaries or commercials — using the same engine, the same files, different rules.">
+<title>One Pipeline, Five Story Formats · Nmedia Services</title>
+<meta name="description" content="How Module 02 expands a one-line pitch into series episodes, movies, musical sections, documentaries or commercials. Using the same engine, the same files, different rules.">
+<meta property="og:title" content="One Pipeline, Five Story Formats · Nmedia Services">
+<meta property="og:description" content="How Module 02 expands a one-line pitch into series episodes, movies, musical sections, documentaries or commercials. Using the same engine, the same files, different rules.">
 <meta property="og:image" content="./images/02a.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 02 · Story / Script Development</span>
     <h1>One pipeline, <em>five story formats</em>.</h1>
-    <p class="hero-sub">A 22-minute series episode, a feature film, a music video, a documentary, a commercial — they all start the same way and break differently. We taught one engine to honour all five.</p>
+    <p class="hero-sub">A 22-minute series episode, a feature film, a music video, a documentary, a commercial. They all start the same way and break differently. We taught one engine to honour all five.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -99,19 +99,19 @@
 
 <article class="body">
 
-  <p class="lede">Most "AI script tools" assume one shape: a feature screenplay. Real production has at least five — and the joints between them are exactly where pipelines break. Module 02 makes the format part of the data, not part of the tool.</p>
+  <p class="lede">Most "AI script tools" assume one shape: a feature screenplay. Real production has at least five, and the joints between them are exactly where pipelines break. Module 02 makes the format part of the data, not part of the tool.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>A series episode is split into <strong>cold open / acts / tag</strong>. A musical track is split into <strong>verses, chorus, bridge</strong>. A commercial breaks at <strong>hook, pitch, CTA</strong>. A documentary breaks by <strong>topic and B-roll</strong>. The vocabulary is different, the beats are different, the file outputs are different. Most teams maintain five different scripts to handle this — or pretend everything is a movie and patch the joints later.</p>
+  <p>A series episode is split into <strong>cold open / acts / tag</strong>. A musical track is split into <strong>verses, chorus, bridge</strong>. A commercial breaks at <strong>hook, pitch, CTA</strong>. A documentary breaks by <strong>topic and B-roll</strong>. The vocabulary is different, the beats are different, the file outputs are different. Most teams maintain five different scripts to handle this, or pretend everything is a movie and patch the joints later.</p>
   <p>We did neither. We made the format a property of the project, and taught the same expansion engine to obey different rules under different presets.</p>
 
   <figure>
     <img src="./images/02a.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Module 02 control panel with format selector and expansion steps visible.">
-    <figcaption>Same panel, different presets — Series, Movie, Musical/Song, Documentary, Ad/Commercial.</figcaption>
+    <figcaption>Same panel, different presets. Series, Movie, Musical/Song, Documentary, Ad/Commercial.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>Each project carries a <code>PROJECT.json</code> manifest with a <code>content_format</code> field. That single field reroutes the whole pipeline — file naming (<code>EPISODE_SEQ01</code> for movies, <code>EPISODE_SEC01</code> for musicals), prompt scaffolds, beat grammar, and downstream module behaviour. The expansion runs in four steps — premise, beat sheet, scene list, scripted dialogue — but each step asks format-specific questions.</p>
+  <p>Each project carries a <code>PROJECT.json</code> manifest with a <code>content_format</code> field. That single field reroutes the whole pipeline. File naming (<code>EPISODE_SEQ01</code> for movies, <code>EPISODE_SEC01</code> for musicals), prompt scaffolds, beat grammar, and downstream module behaviour. The expansion runs in four steps (premise, beat sheet, scene list, scripted dialogue) but each step asks format-specific questions.</p>
   <p>The musical preset, for example, generates a <code>FULL_SONG_SCRIPT.txt</code> as the single source of truth and treats every section as a verse-aware unit so chorus repetition stays musically coherent. The documentary preset asks for sources and B-roll cues alongside narration. The series preset enforces an act structure and watches the runtime budget.</p>
 
   <blockquote>"Format-aware was the unlock. The minute we stopped pretending a music video was a short film, the whole pipeline got faster."</blockquote>
@@ -121,14 +121,14 @@
 
   <ul>
     <li><strong>Format selector.</strong> One dropdown rewires the entire prompt graph and file-naming convention. No code change required.</li>
-    <li><strong>Step gating.</strong> Step 2 won't run until Step 1 is on disk. Errors stay local — a failed Step 3 doesn't corrupt Step 1.</li>
+    <li><strong>Step gating.</strong> Step 2 won't run until Step 1 is on disk. Errors stay local, a failed Step 3 doesn't corrupt Step 1.</li>
     <li><strong>Voiceover extraction.</strong> Pulls speaker-tagged dialogue out of the script in a format ready for TTS, with line IDs that survive into the storyboard.</li>
-    <li><strong>Asset scan.</strong> Cross-references the script against Module 01's cast — flags any character or prop that hasn't been sheeted yet.</li>
+    <li><strong>Asset scan.</strong> Cross-references the script against Module 01's cast. Flags any character or prop that hasn't been sheeted yet.</li>
   </ul>
 
   <figure>
     <img src="./images/02b.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Voiceover extraction and asset scan results for an expanded episode.">
-    <figcaption>The script becomes structured data — speaker tags, scene IDs, asset references.</figcaption>
+    <figcaption>The script becomes structured data. Speaker tags, scene IDs, asset references.</figcaption>
   </figure>
 
   <div class="callout">
@@ -136,13 +136,13 @@
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>The active push is <strong>cross-format adaptation</strong> — taking a feature treatment and re-projecting it as a six-episode series, or a 90-second commercial, with the manifest doing the heavy lifting. Same story, different shapes, no rewrite. After that: a presets registry that lets a studio ship its own house format alongside ours.</p>
+  <p>The active push is <strong>cross-format adaptation</strong>. Taking a feature treatment and re-projecting it as a six-episode series, or a 90-second commercial, with the manifest doing the heavy lifting. Same story, different shapes, no rewrite. After that: a presets registry that lets a studio ship its own house format alongside ours.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

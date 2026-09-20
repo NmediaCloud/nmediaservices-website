@@ -210,7 +210,7 @@ export default function DigitalConversion() {
             </h1>
             <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl text-lg">
               Books, documents, microfilm, palm scripts, photographs and
-              physical objects — converted into searchable, archivable,
+              physical objects. Converted into searchable, archivable,
               shareable digital formats. Experienced personnel, time-tested
               procedures, careful asset handling.
             </p>
@@ -271,7 +271,7 @@ export default function DigitalConversion() {
           basePath="/images/digital-conversion/palm"
           images={["palm_01.jpg","palm_02.jpg","palm_03.jpg","palm_04.jpg","palm_05.jpg","palm_06.jpg","palm_07.jpg","palm_08.jpg"]}
           intro={[
-            "Palm-leaf manuscripts (palm scripts) are among the most fragile artefacts a library can hold. We capture them with conservation-grade overhead equipment — no contact, no flex, no tape — preserving the physical object while delivering high-resolution digital records.",
+            "Palm-leaf manuscripts (palm scripts) are among the most fragile artefacts a library can hold. We capture them with conservation-grade overhead equipment (no contact, no flex, no tape) preserving the physical object while delivering high-resolution digital records.",
             "Where the script is legible enough, we add an OCR pass tuned to the language and shape; where it isn't, we deliver the high-fidelity master image so a human scholar can transcribe later. Either way, the manuscript leaves the way it came in.",
           ]}
           points={[
@@ -323,13 +323,13 @@ export default function DigitalConversion() {
           images={["med_04.jpg","med_05.jpg","med_07.jpg","med_08.jpg"]}
           intro={[
             "Patient charts, lab reports, imaging summaries and historical paper files digitised with privacy-first handling. Secure facility, signed handlers, chain-of-custody from pickup to archive.",
-            "Output is indexed against your patient ID schema and retention policy — searchable on demand, with redaction support for shared copies.",
+            "Output is indexed against your patient ID schema and retention policy. Searchable on demand, with redaction support for shared copies.",
           ]}
           points={[
             "Patient ID indexing · per-record metadata captured at scan time.",
             "Retention-policy aware · time-stamped digital chain of custody.",
             "HIPAA-aware handling · signed personnel · access logs.",
-            "Optional OCR for searchable charts — clinical-typography tuned.",
+            "Optional OCR for searchable charts, clinical-typography tuned.",
             "Redaction utilities for sharing or research extracts.",
           ]}
         />
@@ -347,14 +347,14 @@ export default function DigitalConversion() {
           basePath="/images/digital-conversion/photo"
           images={[]}
           intro={[
-            "Photo prints, photographic negatives and positive films scanned at archive resolution. Each image is colour-corrected, dust-cleaned and optimised to international standards — a clean master plus a derivative ready for sharing or print.",
-            "Image-processing support from experienced operators using current capture and restoration tooling — useful when the original carries decades of fade, scratch or staining.",
+            "Photo prints, photographic negatives and positive films scanned at archive resolution. Each image is colour-corrected, dust-cleaned and optimised to international standards, a clean master plus a derivative ready for sharing or print.",
+            "Image-processing support from experienced operators using current capture and restoration tooling. Useful when the original carries decades of fade, scratch or staining.",
           ]}
           points={[
             "Photo prints · negatives · positive film capture.",
             "Colour correction · dust + scratch cleanup · density balance.",
             "Archive-resolution master + access-resolution derivative.",
-            "Restoration on request — fade recovery, tear repair, stain reduction.",
+            "Restoration on request. Fade recovery, tear repair, stain reduction.",
             "EXIF and per-image metadata preserved or applied.",
           ]}
         />
@@ -371,13 +371,13 @@ export default function DigitalConversion() {
           basePath="/images/digital-conversion/omr"
           images={["omr_01.jpg","omr_02.jpg","omr_03.jpg"]}
           intro={[
-            "OMR — the high-volume, fixed-template capture of marks (bubbles, ticks, multi-choice) into structured data. Exam sheets, surveys, ballots, registration forms — anywhere a mark on paper needs to become a row in a database, fast and audited.",
-            "Captured on calibrated readers with edge-detection thresholds tuned to the form layout. Output: validated CSV / database rows — ready for grading, analysis, or downstream pipelines.",
+            "OMR, the high-volume, fixed-template capture of marks (bubbles, ticks, multi-choice) into structured data. Exam sheets, surveys, ballots, registration forms, anywhere a mark on paper needs to become a row in a database, fast and audited.",
+            "Captured on calibrated readers with edge-detection thresholds tuned to the form layout. Output: validated CSV / database rows. Ready for grading, analysis, or downstream pipelines.",
           ]}
           points={[
             "Bubble-sheet exam capture · multi-choice, true/false, gradeable.",
             "Survey and questionnaire processing at thousands of pages a day.",
-            "Form intake — registration, applications, voting.",
+            "Form intake, registration, applications, voting.",
             "Per-form QA pass · misread flagging · re-scan on demand.",
             "Output: CSV, Excel, JSON, or direct database import.",
           ]}
@@ -439,7 +439,7 @@ export default function DigitalConversion() {
             </h2>
             <p className="text-on-surface-variant max-w-md mx-auto mb-10 font-light">
               Quotes scoped to volume, source format, fragility and delivery
-              spec. Pickup, on-site, or shipped — whichever protects the asset.
+              spec. Pickup, on-site, or shipped. Whichever protects the asset.
             </p>
             <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
               Request a Quote →
@@ -471,9 +471,9 @@ const INDEX = [
 ];
 
 const PROMISE = [
-  { icon: "verified",          title: "Experienced Personnel",  body: "Time-tested procedures handle each format correctly — fragile, oversized, photo-sensitive or rare." },
-  { icon: "tune",              title: "Built To Your Spec",      body: "Tasks scoped to your needs, budget and schedule — not a one-size-fits-all conveyor belt." },
-  { icon: "shield",            title: "Asset-Safe Process",      body: "Production process designed for the utmost safety in handling your originals — never destructive unless you ask." },
+  { icon: "verified",          title: "Experienced Personnel",  body: "Time-tested procedures handle each format correctly. Fragile, oversized, photo-sensitive or rare." },
+  { icon: "tune",              title: "Built To Your Spec",      body: "Tasks scoped to your needs, budget and schedule, not a one-size-fits-all conveyor belt." },
+  { icon: "shield",            title: "Asset-Safe Process",      body: "Production process designed for the utmost safety in handling your originals, never destructive unless you ask." },
   { icon: "workspace_premium", title: "Quality + Accuracy",      body: "Reasonable budget, audited output. Re-scans on demand. QA is part of the price, not an upsell." },
 ];
 

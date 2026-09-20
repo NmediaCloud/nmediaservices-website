@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Designing a Cast Before You Write a Word — Nmedia Services</title>
-<meta name="description" content="How Module 01 turns a one-line pitch into a fully-sheeted cast of characters, props and environments — ready for storyboard before the script lands.">
-<meta property="og:title" content="Designing a Cast Before You Write a Word — Nmedia Services">
-<meta property="og:description" content="How Module 01 turns a one-line pitch into a fully-sheeted cast of characters, props and environments — ready for storyboard before the script lands.">
+<title>Designing a Cast Before You Write a Word · Nmedia Services</title>
+<meta name="description" content="How Module 01 turns a one-line pitch into a fully-sheeted cast of characters, props and environments. Ready for storyboard before the script lands.">
+<meta property="og:title" content="Designing a Cast Before You Write a Word · Nmedia Services">
+<meta property="og:description" content="How Module 01 turns a one-line pitch into a fully-sheeted cast of characters, props and environments. Ready for storyboard before the script lands.">
 <meta property="og:image" content="./images/01a.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 01 · Asset Design</span>
     <h1>Designing a cast <em>before you write a word</em>.</h1>
-    <p class="hero-sub">Traditional pre-production sketches characters after the script. We do it the other way around — sheet the cast first, then write into the world. Module 01 is the engine that makes that swap practical.</p>
+    <p class="hero-sub">Traditional pre-production sketches characters after the script. We do it the other way around. Sheet the cast first, then write into the world. Module 01 is the engine that makes that swap practical.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -99,11 +99,11 @@
 
 <article class="body">
 
-  <p class="lede">A reliable animation pipeline does not start with a script. It starts with a <em>cast</em> — characters, props and environments that already know who they are, so every downstream tool can reach for them by name.</p>
+  <p class="lede">A reliable animation pipeline does not start with a script. It starts with a <em>cast</em>. Characters, props and environments that already know who they are, so every downstream tool can reach for them by name.</p>
 
   <h2><span class="num">01</span>The problem</h2>
   <p>AI image models are happy to invent a hero on the fly. The trouble is they invent a slightly different hero every time. Hair colour drifts, jacket buttons multiply, the dog grows a tail it didn't have in the last shot. Continuity used to be a department. With generative tools it has become an emergency.</p>
-  <p>The fix is older than animation itself: a <strong>character sheet</strong>. A canonical front / side / three-quarter / back view, with palette swatches and a written description specific enough to be reproduced on demand. The same logic applies to props and environments. Module 01 builds those sheets — at scale, in a single panel, before the storyboard team even opens their tablets.</p>
+  <p>The fix is older than animation itself: a <strong>character sheet</strong>. A canonical front / side / three-quarter / back view, with palette swatches and a written description specific enough to be reproduced on demand. The same logic applies to props and environments. Module 01 builds those sheets, at scale, in a single panel, before the storyboard team even opens their tablets.</p>
 
   <figure>
     <img src="./images/01a.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Module 01 control panel showing character, prop and environment cards.">
@@ -111,8 +111,8 @@
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>The operator drops a one-line concept. An LLM (routed via OpenRouter so the team can swap models without code changes) expands it into a structured cast list — names, archetypes, palettes, silhouettes. The same prompt graph then generates each character's turnaround, each prop's three-view, each environment's establishing plate.</p>
-  <p>Crucially, the text descriptions are written <strong>first</strong> and the images are conditioned on them. That means when continuity drifts mid-production we can re-roll a single image without re-rolling the design — the canonical text is the source of truth, the image is just the latest render of it.</p>
+  <p>The operator drops a one-line concept. An LLM (routed via OpenRouter so the team can swap models without code changes) expands it into a structured cast list. Names, archetypes, palettes, silhouettes. The same prompt graph then generates each character's turnaround, each prop's three-view, each environment's establishing plate.</p>
+  <p>Crucially, the text descriptions are written <strong>first</strong> and the images are conditioned on them. That means when continuity drifts mid-production we can re-roll a single image without re-rolling the design, the canonical text is the source of truth, the image is just the latest render of it.</p>
 
   <blockquote>"The cast becomes the contract. Every other module signs it before it makes a frame."</blockquote>
 
@@ -120,10 +120,10 @@
   <p>The interface is deliberately category-led. Three columns, three asset types, one shared review flow.</p>
 
   <ul>
-    <li><strong>Turnaround switcher.</strong> Pick a ratio per character (1:1, 16:9, 9:16, custom) — the panel re-renders only that card without disturbing the rest of the cast.</li>
+    <li><strong>Turnaround switcher.</strong> Pick a ratio per character (1:1, 16:9, 9:16, custom), the panel re-renders only that card without disturbing the rest of the cast.</li>
     <li><strong>Locked descriptions.</strong> Every sheet stores its canonical text. Re-rolling an image is one click; re-rolling the design is intentional.</li>
     <li><strong>Cross-module export.</strong> Output sheets land in a structured folder that Modules 02–07 read directly. No manual re-uploading.</li>
-    <li><strong>Versioned overwrites.</strong> Every regeneration moves the previous render into <code>versions/</code> — nothing is lost when an art director changes their mind at 11pm.</li>
+    <li><strong>Versioned overwrites.</strong> Every regeneration moves the previous render into <code>versions/</code>. Nothing is lost when an art director changes their mind at 11pm.</li>
   </ul>
 
   <figure>
@@ -136,13 +136,13 @@
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>Asset Design is upstream of everything else in the Nmedia Services pipeline. The next iteration adds <strong>asset relationships</strong> — "this prop belongs to this character", "this environment is night-only" — so downstream modules can auto-populate scenes with the right things without the operator having to remember which file lives where. The cast becomes a small graph, not just a folder.</p>
+  <p>Asset Design is upstream of everything else in the Nmedia Services pipeline. The next iteration adds <strong>asset relationships</strong>. "this prop belongs to this character", "this environment is night-only", so downstream modules can auto-populate scenes with the right things without the operator having to remember which file lives where. The cast becomes a small graph, not just a folder.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

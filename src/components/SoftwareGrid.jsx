@@ -25,7 +25,7 @@ const TOOLS = [
     icon: "auto_awesome_mosaic",
     image: "/images/creativeflow.png",
     body:
-      "One campaign brief in; on-brand, localized ad creatives in every aspect ratio out — " +
+      "One campaign brief in; on-brand, localized ad creatives in every aspect ratio out, " +
       "reusing the assets you already own and generating only what is missing. Runs on a " +
       "clean checkout with no API key.",
     href: "/articles/CreativeFlow.html",
@@ -40,7 +40,7 @@ const TOOLS = [
     image: "/images/ugc_pipeline.png",
     body:
       "One spreadsheet row in, one finished UGC, ad or podcast video out. Nine self-contained " +
-      "modules — script, TTS, lipsync, b-roll, title cards, overlay, SFX, music, compositing — " +
+      "modules. Script, TTS, lipsync, b-roll, title cards, overlay, SFX, music, compositing, " +
       "with a vision-graded QA pass.",
     href: "/articles/UGC_Pipeline.html",
     cta: "Read the write-up",
@@ -52,7 +52,7 @@ const TOOLS = [
     status: "In-house",
     icon: "diversity_3",
     body:
-      "A million synthetic viewers test-screen your pitch in twelve minutes — " +
+      "A million synthetic viewers test-screen your pitch in twelve minutes, " +
       "demographic-weighted, opinion-bearing, and brutally honest about what does not land.",
     href: "/articles/MiroFish.html",
     cta: "Read the write-up",
@@ -64,7 +64,7 @@ const TOOLS = [
     icon: "sell",
     body:
       "Photographs in, marketplace listings out. Identifies the product, researches it, " +
-      "recommends a price and writes the copy — then a local agent pre-fills the forms on " +
+      "recommends a price and writes the copy, then a local agent pre-fills the forms on " +
       "Kijiji, Facebook Marketplace and Karrot and stops before Publish.",
     href: "https://github.com/NmediaCloud/marketplace-listing-assistant",
     cta: "View the source",
@@ -87,7 +87,7 @@ const TOOLS = [
     status: "Source available",
     icon: "sync_saved_locally",
     body:
-      "Mirror-backup for Windows with a GUI and a full CLI, in pure Python standard library — " +
+      "Mirror-backup for Windows with a GUI and a full CLI, in pure Python standard library, " +
       "no pip, no virtualenv, so it runs on a locked-down or offline machine. Deep-verify " +
       "hashing, dry-run first, named profiles.",
     href: "https://github.com/NmediaCloud/smart-mirror-backup",

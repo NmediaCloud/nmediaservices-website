@@ -54,7 +54,7 @@ export default function WorldUnderMyBed() {
               </p>
               <p className="text-on-surface-variant font-light leading-relaxed max-w-xl pt-4 text-lg">
                 The place children fear becomes the place that protects them.
-                Beneath the bed lives a secret world of gentle helpers — not
+                Beneath the bed lives a secret world of gentle helpers, not
                 monsters, but creatures who fix fears and soften bad dreams,
                 so the morning can start fresh.
               </p>
@@ -117,7 +117,7 @@ export default function WorldUnderMyBed() {
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6 text-center">
               [ KEY ART // YOUR CHILD'S NIGHTLY PROTECTORS ]
             </p>
-            <img src={`${IMG}/wub_10.png`} alt="The World Under My Bed — Your Child's Nightly Protectors" className="w-full max-w-3xl mx-auto" />
+            <img src={`${IMG}/wub_10.png`} alt="The World Under My Bed. Your Child's Nightly Protectors" className="w-full max-w-3xl mx-auto" />
           </div>
         </section>
 
@@ -172,18 +172,18 @@ export default function WorldUnderMyBed() {
             <div className="lg:col-span-7 text-on-surface-variant font-light leading-relaxed space-y-5">
               <p>
                 Instead of monsters, this world is home to creatures who fix
-                fears and soften bad dreams. A central learner — the child —
+                fears and soften bad dreams. A central learner, the child,
                 perceives a large threat: the darkness. A unified network of
                 specialised helpers uses their unique skills to transform
                 that threat into a positive outcome.
               </p>
               <p className="italic">
-                Think of a nightlight that doesn't just sit on a shelf — but
+                Think of a nightlight that doesn't just sit on a shelf, but
                 actively steps into the shadows to tidy up the worries of the
                 day so the morning can start fresh.
               </p>
               <p>
-                Designed for a global preschool audience — emotion-first
+                Designed for a global preschool audience, emotion-first
                 storytelling with minimal dialogue makes it universally
                 adaptable for bedtime routines.
               </p>
@@ -277,15 +277,15 @@ const CAST = [
 ];
 
 const HELPERS = [
-  { name: "Lumi",   icon: "lightbulb",        role: "The Nurturing Light Keeper", body: "As the leader, Lumi is a patient and reassuring creature made of a warm, golden glow — the first to arrive when the lamps go off." },
-  { name: "Patch",  icon: "auto_fix_normal",  role: "The Proud Fixer of Things",  body: "Stitched together with button eyes — helpful, focused, and certain. Patch can repair any broken toy and any small frayed feeling." },
+  { name: "Lumi",   icon: "lightbulb",        role: "The Nurturing Light Keeper", body: "As the leader, Lumi is a patient and reassuring creature made of a warm, golden glow, the first to arrive when the lamps go off." },
+  { name: "Patch",  icon: "auto_fix_normal",  role: "The Proud Fixer of Things",  body: "Stitched together with button eyes. Helpful, focused, and certain. Patch can repair any broken toy and any small frayed feeling." },
   { name: "Whisp",  icon: "air",              role: "The Gentle Dream Tamer",     body: "A sensitive, cloud-like being who calms bad dreams and untangles them until they are soft." },
-  { name: "Pebble", icon: "spa",              role: "The Calm Watcher & Listener", body: "Small, rounded, and steady — Pebble is a comforting and grounded presence in the quiet night." },
-  { name: "Blink",  icon: "bolt",             role: "The Cheerful Quick Helper",  body: "A tiny, fast-moving spark of light who is always curious, enthusiastic, and playful — first to a worry, last to leave." },
+  { name: "Pebble", icon: "spa",              role: "The Calm Watcher & Listener", body: "Small, rounded, and steady. Pebble is a comforting and grounded presence in the quiet night." },
+  { name: "Blink",  icon: "bolt",             role: "The Cheerful Quick Helper",  body: "A tiny, fast-moving spark of light who is always curious, enthusiastic, and playful. First to a worry, last to leave." },
 ];
 
 const THEMES = [
-  { icon: "psychology",   title: "Naming Big Feelings",    body: "Worry, fear, frustration, missing-someone — each named at preschool scale, never minimised, always met." },
+  { icon: "psychology",   title: "Naming Big Feelings",    body: "Worry, fear, frustration, missing-someone, each named at preschool scale, never minimised, always met." },
   { icon: "shield",       title: "Brave is Small",          body: "Courage modelled at a size a 3-year-old can mirror: stepping toward, not away. Tiny choices repeated nightly." },
   { icon: "auto_awesome", title: "Transform, Don't Fight",  body: "The Under-Bed Crew never battles the darkness. They tidy it. Reframing the threat as something workable, not an enemy." },
   { icon: "wb_sunny",     title: "A Calm Morning",          body: "Every episode lands on the same beat: sunlight finds the room, and the worry is smaller now. Repeat-watch retention by design." },

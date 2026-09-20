@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>One Brief In, Every Format Out — Nmedia Services</title>
-<meta name="description" content="A creative automation pipeline that turns a single campaign brief into on-brand, localized social ad creatives across every aspect ratio — reusing the assets you already own and generating only what is missing.">
-<meta property="og:title" content="One Brief In, Every Format Out — Nmedia Services">
-<meta property="og:description" content="A creative automation pipeline that turns a single campaign brief into on-brand, localized social ad creatives across every aspect ratio — reusing the assets you already own and generating only what is missing.">
+<title>One Brief In, Every Format Out · Nmedia Services</title>
+<meta name="description" content="A creative automation pipeline that turns a single campaign brief into on-brand, localized social ad creatives across every aspect ratio. Reusing the assets you already own and generating only what is missing.">
+<meta property="og:title" content="One Brief In, Every Format Out · Nmedia Services">
+<meta property="og:description" content="A creative automation pipeline that turns a single campaign brief into on-brand, localized social ad creatives across every aspect ratio. Reusing the assets you already own and generating only what is missing.">
 <meta property="og:image" content="./images/creativeflow_a.png">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">CreativeFlow · Creative Automation Pipeline</span>
     <h1>One Brief In, <em>Every Format Out</em>.</h1>
-    <p class="hero-sub">A single campaign brief becomes on-brand, localized social ad creatives across every aspect ratio — reusing the product assets you already own, and calling a GenAI model only for the ones you don't.</p>
+    <p class="hero-sub">A single campaign brief becomes on-brand, localized social ad creatives across every aspect ratio. Reusing the product assets you already own, and calling a GenAI model only for the ones you don't.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -100,49 +100,49 @@
 
 <article class="body">
 
-  <p class="lede">A global brand runs hundreds of localized ad campaigns a month. Every product, every market, every placement needs its own creative — and almost all of that work is assembly, not art. So the interesting question is not <em>how do we make more creatives</em>, but <em>which ones actually need a human</em>.</p>
+  <p class="lede">A global brand runs hundreds of localized ad campaigns a month. Every product, every market, every placement needs its own creative, and almost all of that work is assembly, not art. So the interesting question is not <em>how do we make more creatives</em>, but <em>which ones actually need a human</em>.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>Producing social creative at volume is an operations problem wearing a creative costume. Two products, three aspect ratios and three markets is already eighteen files — before a single variant or a second campaign. Each one needs the product framed correctly, the message translated, the logo placed, the type re-fitted, and someone to check nobody promised something legal will not allow.</p>
-  <p>Done by hand it is slow and expensive. Done carelessly by a script it is worse: the product gets cropped out of the wide format, the German headline overflows its box, and the Japanese version ships with the punctuation stranded on its own line. <strong>The failure mode that matters is not a crash — it is a run that reports success and produces something quietly wrong.</strong></p>
+  <p>Producing social creative at volume is an operations problem wearing a creative costume. Two products, three aspect ratios and three markets is already eighteen files, before a single variant or a second campaign. Each one needs the product framed correctly, the message translated, the logo placed, the type re-fitted, and someone to check nobody promised something legal will not allow.</p>
+  <p>Done by hand it is slow and expensive. Done carelessly by a script it is worse: the product gets cropped out of the wide format, the German headline overflows its box, and the Japanese version ships with the punctuation stranded on its own line. <strong>The failure mode that matters is not a crash, it is a run that reports success and produces something quietly wrong.</strong></p>
 
   <figure>
     <img src="./images/creativeflow_a.png" onerror="this.src='./_shared/placeholder.svg'" alt="One campaign brief rendered at 1:1, 9:16 and 16:9, each with its own layout.">
-    <figcaption>One brief, three delivery ratios. Each is its own layout — the wide format moves the copy into a left panel and holds the product right of centre.</figcaption>
+    <figcaption>One brief, three delivery ratios. Each is its own layout, the wide format moves the copy into a left panel and holds the product right of centre.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>Reuse first, generate second</h2>
-  <p>The pipeline takes one YAML brief — products, target region, audience, campaign message, locales — and validates it before doing any work. Then, for each product, it resolves a hero image in a strict order: an explicit path in the brief, then any image in that product's asset folder, and only if neither exists does it call a GenAI model.</p>
+  <p>The pipeline takes one YAML brief (products, target region, audience, campaign message, locales) and validates it before doing any work. Then, for each product, it resolves a hero image in a strict order: an explicit path in the brief, then any image in that product's asset folder, and only if neither exists does it call a GenAI model.</p>
   <p>This ordering is the whole point. Generating an image the client already owns wastes money, and worse, it puts an <em>invented</em> product in front of a real audience. Generated heroes are cached by a hash of the prompt, so re-running the same campaign costs nothing at all.</p>
 
   <blockquote>"The interesting engineering is not generating images. It is knowing which images not to generate."</blockquote>
 
   <h2><span class="num">03</span>Every ratio is a layout, not a resize</h2>
-  <p>A 16:9 banner and a 9:16 story are different compositions, not one square stretched. Cropping a square hero to fill a wide frame slices the top and bottom off the product — the kind of silent defect that makes automated creative untrustworthy.</p>
+  <p>A 16:9 banner and a 9:16 story are different compositions, not one square stretched. Cropping a square hero to fill a wide frame slices the top and bottom off the product, the kind of silent defect that makes automated creative untrustworthy.</p>
   <p>Instead each ratio has its own declarative layout spec, the product is <em>contained</em> so it always survives whole, and the surrounding frame is filled with a blurred, darkened copy of the same image so the extension carries the shot's own colour. Adding a fourth format is one line of configuration.</p>
 
   <figure>
     <img src="./images/creativeflow_b.png" onerror="this.src='./_shared/placeholder.svg'" alt="The same creative rendered in English, German and Japanese.">
-    <figcaption>The same creative across three markets. Type is re-fitted per language — English wraps to two lines where German and Japanese fit on one.</figcaption>
+    <figcaption>The same creative across three markets. Type is re-fitted per language. English wraps to two lines where German and Japanese fit on one.</figcaption>
   </figure>
 
   <h2><span class="num">04</span>Typography that adapts to the copy</h2>
-  <p>A German translation runs roughly 40% longer than its English source, and Japanese has no spaces at all. So the font size is binary-searched to the largest that fits its box, CJK text wraps per character, and the typeface is chosen per script — a Latin face renders Japanese as a row of empty boxes, and nothing in the pipeline would flag it.</p>
+  <p>A German translation runs roughly 40% longer than its English source, and Japanese has no spaces at all. So the font size is binary-searched to the largest that fits its box, CJK text wraps per character, and the typeface is chosen per script, a Latin face renders Japanese as a row of empty boxes, and nothing in the pipeline would flag it.</p>
   <p>Japanese line-breaking rules are enforced too: closing punctuation may not begin a line, so a headline never strands its full stop. Small detail, but it is exactly the class of error that survives to production when nobody on the team reads the target language.</p>
 
   <h2><span class="num">05</span>Brand and legal checks that read pixels</h2>
-  <p>Every finished creative is inspected before it is written. Findings are <strong>graded, not binary</strong> — a missing logo blocks the creative, while softer language flags it for review. Treating every finding as fatal trains people to ignore the report, which defeats the point of having one.</p>
+  <p>Every finished creative is inspected before it is written. Findings are <strong>graded, not binary</strong>, a missing logo blocks the creative, while softer language flags it for review. Treating every finding as fatal trains people to ignore the report, which defeats the point of having one.</p>
 
   <ul>
-    <li><strong>Logo present and legible</strong> — measured on the rendered image, not asserted. A logo can be drawn off-canvas, under a scrim, or too small to read at feed size.</li>
-    <li><strong>Brand colours visible</strong> — sampled from the composited creative.</li>
-    <li><strong>Headline contrast</strong> — the text colour is chosen by measuring the actual pixels behind it against a WCAG target, then verified.</li>
-    <li><strong>Safe area</strong> — nothing sits where the platform will crop it.</li>
-    <li><strong>Prohibited claims</strong> — matched on word boundaries, so "cure" does not fire on "accurate". Screened once per locale <em>before</em> anything renders.</li>
+    <li><strong>Logo present and legible</strong>. Measured on the rendered image, not asserted. A logo can be drawn off-canvas, under a scrim, or too small to read at feed size.</li>
+    <li><strong>Brand colours visible</strong>. Sampled from the composited creative.</li>
+    <li><strong>Headline contrast</strong>, the text colour is chosen by measuring the actual pixels behind it against a WCAG target, then verified.</li>
+    <li><strong>Safe area</strong>. Nothing sits where the platform will crop it.</li>
+    <li><strong>Prohibited claims</strong>. Matched on word boundaries, so "cure" does not fire on "accurate". Screened once per locale <em>before</em> anything renders.</li>
   </ul>
 
   <h2><span class="num">06</span>The model is an adapter, not a dependency</h2>
-  <p>The pipeline never imports a vendor SDK. It asks a registry for an image provider and calls <code>generate()</code>. Four ship today — an offline renderer that needs no credentials at all, plus OpenAI, Gemini and OpenRouter — and adding Firefly, Imagen or an internal enterprise model means one new file and one registry line.</p>
+  <p>The pipeline never imports a vendor SDK. It asks a registry for an image provider and calls <code>generate()</code>. Four ship today (an offline renderer that needs no credentials at all, plus OpenAI, Gemini and OpenRouter) and adding Firefly, Imagen or an internal enterprise model means one new file and one registry line.</p>
   <p>The offline provider exists for a specific reason: anyone can clone the repository and watch a full campaign build with <strong>no API key, no network and no spend</strong>. Requiring a credit card before someone sees anything is a bad first five minutes.</p>
 
   <div class="callout">
@@ -150,8 +150,8 @@
   </div>
 
   <h2><span class="num">07</span>What's next</h2>
-  <p>The obvious next gain is background removal and relighting — cutting the product out and placing it into a generated scene rather than framing it against its own blur. After that, a job queue for parallel rendering, and a human approval gate so blocked and flagged creatives become a workflow rather than a report.</p>
-  <p>The longer play is closing the loop. Every run writes a manifest keyed by campaign, product, ratio and locale — deliberately shaped to be joined against ad-platform performance data. Once creative decisions can be traced to conversion outcomes, the pipeline stops being a cost saver and starts being a learning system.</p>
+  <p>The obvious next gain is background removal and relighting. Cutting the product out and placing it into a generated scene rather than framing it against its own blur. After that, a job queue for parallel rendering, and a human approval gate so blocked and flagged creatives become a workflow rather than a report.</p>
+  <p>The longer play is closing the loop. Every run writes a manifest keyed by campaign, product, ratio and locale. Deliberately shaped to be joined against ad-platform performance data. Once creative decisions can be traced to conversion outcomes, the pipeline stops being a cost saver and starts being a learning system.</p>
 
 </article>
 
@@ -181,7 +181,7 @@
 <!-- ── SOURCE / DOWNLOAD ───────────────────────────────────── -->
 <section class="cta" style="padding-top:2rem;">
   <h3>Read the code</h3>
-  <p>CreativeFlow is open source under the MIT licence. Clone it and a full campaign builds in about ten seconds — no credentials required.</p>
+  <p>CreativeFlow is open source under the MIT licence. Clone it and a full campaign builds in about ten seconds, no credentials required.</p>
   <div style="display:flex;flex-wrap:wrap;gap:0.9rem;justify-content:center;margin-top:1.5rem;">
     <a class="cta-btn" href="https://github.com/NmediaCloud/creativeflow" target="_blank" rel="noopener">View on GitHub →</a>
     <a class="cta-btn" href="https://github.com/NmediaCloud/creativeflow/archive/refs/heads/main.zip"

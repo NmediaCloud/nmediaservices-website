@@ -44,7 +44,7 @@ export default function DigitalMarketing() {
               Not the Product.
             </h1>
             <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl text-lg">
-              Three-pillar digital marketing strategy — paid, earned, owned —
+              Three-pillar digital marketing strategy, paid, earned, owned,
               wired through a single analytics layer. The framework we use to
               put animation work in front of the right rooms.
             </p>
@@ -99,7 +99,7 @@ export default function DigitalMarketing() {
               The <span className="text-primary">strategy</span> map.
             </h2>
             <p className="mt-6 text-on-surface-variant font-light max-w-2xl mx-auto">
-              Goals, audience, competitors, channels, content — the eight-piece
+              Goals, audience, competitors, channels, content, the eight-piece
               loop every campaign runs through.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function DigitalMarketing() {
                 Paid <span className="text-primary">Media</span>.
               </h2>
               <p className="mt-6 text-on-surface-variant font-light max-w-2xl">
-                Native and traditional advertising — display, banner, print,
+                Native and traditional advertising, display, banner, print,
                 radio, TV, sponsored social, out-of-home and in-store.
               </p>
             </div>
@@ -169,7 +169,7 @@ export default function DigitalMarketing() {
             </h2>
             <p className="mt-6 text-on-surface-variant font-light max-w-2xl">
               Branded communication that makes a direct connection between
-              brand and consumer — sites, blogs, CRM, email, social pages.
+              brand and consumer. Sites, blogs, CRM, email, social pages.
             </p>
           </div>
 
@@ -201,7 +201,7 @@ export default function DigitalMarketing() {
                 Earned <span className="text-primary">Media</span>.
               </h2>
               <p className="mt-6 text-on-surface-variant font-light max-w-2xl">
-                Communication about the brand that isn't managed — exposure
+                Communication about the brand that isn't managed, exposure
                 that comes through word of mouth, organic shares, reviews and
                 viral spread.
               </p>
@@ -226,9 +226,9 @@ export default function DigitalMarketing() {
                 What gets<br />measured.
               </h2>
               <p className="mt-6 text-on-surface-variant font-light leading-relaxed">
-                Every campaign is wired through one analytics layer — Google
-                Analytics, Hootsuite Core, and Power BI sentiment dashboards
-                — so the same spend can be evaluated across paid, owned and
+                Every campaign is wired through one analytics layer, Google
+                Analytics, Hootsuite Core, and Power BI sentiment dashboards,
+                so the same spend can be evaluated across paid, owned and
                 earned channels in one report.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
@@ -266,7 +266,7 @@ export default function DigitalMarketing() {
                 How the work gets made.
               </h2>
               <p className="mt-4 text-on-surface-variant font-light max-w-2xl">
-                The strategy frames the campaign — these pipelines deliver the
+                The strategy frames the campaign. These pipelines deliver the
                 creative that runs through it.
               </p>
             </div>
@@ -301,7 +301,7 @@ export default function DigitalMarketing() {
                 </h3>
                 <p className="text-sm text-on-surface-variant font-light leading-relaxed">
                   Ad commercials, brand promos, trailer visualisations and
-                  biomedical explainers — the on-air work that paid campaigns
+                  biomedical explainers, the on-air work that paid campaigns
                   push.
                 </p>
               </Link>

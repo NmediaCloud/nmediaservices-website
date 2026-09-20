@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polishing AI Animation Reels at Production Speed — Nmedia Services</title>
-<meta name="description" content="How we built Reel Polish — a single control panel that upscales, interpolates and reformats AI-generated shots in batches, with a kill switch and live progress.">
-<meta property="og:title" content="Polishing AI Animation Reels at Production Speed — Nmedia Services">
-<meta property="og:description" content="How we built Reel Polish — a single control panel that upscales, interpolates and reformats AI-generated shots in batches, with a kill switch and live progress.">
+<title>Polishing AI Animation Reels at Production Speed · Nmedia Services</title>
+<meta name="description" content="How we built Reel Polish, a single control panel that upscales, interpolates and reformats AI-generated shots in batches, with a kill switch and live progress.">
+<meta property="og:title" content="Polishing AI Animation Reels at Production Speed · Nmedia Services">
+<meta property="og:description" content="How we built Reel Polish, a single control panel that upscales, interpolates and reformats AI-generated shots in batches, with a kill switch and live progress.">
 <meta property="og:image" content="./images/07a.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 07 · Reel Polish</span>
     <h1>Polishing AI animation reels <em>at production speed</em>.</h1>
-    <p class="hero-sub">Most AI shots come out the door at 720p, 16fps, with the wrong aspect ratio. We built one panel that fixes all three — in a queue, with a kill switch, and without making the editor click forty times.</p>
+    <p class="hero-sub">Most AI shots come out the door at 720p, 16fps, with the wrong aspect ratio. We built one panel that fixes all three, in a queue, with a kill switch, and without making the editor click forty times.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -100,19 +100,19 @@
 
 <article class="body">
 
-  <p class="lede">AI generates shots faster than a human can finish them. The bottleneck has moved — from "can we make the frames?" to "can we get the frames into a deliverable shape, today, without a TD on standby?" Module 07 is our answer.</p>
+  <p class="lede">AI generates shots faster than a human can finish them. The bottleneck has moved, from "can we make the frames?" to "can we get the frames into a deliverable shape, today, without a TD on standby?" Module 07 is our answer.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>Generative video models — Veo, Kling, Runway, Sora and the open-source pack — share a polite output preset: roughly 720p, 16 to 24 frames per second, often in whatever aspect ratio the model was trained on. That is fine for a pitch GIF. It is not a deliverable.</p>
+  <p>Generative video models (Veo, Kling, Runway, Sora and the open-source pack) share a polite output preset: roughly 720p, 16 to 24 frames per second, often in whatever aspect ratio the model was trained on. That is fine for a pitch GIF. It is not a deliverable.</p>
   <p>To turn a folder of those clips into a reel that survives a client review you need <strong>three</strong> separate operations: spatial upscale, frame interpolation, and a final repack to the target frame, fps and aspect. Each one historically meant a different binary, a different config file, and a different mental model of what a "good" command-line invocation looks like. Multiply that by twenty shots and a junior editor's afternoon is gone.</p>
 
   <figure>
     <img src="./images/07a.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="The Reel Polish control panel showing the input file list and preset row.">
-    <figcaption>Reel Polish — single panel, queued jobs, live progress per shot.</figcaption>
+    <figcaption>Reel Polish. Single panel, queued jobs, live progress per shot.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>We collapsed the three operations behind a single Flask control panel and gave the operator three knobs that matter: <strong>upscale factor</strong>, <strong>target fps</strong>, and <strong>output frame</strong> (with fit mode — pad, cover or stretch). Everything else — model selection, ncnn-vulkan flags, ffmpeg map arguments, audio routing — is hidden behind presets the editor never has to read.</p>
+  <p>We collapsed the three operations behind a single Flask control panel and gave the operator three knobs that matter: <strong>upscale factor</strong>, <strong>target fps</strong>, and <strong>output frame</strong> (with fit mode. Pad, cover or stretch). Everything else (model selection, ncnn-vulkan flags, ffmpeg map arguments, audio routing) is hidden behind presets the editor never has to read.</p>
   <p>Under the hood it's Real-ESRGAN ncnn-vulkan for the upscale, RIFE ncnn-vulkan for the interpolation, and ffmpeg for the final fit-and-finish. A single FIFO worker queue serialises GPU access so two jobs never fight over VRAM. Every subprocess is registered against a job ID, which means there is one button on the panel that always works: <strong>Kill</strong>.</p>
 
   <blockquote>"We stopped writing render scripts the day the kill switch shipped. That single button changed how the team uses the tool."</blockquote>
@@ -124,12 +124,12 @@
     <li><strong>Bulk select with presets.</strong> "1080p / 30fps / 16:9", "Vertical 9:16 social", "4K archival". The editor never types numbers.</li>
     <li><strong>Chain-polish.</strong> Output of one stage feeds the input of the next, with input cards turning orange and polished cards green so progress is visible at a glance.</li>
     <li><strong>Audio keep/drop toggle.</strong> Most generated clips have no audio track; we map <code>0:v + 1:a?</code> and let ffmpeg silently skip when missing, so the same recipe works for both.</li>
-    <li><strong>Reveal-in-folder + light-theme console.</strong> When something does break, the operator sees the actual stderr — not a spinner that turns red.</li>
+    <li><strong>Reveal-in-folder + light-theme console.</strong> When something does break, the operator sees the actual stderr, not a spinner that turns red.</li>
   </ul>
 
   <figure>
     <img src="./images/07a.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Live progress console with stderr streaming during a polish job.">
-    <figcaption>Live stderr is streamed back via Server-Sent Events — no log files, no SSH, no guessing.</figcaption>
+    <figcaption>Live stderr is streamed back via Server-Sent Events, no log files, no SSH, no guessing.</figcaption>
   </figure>
 
   <div class="callout">
@@ -137,13 +137,13 @@
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>Reel Polish is the last gate before delivery in the Nmedia Services pipeline — the modules upstream (Asset Design, Story / Script, Storyboard, Animatics, Animation Sandbox) all eventually feed into it. Next up is a presets registry that travels with the project file, so a "client A house style" preset is one click away on every new job, and an automatic spec-sheet exporter that writes the final fps / resolution / codec back into the project manifest. The pipeline keeps getting shorter.</p>
+  <p>Reel Polish is the last gate before delivery in the Nmedia Services pipeline, the modules upstream (Asset Design, Story / Script, Storyboard, Animatics, Animation Sandbox) all eventually feed into it. Next up is a presets registry that travels with the project file, so a "client A house style" preset is one click away on every new job, and an automatic spec-sheet exporter that writes the final fps / resolution / codec back into the project manifest. The pipeline keeps getting shorter.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

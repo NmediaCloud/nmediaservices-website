@@ -37,7 +37,7 @@ export default function IPSeries() {
               </h1>
               <p className="text-on-surface-variant font-light leading-relaxed max-w-2xl text-lg pt-4">
                 Original animated series development from concept to screen.
-                Pre-school SEL, comedic pre-K, microformats — built for OTT,
+                Pre-school SEL, comedic pre-K, microformats, built for OTT,
                 broadcast, and cross-platform distribution.
               </p>
             </div>
@@ -82,14 +82,14 @@ export default function IPSeries() {
             <div className="lg:col-span-7 space-y-6">
               <p className="text-on-surface-variant font-light leading-relaxed">
                 Our original IP runs through the same NM_CORE pipeline that
-                powers our client work — eleven control panels, one project
+                powers our client work. Eleven control panels, one project
                 manifest, format-aware from the brief. Every frame is processed
                 through the same pre-vis-to-final route, whether it's a 22-min
                 broadcast episode or a 30-second social cut.
               </p>
               <p className="text-on-surface-variant font-light leading-relaxed">
                 That technical backbone is why our development cycles run weeks
-                instead of months. We built the studio to ship — and the slate
+                instead of months. We built the studio to ship, and the slate
                 proves it.
               </p>
               <Link to="/" className="inline-flex items-center gap-2 text-primary font-label uppercase text-xs tracking-widest mt-4 hover:gap-3 transition-all">
@@ -110,7 +110,7 @@ export default function IPSeries() {
               Distribution. Co-production. Original IP.
             </h2>
             <p className="text-on-surface-variant max-w-xl mx-auto mb-10 font-light">
-              For broadcasters, OTTs, distributors and co-production partners —
+              For broadcasters, OTTs, distributors and co-production partners,
               full pitch decks and pilot materials available on request.
             </p>
             <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary font-label uppercase px-12 py-5 font-bold text-sm tracking-widest inline-block">
@@ -188,7 +188,7 @@ const IP_SLATE = [
     status:    "Pilot Complete",
     status_active: true,
     version:   "VOL. 01",
-    body:      "Buzz, a small bee, learns his place in the wide world — every tiny flutter helps the Earth bloom. 54 EP across 4 seasons.",
+    body:      "Buzz, a small bee, learns his place in the wide world, every tiny flutter helps the Earth bloom. 54 EP across 4 seasons.",
     detail_url:"/ip/tiny-wings-buzz",
     poster:    "/images/ip/tiny-wings.jpg",
   },
@@ -200,7 +200,7 @@ const IP_SLATE = [
     status:    "Development",
     version:   "VOL. 02",
     translateY: true,
-    body:      "Underwater news-reporter adventure for ages 4-8 — friendship, growth and the planet, story-first. 26 EP × 7 min.",
+    body:      "Underwater news-reporter adventure for ages 4-8. Friendship, growth and the planet, story-first. 26 EP × 7 min.",
     detail_url: "/ip/cici",
     poster:     "/images/ip/cici.jpg",
   },
@@ -211,7 +211,7 @@ const IP_SLATE = [
     icon:      "sentiment_very_satisfied",
     status:    "Development",
     version:   "VOL. 03",
-    body:      "Bouncy pre-K slapstick — exaggerated cause-and-effect comedy with character-led mischief and zero dialogue dependency.",
+    body:      "Bouncy pre-K slapstick. Exaggerated cause-and-effect comedy with character-led mischief and zero dialogue dependency.",
     detail_url: "/ip/chimpu",
     poster:     "/images/ip/chimpu.jpg",
   },
@@ -223,7 +223,7 @@ const IP_SLATE = [
     status:    "Development",
     status_active: true,
     version:   "VOL. 04",
-    body:      "Lumi, Patch and Whisp turn night-time worry into morning calm — bedtime SEL for toddlers 2-6.",
+    body:      "Lumi, Patch and Whisp turn night-time worry into morning calm. Bedtime SEL for toddlers 2-6.",
     detail_url:"/ip/world-under-my-bed",
     poster:    "/images/ip/world-under-bed.png",
   },
@@ -235,7 +235,7 @@ const IP_SLATE = [
     status:    "Concept",
     version:   "VOL. 05",
     translateY: true,
-    body:      "Microformat short-form series — observational comedy threaded through the rituals of a modern wedding week.",
+    body:      "Microformat short-form series. Observational comedy threaded through the rituals of a modern wedding week.",
     detail_url: "/ip/woh-shaadi",
     poster:     "/images/ip/woh-shaadi.jpg",
   },

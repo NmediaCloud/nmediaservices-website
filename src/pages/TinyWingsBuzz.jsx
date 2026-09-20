@@ -60,7 +60,7 @@ export default function TinyWingsBuzz() {
                 Inside a warm, humming hive lives <span className="text-primary">Buzz</span>,
                 a small bee learning his place in the wide world. Through gentle
                 discoveries, Buzz learns that even the tiniest wings can help
-                the Earth bloom — and that every small action quietly keeps
+                the Earth bloom, and that every small action quietly keeps
                 nature alive and connected.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function TinyWingsBuzz() {
               The hive.
             </h2>
             <p className="mt-6 text-on-surface-variant font-light max-w-2xl">
-              Buzz at the centre — Queen Beatrice, Flora, Nectarine and Pollen
+              Buzz at the centre. Queen Beatrice, Flora, Nectarine and Pollen
               alongside him. Five gentle teachers in a living, humming world.
             </p>
           </div>
@@ -122,7 +122,7 @@ export default function TinyWingsBuzz() {
             <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-6 text-center">
               [ KEY ART // A TINY HERO'S PURPOSE ]
             </p>
-            <img src={`${IMG}/tw_09.jpg`} alt="A Tiny Hero's Purpose — Tiny Wings Big Job" className="w-full max-w-2xl mx-auto" />
+            <img src={`${IMG}/tw_09.jpg`} alt="A Tiny Hero's Purpose. Tiny Wings Big Job" className="w-full max-w-2xl mx-auto" />
           </div>
         </section>
 
@@ -179,7 +179,7 @@ export default function TinyWingsBuzz() {
               [ LOGLINE ]
             </p>
             <p className="font-headline text-2xl md:text-4xl font-bold leading-tight tracking-tight">
-              A small bee learning his place in the world — discovering that
+              A small bee learning his place in the world, discovering that
               <span className="text-primary"> every tiny flutter</span> helps
               the Earth bloom and buzz with life.
             </p>
@@ -206,10 +206,10 @@ export default function TinyWingsBuzz() {
               </p>
               <p>
                 He meets <span className="text-primary">Flora</span> dancing
-                from flower to flower — pollinating, helping flowers make
+                from flower to flower. Pollinating, helping flowers make
                 seeds for fruits and vegetables. He meets <span className="text-primary">Nectarine</span> carefully
-                storing sweet nectar — making honey that feeds the hive and
-                many other creatures. He meets <span className="text-primary">Pollen</span> the brave scout —
+                storing sweet nectar. Making honey that feeds the hive and
+                many other creatures. He meets <span className="text-primary">Pollen</span> the brave scout,
                 searching for new patches of blooming flowers so the work can
                 continue.
               </p>
@@ -231,7 +231,7 @@ export default function TinyWingsBuzz() {
               Buzz grows up.
             </h2>
             <p className="mt-6 text-on-surface-variant font-light max-w-2xl">
-              Each season has its own visual identity and emotional arc — but
+              Each season has its own visual identity and emotional arc, but
               the world stays cohesive. No aging-out. No reset. Buzz simply
               earns the next chapter.
             </p>
@@ -395,7 +395,7 @@ const SEASONS = [
     label: "S03",
     title: "Growing Confidence",
     episodes: "14 EP",
-    body:  "Buzz flies higher above the fields, wings spread wide. Below, the hive looks smaller — showing how far he has come. Calm. Confident. No longer unsure.",
+    body:  "Buzz flies higher above the fields, wings spread wide. Below, the hive looks smaller. Showing how far he has come. Calm. Confident. No longer unsure.",
     mood:  "Confident · Peaceful",
     palette: "Sky blues · Whites · Gold",
     theme: "Self-belief",
@@ -404,7 +404,7 @@ const SEASONS = [
     label: "S04",
     title: "A Tiny Hero in a Big World",
     episodes: "14 EP",
-    body:  "Buzz leads younger bees across blooming fields and changing seasons. Not a hero in spotlight — a quiet guide. Leadership without volume.",
+    body:  "Buzz leads younger bees across blooming fields and changing seasons. Not a hero in spotlight, a quiet guide. Leadership without volume.",
     mood:  "Proud · Gentle",
     palette: "Rich golds · Ambers",
     theme: "Continuity",
@@ -422,7 +422,7 @@ const S1_EPISODES = [
   { n: 7,  title: "The Quiet Flower",     beat: "Buzz helps pollinate a single forgotten flower and sees its quiet magic." },
   { n: 8,  title: "Working Together",     beat: "A big task becomes easy when bees work as one." },
   { n: 9,  title: "Lost Pollen",          beat: "Buzz helps return lost pollen safely back to the hive." },
-  { n: 10, title: "Different Wings",      beat: "Buzz notices how every bee flies differently — and that's okay." },
+  { n: 10, title: "Different Wings",      beat: "Buzz notices how every bee flies differently, and that's okay." },
   { n: 11, title: "Storm Day",            beat: "A storm keeps bees inside. Buzz learns some jobs happen within the hive." },
   { n: 12, title: "Bloom Day",            beat: "The fields burst with flowers, and Buzz proudly joins the work." },
 ];

@@ -57,13 +57,13 @@ export default function Chimpu() {
                 A clever and resourceful monkey adapts to a human-centric world
                 after his forest home is replaced by a luxury hotel. Left
                 behind while his troop is sent to the zoo, <span className="text-primary">Chimpu</span> decides
-                to make the resort his personal playground — and <span className="text-primary">Tiger</span>,
+                to make the resort his personal playground, and <span className="text-primary">Tiger</span>,
                 the hellbound rival, has other plans.
               </p>
             </div>
             <div className="lg:col-span-5">
               <div className="bg-surface-container-low border border-outline-variant overflow-hidden" style={{ aspectRatio: "1 / 1" }}>
-                <img src={`${IMG}/ch_07.png`} alt="Chimpu · Mann Ki Masti — Key Art" className="w-full h-full object-cover" />
+                <img src={`${IMG}/ch_07.png`} alt="Chimpu · Mann Ki Masti. Key Art" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function Chimpu() {
             </div>
             <div className="lg:col-span-8 text-on-surface-variant font-light leading-relaxed space-y-5">
               <p>
-                In the pilot episode, Chimpu — a clever and resourceful monkey —
+                In the pilot episode, Chimpu, a clever and resourceful monkey,
                 adapts to a human-centric world after his forest home is
                 replaced by a luxury hotel. Left behind while his troop is
                 sent to the zoo, Chimpu decides to make the resort his
@@ -181,11 +181,11 @@ export default function Chimpu() {
               <p>
                 Lobbies become tree canopies. Chandeliers become vines.
                 Banana plates become buffets. And the hotel's grumpy guard
-                cat, Tiger, makes it his life's mission to chase Chimpu out —
+                cat, Tiger, makes it his life's mission to chase Chimpu out,
                 and fails, gloriously, every time.
               </p>
               <p className="italic text-on-surface-variant">
-                Pre-K slapstick — exaggerated cause-and-effect comedy with
+                Pre-K slapstick. Exaggerated cause-and-effect comedy with
                 character-led mischief and zero dialogue dependency.
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function Chimpu() {
             </p>
             <p className="font-headline text-2xl md:text-4xl font-bold leading-tight tracking-tight">
               When the jungle becomes a hotel, the cleverest monkey just
-              <span className="text-primary"> changes the rules</span> — one
+              <span className="text-primary"> changes the rules</span>, one
               banana, one chase, one pratfall at a time.
             </p>
           </div>
@@ -262,10 +262,10 @@ const CAST = [
 ];
 
 const CRAFT = [
-  { icon: "sentiment_very_satisfied", title: "Slapstick First",     body: "Exaggerated cause-and-effect comedy — pratfalls, near-misses, perfectly-timed chaos. Built for the pre-K laugh." },
-  { icon: "translate",                title: "Zero Dialogue Dependency", body: "Chimpu and Tiger barely speak. The story is read in body, beat, and bounce — globally legible from frame one." },
+  { icon: "sentiment_very_satisfied", title: "Slapstick First",     body: "Exaggerated cause-and-effect comedy. Pratfalls, near-misses, perfectly-timed chaos. Built for the pre-K laugh." },
+  { icon: "translate",                title: "Zero Dialogue Dependency", body: "Chimpu and Tiger barely speak. The story is read in body, beat, and bounce. Globally legible from frame one." },
   { icon: "directions_run",           title: "Chase as Engine",      body: "Every episode is a chase episode. Tiger chases Chimpu. The hotel chases its own ghosts. The audience just chases the laugh." },
-  { icon: "auto_awesome",             title: "Visual Gag Library",   body: "A growing repertoire of recurring sight gags — banana cart, chandelier swing, room-service trolley — re-staged each episode." },
+  { icon: "auto_awesome",             title: "Visual Gag Library",   body: "A growing repertoire of recurring sight gags (banana cart, chandelier swing, room-service trolley) re-staged each episode." },
   { icon: "schedule",                 title: "11-Min Episode Length", body: "Tight, broadcast-friendly format. Two beats per episode, one big set-piece, one quiet button to land it." },
   { icon: "public",                   title: "Travels Without Translation", body: "Hotel + monkey + cat = a story format that ships to any market without a dub track. The pilot proves the floor." },
 ];

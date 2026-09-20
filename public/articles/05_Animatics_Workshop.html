@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animatics That Actually Time the Show — Nmedia Services</title>
-<meta name="description" content="Module 05 wires storyboard panels to voiceover, music and SFX into a real timed animatic — the first place the show feels like a show.">
-<meta property="og:title" content="Animatics That Actually Time the Show — Nmedia Services">
-<meta property="og:description" content="Module 05 wires storyboard panels to voiceover, music and SFX into a real timed animatic — the first place the show feels like a show.">
+<title>Animatics That Actually Time the Show · Nmedia Services</title>
+<meta name="description" content="Module 05 wires storyboard panels to voiceover, music and SFX into a real timed animatic, the first place the show feels like a show.">
+<meta property="og:title" content="Animatics That Actually Time the Show · Nmedia Services">
+<meta property="og:description" content="Module 05 wires storyboard panels to voiceover, music and SFX into a real timed animatic, the first place the show feels like a show.">
 <meta property="og:image" content="./images/05b.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 05 · Animatics Workshop</span>
     <h1>Animatics that <em>actually time the show</em>.</h1>
-    <p class="hero-sub">An animatic is the first honest read of a script. Module 05 builds it from boards plus voice plus music — and crucially, lets you re-cut it as fast as you can change your mind.</p>
+    <p class="hero-sub">An animatic is the first honest read of a script. Module 05 builds it from boards plus voice plus music, and crucially, lets you re-cut it as fast as you can change your mind.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -99,7 +99,7 @@
 
 <article class="body">
 
-  <p class="lede">A storyboard says <em>what</em> is in the show. An animatic says <em>how long</em> the show is. Skip this step and you find out only at the colour-grade — which is too late.</p>
+  <p class="lede">A storyboard says <em>what</em> is in the show. An animatic says <em>how long</em> the show is. Skip this step and you find out only at the colour-grade, which is too late.</p>
 
   <h2><span class="num">01</span>The problem</h2>
   <p>Animatics are where pacing problems become visible. The trouble is they've historically been expensive: a sound editor cuts dialogue to picture, an assistant edits the panels to the dialogue, a director gives notes, the loop repeats. Three days minimum, and that's before the music demo arrives.</p>
@@ -107,12 +107,12 @@
 
   <figure>
     <img src="./images/05b.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Animatics workshop timeline with panels, dialogue tracks and music bed.">
-    <figcaption>One timeline, three layers — boards, voice, music — driven from the same project manifest.</figcaption>
+    <figcaption>One timeline, three layers (boards, voice, music) driven from the same project manifest.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
   <p>Module 05 ingests the boards from Module 04 plus the voiceover script extracted by Module 02. It synthesises voice with a self-hosted TTS (we use IndexTTS-2 for zero-shot voice cloning) and auto-aligns each line to its corresponding board panel. The first cut is generated, not edited.</p>
-  <p>From there the panel becomes a re-cut surface: drag a panel boundary to extend a beat, swap a voice take, scrub a music bed under it. The output is an MP4 plus a structured EDL that downstream tools can read — so when Module 06 (Animation Sandbox) takes over, it inherits the timing instead of guessing it.</p>
+  <p>From there the panel becomes a re-cut surface: drag a panel boundary to extend a beat, swap a voice take, scrub a music bed under it. The output is an MP4 plus a structured EDL that downstream tools can read, so when Module 06 (Animation Sandbox) takes over, it inherits the timing instead of guessing it.</p>
 
   <blockquote>"The first cut is free. Every cut after that is faster than opening Premiere."</blockquote>
 
@@ -122,13 +122,13 @@
   <ul>
     <li><strong>Voice clone routing.</strong> Each character ID in the script maps to a voice profile. Re-roll a single line without disturbing the rest.</li>
     <li><strong>Auto-alignment.</strong> First-cut panel timings are derived from the dialogue duration plus a configurable per-show pacing curve.</li>
-    <li><strong>Music bed slot.</strong> Drop in a placeholder music track now, replace with the licensed mix later — timing data survives the swap.</li>
+    <li><strong>Music bed slot.</strong> Drop in a placeholder music track now, replace with the licensed mix later. Timing data survives the swap.</li>
     <li><strong>Board edit round-trip.</strong> Spot a panel that's wrong? Edit it in Module 04 and the animatic re-imports without losing your timing edits.</li>
   </ul>
 
   <figure>
     <img src="./images/05c.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Voice clone selection panel with per-character profiles assigned.">
-    <figcaption>Per-character voice profiles — assigned once, used across every line in the script.</figcaption>
+    <figcaption>Per-character voice profiles. Assigned once, used across every line in the script.</figcaption>
   </figure>
 
   <div class="callout">
@@ -136,13 +136,13 @@
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>The next iteration adds <strong>multi-take voiceover comparison</strong> — generate three reads of every line, audition them inside the timeline, lock the best one. After that: shot-level <strong>action timing</strong>, so the animatic can suggest motion durations the animation module then honours by default.</p>
+  <p>The next iteration adds <strong>multi-take voiceover comparison</strong>. Generate three reads of every line, audition them inside the timeline, lock the best one. After that: shot-level <strong>action timing</strong>, so the animatic can suggest motion durations the animation module then honours by default.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

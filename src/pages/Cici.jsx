@@ -54,7 +54,7 @@ export default function Cici() {
               </p>
               <p className="text-on-surface-variant font-light leading-relaxed max-w-xl pt-4 text-lg">
                 <span className="text-primary">Cici</span> is an assertive, competitive
-                8-year-old fish — and an overly enthusiastic news reporter
+                8-year-old fish, and an overly enthusiastic news reporter
                 broadcasting live from the coral reef. With <span className="text-primary">Spike</span> at
                 her side and <span className="text-primary">Mr. Rudolph</span> watching from the
                 school bench, every story turns into a lesson on friendship,
@@ -178,7 +178,7 @@ export default function Cici() {
                 Join Cici, an assertive and competitive 8-year-old fish who
                 is also an overly enthusiastic news reporter. Cici loves a
                 good adventure and playing cricket with her best friend
-                Spike — but her impulsive nature often leads her into tricky
+                Spike, but her impulsive nature often leads her into tricky
                 situations.
               </p>
               <p>
@@ -190,7 +190,7 @@ export default function Cici() {
               </p>
               <p className="italic text-on-surface-variant">
                 Think of Cici as a young journalist trying to report from the
-                middle of a theme park — surrounded by excitement and
+                middle of a theme park. Surrounded by excitement and
                 distractions, until she learns that the best stories are
                 found when you slow down and listen.
               </p>
@@ -238,18 +238,18 @@ export default function Cici() {
             <div className="lg:col-span-7 text-on-surface-variant font-light leading-relaxed space-y-5">
               <p>
                 A central recurring segment in every episode. Cici stumbles on
-                an object drifting through the reef — a plastic bag, a
-                fishing line, a forgotten shoe — and tries to figure out
+                an object drifting through the reef, a plastic bag, a
+                fishing line, a forgotten shoe, and tries to figure out
                 what it is, where it came from, and why it doesn't belong.
               </p>
               <p>
                 A thought-provoking, bite-sized format that sheds light on
-                the impact of human activities on marine life — designed to
+                the impact of human activities on marine life, designed to
                 travel as a standalone short, an adaptable interstitial, or a
                 full episode beat.
               </p>
               <p className="text-primary font-medium">
-                Foster a sense of responsibility and care for our planet — by
+                Foster a sense of responsibility and care for our planet, by
                 making the lesson the story, not the homework.
               </p>
             </div>
@@ -278,8 +278,8 @@ export default function Cici() {
               Pitch deck. Pilot.<br />Series bible.
             </h2>
             <p className="text-on-surface-variant max-w-md mx-auto mb-10 font-light">
-              Looking for partners — broadcasters, OTTs, environmental
-              education programs — to bring the world of "Swim. Sink. Rise.
+              Looking for partners, broadcasters, OTTs, environmental
+              education programs, to bring the world of "Swim. Sink. Rise.
               Repeat." to life.
             </p>
             <a href="mailto:nanda@nmediaservices.com" className="nm-btn-primary inline-block font-label uppercase px-12 py-5 font-bold text-sm tracking-widest">
@@ -305,8 +305,8 @@ const CAST = [
 ];
 
 const PILLARS = [
-  { icon: "eco",          title: "Environmental Awareness", body: "The 'What's That U.F.O.' segment frames human impact on marine life as bite-sized, story-led discovery — never lecture." },
-  { icon: "groups",       title: "Relatable Characters",   body: "Spike — Cici's loyal, compassionate 'Yin to her Yang' — and Mr. Rudolph, the optimistic counselor who finds wonder in everything." },
+  { icon: "eco",          title: "Environmental Awareness", body: "The 'What's That U.F.O.' segment frames human impact on marine life as bite-sized, story-led discovery, never lecture." },
+  { icon: "groups",       title: "Relatable Characters",   body: "Spike (Cici's loyal, compassionate 'Yin to her Yang') and Mr. Rudolph, the optimistic counselor who finds wonder in everything." },
   { icon: "psychology",   title: "Moral Education",        body: "Every story follows the same shape: Cici makes a mistake, understands the consequence with friends and family, and amends." },
   { icon: "playlist_play", title: "Format & Scope",        body: "26 episodes × 7 minutes. Targeting children ages 4–8. Broadcast and streaming friendly." },
 ];

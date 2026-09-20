@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Turning Client Chaos Into a Production Brief — Nmedia Services</title>
+<title>Turning Client Chaos Into a Production Brief · Nmedia Services</title>
 <meta name="description" content="Module 00 ingests client emails, briefs and reference images, layers in a seven-axis taxonomy, and emits a structured production document the rest of the pipeline can actually read.">
-<meta property="og:title" content="Turning Client Chaos Into a Production Brief — Nmedia Services">
+<meta property="og:title" content="Turning Client Chaos Into a Production Brief · Nmedia Services">
 <meta property="og:description" content="Module 00 ingests client emails, briefs and reference images, layers in a seven-axis taxonomy, and emits a structured production document the rest of the pipeline can actually read.">
 <meta property="og:image" content="./images/00a.jpg">
 <meta property="og:type" content="article">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 00 · Content Input System</span>
     <h1>Turning client chaos <em>into a production brief</em>.</h1>
-    <p class="hero-sub">A pitch arrives as a Word doc, three voice notes and a Pinterest board. The pipeline expects structured data. Module 00 is the translator — and the place where every project in the studio is born.</p>
+    <p class="hero-sub">A pitch arrives as a Word doc, three voice notes and a Pinterest board. The pipeline expects structured data. Module 00 is the translator, and the place where every project in the studio is born.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -100,20 +100,20 @@
 
 <article class="body">
 
-  <p class="lede">Every animation project starts the same way: a great idea, badly described. The job of Module 00 is to take that mess — the email chain, the reference deck, the half-written treatment — and turn it into a brief the rest of the pipeline can actually consume.</p>
+  <p class="lede">Every animation project starts the same way: a great idea, badly described. The job of Module 00 is to take that mess (the email chain, the reference deck, the half-written treatment) and turn it into a brief the rest of the pipeline can actually consume.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>Pre-production is where most studios bleed time. Not on creative choices — on <strong>translation</strong>. A producer reads a client email. A creative director writes a treatment from it. A coordinator restructures the treatment into a brief. A writer rebuilds the brief as a script. Every hand-off is a re-typing exercise, and every re-typing is a place where intent gets lost.</p>
-  <p>Worse: by the time the brief reaches the storyboard team, nobody can say with confidence whether the show is supposed to be a 3D Pixar piece, a webtoon, a cel-shaded anime, or a live-action commercial. The visual treatment was a vibe in someone's head three Slack messages ago. That's not a creative problem — it's a data-loss problem.</p>
+  <p>Pre-production is where most studios bleed time. Not on creative choices, on <strong>translation</strong>. A producer reads a client email. A creative director writes a treatment from it. A coordinator restructures the treatment into a brief. A writer rebuilds the brief as a script. Every hand-off is a re-typing exercise, and every re-typing is a place where intent gets lost.</p>
+  <p>Worse: by the time the brief reaches the storyboard team, nobody can say with confidence whether the show is supposed to be a 3D Pixar piece, a webtoon, a cel-shaded anime, or a live-action commercial. The visual treatment was a vibe in someone's head three Slack messages ago. That's not a creative problem. It's a data-loss problem.</p>
 
   <figure>
     <img src="./images/00a.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Module 00 control panel showing client input list and the stepped brief builder.">
-    <figcaption>Client inputs on the left, taxonomy-driven brief builder on the right — every project starts here.</figcaption>
+    <figcaption>Client inputs on the left, taxonomy-driven brief builder on the right, every project starts here.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>Module 00 collapses intake into a single Flask control panel that does two things well. First, it accepts <strong>raw client material</strong> — text briefs, questionnaire answers, reference images — and stores them as a versioned workspace. Second, it walks an operator through a <strong>stepped brief builder</strong>: pick a content format (Series, Movie, Musical/Song, Documentary, Ad/Commercial), then layer in seven taxonomy axes — visual treatment, art style, motion language, genre, age group, tone, mood.</p>
-  <p>Each taxonomy choice is backed by a real document — an actual style guide that gets injected into the LLM prompt. "Anime" isn't a vibe; it's a 400-word treatment of cel-shaded technique, vibrant palette and dynamic action lines. The brief generator reads all of it as context, not as a label.</p>
+  <p>Module 00 collapses intake into a single Flask control panel that does two things well. First, it accepts <strong>raw client material</strong>. Text briefs, questionnaire answers, reference images, and stores them as a versioned workspace. Second, it walks an operator through a <strong>stepped brief builder</strong>: pick a content format (Series, Movie, Musical/Song, Documentary, Ad/Commercial), then layer in seven taxonomy axes, visual treatment, art style, motion language, genre, age group, tone, mood.</p>
+  <p>Each taxonomy choice is backed by a real document, an actual style guide that gets injected into the LLM prompt. "Anime" isn't a vibe; it's a 400-word treatment of cel-shaded technique, vibrant palette and dynamic action lines. The brief generator reads all of it as context, not as a label.</p>
 
   <blockquote>"The intake step used to be a coordinator with a Word doc. Now it's a manifest the rest of the studio can read."</blockquote>
 
@@ -122,28 +122,28 @@
 
   <ul>
     <li><strong>Stepped brief builder.</strong> Project name → client input → format → seven taxonomy layers → model → generate. Each step gates the next, so an operator can't accidentally ship a half-configured brief.</li>
-    <li><strong>Production buckets.</strong> Five format presets (Ad, Series, Movie, Documentary, Musical/Song) — each with its own brief template that the LLM fills in. The structure is the contract.</li>
-    <li><strong>PROJECT.json manifest.</strong> Every generated brief writes a canonical manifest into its project folder. Format, version, taxonomy, source files — the rest of the pipeline (M01–M07) reads this one file to know what kind of project it is.</li>
+    <li><strong>Production buckets.</strong> Five format presets (Ad, Series, Movie, Documentary, Musical/Song), each with its own brief template that the LLM fills in. The structure is the contract.</li>
+    <li><strong>PROJECT.json manifest.</strong> Every generated brief writes a canonical manifest into its project folder. Format, version, taxonomy, source files, the rest of the pipeline (M01–M07) reads this one file to know what kind of project it is.</li>
     <li><strong>Workspace flush + load.</strong> Save-and-flush archives the current intake into a zip; load-archive restores it. Multiple projects, no cross-contamination, full auditability.</li>
   </ul>
 
   <figure>
     <img src="./images/00b.jpg" onerror="this.src='./_shared/placeholder.svg'" alt="Stepped brief builder showing the seven taxonomy layers being configured.">
-    <figcaption>Seven taxonomy axes — each backed by a real style document the LLM reads as context.</figcaption>
+    <figcaption>Seven taxonomy axes, each backed by a real style document the LLM reads as context.</figcaption>
   </figure>
 
   <div class="callout">
-    <b>Why it matters →</b> Garbage-in / garbage-out is the oldest rule in production. The studios shipping fastest aren't the ones with the best AI models — they're the ones whose intake is structured enough that the model has something coherent to work with. Module 00 is where that structure happens.
+    <b>Why it matters →</b> Garbage-in / garbage-out is the oldest rule in production. The studios shipping fastest aren't the ones with the best AI models. They're the ones whose intake is structured enough that the model has something coherent to work with. Module 00 is where that structure happens.
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>The next iteration adds a <strong>questionnaire-first intake</strong>: rather than starting from a client email, the studio sends the client a smart form whose questions are themselves taxonomy-aware. The output of the form lands as a pre-filled brief builder. After that: <strong>multi-language intake</strong> — clients write in their own language, the brief is generated in production English, no translator round-trip required. The pipeline keeps moving the bottleneck upstream until there isn't one.</p>
+  <p>The next iteration adds a <strong>questionnaire-first intake</strong>: rather than starting from a client email, the studio sends the client a smart form whose questions are themselves taxonomy-aware. The output of the form lands as a pre-filled brief builder. After that: <strong>multi-language intake</strong>. Clients write in their own language, the brief is generated in production English, no translator round-trip required. The pipeline keeps moving the bottleneck upstream until there isn't one.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

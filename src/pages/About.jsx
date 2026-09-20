@@ -55,11 +55,11 @@ export default function About() {
                 <span className="text-primary">Forward Deployed Engineer</span> · Toronto
               </p>
               <p className="text-on-surface-variant font-light leading-relaxed text-lg pt-3">
-                Twenty-plus years in animation, lighting and VFX —
+                Twenty-plus years in animation, lighting and VFX,
                 <span className="text-primary"> Disney</span>,
                 <span className="text-primary"> Nickelodeon</span>,
                 <span className="text-primary"> Lego</span>,
-                <span className="text-primary"> Paw Patrol</span> — now running
+                <span className="text-primary"> Paw Patrol</span>, now running
                 an AI-native production studio out of one toolchain.
               </p>
               <button
@@ -220,7 +220,7 @@ export default function About() {
               rendering and technical direction.
             </p>
             <p>
-              Nmedia Services is the studio that came out of that — built on
+              Nmedia Services is the studio that came out of that, built on
               the principle that <em className="not-italic text-primary">no
               hand-off is faster than no hand-off</em>. Every module of the
               pipeline is operator-runnable from a single browser tab. Every
@@ -231,7 +231,7 @@ export default function About() {
               The current work is model-agnostic by construction. The generation
               layer runs across{" "}
               <em className="not-italic text-primary">eight frontier models</em>{" "}
-              rather than betting the pipeline on one — swapping a provider is a
+              rather than betting the pipeline on one. Swapping a provider is a
               config change, not a rewrite. Since April 2026 that has meant{" "}
               <em className="not-italic text-primary">61 million generated tokens</em>{" "}
               across 61,080 model turns, spanning storyboard generation, animatics,
@@ -248,7 +248,7 @@ export default function About() {
             </p>
             <p>
               Adjacent to the animation work: a deliberate stack of credentials
-              in generative AI, data analytics, and digital marketing — all
+              in generative AI, data analytics, and digital marketing, all
               feeding back into how we run client briefs end-to-end.
             </p>
           </div>
@@ -298,12 +298,12 @@ const DISCIPLINES = [
   { icon: "code",            title: "Full-Stack Development", body: "React, Vite, Tailwind, Node, FastAPI. The web, data and delivery layer wrapped around the creative work." },
   { icon: "engineering",     title: "Technical Direction",   body: "The role between 'animator' and 'pipeline TD' that keeps shows shipping. End-to-end ownership." },
   // — Production craft —
-  { icon: "person",          title: "Character Animation",   body: "Performance acting, body mechanics, blocking through final polish — across stylised and realistic." },
-  { icon: "videocam",        title: "Motion Graphics",       body: "Editing, compositing, animation, lighting and rendering — full-stack motion craft." },
+  { icon: "person",          title: "Character Animation",   body: "Performance acting, body mechanics, blocking through final polish, across stylised and realistic." },
+  { icon: "videocam",        title: "Motion Graphics",       body: "Editing, compositing, animation, lighting and rendering. Full-stack motion craft." },
   { icon: "view_in_ar",      title: "Polygon Modelling",     body: "Production-grade asset modelling. Props for Disney's Tinker Bell. Game and film pipelines." },
   { icon: "wb_incandescent", title: "Lighting & Render",     body: "V-Ray, Cycles, Eevee. Look-development through final-frame, broadcast-grade output." },
-  { icon: "videogame_asset", title: "Motion Capture",        body: "Mocap pipeline ownership — solving, retargeting, cleanup, blending into animator finishes." },
-  { icon: "deployed_code",   title: "Real-Time Engines",     body: "Unreal and Unity — animation assets built for immersive, real-time cinematic delivery." },
+  { icon: "videogame_asset", title: "Motion Capture",        body: "Mocap pipeline ownership. Solving, retargeting, cleanup, blending into animator finishes." },
+  { icon: "deployed_code",   title: "Real-Time Engines",     body: "Unreal and Unity. Animation assets built for immersive, real-time cinematic delivery." },
 ];
 
 // Credentials wall — actual scans/screenshots from the legacy Wix /certi page.

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Built an Automated Video Factory — Nmedia Services</title>
-<meta name="description" content="A modular, GPU-accelerated pipeline that turns a single spreadsheet row into a finished UGC video — avatar, voice, B-roll, captions, QA — without a human in the middle.">
-<meta property="og:title" content="I Built an Automated Video Factory — Nmedia Services">
-<meta property="og:description" content="A modular, GPU-accelerated pipeline that turns a single spreadsheet row into a finished UGC video — avatar, voice, B-roll, captions, QA — without a human in the middle.">
+<title>I Built an Automated Video Factory · Nmedia Services</title>
+<meta name="description" content="A modular, GPU-accelerated pipeline that turns a single spreadsheet row into a finished UGC video (avatar, voice, B-roll, captions, QA) without a human in the middle.">
+<meta property="og:title" content="I Built an Automated Video Factory · Nmedia Services">
+<meta property="og:description" content="A modular, GPU-accelerated pipeline that turns a single spreadsheet row into a finished UGC video (avatar, voice, B-roll, captions, QA) without a human in the middle.">
 <meta property="og:image" content="./images/ugc_a.png">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">UGC Pipeline · Automated Video Factory</span>
     <h1>UGC, Building An <em>Automated User Video Pipeline</em>.</h1>
-    <p class="hero-sub">One spreadsheet row in, one finished video out. Avatar, voice, B-roll, captions, brand stings and a QA gate — all wired into a single Sheet-driven pipeline that runs on a GPU instead of a junior editor.</p>
+    <p class="hero-sub">One spreadsheet row in, one finished video out. Avatar, voice, B-roll, captions, brand stings and a QA gate, all wired into a single Sheet-driven pipeline that runs on a GPU instead of a junior editor.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -100,20 +100,20 @@
 
 <article class="body">
 
-  <p class="lede">UGC content has the same shape every time. Hook, talking-head, B-roll, payoff, brand sting. The pieces are repetitive — the editing is not. So I stopped editing and started <em>scheduling</em>: one row in a Google Sheet becomes one finished video, and the GPU does the rest.</p>
+  <p class="lede">UGC content has the same shape every time. Hook, talking-head, B-roll, payoff, brand sting. The pieces are repetitive, the editing is not. So I stopped editing and started <em>scheduling</em>: one row in a Google Sheet becomes one finished video, and the GPU does the rest.</p>
 
   <h2><span class="num">01</span>The problem</h2>
-  <p>Producing UGC at volume looks easy from the outside and is brutal from the inside. A creator delivers a script. An editor records voiceover, picks a voice, generates a talking-head, hunts B-roll, lays in captions, brands the bumpers, exports, QCs, re-exports. <strong>Forty minutes per video on a good day.</strong> Multiply that by twenty videos a week and the bottleneck is no longer creative — it's clerical.</p>
+  <p>Producing UGC at volume looks easy from the outside and is brutal from the inside. A creator delivers a script. An editor records voiceover, picks a voice, generates a talking-head, hunts B-roll, lays in captions, brands the bumpers, exports, QCs, re-exports. <strong>Forty minutes per video on a good day.</strong> Multiply that by twenty videos a week and the bottleneck is no longer creative, it's clerical.</p>
   <p>Worse, every minute of that work is the kind machines are good at: picking a track, aligning audio to video, dropping in lower-thirds, cutting on the beat. Humans burn out. Pipelines don't.</p>
 
   <figure>
     <img src="./images/ugc_a.png" onerror="this.src='./_shared/placeholder.svg'" alt="Pipeline architecture diagram showing modules, queue and Sheet-driven control flow.">
-    <figcaption>The architecture — modular Python stages, GPU-accelerated, driven from a single Google Sheet.</figcaption>
+    <figcaption>The architecture. Modular Python stages, GPU-accelerated, driven from a single Google Sheet.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
   <p>The production queue lives in a Google Sheet. Each row is one video. Dropdowns pick voice, avatar, animation style, format (UGC / Ad / Podcast) and two-speaker mode. The operator ticks a <code>START</code> checkbox; the pipeline picks the row up on the next cycle, writes status back to the Sheet as it works, and posts the rendered MP4 to a finished folder when it's done.</p>
-  <p>Under the hood it's a chain of small, replaceable modules — TTS, lip-sync, B-roll fetch, caption render, brand sting, final composite. Each module reads from a shared cache so the same voice or avatar never gets regenerated twice. A pipeline-wide <strong>kill switch</strong> writes a stop flag to disk and every module checks it between steps — so a runaway render never costs more than the current shot.</p>
+  <p>Under the hood it's a chain of small, replaceable modules. TTS, lip-sync, B-roll fetch, caption render, brand sting, final composite. Each module reads from a shared cache so the same voice or avatar never gets regenerated twice. A pipeline-wide <strong>kill switch</strong> writes a stop flag to disk and every module checks it between steps, so a runaway render never costs more than the current shot.</p>
 
   <blockquote>"The Sheet is the UI. The pipeline is the renderer. Editors became reviewers, and weekly throughput went up 5×."</blockquote>
 
@@ -121,28 +121,28 @@
   <p>The same engine produces three distinct video formats, picked by a single column in the Sheet:</p>
 
   <ul>
-    <li><strong>UGC.</strong> Talking-head avatar over B-roll, with text overlays and branded title cards. The classic creator format — hook, deliver, sign-off.</li>
-    <li><strong>Ad.</strong> Text animations with voiceover over B-roll. No avatar — clean commercial pacing for product or campaign work.</li>
+    <li><strong>UGC.</strong> Talking-head avatar over B-roll, with text overlays and branded title cards. The classic creator format, hook, deliver, sign-off.</li>
+    <li><strong>Ad.</strong> Text animations with voiceover over B-roll. No avatar. Clean commercial pacing for product or campaign work.</li>
     <li><strong>Podcast.</strong> Multi-speaker discussion with two avatar circles (male + female) facing each other. The audio is <em>diarised by pitch analysis</em> before lip-sync, so each speaker drives their own avatar independently.</li>
   </ul>
 
   <h2><span class="num">04</span>Automated quality control</h2>
-  <p>Every video passes through a vision-AI gate before being marked done. The system extracts representative frames and scores them against design criteria — typography, contrast, framing, brand consistency, motion smoothness.</p>
+  <p>Every video passes through a vision-AI gate before being marked done. The system extracts representative frames and scores them against design criteria. Typography, contrast, framing, brand consistency, motion smoothness.</p>
 
   <ul>
     <li><strong>Score ≥ 7</strong> → auto-approved, posted to the finished folder.</li>
     <li><strong>4–6</strong> → flagged for human review with the failing criteria attached.</li>
     <li><strong>&lt; 4</strong> → automatic revision with noted corrections, re-runs through the pipeline.</li>
-    <li><strong>Lessons Learned table</strong> — every flagged issue gets logged so the QA prompt itself improves over time. The same problem is never raised twice.</li>
+    <li><strong>Lessons Learned table</strong>, every flagged issue gets logged so the QA prompt itself improves over time. The same problem is never raised twice.</li>
   </ul>
 
   <div class="callout">
-    <b>Why it matters →</b> Video at volume is an operations problem dressed up as a creative one. Once the boring 80% is automated, the editor's job becomes choosing what's worth making — not assembling the parts. The pipeline doesn't replace creativity; it gives creativity room to breathe.
+    <b>Why it matters →</b> Video at volume is an operations problem dressed up as a creative one. Once the boring 80% is automated, the editor's job becomes choosing what's worth making, not assembling the parts. The pipeline doesn't replace creativity; it gives creativity room to breathe.
   </div>
 
   <h2><span class="num">05</span>What's next</h2>
-  <p>The architecture was built as a personal bottleneck-buster and grew into a reusable framework — the module pattern, the live dashboard, the smart caching, the Sheet-driven control panel. Ad agencies, content studios, e-learning platforms and social-media teams can drop this structure into their own workflow with minor adapter work.</p>
-  <p>The next evolution is <strong>pre-production automation</strong> — AI-generated briefs feeding directly into project folders, per-project asset discovery, voice files bypassing TTS when a real read exists, and a single command that takes a client brief to a populated queue ready to render. The pipeline keeps moving the bottleneck upstream until there isn't one.</p>
+  <p>The architecture was built as a personal bottleneck-buster and grew into a reusable framework, the module pattern, the live dashboard, the smart caching, the Sheet-driven control panel. Ad agencies, content studios, e-learning platforms and social-media teams can drop this structure into their own workflow with minor adapter work.</p>
+  <p>The next evolution is <strong>pre-production automation</strong>. AI-generated briefs feeding directly into project folders, per-project asset discovery, voice files bypassing TTS when a real read exists, and a single command that takes a client brief to a populated queue ready to render. The pipeline keeps moving the bottleneck upstream until there isn't one.</p>
 
 </article>
 

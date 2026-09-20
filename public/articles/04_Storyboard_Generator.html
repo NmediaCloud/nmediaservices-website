@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>From Scene List to Shot Panels in Minutes — Nmedia Services</title>
-<meta name="description" content="Module 04 turns a structured script into keyframe-ready shot panels — LLM-enriched prompts, cast-aware compositions, no manual prompt writing.">
-<meta property="og:title" content="From Scene List to Shot Panels in Minutes — Nmedia Services">
-<meta property="og:description" content="Module 04 turns a structured script into keyframe-ready shot panels — LLM-enriched prompts, cast-aware compositions, no manual prompt writing.">
+<title>From Scene List to Shot Panels in Minutes · Nmedia Services</title>
+<meta name="description" content="Module 04 turns a structured script into keyframe-ready shot panels. LLM-enriched prompts, cast-aware compositions, no manual prompt writing.">
+<meta property="og:title" content="From Scene List to Shot Panels in Minutes · Nmedia Services">
+<meta property="og:description" content="Module 04 turns a structured script into keyframe-ready shot panels. LLM-enriched prompts, cast-aware compositions, no manual prompt writing.">
 <meta property="og:image" content="./images/04_a.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
     </a>
     <span class="hero-tag">Module 04 · Storyboard Generator</span>
     <h1>From scene list to shot panels <em>in minutes</em>.</h1>
-    <p class="hero-sub">A storyboard isn't a slideshow of pretty pictures. It's a contract between writers, directors and animators. Module 04 generates that contract — at a speed the writer's room actually keeps up with.</p>
+    <p class="hero-sub">A storyboard isn't a slideshow of pretty pictures. It's a contract between writers, directors and animators. Module 04 generates that contract, at a speed the writer's room actually keeps up with.</p>
     <div class="author-bar">
       <div class="author-avatar">N</div>
       <div class="author-info">
@@ -99,19 +99,19 @@
 
 <article class="body">
 
-  <p class="lede">A storyboard is the first place a script meets a camera. Get the camera wrong here and every downstream module — animatics, animation, polish — is rebuilding from a bad foundation.</p>
+  <p class="lede">A storyboard is the first place a script meets a camera. Get the camera wrong here and every downstream module (animatics, animation, polish) is rebuilding from a bad foundation.</p>
 
   <h2><span class="num">01</span>The problem</h2>
   <p>The honest version: most "AI storyboard" tools are image generators with extra steps. They take a sentence and draw something. That's a thumbnail, not a storyboard. A real storyboard knows the <strong>shot type</strong> (CU, MS, WS), the <strong>camera move</strong> (push-in, dolly, lock-off), the <strong>screen direction</strong> (left to right, eyeline match), and which <strong>characters from the cast</strong> are actually in frame. Sentences alone don't carry that.</p>
   <p>So board artists end up writing five-hundred-word prompts per panel, or hand-painting keyframes from scratch. Either way, the tool's "speed advantage" evaporates by panel twenty.</p>
 
   <figure>
-    <img src="./images/04_storyboard_hero.webp" onerror="this.src='./images/04_a.jpg'" alt="Animation Production. Generative Speed. Module 04 decomposes scenes into metadata-rich shots — context-aware, cast-locked." loading="lazy">
+    <img src="./images/04_storyboard_hero.webp" onerror="this.src='./images/04_a.jpg'" alt="Animation Production. Generative Speed. Module 04 decomposes scenes into metadata-rich shots, context-aware, cast-locked." loading="lazy">
     <figcaption>Scenes break into shots; shots get LLM-enriched prompts; prompts produce keyframe-ready panels.</figcaption>
   </figure>
 
   <h2><span class="num">02</span>The approach</h2>
-  <p>Module 04 reads structured input from Module 02 (script scenes) and Module 03 (cast variants). Each scene is decomposed into shots by an LLM that knows the show's grammar — established shot types, preferred camera language, the cast members in scope. The shot list is editable before any image is generated.</p>
+  <p>Module 04 reads structured input from Module 02 (script scenes) and Module 03 (cast variants). Each scene is decomposed into shots by an LLM that knows the show's grammar. Established shot types, preferred camera language, the cast members in scope. The shot list is editable before any image is generated.</p>
   <p>Then the prompt enrichment runs: every shot gets a long-form image prompt that injects the canonical cast description, the variant outfit, the environment plate, the lensing intent and the framing. The image model sees a complete scene description, not a fragment.</p>
 
   <blockquote>"The board stopped being prompts. It started being shots, with prompts attached as metadata."</blockquote>
@@ -121,28 +121,28 @@
 
   <ul>
     <li><strong>Scene-to-shot decomposition.</strong> One scene becomes 4–12 shots with suggested types and intent. Editable inline.</li>
-    <li><strong>Cast-aware enrichment.</strong> The prompt for every shot pulls from the canonical cast and active episode variants — no manual reference image hunting.</li>
-    <li><strong>Camera language presets.</strong> "Anime push-in", "documentary handheld", "comic-flat 2D" — house styles distilled into reusable directing vocabularies.</li>
-    <li><strong>Print-ready export.</strong> PDF storyboard sheets with shot numbers, dialogue, action notes — what a director actually needs in the room.</li>
+    <li><strong>Cast-aware enrichment.</strong> The prompt for every shot pulls from the canonical cast and active episode variants, no manual reference image hunting.</li>
+    <li><strong>Camera language presets.</strong> "Anime push-in", "documentary handheld", "comic-flat 2D". House styles distilled into reusable directing vocabularies.</li>
+    <li><strong>Print-ready export.</strong> PDF storyboard sheets with shot numbers, dialogue, action notes. What a director actually needs in the room.</li>
   </ul>
 
   <figure>
-    <img src="./images/04_panel_view.webp" onerror="this.src='./images/04_b.jpg'" alt="Module 04 control panel — Miss Mulala series, Underwater Ballet episode, shot cards SH01A, SH01B, SH02A with metadata fields below each frame." loading="lazy">
-    <figcaption>The output the director actually wants — printable, numbered, dialogue inline.</figcaption>
+    <img src="./images/04_panel_view.webp" onerror="this.src='./images/04_b.jpg'" alt="Module 04 control panel. Miss Mulala series, Underwater Ballet episode, shot cards SH01A, SH01B, SH02A with metadata fields below each frame." loading="lazy">
+    <figcaption>The output the director actually wants. Printable, numbered, dialogue inline.</figcaption>
   </figure>
 
   <div class="callout">
-    <b>Why it matters →</b> A storyboard pass that used to take a week now takes a morning. More importantly, the boards that come out of it are <em>structured</em> — every panel knows its shot type, camera move and cast, so the animatic and animation modules don't have to re-derive any of it.
+    <b>Why it matters →</b> A storyboard pass that used to take a week now takes a morning. More importantly, the boards that come out of it are <em>structured</em>, every panel knows its shot type, camera move and cast, so the animatic and animation modules don't have to re-derive any of it.
   </div>
 
   <h2><span class="num">04</span>What's next</h2>
-  <p>We're working on a <strong>shot-bank</strong> — a project-level library of approved shot grammars that learns from director feedback ("more push-ins", "less symmetric framing"). The board generator gets opinionated about your show over time, instead of being an empty prompt box on day one.</p>
+  <p>We're working on a <strong>shot-bank</strong>, a project-level library of approved shot grammars that learns from director feedback ("more push-ins", "less symmetric framing"). The board generator gets opinionated about your show over time, instead of being an empty prompt box on day one.</p>
 
 </article>
 
 <section class="cta">
   <h3>Want a pipeline like this for your studio?</h3>
-  <p>Nmedia Services is building the next generation of AI-native animation tools — modular, format-aware, and operator-friendly.</p>
+  <p>Nmedia Services is building the next generation of AI-native animation tools. Modular, format-aware, and operator-friendly.</p>
   <a class="cta-btn" href="https://nmediaservices.com" target="_blank" rel="noopener">Get in touch →</a>
 </section>
 

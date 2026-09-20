@@ -54,9 +54,9 @@ export default function WohShaadi() {
               </p>
               <p className="text-on-surface-variant font-light leading-relaxed max-w-xl pt-4 text-lg">
                 A micro-drama threaded through the rituals of a modern wedding
-                week. Three lives — <span className="text-primary">Aarohi</span>,
+                week. Three lives, <span className="text-primary">Aarohi</span>,
                 <span className="text-primary"> Kabir</span> and
-                <span className="text-primary"> Meera</span> — collide in
+                <span className="text-primary"> Meera</span>, collide in
                 ninety-second cliffhangers built for the phone screen.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function WohShaadi() {
               The triangle.
             </h2>
             <p className="mt-6 text-on-surface-variant font-light max-w-2xl">
-              Aarohi at the centre — Kabir in the middle, Meera at the edge of
+              Aarohi at the centre. Kabir in the middle, Meera at the edge of
               the frame. Five faces shape the story.
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function WohShaadi() {
             </h2>
           </div>
           <div className="bg-surface-container border border-outline-variant p-6 md:p-10">
-            <img src={`${IMG}/ws_08.png`} alt="Anatomy of a Microdrama — Story Pitch" className="w-full max-w-4xl mx-auto" />
+            <img src={`${IMG}/ws_08.png`} alt="Anatomy of a Microdrama. Story Pitch" className="w-full max-w-4xl mx-auto" />
           </div>
         </section>
 
@@ -203,13 +203,13 @@ export default function WohShaadi() {
             <div className="lg:col-span-7 text-on-surface-variant font-light leading-relaxed space-y-5">
               <p>
                 Microdrama is a fast-growing storytelling format made for
-                today's short-attention, mobile-first audience — especially
+                today's short-attention, mobile-first audience, especially
                 popular on TikTok, Instagram Reels, YouTube Shorts and
                 dedicated micro-drama apps.
               </p>
               <p>
                 A micro-drama is a short episodic story told in very small
-                time units — strong emotions, fast hooks, cliffhangers in
+                time units. Strong emotions, fast hooks, cliffhangers in
                 every cut.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
@@ -284,7 +284,7 @@ const ACTS = [
   { label: "ACT 01", title: "The Shock",   range: "EP 01–10", body: "Aarohi arrives, creating immediate tension with a visibly unhappy Kabir." },
   { label: "ACT 02", title: "The Secrets", range: "EP 11–20", body: "Hidden conversations begin to reveal family pressures and a secret debt." },
   { label: "ACT 03", title: "The Truth",   range: "EP 21–30", body: "The bride confronts Aarohi, revealing she knows everything about the past love affair." },
-  { label: "ACT 04", title: "The Decision", range: "EP 31–40", body: "With time running out, a final choice looms — will the wedding stop?" },
+  { label: "ACT 04", title: "The Decision", range: "EP 31–40", body: "With time running out, a final choice looms. Will the wedding stop?" },
 ];
 
 const SPECS = [
@@ -296,9 +296,9 @@ const SPECS = [
 
 const CHARACTERISTICS = [
   { icon: "bolt",          title: "Extremely Fast Storytelling", body: "Conflict starts in the first 3–5 seconds. No slow buildup. Every scene moves the plot forward." },
-  { icon: "smartphone",    title: "Vertical-First",              body: "Designed for the phone screen — composition, framing and rhythm built for the thumb scroll." },
-  { icon: "view_carousel", title: "Multi-Episode Drops",         body: "Released as multiple episodes — 30 to 100+ — designed to keep the viewer in a session loop." },
-  { icon: "favorite",      title: "Strong Emotions",             body: "Heightened, telenovela-grade emotional beats — desire, betrayal, secrets, choice." },
-  { icon: "fitness_center", title: "Cliffhanger Cuts",           body: "Every episode ends on a turn — the next tap of the play button is the only resolution available." },
-  { icon: "translate",     title: "Culturally Grounded",          body: "Hindi-language micro-drama with a wedding-week container that travels — Indian weddings are a global format." },
+  { icon: "smartphone",    title: "Vertical-First",              body: "Designed for the phone screen. Composition, framing and rhythm built for the thumb scroll." },
+  { icon: "view_carousel", title: "Multi-Episode Drops",         body: "Released as multiple episodes, 30 to 100+, designed to keep the viewer in a session loop." },
+  { icon: "favorite",      title: "Strong Emotions",             body: "Heightened, telenovela-grade emotional beats. Desire, betrayal, secrets, choice." },
+  { icon: "fitness_center", title: "Cliffhanger Cuts",           body: "Every episode ends on a turn, the next tap of the play button is the only resolution available." },
+  { icon: "translate",     title: "Culturally Grounded",          body: "Hindi-language micro-drama with a wedding-week container that travels. Indian weddings are a global format." },
 ];
