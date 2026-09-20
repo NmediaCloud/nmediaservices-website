@@ -292,79 +292,6 @@ export default function HomeDesktop() {
           </div>
         </section>
 
-        {/* Portfolio showreels. The work comes first, the technology that
-            made it second. Client campaign reels lead; the two artist reels
-            follow. Alternating bands keep them reading as separate sections
-            rather than one endless scroll. */}
-        <ShowreelStrip
-          title="Ad Commercials · Trailers"
-          videos={FB_VIDEOS}
-          kicker="[ SHOWREEL // AD_COMMERCIALS_TRAILERS ]"
-          headline="Ads that move."
-          blurb="Ad commercials, brand promos, and game and movie trailer
-                 visualisation. Cinematic 3D, animated VFX and motion graphics
-                 for finance, food service, games and film."
-          ctaTitle="Ads · Promos · Trailer Visualization →"
-          ctaBlurb="Every ad commercial, brand promo and trailer previsual in
-                    one place."
-          ctaMeta={`${FB_VIDEOS.length} films · ad & trailer reel`}
-          ctaTo="/commercials"
-          bg="bg-background"
-        />
-
-        <ShowreelStrip
-          title="BioMedical Visualization"
-          videos={BIOMED_VIDEOS}
-          kicker="[ SHOWREEL // BIOMEDICAL_VISUALIZATION ]"
-          headline="Science, made visible."
-          blurb="3D medical animation, microscopic biology and explainer media
-                 for medtech, pharma and science communication. The invisible,
-                 rendered accurately enough to teach from."
-          ctaTitle="BioMedical Visualization →"
-          ctaBlurb="The full science reel: 3D medical animation, microscopic
-                    biology and explainer media."
-          ctaMeta={`${BIOMED_VIDEOS.length} films · science reel`}
-          ctaTo="/biomedical"
-          bg="bg-surface-container"
-        />
-
-        <ShowreelStrip
-          title="Animation & VFX"
-          videos={ANIM_VIDEOS}
-          kicker="[ SHOWREEL // ANIMATION_VFX_CREDITS ]"
-          headline="Shows you already know."
-          blurb="Character animation and VFX on broadcast series and features.
-                 Paw Patrol, Tinker Bell, Puppy Dog Pals, Lego Marvel and
-                 Nickelodeon, shipped inside the studios that made them."
-          ctaTitle="Animation & VFX Credits →"
-          ctaBlurb="The full credit reel, plus the disciplines and projects
-                    behind it."
-          ctaMeta={`${ANIM_VIDEOS.length} films · credit reel`}
-          ctaTo="/animation-vfx"
-          bg="bg-background"
-        />
-
-        <ShowreelStrip
-          title="Motion Graphics & Craft"
-          videos={MFX_VIDEOS}
-          kicker="[ SHOWREEL // MOTION_GRAPHICS_VFX ]"
-          headline="The craft reel."
-          blurb="Editing, compositing, lighting and rendering across medical,
-                 architectural, product, automotive and broadcast. Twenty-five
-                 years of hands-on craft, out of one technical hand."
-          ctaTitle="Motion Graphics & VFX →"
-          ctaBlurb="The full craft reel, plus the toolchain and services behind
-                    it."
-          ctaMeta={`${MFX_VIDEOS.length} films · craft reel`}
-          ctaTo="/motion-graphics"
-          bg="bg-surface-container"
-        />
-
-        {/* Pipeline field notes. The technology comes after the work.
-            The heading is passed as a prop so HomeMobile, which renders this
-            same component, can carry its own section rhythm. */}
-        <PipelineArticles title="Pipeline Production Tech" />
-
         {/* Original IP — Slate (lifted above Capabilities) */}
         <section className="py-24 px-8 bg-surface-container border-y border-outline-variant">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-[1440px] mx-auto">
@@ -441,12 +368,85 @@ export default function HomeDesktop() {
           </div>
         </section>
 
+        {/* Portfolio showreels. The work comes first, the technology that
+            made it second. Client campaign reels lead; the two artist reels
+            follow. Alternating bands keep them reading as separate sections
+            rather than one endless scroll. */}
+        <ShowreelStrip
+          title="Ad Commercials · Trailers"
+          videos={FB_VIDEOS}
+          kicker="[ SHOWREEL // AD_COMMERCIALS_TRAILERS ]"
+          headline="Ads that move."
+          blurb="Ad commercials, brand promos, and game and movie trailer
+                 visualisation. Cinematic 3D, animated VFX and motion graphics
+                 for finance, food service, games and film."
+          ctaTitle="Ads · Promos · Trailer Visualization →"
+          ctaBlurb="Every ad commercial, brand promo and trailer previsual in
+                    one place."
+          ctaMeta={`${FB_VIDEOS.length} films · ad & trailer reel`}
+          ctaTo="/commercials"
+          bg="bg-background"
+        />
+
+        <ShowreelStrip
+          title="BioMedical Visualization"
+          videos={BIOMED_VIDEOS}
+          kicker="[ SHOWREEL // BIOMEDICAL_VISUALIZATION ]"
+          headline="Science, made visible."
+          blurb="3D medical animation, microscopic biology and explainer media
+                 for medtech, pharma and science communication. The invisible,
+                 rendered accurately enough to teach from."
+          ctaTitle="BioMedical Visualization →"
+          ctaBlurb="The full science reel: 3D medical animation, microscopic
+                    biology and explainer media."
+          ctaMeta={`${BIOMED_VIDEOS.length} films · science reel`}
+          ctaTo="/biomedical"
+          bg="bg-surface-container"
+        />
+
+        <ShowreelStrip
+          title="Animation & VFX"
+          videos={ANIM_VIDEOS}
+          kicker="[ SHOWREEL // ANIMATION_VFX_CREDITS ]"
+          headline="Shows you already know."
+          blurb="Character animation and VFX on broadcast series and features.
+                 Paw Patrol, Tinker Bell, Puppy Dog Pals, Lego Marvel and
+                 Nickelodeon, shipped inside the studios that made them."
+          ctaTitle="Animation & VFX Credits →"
+          ctaBlurb="The full credit reel, plus the disciplines and projects
+                    behind it."
+          ctaMeta={`${ANIM_VIDEOS.length} films · credit reel`}
+          ctaTo="/animation-vfx"
+          bg="bg-background"
+        />
+
+        <ShowreelStrip
+          title="Motion Graphics & Craft"
+          videos={MFX_VIDEOS}
+          kicker="[ SHOWREEL // MOTION_GRAPHICS_VFX ]"
+          headline="The craft reel."
+          blurb="Editing, compositing, lighting and rendering across medical,
+                 architectural, product, automotive and broadcast. Twenty-five
+                 years of hands-on craft, out of one technical hand."
+          ctaTitle="Motion Graphics & VFX →"
+          ctaBlurb="The full craft reel, plus the toolchain and services behind
+                    it."
+          ctaMeta={`${MFX_VIDEOS.length} films · craft reel`}
+          ctaTo="/motion-graphics"
+          bg="bg-surface-container"
+        />
+
+        {/* Pipeline field notes. The technology comes after the work.
+            The heading is passed as a prop so HomeMobile, which renders this
+            same component, can carry its own section rhythm. */}
+        <PipelineArticles title="Pipeline Production Tech" />
+
         {/* Capabilities */}
         <section className="py-32 px-8 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <h2 className="font-headline text-5xl font-bold tracking-tighter mb-6 text-headline">
-                Capabilities
+                Projects &amp;<br />Capabilities
               </h2>
               <p className="font-body text-on-surface-variant mb-6 max-w-sm">
                 Optimizing creative throughput through technical curatorship and
@@ -510,8 +510,10 @@ export default function HomeDesktop() {
                 href="https://github.com/NmediaCloud/pdf-scripts-toolkit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+                className="block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden"
               >
+                <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/images/cards/pdf-scripts-toolkit.svg" alt="Scanned pages becoming a searchable PDF" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
+                <span className="block p-8">
                 <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
                   digitisation · ocr
                 </span>
@@ -523,13 +525,16 @@ export default function HomeDesktop() {
                   vision-language transcription pass for Sanskrit where
                   conventional OCR fails. Source available.
                 </p>
+                </span>
               </a>
               <a
                 href="/articles/ShotStudio.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+                className="block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden"
               >
+                <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/articles/images/shotstudio_closeup.jpg" alt="Tholkappiyar, performed shot from the conference address" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
+                <span className="block p-8">
                 <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
                   recent project &middot; ai performance
                 </span>
@@ -541,6 +546,7 @@ export default function HomeDesktop() {
                   conference. Thirty-nine shots and eighteen recorded speeches,
                   with Tamil lip sync, directed from one production desk.
                 </p>
+                </span>
               </a>
               <Link
                 to="/digital-conversion"

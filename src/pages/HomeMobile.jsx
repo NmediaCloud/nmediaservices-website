@@ -230,6 +230,27 @@ export default function HomeMobile() {
         </section>
 
         {/* Pipeline Field Notes — moved up to sit directly under the hero video */}
+        {/* Original IP slate. Desktop-only until now. */}
+        <section className="py-20 px-6 bg-surface-container border-y border-outline-variant">
+          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+            [ ORIGINAL_IP // ANIMATION_SERIES ]
+          </p>
+          <h2 className="font-headline text-4xl font-bold tracking-tighter mb-4 text-headline">
+            IP Slate
+          </h2>
+          <p className="font-body text-sm text-on-surface-variant mb-8">
+            Original animated series, concept to screen. Toddler SEL, pre-school
+            comedy, bedtime worlds and short-form cultural comedy.
+          </p>
+          <Link
+            to="/ip-series"
+            className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary"
+          >
+            See the slate
+            <span className="material-symbols-outlined text-base">arrow_outward</span>
+          </Link>
+        </section>
+
         {/* Portfolio showreels. Client campaign reels lead, artist reels
             follow, technology last. Alternating bands keep them distinct. */}
         <ShowreelStrip
@@ -288,27 +309,6 @@ export default function HomeMobile() {
 
         <PipelineArticles />
 
-        {/* Original IP slate. Desktop-only until now. */}
-        <section className="py-20 px-6 bg-surface-container border-y border-outline-variant">
-          <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-            [ ORIGINAL_IP // ANIMATION_SERIES ]
-          </p>
-          <h2 className="font-headline text-4xl font-bold tracking-tighter mb-4 text-headline">
-            IP Slate
-          </h2>
-          <p className="font-body text-sm text-on-surface-variant mb-8">
-            Original animated series, concept to screen. Toddler SEL, pre-school
-            comedy, bedtime worlds and short-form cultural comedy.
-          </p>
-          <Link
-            to="/ip-series"
-            className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary"
-          >
-            See the slate
-            <span className="material-symbols-outlined text-base">arrow_outward</span>
-          </Link>
-        </section>
-
         {/* Software collection. The Stockflow storefront leads, then the grid. */}
         <section className="py-20 px-6 bg-surface">
           <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
@@ -356,8 +356,10 @@ export default function HomeMobile() {
               href="/articles/ShotStudio.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all"
+              className="block bg-surface-container border border-outline-variant active:border-primary/40 transition-all overflow-hidden"
             >
+              <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/articles/images/shotstudio_closeup.jpg" alt="Tholkappiyar, performed shot from the conference address" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
+              <span className="block p-6">
               <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
                 recent project &middot; ai performance
               </span>
@@ -367,6 +369,7 @@ export default function HomeMobile() {
                 conference. Thirty-nine shots and eighteen recorded speeches,
                 with Tamil lip sync, directed from one production desk.
               </p>
+              </span>
             </a>
             <Link to="/digital-conversion" className="block bg-surface-container p-6 border border-outline-variant active:border-primary/40 transition-all">
               <span className="font-label tracking-widest text-primary mb-4 block text-xs uppercase font-bold">
