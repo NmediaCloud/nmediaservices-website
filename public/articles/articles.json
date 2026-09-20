@@ -7,7 +7,8 @@
     "thumbnail": "./images/00a.jpg",
     "url": "./00_Info_Input_Collection.html",
     "youtube_id": "FS2_Nv_dsUM",
-    "intro": "Client briefs become a structured project manifest the rest of the pipeline reads."
+    "intro": "Client briefs become a structured project manifest the rest of the pipeline reads.",
+    "group": "module"
   },
   {
     "slug": "01_Asset_Design",
@@ -17,7 +18,8 @@
     "thumbnail": "./images/01a.jpg",
     "url": "./01_Asset_Design.html",
     "youtube_id": "8Zqxx1QqgJA",
-    "intro": "Sheet the cast first (characters, props, environments) before a single shot is drawn."
+    "intro": "Sheet the cast first (characters, props, environments) before a single shot is drawn.",
+    "group": "module"
   },
   {
     "slug": "02_Story_Script_Development",
@@ -27,7 +29,8 @@
     "thumbnail": "./images/02a.jpg",
     "url": "./02_Story_Script_Development.html",
     "youtube_id": "FwMOikJqy0c",
-    "intro": "One engine, five formats: series, movie, musical, documentary, ad. Format-aware from line one."
+    "intro": "One engine, five formats: series, movie, musical, documentary, ad. Format-aware from line one.",
+    "group": "module"
   },
   {
     "slug": "03_Episodic_Asset_Development",
@@ -37,7 +40,8 @@
     "thumbnail": "./images/03_a.jpg",
     "url": "./03_Episodic_Asset_Development.html",
     "youtube_id": "V3IhX6TxRp4",
-    "intro": "Variants as deltas, not duplicates. The face stays. The wardrobe changes."
+    "intro": "Variants as deltas, not duplicates. The face stays. The wardrobe changes.",
+    "group": "module"
   },
   {
     "slug": "04_Storyboard_Generator",
@@ -47,7 +51,8 @@
     "thumbnail": "./images/04_a.jpg",
     "url": "./04_Storyboard_Generator.html",
     "youtube_id": "UgdeF7GYeK4",
-    "intro": "Scene → shot decomposition with cast-aware prompt enrichment. Boards as data."
+    "intro": "Scene → shot decomposition with cast-aware prompt enrichment. Boards as data.",
+    "group": "module"
   },
   {
     "slug": "05_Animatics_Workshop",
@@ -57,7 +62,8 @@
     "thumbnail": "./images/05b.jpg",
     "url": "./05_Animatics_Workshop.html",
     "youtube_id": "D2QxfssqSTo",
-    "intro": "Boards + voice clones + music bed. Re-cut faster than opening Premiere."
+    "intro": "Boards + voice clones + music bed. Re-cut faster than opening Premiere.",
+    "group": "module"
   },
   {
     "slug": "06_Animation_Sandbox",
@@ -67,7 +73,8 @@
     "thumbnail": "./images/06a.jpg",
     "url": "./06_Animation_Sandbox.html",
     "youtube_id": "WZCil1jiLW0",
-    "intro": "Veo, Kling, Runway, open-source. Same prompt, every backend, audited takes."
+    "intro": "Veo, Kling, Runway, open-source. Same prompt, every backend, audited takes.",
+    "group": "module"
   },
   {
     "slug": "06_Comic_Book_Generator",
@@ -77,7 +84,8 @@
     "thumbnail": "./images/comic_a.jpg",
     "url": "./06_Comic_Book_Generator.html",
     "youtube_id": "9sxxPEkRylY",
-    "intro": "Same cast, same boards, different deliverable. Print-ready CMYK pages."
+    "intro": "Same cast, same boards, different deliverable. Print-ready CMYK pages.",
+    "group": "module"
   },
   {
     "slug": "07_Reel_Polish",
@@ -87,7 +95,8 @@
     "thumbnail": "./images/07a.jpg",
     "url": "./07_Reel_Polish.html",
     "youtube_id": "phVQs_pFviQ",
-    "intro": "Upscale, interpolate, repack. One queue. One kill switch. Production-grade output."
+    "intro": "Upscale, interpolate, repack. One queue. One kill switch. Production-grade output.",
+    "group": "module"
   },
   {
     "slug": "CreativeFlow",
@@ -97,7 +106,8 @@
     "thumbnail": "./images/creativeflow_a.png",
     "url": "./CreativeFlow.html",
     "youtube_id": "aVP41pk1HL4",
-    "intro": "One campaign brief in. On-brand, localized ad creatives in every aspect ratio out."
+    "intro": "One campaign brief in. On-brand, localized ad creatives in every aspect ratio out.",
+    "group": "project"
   },
   {
     "slug": "ShotStudio",
@@ -107,6 +117,7 @@
     "thumbnail": "./images/shotstudio_closeup.jpg",
     "url": "./ShotStudio.html",
     "youtube_id": "",
-    "intro": "39 AI shots, one desk. Versioned takes, Tamil lip sync and the bill before you press go."
+    "intro": "39 AI shots, one desk. Versioned takes, Tamil lip sync and the bill before you press go.",
+    "group": "project"
   }
 ]

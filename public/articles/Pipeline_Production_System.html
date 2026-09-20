@@ -26,7 +26,7 @@
   gtag('config', 'G-ZPSQHGJ273');
 </script>
 <style>
-  /* Module rail — the eleven field notes, reachable straight from the hero. */
+  /* Module grid: the pipeline field notes, reachable straight from the hero. */
   .modules { max-width: 1100px; margin: 0 auto 3.5rem; padding: 0 2rem; }
   .modules-head {
     display: flex; align-items: flex-end; justify-content: space-between;
@@ -47,14 +47,14 @@
     font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
     color: var(--muted);
   }
+  /* A wrapping grid, not a rail. The horizontal version hid most of the
+     modules behind a scroll with no visible affordance, which on a landing
+     page is the opposite of what this section is for. */
   .modules-rail {
-    display: flex; gap: 4px; overflow-x: auto; padding-bottom: 0.5rem;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; -ms-overflow-style: none;
+    display: grid; gap: 4px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-  .modules-rail::-webkit-scrollbar { display: none; }
   .module-card {
-    flex: 0 0 210px; scroll-snap-align: start;
     background: var(--panel); border: 1px solid var(--line);
     display: flex; flex-direction: column; overflow: hidden;
     color: inherit;
@@ -93,7 +93,7 @@
   .module-card:hover .module-go { color: var(--orange); }
   @media (max-width: 640px) {
     .modules { padding: 0 1.25rem; }
-    .module-card { flex-basis: 175px; }
+    .modules-rail { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   }
 </style>
 </head>
@@ -136,10 +136,10 @@
 <section class="modules" id="modules" hidden>
   <div class="modules-head">
     <div>
-      <p class="modules-kicker">[ THE ELEVEN PANELS ]</p>
+      <p class="modules-kicker">[ THE PIPELINE PANELS ]</p>
       <h2 class="modules-title">Start with a module.</h2>
     </div>
-    <p class="modules-hint" id="modules-hint">Swipe or scroll</p>
+    <p class="modules-hint" id="modules-hint">Pick a panel</p>
   </div>
   <div class="modules-rail" id="modules-rail"></div>
 </section>
@@ -155,7 +155,12 @@
     fetch('./articles.json', { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
       .then(function (list) {
-        if (!Array.isArray(list) || !list.length) return;
+        if (!Array.isArray(list)) return;
+        /* Only the pipeline panels. CreativeFlow and Shot Studio are
+           standalone projects and are linked from the site's capabilities
+           section instead. */
+        list = list.filter(function (a) { return a.group !== 'project'; });
+        if (!list.length) return;
 
         list.forEach(function (a) {
           var href = (a.url || '').indexOf('./') === 0 ? a.url : './' + a.url;
@@ -206,7 +211,7 @@
         });
 
         var hint = document.getElementById('modules-hint');
-        if (hint) hint.textContent = list.length + ' modules \u00b7 swipe or scroll';
+        if (hint) hint.textContent = list.length + ' field notes';
         sect.hidden = false;
       })
       .catch(function () { /* leave the rail hidden */ });

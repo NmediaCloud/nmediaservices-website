@@ -58,7 +58,10 @@ export default function PipelineArticles({ title }) {
   useEffect(() => {
     fetch(`/articles/articles.json?v=${Date.now()}`, { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : Promise.reject(r.statusText)))
-      .then(setArticles)
+      // Only the pipeline panels belong in this strip. CreativeFlow and
+      // Shot Studio are standalone projects and have their own cards in the
+      // capabilities section further down the page.
+      .then((list) => setArticles(list.filter((a) => a.group !== "project")))
       .catch((e) => setError(String(e)));
   }, []);
 
