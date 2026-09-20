@@ -239,8 +239,8 @@ export default function HomeMobile() {
           blurb="Ad commercials, brand promos, and game and movie trailer
                  visualisation. Cinematic 3D, animated VFX and motion graphics."
           ctaTitle="Ads · Promos · Trailer Visualization →"
-          ctaBlurb="Every commercial and trailer in one place, plus the
-                    biomedical visualisation reel."
+          ctaBlurb="Every ad commercial, brand promo and trailer previsual in
+                    one place."
           ctaMeta={`${FB_VIDEOS.length} films · ad & trailer reel`}
           ctaTo="/commercials"
           bg="bg-background"
@@ -253,10 +253,10 @@ export default function HomeMobile() {
           blurb="3D medical animation, microscopic biology and explainer media
                  for medtech, pharma and science communication."
           ctaTitle="BioMedical Visualization →"
-          ctaBlurb="The full science reel, alongside the ad commercials and
-                    trailer visualisation work."
+          ctaBlurb="The full science reel: 3D medical animation, microscopic
+                    biology and explainer media."
           ctaMeta={`${BIOMED_VIDEOS.length} films · science reel`}
-          ctaTo="/commercials"
+          ctaTo="/biomedical"
           bg="bg-surface-container"
         />
 

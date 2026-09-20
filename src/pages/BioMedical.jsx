@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import VideoGrid from "../components/VideoGrid";
-import { PLAYLIST_FB, FB_VIDEOS } from "../data/commercials";
+import { PLAYLIST_BIOMED, BIOMED_VIDEOS } from "../data/commercials";
 
 /**
- * Commercials — Ad / Promo / Trailer Visualisation portfolio.
+ * BioMedical — 3D medical animation and microscopic visualisation.
  *
- * Mirrors the legacy Wix layout (nmediaservices.wixsite.com/nmedia/
- * ad-commercials-nmedia): a hero block + two video grids (F&B + Ad
- * Trailers, then BioMedical Visualizations). Each tile is a click-
- * to-play YouTube embed — thumbnail loads first, iframe swaps in
- * when the user clicks. Keeps the page light despite 27+ videos.
+ * Split out of /commercials on purpose. The two reels sell to different
+ * buyers: a medtech or pharma lead arriving on the ad-commercials page saw
+ * a tab titled "Ads · Commercial Promos" and a headline about brand
+ * campaigns, and had no URL they could pass on without it reading as ad
+ * work. The films still come from the shared data module, so nothing is
+ * duplicated but the page shell.
  */
-export default function Commercials() {
+export default function BioMedical() {
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen">
 
@@ -24,58 +25,61 @@ export default function Commercials() {
         {/* ── HERO ──────────────────────────────────────── */}
         <section className="px-8 mb-16 max-w-7xl mx-auto">
           <div className="border-b border-outline-variant pb-12 text-center">
+            <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-4">
+              [ BIOMEDICAL // VISUALIZATION ]
+            </p>
             <h1 className="font-headline text-3xl md:text-5xl font-bold tracking-tight leading-tight uppercase mb-6">
-              Ads · Commercial Promos · Trailer Visualization
+              BioMedical &amp; Scientific Visualization
             </h1>
             <p className="text-on-surface-variant font-light leading-relaxed max-w-3xl mx-auto text-base md:text-lg">
-              Show-case for Ad Commercials, Promos and Various-Industries Trailer
-              Visualisation across <span className="text-primary">Animation</span>,
-              <span className="text-primary"> Game</span>,
-              <span className="text-primary"> Movie</span> and
-              <span className="text-primary"> VFX</span>.
+              3D medical animation, microscopic biology and explainer media for
+              <span className="text-primary"> medtech</span>,
+              <span className="text-primary"> pharma</span> and
+              <span className="text-primary"> science communication</span>.
+              The invisible, rendered accurately enough to teach from.
             </p>
           </div>
         </section>
 
-        {/* ── PORTFOLIO GRID — F&B + AD TRAILERS ───────── */}
-        {/* id + scroll-mt: the homepage ad reel links straight here, and the
-            offset keeps the heading clear of the fixed site header. */}
-        <section id="ad-commercials" className="px-8 max-w-7xl mx-auto mb-24 scroll-mt-28">
+        {/* ── THE REEL ──────────────────────────────────── */}
+        <section className="px-8 max-w-7xl mx-auto mb-24">
           <div className="flex items-end justify-between mb-8 flex-wrap gap-3">
             <div>
               <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-2">
-                [ PLAYLIST · 01 ]
+                [ REEL · {BIOMED_VIDEOS.length} ]
               </p>
               <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight uppercase leading-none">
-                Ad Commercials
+                The science reel
               </h2>
             </div>
-            <a href={`https://www.youtube.com/playlist?list=${PLAYLIST_FB}`} target="_blank" rel="noopener noreferrer"
-               className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant hover:text-primary transition-colors">
+            <a
+              href={`https://www.youtube.com/playlist?list=${PLAYLIST_BIOMED}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant hover:text-primary transition-colors"
+            >
               Open on YouTube
               <span className="material-symbols-outlined text-base">arrow_outward</span>
             </a>
           </div>
-          <VideoGrid videos={FB_VIDEOS} />
+          <VideoGrid videos={BIOMED_VIDEOS} />
         </section>
 
-        {/* ── CROSS-LINK: BIOMEDICAL ──────────────────── */}
-        {/* The science reel lives on its own page now. It sells to medtech and
-            pharma rather than to brands, and needed a URL that says so. */}
-        <section className="px-8 max-w-7xl mx-auto mb-32">
+        {/* ── CROSS-LINK ────────────────────────────────── */}
+        <section className="px-8 max-w-7xl mx-auto mb-24">
           <Link
-            to="/biomedical"
+            to="/commercials"
             className="block bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/35 hover:border-primary/50 transition-all duration-300 p-8 group"
           >
             <p className="font-label text-[9px] tracking-[0.3em] text-primary uppercase mb-2">
               [ ALSO ON THE REEL ]
             </p>
             <h3 className="font-headline font-bold text-xl text-title leading-tight tracking-tight mb-2">
-              BioMedical &amp; Scientific Visualization →
+              Ads · Promos · Trailer Visualization →
             </h3>
             <p className="text-sm text-on-surface-variant leading-relaxed">
-              3D medical animation, microscopic biology and explainer media for
-              medtech, pharma and science communication.
+              The commercial side of the studio: brand promos, cinematic 3D ads
+              and game and movie trailer previsuals.
             </p>
           </Link>
         </section>
@@ -86,9 +90,15 @@ export default function Commercials() {
           style={{ background: "linear-gradient(135deg, #FAF8F5 0%, #FFFFFF 55%, #F3E7DC 100%)" }}
         >
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-headline">
-              Got a campaign? Let's visualise it.
+            <h2 className="font-headline text-2xl md:text-3xl font-bold tracking-tight leading-tight text-headline mb-4">
+              Got a mechanism to explain? Let&apos;s visualise it.
             </h2>
+            <a
+              href="mailto:nanda@nmediaservices.com"
+              className="nm-btn-primary inline-block px-8 py-4 font-label font-bold text-xs tracking-widest uppercase"
+            >
+              Start a conversation
+            </a>
           </div>
         </section>
 
@@ -125,7 +135,3 @@ export default function Commercials() {
     </div>
   );
 }
-
-
-
-
