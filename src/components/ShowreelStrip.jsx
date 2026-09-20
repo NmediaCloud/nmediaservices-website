@@ -182,8 +182,17 @@ export default function ShowreelStrip({
                 <div className="relative aspect-video bg-surface-container-high overflow-hidden border-b border-outline-variant">
                   <img
                     src={`https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`}
+                    onLoad={(e) => {
+                      // When a video has no max-res still, YouTube answers 200
+                      // with a 120x90 grey placeholder rather than a 404, so
+                      // onError never fires. Size is the only tell.
+                      const img = e.currentTarget;
+                      if (img.naturalWidth <= 120 && !img.dataset.fallback) {
+                        img.dataset.fallback = "1";
+                        img.src = `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
+                      }
+                    }}
                     onError={(e) => {
-                      // Not every upload has a maxres still — fall back once.
                       if (!e.currentTarget.dataset.fallback) {
                         e.currentTarget.dataset.fallback = "1";
                         e.currentTarget.src = `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
