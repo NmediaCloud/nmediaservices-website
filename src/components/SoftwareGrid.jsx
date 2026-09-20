@@ -77,9 +77,9 @@ const TOOLS = [
     icon: "query_stats",
     image: "/images/cards/fx-strategy-research.svg",
     body:
-      "A validated harness for one question, answered honestly: does this trading idea have an " +
-      "edge? Nineteen hypotheses tested across six asset classes, all nineteen dead. Nothing " +
-      "is trading, and the later phases stay gated until something earns them.",
+      "A validated harness for one question, answered honestly: is this a favourable moment to " +
+      "act? Nineteen ideas screened across six asset classes, each measured against its costs, " +
+      "so capital waits for a setup that earns the green light.",
     href: "/articles/FX_Strategy_Research.html",
     repo: "https://github.com/NmediaCloud/fx-strategy-research",
     cta: "Read the write-up",
