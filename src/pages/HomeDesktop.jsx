@@ -59,7 +59,7 @@ export default function HomeDesktop() {
               </span>
               <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter leading-[0.95] text-headline mb-8 max-w-5xl">
                 Creative &amp; Technical Director.<br />
-                <span className="text-primary">Forward Deployed Engineer.</span><br />
+                <span className="text-primary">Forward Deployed Engineering.</span><br />
                 Animation, VFX, game assets,<br />
                 <span className="whitespace-nowrap">e-commerce</span> catalogues, websites<br />
                 and stock media at scale.
@@ -84,21 +84,6 @@ export default function HomeDesktop() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 mt-8">
-                <a
-                  href={GITHUB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nm-btn-secondary inline-flex items-center gap-2.5 px-5 py-3 font-label text-[11px] tracking-[0.2em] uppercase font-bold"
-                >
-                  <GitHubMark className="w-[18px] h-[18px]" />
-                  Code &amp; Contributions
-                  <span className="material-symbols-outlined text-base">arrow_outward</span>
-                </a>
-                <span className="font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant">
-                  Open source · pipelines · production systems
-                </span>
-              </div>
             </div>
           </div>
         </section>
