@@ -267,8 +267,7 @@ export default function About() {
             <p>
               Some of it is open. {" "}
               <em className="not-italic text-primary">CreativeFlow</em> turns one
-              campaign brief into on-brand creatives across every aspect ratio and
-              runs on a clean checkout with no API key at all. An{" "}
+              campaign brief into on-brand creatives across every aspect ratio. An{" "}
               <em className="not-italic text-primary">MCP server</em> puts 15,000+
               8K stills and 4K clips directly inside Claude Code, Cursor and Codex.
               The production pipeline itself stays in-house.

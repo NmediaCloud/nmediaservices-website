@@ -26,8 +26,7 @@ const TOOLS = [
     image: "/images/creativeflow.webp",
     body:
       "One campaign brief in; on-brand, localized ad creatives in every aspect ratio out, " +
-      "reusing the assets you already own and generating only what is missing. Runs on a " +
-      "clean checkout with no API key.",
+      "reusing the assets you already own and generating only what is missing.",
     href: "/articles/CreativeFlow.html",
     cta: "Read the write-up",
     repo: "https://github.com/NmediaCloud/creativeflow",
