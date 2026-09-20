@@ -105,29 +105,6 @@ export default function About() {
         {/* Photo gallery modal — opens on demand */}
         <PicsModal open={picsOpen} onClose={() => setPicsOpen(false)} pics={ABOUT_PICS} />
 
-        {/* ── DISCIPLINES ──────────────────────────────── */}
-        <section className="bg-surface-container-lowest py-20 border-y border-outline-variant">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="mb-8">
-              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
-                [ DISCIPLINES ]
-              </p>
-              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
-                What we build.
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
-              {DISCIPLINES.map((d) => (
-                <article key={d.title} className="bg-surface-container border border-outline-variant p-5 hover:bg-surface-container-high hover:border-primary/30 transition-all">
-                  <span className="material-symbols-outlined text-primary text-2xl mb-2 block">{d.icon}</span>
-                  <h3 className="font-headline font-bold text-base uppercase tracking-tight mb-1.5">{d.title}</h3>
-                  <p className="text-xs text-on-surface-variant font-light leading-relaxed">{d.body}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── CREDENTIALS WALL (cert thumbnails) ─────────── */}
         <section className="bg-surface-container-lowest py-24 border-y border-outline-variant">
           <div className="max-w-7xl mx-auto px-8">
@@ -305,6 +282,31 @@ export default function About() {
                 Marketing Strategy
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── DISCIPLINES ──────────────────────────────── */}
+        {/* Reference, not navigation: closes the page, carries no hover state
+            so it does not read as a grid of links, and is left off phones. */}
+        <section className="hidden md:block bg-surface-container-lowest py-20 border-y border-outline-variant">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="mb-8">
+              <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+                [ DISCIPLINES ]
+              </p>
+              <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase">
+                What we build.
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
+              {DISCIPLINES.map((d) => (
+                <article key={d.title} className="bg-surface-container border border-outline-variant p-5">
+                  <span className="material-symbols-outlined text-primary text-2xl mb-2 block">{d.icon}</span>
+                  <h3 className="font-headline font-bold text-base uppercase tracking-tight mb-1.5">{d.title}</h3>
+                  <p className="text-xs text-on-surface-variant font-light leading-relaxed">{d.body}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thirty-Nine Shots, One Desk · Nmedia Services</title>
-<meta name="description" content="Shot Studio is the local production desk behind a 39-shot AI-performed address by Tholkappiyar. Versioned takes, progress and cost planning on one screen.">
+<meta name="description" content="Shot Studio is the local production desk behind a 39-shot AI-performed address by Tholkappiyar. Versioned takes and sequence progress on one screen.">
 <meta property="og:title" content="Thirty-Nine Shots, One Desk · Nmedia Services">
-<meta property="og:description" content="Shot Studio is the local production desk behind a 39-shot AI-performed address by Tholkappiyar. Versioned takes, progress and cost planning on one screen.">
+<meta property="og:description" content="Shot Studio is the local production desk behind a 39-shot AI-performed address by Tholkappiyar. Versioned takes and sequence progress on one screen.">
 <meta property="og:image" content="./images/shotstudio_closeup.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +95,7 @@
   <div class="stat-item"><span class="stat-n">39</span><span class="stat-l">Shots in sequence</span></div>
   <div class="stat-item"><span class="stat-n">18</span><span class="stat-l">Script sections</span></div>
   <div class="stat-item"><span class="stat-n">9:17</span><span class="stat-l">Current edit</span></div>
-  <div class="stat-item"><span class="stat-n">0</span><span class="stat-l">Paid calls in tests</span></div>
+  <div class="stat-item"><span class="stat-n">v1.0</span><span class="stat-l">Production desk</span></div>
 </section>
 
 <div class="tag-row">
@@ -103,7 +103,7 @@
   <span class="tag">Lip sync</span>
   <span class="tag">Tamil</span>
   <span class="tag">Production tooling</span>
-  <span class="tag">Cost planning</span>
+  <span class="tag">Progress tracking</span>
 </div>
 
 <article class="body">
@@ -127,7 +127,7 @@
   </figure>
 
   <h2><span class="num">02</span>One clip is easy. Thirty-nine is a production.</h2>
-  <p>A sequence is a stack of decisions: which image is current, which prompt produced which take, whether a shot is lip-synced or a voice-over on the audience, what fits the budget, and which take is actually good enough to cut.</p>
+  <p>A sequence is a stack of decisions: which image is current, which prompt produced which take, whether a shot is lip-synced or a voice-over on the audience, and which take is actually good enough to cut.</p>
   <p>Before Shot Studio that lived in folder names, batch files and memory. <strong>Now it lives on one screen.</strong></p>
 
   <div class="seq" role="img" aria-label="Sequence strip of 39 shots; shot 02 has generated takes in Shot Studio">
@@ -147,20 +147,19 @@
   <blockquote>"A prompt edit should shape the next take, not quietly change one already waiting in the queue."</blockquote>
 
   <h2><span class="num">04</span>Every take is recoverable</h2>
-  <p>Each queued job freezes its own copy of the image, audio and prompt. Progress is recorded as the job runs, so an interrupted job <strong>resumes instead of being paid for twice</strong>. If a submission's result is uncertain, the desk stops and asks rather than silently resubmitting.</p>
+  <p>Each queued job freezes its own copy of the image, audio and prompt. Progress is recorded as the job runs, so an interrupted job <strong>resumes instead of starting over</strong>. If a submission's result is uncertain, the desk stops and asks rather than silently resubmitting.</p>
 
-  <h2><span class="num">05</span>See the bill before you press the button</h2>
-  <p>The top of the studio answers two questions: how far along is the sequence, and what will the rest cost? A colour strip shows every shot as ready, running, queued, needing attention or pending. Duration coverage sits beside the shot count, because a three-second insert and a thirty-second speech are not equal work.</p>
-  <p>The budget panel compares saved attempts, the shots still missing and a full new pass, using a dated price catalogue. Every paid generation gets its own estimate and confirmation before anything is spent.</p>
+  <h2><span class="num">05</span>See the whole sequence at a glance</h2>
+  <p>The top of the studio answers one question at a glance: how far along is the sequence? A colour strip shows every shot as ready, running, queued, needing attention or pending. Duration coverage sits beside the shot count, because a three-second insert and a thirty-second speech are not equal work.</p>
 
   <figure>
-    <img src="./images/shotstudio_dashboard.png" onerror="this.src='./_shared/placeholder.svg'" alt="Shot Studio dashboard with sequence cost cards and sequence progress">
-    <figcaption>Sequence cost and progress at the start of the generation pass. Figures are planning estimates, not billed spend.</figcaption>
+    <img src="./images/shotstudio_dashboard.png" onerror="this.src='./_shared/placeholder.svg'" alt="Shot Studio dashboard showing sequence progress">
+    <figcaption>Sequence progress at the start of the generation pass.</figcaption>
   </figure>
 
   <h2><span class="num">06</span>Built for the production desk</h2>
   <p>Shot Studio is a lightweight web app that runs on the production machine. Generations run one at a time in a managed queue, and long speeches are covered in full <strong>without ever speeding up the voice</strong>.</p>
-  <p>Nothing is exposed beyond the studio machine, and credentials never reach the browser. An offline test suite checks estimates, versioning and recovery without spending a cent. Chosen takes export in running order, ready for the editor.</p>
+  <p>Nothing is exposed beyond the studio machine, and credentials never reach the browser. An offline test suite checks versioning and recovery. Chosen takes export in running order, ready for the editor.</p>
 
   <div class="callout">
     <b>Where it stands →</b> Shot Studio is running on the production machine and the generation pass is under way. Lip-sync quality on Tamil speech, continuity between shots and client approval are still judged by eye, the desk is built to support that review, not replace it. The next step, if it grows beyond one workstation, is sign-in, durable job workers and shared media storage.
