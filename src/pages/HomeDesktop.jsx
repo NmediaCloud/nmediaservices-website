@@ -59,10 +59,13 @@ export default function HomeDesktop() {
               </span>
               <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter leading-[0.95] text-headline mb-8 max-w-5xl">
                 Creative &amp; Technical Director.<br />
-                <span className="text-primary">Forward Deployed Engineering.</span><br />
+                <span className="text-primary">Forward Deployed Engineering.</span>
+                {/* The list of domains is desktop-only. On a phone it ran five
+                    lines and pushed everything else below the fold. */}
+                <span className="hidden md:inline"><br />
                 Animation, VFX, game assets,<br />
                 <span className="whitespace-nowrap">e-commerce</span> catalogues, websites<br />
-                and stock media at scale.
+                and stock media at scale.</span>
               </h1>
               {/* Desktop keeps the standfirst; a phone does not, where it ran
                   six lines and the capability chips already say it. */}
@@ -75,7 +78,7 @@ export default function HomeDesktop() {
               </p>
               {/* Capability chips. People kept reading the studio as image and
                   video generation only; naming the domains is the fastest fix. */}
-              <div className="flex flex-wrap items-center gap-2 mt-8">
+              <div className="hidden md:flex flex-wrap items-center gap-2 mt-8">
                 {CAPABILITIES.map((c) => (
                   <span
                     key={c}
