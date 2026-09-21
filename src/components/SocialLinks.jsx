@@ -8,7 +8,7 @@ import { GITHUB_URL } from "./GitHubLink";
  * The GitHub entry is what guarantees a GitHub link on every page, which
  * SiteHeader previously provided through GitHubLink.
  */
-export const LINKEDIN_URL = "https://www.linkedin.com/company/nmedia-inc/";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/mnkmars/";
 export const YOUTUBE_URL = "https://www.youtube.com/@nmediaservices2014";
 
 const LINKS = [
