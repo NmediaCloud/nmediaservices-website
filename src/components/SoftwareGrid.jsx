@@ -23,7 +23,7 @@ const TOOLS = [
     tag: "Campaign automation",
     status: "Open source",
     icon: "auto_awesome_mosaic",
-    image: "/images/creativeflow.webp",
+    image: "/images/cards/creativeflow.svg",
     body:
       "One campaign brief in; on-brand, localized ad creatives in every aspect ratio out, " +
       "reusing the assets you already own and generating only what is missing.",
@@ -32,11 +32,11 @@ const TOOLS = [
     repo: "https://github.com/NmediaCloud/creativeflow",
   },
   {
-    name: "Tholkappiyar · Thirty-Nine Shots",
-    tag: "Recent project · AI performance",
+    name: "Shot Studio",
+    tag: "AI video production desk",
     status: "In-house",
     icon: "movie",
-    image: "/articles/images/shotstudio_closeup.jpg",
+    image: "/images/cards/shot-studio.svg",
     body:
       "An ancient Tamil grammarian takes the stage at a Canadian conference. Thirty-nine " +
       "shots and eighteen recorded speeches, with Tamil lip sync, directed from one " +
