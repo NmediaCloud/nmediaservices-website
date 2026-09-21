@@ -108,10 +108,10 @@ Running the chain against the current source will:
   `ShotStudio.html` or `podcast/*` — those are outside the generator's `ARTICLES`
   list and are safe. Their `articles.json` entries (CreativeFlow, ShotStudio) are
   hand-added, so re-add them if the manifest is regenerated.
-- `ShotStudio.html` (added 2026-09-16) self-hosts its teaser at
-  `articles/media/shotstudio_teaser.mp4` instead of a YouTube ID. With an empty
-  `youtube_id`, `PipelineArticles.jsx` shows the manifest `thumbnail` instead of
-  the "coming soon" placeholder.
+- `ShotStudio.html` (added 2026-09-16) embeds the finished speech from YouTube
+  (`4xCbayqduok`, since 2026-09-21); the 30-second self-hosted teaser at
+  `articles/media/shotstudio_teaser.mp4` is no longer referenced. Its manifest
+  entry is `group: "project"`, so it stays out of the pipeline strip either way.
 
 Before regenerating: back-port the video IDs and images into
 `Articles to Publish/`, or expect to restore from git afterwards.
