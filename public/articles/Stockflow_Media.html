@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stockflow.Media · Made Once, Reused Everywhere</title>
+<meta name="description" content="Stockflow.media is a curated library of 18,084 royalty-free 8K images and 4K videos. Licensing a finished asset costs less than generating one, takes minutes, and avoids spending fresh compute every time.">
+<link rel="canonical" href="https://nmediaservices.com/articles/Stockflow_Media.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nmediaservices.com/articles/Stockflow_Media.html">
+<meta property="og:title" content="Stockflow.Media · Made Once, Reused Everywhere">
+<meta property="og:description" content="18,084 curated 8K images and 4K videos. Cheaper than generating, ready in minutes, and lighter on the planet.">
+<meta property="og:image" content="https://nmediaservices.com/images/stockflow_preview.webp">
+<meta name="theme-color" content="#F3E7DC">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- Google Analytics (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPSQHGJ273"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZPSQHGJ273');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* Soft Executive Orange, the Nmedia house theme */
+  :root {
+    --canvas:#FAF8F5; --surface:#FFFFFF; --warm:#F3E7DC; --peach:#EDD5C3;
+    --brand:#BF4E10; --brand-hover:#A0400C; --pastel:#E7B79A;
+    --h:#000000; --h3:#2A2622; --body:#4E4A46; --meta:#6E6862; --line:#DDD6CF;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--canvas); color:var(--body); font:16px/1.65 Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:var(--brand); }
+  img { max-width:100%; display:block; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 16px; }
+  @media (min-width:768px){ .wrap { padding:0 32px; } }
+
+  .kicker { font:700 12px/1.4 'JetBrains Mono', ui-monospace, monospace; letter-spacing:.18em; text-transform:uppercase; color:var(--brand); margin:0 0 14px; }
+  h1, h2, h3 { font-family:'Space Grotesk', system-ui, sans-serif; letter-spacing:-.02em; margin:0; }
+  h1 { color:var(--h); font-size:clamp(34px, 6vw, 60px); line-height:1.02; }
+  h1 em, h2 em { font-style:normal; color:var(--brand); }
+  h2 { color:var(--h); font-size:clamp(26px, 4vw, 40px); line-height:1.08; margin-bottom:14px; }
+  h3 { color:var(--h3); font-size:19px; line-height:1.25; margin-bottom:6px; }
+  p { margin:0 0 14px; }
+  .lede { font-size:18px; max-width:62ch; }
+  section { padding:64px 0; border-top:1px solid var(--line); }
+  section.warm { background:var(--warm); }
+
+  /* Header */
+  header.top { border-bottom:1px solid var(--line); background:var(--canvas); margin-top:76px; }
+  header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:14px; padding-bottom:14px; }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--h3); font:700 17px 'Space Grotesk', system-ui; }
+  .logo img { height:38px; width:auto; }
+  .logo span em { font-style:normal; color:var(--brand); }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:10px; font:600 14px Inter, system-ui; text-decoration:none; transition:all .25s; }
+  .btn-solid { background:var(--brand); color:#fff; box-shadow:0 6px 20px -8px rgb(191 78 16 / .55); }
+  .btn-solid:hover { background:var(--brand-hover); transform:translateY(-2px); }
+  .btn-ghost { border:1px solid var(--line); color:var(--h3); background:var(--surface); }
+  .btn-ghost:hover { border-color:var(--brand); color:var(--brand); }
+  header.top .btn { padding:9px 14px; font-size:13px; }
+
+  /* Hero */
+  .hero { padding:56px 0 64px; border-top:0; }
+  .hero-grid { display:grid; gap:36px; align-items:center; }
+  @media (min-width:960px){ .hero-grid { grid-template-columns:1fr 1.1fr; gap:48px; } }
+  .hero .lede { margin-top:18px; }
+  .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .video { position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 18px 44px -18px rgb(42 38 34 / .45); }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .video-cap { font:500 12px 'JetBrains Mono', monospace; color:var(--meta); margin-top:10px; letter-spacing:.04em; }
+
+  /* Stats */
+  .stats { display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  @media (min-width:768px){ .stats { grid-template-columns:repeat(5, 1fr); } }
+  .stat { background:var(--surface); padding:20px 18px; }
+  @media (max-width:767px){ .stat:last-child { grid-column:1 / -1; } }
+  .stat b { display:block; font:700 30px/1 'Space Grotesk', system-ui; color:var(--h); letter-spacing:-.02em; }
+  .stat span { display:block; margin-top:8px; font:600 11px/1.35 'JetBrains Mono', monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--meta); }
+
+  /* Two column text */
+  .split { display:grid; gap:28px; }
+  @media (min-width:900px){ .split { grid-template-columns:1fr 1fr; gap:56px; } }
+
+  /* Comparison */
+  .compare { width:100%; border-collapse:separate; border-spacing:0; background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:24px; font-size:15px; }
+  .compare th, .compare td { text-align:left; padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:top; }
+  .compare tr:last-child td { border-bottom:0; }
+  .compare thead th { font:700 12px 'JetBrains Mono', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--meta); background:var(--canvas); }
+  .compare thead th.us { color:var(--brand); }
+  .compare td:first-child { font-weight:600; color:var(--h3); width:22%; }
+  .compare td.us { color:var(--h3); background:#FFF9F4; }
+  @media (max-width:640px){
+    .compare thead { display:none; }
+    .compare tr { display:block; border-bottom:1px solid var(--line); }
+    .compare tr:last-child { border-bottom:0; }
+    .compare td { display:block; border:0; padding:6px 16px; width:auto !important; }
+    .compare td:first-child { padding-top:16px; }
+    .compare td:not(:first-child)::before { display:block; font:700 11px 'JetBrains Mono', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--meta); }
+    .compare td.gen::before { content:"Generate it"; }
+    .compare td.us::before { content:"License it on Stockflow"; color:var(--brand); }
+    .compare td.us { padding-bottom:16px; }
+  }
+
+  /* Green band */
+  .green { display:grid; gap:24px; }
+  @media (min-width:900px){ .green { grid-template-columns:1.2fr 1fr; gap:48px; align-items:center; } }
+  .flow { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font:700 13px 'JetBrains Mono', monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--h3); }
+  .flow .node { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+  .flow .node.hot { border-color:var(--brand); color:var(--brand); }
+  .flow .arrow { color:var(--brand); font-size:18px; }
+  .note { font-size:13px; color:var(--meta); }
+
+  /* Cards */
+  .cards { display:grid; gap:14px; margin-top:26px; grid-template-columns:1fr; }
+  @media (min-width:600px){ .cards { grid-template-columns:repeat(2, 1fr); } }
+  @media (min-width:960px){ .cards.four { grid-template-columns:repeat(4, 1fr); } .cards.three { grid-template-columns:repeat(3, 1fr); } }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:0 4px 20px -10px rgb(191 78 16 / .25); }
+  .card .tag { font:700 11px 'JetBrains Mono', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--brand); margin-bottom:10px; }
+  .card p { font-size:15px; margin:0; }
+
+  /* Collections */
+  .collections { display:grid; gap:12px; margin-top:26px; grid-template-columns:repeat(2, 1fr); }
+  @media (min-width:768px){ .collections { grid-template-columns:repeat(5, 1fr); } }
+  .coll { display:block; text-decoration:none; background:var(--surface); border:1px solid var(--line); border-radius:12px; overflow:hidden; transition:all .25s; }
+  .coll:hover { transform:translateY(-3px); box-shadow:0 12px 28px -12px rgb(191 78 16 / .5); border-color:var(--pastel); }
+  .coll img { aspect-ratio:1/1; object-fit:cover; width:100%; background:var(--warm); }
+  .coll div { padding:10px 12px 12px; }
+  .coll b { display:block; font:700 14px 'Space Grotesk', system-ui; color:var(--h3); }
+  .coll span { font:500 12px 'JetBrains Mono', monospace; color:var(--meta); }
+
+  /* Model list */
+  .rows { margin-top:22px; border-top:1px solid var(--line); }
+  .row { display:grid; gap:4px 24px; padding:16px 0; border-bottom:1px solid var(--line); }
+  @media (min-width:768px){ .row { grid-template-columns:220px 1fr auto; align-items:baseline; } }
+  .row b { color:var(--h3); font:700 16px 'Space Grotesk', system-ui; }
+  .row .pill { justify-self:start; font:700 10px 'JetBrains Mono', monospace; letter-spacing:.12em; text-transform:uppercase; padding:4px 8px; border-radius:999px; border:1px solid var(--line); color:var(--meta); }
+  .row .pill.live { border-color:var(--brand); color:var(--brand); }
+
+  /* Closing */
+  .close { text-align:left; }
+  .close .cta-row { margin-top:22px; }
+  footer { padding:28px 0 40px; border-top:1px solid var(--line); font-size:13px; color:var(--meta); }
+  footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
+  footer a { color:var(--meta); }
+  /* The shared site header is inline-styled for desktop; tighten it on phones. */
+  @media (max-width:640px){
+    .nm-site-header { padding:.85rem 16px !important; }
+    .nm-site-header a[href^="mailto"] { display:none !important; }
+    .nm-site-header span { white-space:nowrap; }
+    header.top { margin-top:62px; }
+    header.top .btn { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── SITE HEADER (injected for back-nav) ────────────────── -->
+<nav class="nm-site-header" style="position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;background:rgba(250, 248, 245, 0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #DDD6CF;z-index:1000;font-family:'Space Grotesk','Inter',system-ui,sans-serif;">
+  <a href="https://nmediaservices.com" style="display:flex;align-items:center;gap:0.75rem;color:#4E4A46;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
+    <img src="/images/nmedia_mark.svg" alt="" width="32" height="22" style="display:block;width:32px;height:auto;">
+    <span style="font-weight:700;font-size:1.125rem;letter-spacing:-0.02em;">Nmedia Services</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:1.25rem;"><a href="https://nmediaservices.com" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:#4E4A46;text-decoration:none;border:1px solid #DDD6CF;padding:0.4rem 0.85rem;border-radius:3px;background:transparent;transition:all .2s;font-weight:600;" onmouseover="this.style.background='#F3E7DC';this.style.borderColor='#BF4E10'" onmouseout="this.style.background='transparent';this.style.borderColor='#DDD6CF'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="mailto:Nanda@nmediaservices.com" style="font-size:0.875rem;color:#6E6862;text-decoration:none;letter-spacing:-0.01em;transition:color .2s;" onmouseover="this.style.color='#BF4E10'" onmouseout="this.style.color='#6E6862'">Nanda@nmediaservices.com</a></div>
+</nav>
+<!-- ── END SITE HEADER ─────────────────────────────────────── -->
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://stockflow.media/" target="_blank" rel="noopener"><img src="https://stockflow.media/assets/logo_SF.webp" alt="" onerror="this.style.display='none'"><span>Stockflow<em>.media</em></span></a>
+    <a class="btn btn-solid" href="https://stockflow.media/" target="_blank" rel="noopener">Browse the library</a>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero with the walkthrough video -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Stockflow.Media · Nmedia Services · Toronto</p>
+      <h1>Already made.<br><em>Ready to use.</em></h1>
+      <p class="lede">Stockflow.media is a professionally curated library of 18,084 royalty-free 8K images and 4K videos. Licensing a finished asset costs less than generating a new one, takes minutes instead of hours, and doesn't spend fresh compute every time someone needs a picture.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="https://stockflow.media/" target="_blank" rel="noopener">Browse the library</a>
+        <a class="btn btn-ghost" href="#partner">Partner with us</a>
+      </div>
+    </div>
+    <div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/KfV_Y7hudvM?rel=0&modestbranding=1" title="Stockflow walkthrough" loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p class="video-cap">Walkthrough · browse, license and download in about two minutes</p>
+    </div>
+  </div>
+</section>
+
+<!-- Numbers -->
+<section style="padding-top:0; border-top:0;">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>18,084</b><span>Curated assets</span></div>
+      <div class="stat"><b>8K</b><span>Native image resolution</span></div>
+      <div class="stat"><b>2,166</b><span>4K video clips</span></div>
+      <div class="stat"><b>$0.10</b><span>Starting price per asset</span></div>
+      <div class="stat"><b>5</b><span>Industry collections</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- The opportunity -->
+<section>
+  <div class="wrap split">
+    <div>
+      <p class="kicker">The opportunity</p>
+      <h2>Most teams don't need a new image. <em>They need the right one, today.</em></h2>
+    </div>
+    <div>
+      <p>Businesses are turning to AI generators for everyday visuals: a menu photo, a product backdrop, a science explainer shot. Each request is billed per attempt, takes several tries to get right, and runs a GPU every single time, even when the result looks like something that already exists.</p>
+      <p>Stockflow flips that. Every asset is produced once, checked by a working creative director, and then licensed again and again. The buyer gets a finished, high-resolution file with clear rights, at a lower price, in the time it takes to search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Business logic -->
+<section class="warm">
+  <div class="wrap">
+    <p class="kicker">The business logic</p>
+    <h2>Licensing beats generating, <em>on every line.</em></h2>
+    <p class="lede">The same visual need, met two ways.</p>
+    <table class="compare">
+      <thead><tr><th></th><th>Generate it</th><th class="us">License it on Stockflow</th></tr></thead>
+      <tbody>
+        <tr><td>Price</td><td class="gen">Paid per attempt, and many attempts are thrown away</td><td class="us">$0.10 to $3 for one finished file</td></tr>
+        <tr><td>Time</td><td class="gen">Prompt, wait, re-roll, fix hands and text, upscale</td><td class="us">Search, preview, download in minutes</td></tr>
+        <tr><td>Energy</td><td class="gen">New GPU compute on every request</td><td class="us">Made once, reused by every buyer after that</td></tr>
+        <tr><td>Quality</td><td class="gen">Varies from one attempt to the next</td><td class="us">Curated sets at native 8K and 4K</td></tr>
+        <tr><td>Rights</td><td class="gen">Terms differ by model and provider</td><td class="us">Royalty-free licence. Pay once, use forever.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Green -->
+<section>
+  <div class="wrap green">
+    <div>
+      <p class="kicker">Keeping it green</p>
+      <h2>Every download is a generation <em>that never has to run.</em></h2>
+      <p>AI image and video generation is energy hungry, and the cost repeats for every person who asks for a similar picture. A 2023 study of AI models measured image generation at an average of about 2.9 kWh for every 1,000 images, among the most energy-intensive AI tasks tested. Video costs far more.</p>
+      <p>A curated library spreads the energy of making an asset across everyone who uses it. Serving a file that already exists costs a small fraction of generating a new one, so the more the library is reused, the lower the footprint of each use.</p>
+      <p class="note">Source: Luccioni, Jernite and Strubell, <a href="https://arxiv.org/abs/2311.16863" target="_blank" rel="noopener">"Power Hungry Processing: Watts Driving the Cost of AI Deployment?"</a>, 2023.</p>
+    </div>
+    <div class="flow" aria-label="Made once, curated, reused by many buyers">
+      <span class="node">Made once</span><span class="arrow">→</span>
+      <span class="node">Curated</span><span class="arrow">→</span>
+      <span class="node hot">Reused by thousands</span>
+    </div>
+  </div>
+</section>
+
+<!-- Who it is for -->
+<section class="warm">
+  <div class="wrap">
+    <p class="kicker">Who it's for</p>
+    <h2>Built for people who make things <em>every week.</em></h2>
+    <div class="cards four">
+      <div class="card"><div class="tag">Restaurants & food brands</div><p>Menu, delivery app and social visuals from 6,544 food and beverage assets.</p></div>
+      <div class="card"><div class="tag">Caterers & event planners</div><p>4,923 event and catering scenes for proposals, websites and ads.</p></div>
+      <div class="card"><div class="tag">Science & health</div><p>2,619 microscopy visuals for biotech decks, lectures, explainers and journals.</p></div>
+      <div class="card"><div class="tag">Retail & e-commerce</div><p>Product backdrops and 1,457 retail item shots for listings and storefronts.</p></div>
+      <div class="card"><div class="tag">Video editors</div><p>4K clips and vertical formats ready to drop into documentaries, reels and ads.</p></div>
+      <div class="card"><div class="tag">Agencies & marketers</div><p>Fast, cleared visuals for campaigns without a shoot or a generation budget.</p></div>
+      <div class="card"><div class="tag">Educators & students</div><p>Clear, high-resolution imagery for courses, slides and learning material.</p></div>
+      <div class="card"><div class="tag">AI assistants</div><p>An MCP server and a machine-readable catalogue let AI tools find and license real assets for their users.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Collections -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The collections</p>
+    <h2>Five collections, <em>professionally curated.</em></h2>
+    <div class="collections">
+      <a class="coll" href="https://stockflow.media/gallery/food-beverage/"><img loading="lazy" src="https://storage.googleapis.com/stockflow-thumbnails/03_FnB_Catering_Events/01_Food_Menu/Mp4/20260215_000023_01_Chicken_Dinner_W_01_preview.jpg" alt="Food and beverage collection"><div><b>Food & Beverage</b><span>6,544 assets</span></div></a>
+      <a class="coll" href="https://stockflow.media/gallery/catering-events/"><img loading="lazy" src="https://storage.googleapis.com/stockflow-thumbnails/04_Catering-Events/00_Event_types/Jpeg/20260515_00001_01_Bbq-Picnic_S_01_5760x5760_jpeg__thumbnail.webp" alt="Catering and events collection"><div><b>Catering Events</b><span>4,923 assets</span></div></a>
+      <a class="coll" href="https://stockflow.media/gallery/microscopic/"><img loading="lazy" src="https://storage.googleapis.com/stockflow-thumbnails/01_Micro/Mp4/20260314_0051_01_Micro_00_Virus_On_Membrane_11_V1_W_Mp4_thumbnail.webp" alt="Microscopic collection"><div><b>Microscopic</b><span>2,619 assets</span></div></a>
+      <a class="coll" href="https://stockflow.media/gallery/background/"><img loading="lazy" src="https://storage.googleapis.com/stockflow-thumbnails/02_BG_Background/01_Abstract_Creative/Jpeg/20260621_00001_01_Bokeh_City_lights_S_01_8192x8192_jpeg__thumbnail.webp" alt="Background collection"><div><b>Background</b><span>2,541 assets</span></div></a>
+      <a class="coll" href="https://stockflow.media/gallery/retail-items/"><img loading="lazy" src="https://storage.googleapis.com/stockflow-thumbnails/05_Retail_Items/01_Apparel_Fashion_1/Jpeg/20260702_00001_01_Belts_S_01_8192x8192_jpeg__thumbnail.webp" alt="Retail items collection"><div><b>Retail Items</b><span>1,457 assets</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Business model -->
+<section class="warm">
+  <div class="wrap">
+    <p class="kicker">How it earns</p>
+    <h2>A simple model <em>with room to grow.</em></h2>
+    <div class="rows">
+      <div class="row"><b>Pay per asset</b><span>Buy a single file from $0.10. No subscription, no expiry.</span><span class="pill live">Live</span></div>
+      <div class="row"><b>Wallet credits</b><span>Prepaid credit for repeat buyers and reward offers.</span><span class="pill live">Live</span></div>
+      <div class="row"><b>Search & shopping</b><span>Per-asset pages, sitemaps and a merchant feed bring buyers in from search.</span><span class="pill live">Live</span></div>
+      <div class="row"><b>AI channel</b><span>MCP server and machine-readable catalogue so AI assistants can recommend and license assets.</span><span class="pill live">Live</span></div>
+      <div class="row"><b>Team packs</b><span>Bundles and plans for agencies, restaurants and schools that buy every month.</span><span class="pill">Next</span></div>
+      <div class="row"><b>Licensing API</b><span>Real, curated media for AI and design tools, as an alternative to generating.</span><span class="pill">Next</span></div>
+      <div class="row"><b>Custom collections</b><span>Curated sets made to order for brands and industries.</span><span class="pill">Next</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Where support takes us -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Where support takes us</p>
+    <h2>What funding <em>makes possible.</em></h2>
+    <div class="cards three">
+      <div class="card"><div class="tag">Grow the library</div><p>New collections for healthcare, education and local Canadian businesses.</p></div>
+      <div class="card"><div class="tag">Measure the savings</div><p>A public counter that estimates the energy saved by each download against a fresh generation.</p></div>
+      <div class="card"><div class="tag">Reach small business</div><p>Bring affordable, cleared visuals to restaurants, caterers and shops that can't afford a shoot.</p></div>
+      <div class="card"><div class="tag">Open to AI tools</div><p>Build the licensing API so assistants and design apps can use real assets instead of generating.</p></div>
+      <div class="card"><div class="tag">Accessibility</div><p>Descriptive alt text and captions across the catalogue, so every asset is usable by everyone.</p></div>
+      <div class="card"><div class="tag">Local talent</div><p>Train and hire junior artists and curators in Toronto to produce and review new collections.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Who is behind it -->
+<section class="warm">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Who's behind it</p>
+      <h2>Built by a studio <em>with 20+ years on the floor.</em></h2>
+    </div>
+    <div>
+      <p>Stockflow.media is a product of <a href="https://nmediaservices.com" target="_blank" rel="noopener">Nmedia Services</a>, a Toronto studio led by Nanda Mohan, a creative and technical director with more than twenty years in animation, lighting and VFX on work for Disney, Nickelodeon, Lego and Paw Patrol.</p>
+      <p>The same production pipeline that delivers animation and VFX curates, grades and publishes every Stockflow asset, which is how one studio keeps a library of this size consistent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Close -->
+<section id="partner" class="close">
+  <div class="wrap">
+    <p class="kicker">Partner with us</p>
+    <h2>Funders, partners and buyers, <em>let's talk.</em></h2>
+    <p class="lede">Whether you support small business, clean technology or Canadian media, or you simply need visuals this week, we'd love to hear from you.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="mailto:stockflowmedia.contact@gmail.com?subject=Stockflow%20partnership">stockflowmedia.contact@gmail.com</a>
+      <a class="btn btn-ghost" href="https://stockflow.media/gallery/">See the gallery</a>
+      <a class="btn btn-ghost" href="https://help.stockflow.media/" target="_blank" rel="noopener">Help & licence</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Stockflow.media · A product of Nmedia Services, Toronto</span>
+    <span><a href="https://stockflow.media/">Library</a> · <a href="https://stockflow.media/gallery/">Gallery</a> · <a href="https://help.stockflow.media/license/" target="_blank" rel="noopener">Licence</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

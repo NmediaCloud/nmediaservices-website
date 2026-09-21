@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import ShowreelStrip from "../components/ShowreelStrip";
 import PipelineArticles from "../components/PipelineArticles";
@@ -24,7 +24,6 @@ const CAPABILITIES = [
 ];
 
 export default function HomeDesktop() {
-  const [sfVideoOpen, setSfVideoOpen] = useState(false);
   return (
     <div className="selection:bg-primary selection:text-on-primary bg-background min-h-screen text-on-surface font-['Inter']">
       {/* Top Navigation Bar */}
@@ -473,7 +472,7 @@ export default function HomeDesktop() {
               {/* Software — Stockflow leads (it carries a video), then the collection grid */}
               <div className="bg-gradient-to-br from-primary/10 via-surface-container to-surface-container border border-primary/40 group rounded-xl shadow-[0_4px_20px_-6px_rgb(191_78_16_/_0.35)] hover:shadow-[0_10px_34px_-6px_rgb(191_78_16_/_0.55)] hover:border-primary/70 hover:from-primary/20 hover:-translate-y-1 transition-all duration-300 ease-out overflow-hidden">
                 {/* The shot is of the live storefront, so it leads there.
-                    The walkthrough moved to its own button below. */}
+                    The walkthrough button below opens the Stockflow pitch page. */}
                 <a
                   href="https://stockflow.media/"
                   target="_blank"
@@ -499,14 +498,13 @@ export default function HomeDesktop() {
                     assets and automated pipelines for creators, marketers,
                     and production teams.
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => setSfVideoOpen(true)}
+                  <a
+                    href="/articles/Stockflow_Media.html"
                     className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-primary hover:gap-3 transition-all cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-base">play_circle</span>
                     Watch the Walkthrough
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -711,14 +709,6 @@ export default function HomeDesktop() {
         </div>
       </main>
 
-      {/* Stockflow.Media video modal */}
-      <VideoModal
-        open={sfVideoOpen}
-        onClose={() => setSfVideoOpen(false)}
-        src="https://www.youtube.com/embed/KfV_Y7hudvM?autoplay=1&rel=0&modestbranding=1"
-        title="Stockflow.Media · Preview"
-      />
-
       {/* Footer */}
       <footer className="bg-warm-neutral w-full flex flex-col md:flex-row justify-between items-center border-t border-outline-variant py-12 px-8">
         <div className="mb-8 md:mb-0">
@@ -756,56 +746,6 @@ export default function HomeDesktop() {
           </a>
         </div>
       </footer>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────
-// VideoModal — fullscreen-ish lightbox for an embed iframe
-// ─────────────────────────────────────────────────────────────────
-function VideoModal({ open, onClose, src, title }) {
-  useEffect(() => {
-    if (!open) return;
-    document.body.style.overflow = "hidden";
-    const onKey = (e) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [open, onClose]);
-  if (!open) return null;
-  return (
-    <div
-      className="fixed inset-0 z-[100] bg-[#4E4A46]/92 backdrop-blur-sm flex flex-col"
-      onClick={onClose}
-    >
-      <div className="flex items-center justify-between px-8 py-5 border-b border-primary/30">
-        <span className="font-label text-[10px] tracking-[0.4em] text-primary uppercase">
-          [ NOW PLAYING · {title} ]
-        </span>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close video"
-          className="font-label text-xs tracking-widest text-white/70 hover:text-white transition-colors flex items-center gap-2 cursor-pointer"
-        >
-          CLOSE
-          <span className="material-symbols-outlined text-base">close</span>
-        </button>
-      </div>
-      <div className="flex-1 flex items-center justify-center p-8" onClick={(e) => e.stopPropagation()}>
-        <div className="w-full max-w-6xl aspect-video bg-surface-container-high border border-outline-variant overflow-hidden">
-          <iframe
-            className="w-full h-full"
-            src={src}
-            title={title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
-      </div>
     </div>
   );
 }
