@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GitHubLink from "./GitHubLink";
+import SocialLinks from "./SocialLinks";
 
 /**
  * SiteHeader — canonical top banner used on every page.
@@ -26,7 +26,7 @@ export default function SiteHeader() {
         </div>
       </Link>
       <div className="flex items-center gap-6">
-        <GitHubLink />
+        <SocialLinks />
         <a
           className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300 hidden md:inline-block"
           href="mailto:Nanda@nmediaservices.com"

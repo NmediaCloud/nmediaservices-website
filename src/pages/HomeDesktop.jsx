@@ -5,7 +5,8 @@ import PipelineArticles from "../components/PipelineArticles";
 import { FB_VIDEOS, BIOMED_VIDEOS } from "../data/commercials";
 import { ANIM_VIDEOS } from "../data/animationVfx";
 import { MFX_VIDEOS } from "../data/motionGraphics";
-import GitHubLink, { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
+import { GITHUB_URL, GitHubMark } from "../components/GitHubLink";
+import SocialLinks from "../components/SocialLinks";
 import StatsBanner from "../components/StatsBanner";
 import SoftwareGrid from "../components/SoftwareGrid";
 
@@ -39,7 +40,7 @@ export default function HomeDesktop() {
           </div>
         </div>
         <div className="hidden md:flex gap-8 items-center">
-          <GitHubLink />
+          <SocialLinks />
           <a
             className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300"
             href="mailto:Nanda@nmediaservices.com"
