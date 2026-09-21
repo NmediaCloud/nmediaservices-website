@@ -106,7 +106,7 @@ export default function HomeDesktop() {
               <h2 className="font-headline text-4xl font-bold tracking-tighter mb-6 text-headline">
                 Credentials &<br />Platforms
               </h2>
-              <p className="font-body text-on-surface-variant max-w-sm">
+              <p className="hidden md:block font-body text-on-surface-variant max-w-sm">
                 The longer record. Public credits, the principal's profile,
                 and the platform we ship media assets through.
               </p>
@@ -122,7 +122,7 @@ export default function HomeDesktop() {
                 <h4 className="font-headline text-xl font-bold mb-2 text-title">
                   Creative–Technical Director
                 </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
                   Full-stack media tech, AI-native pipelines, motion-graphics
                   + data-science credentials. The pipeline architect's record.
                 </p>
@@ -139,7 +139,7 @@ export default function HomeDesktop() {
                 <h4 className="font-headline text-xl font-bold mb-2 text-title">
                   Animation and Visual FX
                 </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
                   Nandakumar Mohan · IMDb. Visual Effects: PAW Patrol. Known for
                   high-quality production across global animated series.
                 </p>
@@ -156,7 +156,7 @@ export default function HomeDesktop() {
                 <h4 className="font-headline text-xl font-bold mb-2 text-title">
                   Game Animation / AR / VR
                 </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
                   Animation Assets development for Unity deployment for immersive,
                   real-time cinematic content. Motion Capture editing and Facial
                   capture implementation.
@@ -205,6 +205,8 @@ export default function HomeDesktop() {
               </a>
             </div>
 
+            {/* Parts 02 and 03 are desktop-only: stacked on a phone the three
+                tiles read as the same picture three times. */}
             <div className="grid sm:grid-cols-3 gap-4 items-start max-w-6xl">
               <a
                 href={PODCAST_ARTICLE}
@@ -229,7 +231,7 @@ export default function HomeDesktop() {
                 href={PODCAST_ARTICLE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block"
+                className="hidden sm:block group"
                 aria-label="Read the interview, Part 02"
               >
                 <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
@@ -248,7 +250,7 @@ export default function HomeDesktop() {
                 href={PODCAST_ARTICLE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block"
+                className="hidden sm:block group"
                 aria-label="Read the interview, Part 03"
               >
                 <div className="relative aspect-video bg-surface-container-high border border-outline-variant overflow-hidden shadow-xl">
@@ -610,8 +612,9 @@ export default function HomeDesktop() {
           </div>
         </section>
 
-        {/* About Nmedia Services */}
-        <section className="py-24 px-8 border-y border-outline-variant bg-surface-container-low">
+        {/* About Nmedia Services. Desktop only: four paragraphs of studio
+            description is a long scroll to put in front of a phone. */}
+        <section className="hidden md:block py-24 px-8 border-y border-outline-variant bg-surface-container-low">
           <div className="max-w-[1440px] mx-auto">
             <div className="bg-surface-container p-12 flex flex-col md:flex-row justify-between items-start gap-8 border border-outline-variant hover:border-primary/35 transition-colors">
               <div className="flex-1">
