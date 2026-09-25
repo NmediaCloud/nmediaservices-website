@@ -103,7 +103,7 @@ const TOOLS = [
 function ToolCard({ tool }) {
   const external = tool.href.startsWith("http") || tool.href.endsWith(".html");
   return (
-    <article className="bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
+    <article className="snap-start shrink-0 w-[80vw] max-w-[320px] sm:w-auto sm:max-w-none bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
       {/* The artwork is the biggest target on the card, so it links where the
           card's own call to action does rather than sitting there inert. */}
       <a
@@ -144,7 +144,7 @@ function ToolCard({ tool }) {
             {tool.name}
           </a>
         </h4>
-        <p className="font-body text-sm text-on-surface-variant leading-relaxed flex-1">{tool.body}</p>
+        <p className="font-body text-sm text-on-surface-variant leading-relaxed flex-1 line-clamp-2 sm:line-clamp-none">{tool.body}</p>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4">
           <a
@@ -174,10 +174,29 @@ function ToolCard({ tool }) {
 
 export default function SoftwareGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {TOOLS.map((t) => (
-        <ToolCard key={t.name} tool={t} />
-      ))}
-    </div>
+    <>
+      {/* Below sm this is a horizontal snap strip rather than a stack: the
+          cards are tall, and eight of them stacked is a very long scroll on a
+          phone. The negative margin lets it bleed to the screen edges so the
+          next card peeks in and the strip reads as swipeable. From sm up it
+          reverts to the ordinary two-column grid. */}
+      <div
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="
+          flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2
+          -mx-6 px-6
+          [&::-webkit-scrollbar]:hidden
+          sm:grid sm:grid-cols-2 sm:overflow-visible sm:snap-none
+          sm:mx-0 sm:px-0 sm:pb-0
+        "
+      >
+        {TOOLS.map((t) => (
+          <ToolCard key={t.name} tool={t} />
+        ))}
+      </div>
+      <p className="mt-3 sm:hidden font-label text-[10px] tracking-[0.25em] uppercase text-on-surface-variant text-right">
+        Swipe · {TOOLS.length} tools
+      </p>
+    </>
   );
 }

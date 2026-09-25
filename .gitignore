@@ -27,3 +27,12 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Source scans holding personal data (PAN, bank account, address, phone,
+# passport photographs) were moved out of this repo entirely, to
+# D:/Projects/2026/_Nmedia_Private_Documents/. Only the seven client
+# reference letters are published, optimised, in public/images/recommendations/.
+# This rule stays as a guard in case originals are ever dropped back in.
+src/assets/Certiicates_Recomondateion Nmedia/
+**/Certiicates_Recomondateion*/
+**/Certificates_and_References/

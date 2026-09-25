@@ -32,7 +32,7 @@ const LINKS = [
   },
 ];
 
-export default function SocialLinks({ className = "", gap = "gap-3" }) {
+export default function SocialLinks({ className = "", gap = "gap-2 sm:gap-3" }) {
   return (
     <div className={`flex items-center ${gap} ${className}`}>
       {LINKS.map((l) => (
@@ -43,9 +43,9 @@ export default function SocialLinks({ className = "", gap = "gap-3" }) {
           rel="noopener noreferrer"
           aria-label={l.label}
           title={l.label}
-          className={`inline-flex items-center justify-center w-9 h-9 rounded-full border border-outline-variant text-on-surface-variant hover:-translate-y-0.5 transition-all duration-300 ${l.hover}`}
+          className={`inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-outline-variant text-on-surface-variant hover:-translate-y-0.5 transition-all duration-300 ${l.hover}`}
         >
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
             <path d={l.path} />
           </svg>
         </a>

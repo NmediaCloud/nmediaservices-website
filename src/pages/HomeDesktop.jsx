@@ -27,21 +27,23 @@ export default function HomeDesktop() {
   return (
     <div className="selection:bg-primary selection:text-on-primary bg-background min-h-screen text-on-surface font-['Inter']">
       {/* Top Navigation Bar */}
-      <nav className="fixed top-0 w-full flex justify-between items-center px-8 py-6 max-w-[1440px] left-1/2 -translate-x-1/2 z-50 bg-background/85 backdrop-blur-md border-b border-primary/30">
+      <nav className="fixed top-0 w-full flex justify-between items-center px-5 md:px-8 py-4 md:py-6 max-w-[1440px] left-1/2 -translate-x-1/2 z-50 bg-background/85 backdrop-blur-md border-b border-primary/30">
         <div className="flex items-center gap-3">
           <img
             alt="Nmedia Services Logo"
             className="nm-logo w-auto object-contain h-10"
             src="/images/nmedia_mark.svg"
           />
-          <div className="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-on-surface">
+          <div className="font-['Space_Grotesk'] font-bold text-base md:text-xl tracking-tighter text-on-surface whitespace-nowrap">
             Nmedia Services
           </div>
         </div>
-        <div className="hidden md:flex gap-8 items-center">
+        {/* The socials show at every width; only the long mailto is held
+            back on phones, where it would not fit beside the wordmark. */}
+        <div className="flex gap-4 md:gap-8 items-center">
           <SocialLinks />
           <a
-            className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300"
+            className="font-['Space_Grotesk'] tracking-tighter text-sm text-on-surface-variant hover:text-primary transition-colors duration-300 hidden md:inline-block"
             href="mailto:Nanda@nmediaservices.com"
           >
             Nanda@nmediaservices.com

@@ -191,6 +191,8 @@ const ALL_PICS = [
 export default function DigitalConversion() {
   const [zoomOpen, setZoomOpen] = useState(false);
   const [zoomInitial, setZoomInitial] = useState(null);
+  const [refOpen, setRefOpen] = useState(false);
+  const [refInitial, setRefInitial] = useState(null);
   const onZoom = (src) => { setZoomInitial(src.replace(/^\//, "")); setZoomOpen(true); };
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen">
@@ -428,6 +430,60 @@ export default function DigitalConversion() {
           </div>
         </section>
 
+        {/* ── CLIENT REFERENCES ─────────────────────── */}
+        <section className="py-24 px-8 bg-surface-container border-t border-outline-variant">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+              <div>
+                <p className="font-label text-[10px] tracking-[0.4em] text-primary uppercase mb-3">
+                  [ REFERENCES // CLIENT_LETTERS ]
+                </p>
+                <h2 className="font-headline text-2xl md:text-4xl font-bold tracking-tight leading-none uppercase text-headline">
+                  What clients wrote.
+                </h2>
+                <p className="text-on-surface-variant font-light max-w-2xl mt-4">
+                  Reference letters from the organisations whose archives we
+                  digitised, including palm-leaf manuscripts, HR and property
+                  records, accounts files and medical documentation.
+                </p>
+              </div>
+              <span className="font-label text-[10px] tracking-[0.3em] text-on-surface-variant uppercase shrink-0">
+                Click a letter to read it
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+              {REFERENCES.map((r) => (
+                <button
+                  key={r.file}
+                  type="button"
+                  onClick={() => { setRefInitial(r.file); setRefOpen(true); }}
+                  title={`${r.client} — ${r.work}`}
+                  aria-label={`Read the reference letter from ${r.client}`}
+                  className="group block text-left bg-surface-container-lowest border border-outline-variant hover:border-primary/40 overflow-hidden transition-all cursor-zoom-in"
+                >
+                  <div className="relative w-full overflow-hidden bg-surface-container-high" style={{ aspectRatio: "3 / 4" }}>
+                    <img
+                      src={`/images/recommendations/${r.file}`}
+                      alt={`Reference letter from ${r.client}`}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <p className="font-headline text-[11px] font-bold uppercase tracking-tight leading-tight text-title line-clamp-2">
+                      {r.client}
+                    </p>
+                    <p className="font-label text-[9px] tracking-[0.15em] uppercase text-on-surface-variant mt-1 line-clamp-2">
+                      {r.work}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ──────────────────────────────────────── */}
         <section className="py-32 px-8 text-center bg-surface relative overflow-hidden border-t border-outline-variant">
           <div className="absolute inset-0 opacity-30 pointer-events-none">
@@ -451,6 +507,15 @@ export default function DigitalConversion() {
       </main>
 
       <PicsModal
+        open={refOpen}
+        onClose={() => setRefOpen(false)}
+        pics={REFERENCES.map((r) => r.file)}
+        basePath="/images/recommendations"
+        title="Client References"
+        initialZoom={refInitial}
+      />
+
+      <PicsModal
         open={zoomOpen}
         onClose={() => setZoomOpen(false)}
         pics={ALL_PICS}
@@ -461,6 +526,21 @@ export default function DigitalConversion() {
     </div>
   );
 }
+
+// Client reference letters. Only these seven are published. The bank
+// letter, service-tax form, MSME memorandum and import/export code that
+// sat in the same source folder are deliberately excluded: they carry a
+// bank account number, a PAN, a residential address, a phone number and
+// a passport photograph.
+const REFERENCES = [
+  { file: "07-kuppuswami-sastri.jpg",  client: "Kuppuswami Sastri Research Institute", work: "Palm-leaf manuscripts" },
+  { file: "04-indian-oil-hr.jpg",      client: "Indian Oil Corporation",               work: "HR policy circulars" },
+  { file: "05-indian-oil-property.jpg",client: "Indian Oil Corporation",               work: "Property documents" },
+  { file: "03-seamec-technip.jpg",     client: "SEAMEC Ltd · TECHNIP Group",           work: "Hard files to digital" },
+  { file: "06-icai.jpg",               client: "Inst. of Chartered Accountants of India", work: "Documents and books" },
+  { file: "01-accsource-kpo.jpg",      client: "AccSource KPO",                        work: "Accounts documents" },
+  { file: "02-lifecell.jpg",           client: "LifeCell",                             work: "Scanning and editing" },
+];
 
 const INDEX = [
   { id: "palm",  title: "Palm Scripts",        flashcard: "/images/digital-conversion/dc_05.jpg" },
