@@ -68,7 +68,7 @@ export default function PipelineArticles({ title }) {
   if (error || articles.length === 0) return null;   // fail quiet. Strip just doesn't render
 
   return (
-    <section className="py-24 px-8 bg-background border-y border-outline-variant">
+    <section className="py-12 md:py-24 px-8 bg-background border-y border-outline-variant">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Section heading — matches the Capabilities header rhythm */}

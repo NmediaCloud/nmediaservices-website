@@ -456,14 +456,15 @@ export default function HomeDesktop() {
             same component, can carry its own section rhythm. */}
         <PipelineArticles title="Pipeline Production Tech" />
 
-        {/* Capabilities */}
-        <section className="py-32 px-8 max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Capabilities. Spacing halves on a phone, where the stacked
+            heading, link and grid gap added up to three empty screens-worth. */}
+        <section className="py-12 md:py-32 px-8 max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
             <div className="lg:col-span-4">
-              <h2 className="font-headline text-5xl font-bold tracking-tighter mb-6 text-headline">
+              <h2 className="font-headline text-5xl font-bold tracking-tighter mb-4 md:mb-6 text-headline">
                 Projects &amp;<br />Capabilities
               </h2>
-              <p className="font-body text-on-surface-variant mb-6 max-w-sm">
+              <p className="font-body text-on-surface-variant mb-4 md:mb-6 max-w-sm">
                 Optimizing creative throughput through technical curatorship and
                 precision engineering.
               </p>
@@ -471,7 +472,7 @@ export default function HomeDesktop() {
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary font-label uppercase text-xs tracking-widest hover:gap-3 transition-all mb-12"
+                className="inline-flex items-center gap-2 text-primary font-label uppercase text-xs tracking-widest hover:gap-3 transition-all lg:mb-12"
               >
                 All repositories
                 <span className="material-symbols-outlined text-sm">arrow_outward</span>
