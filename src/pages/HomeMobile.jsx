@@ -62,7 +62,7 @@ export default function HomeMobile() {
             </h1>
             <p className="font-body text-on-surface-variant max-w-sm mb-12 text-lg leading-relaxed">
               Animation and VFX, e-commerce catalogue generation, websites and
-              storefronts, and a 15,000-asset stock media library, with the
+              storefronts, and an 18,084-asset stock media library, with the
               production pipelines behind all of it.
             </p>
             {/* Capability chips, mirroring the desktop hero. */}

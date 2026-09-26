@@ -64,7 +64,11 @@ export default function HomeDesktop() {
                 <span className="text-primary">Forward Deployed Engineering.</span>
                 {/* The list of domains is desktop-only. On a phone it ran five
                     lines and pushed everything else below the fold. */}
-                <span className="hidden md:inline"><br />
+                {/* The supporting tier: smaller, lighter in weight and colour
+                    than the two lines above. It has to be a block, not an
+                    inline span, or the h1's own 57px strut wins and the
+                    line-height set here is ignored. */}
+                <span className="hidden md:block md:text-4xl lg:text-5xl font-medium text-on-surface-muted leading-[1.05] mt-1">
                 Animation, VFX, game assets,<br />
                 <span className="whitespace-nowrap">e-commerce</span> catalogues, websites<br />
                 and stock media at scale.</span>
@@ -73,10 +77,9 @@ export default function HomeDesktop() {
                   six lines and the capability chips already say it. */}
               <p className="hidden md:block font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed">
                 From story to final render, and from idea to scalable
-                production system. We build the pipelines behind animation and
+                production system. Building pipelines behind animation and
                 VFX, <span className="whitespace-nowrap">e-commerce</span> catalogue
-                generation, product and brand websites, and a 15,000-asset stock
-                media library. Not just the images and videos that come out of them.
+                generation, product and brand websites.
               </p>
               {/* Capability chips. People kept reading the studio as image and
                   video generation only; naming the domains is the fastest fix. */}
@@ -95,7 +98,11 @@ export default function HomeDesktop() {
           </div>
         </section>
 
-        <StatsBanner />
+        {/* Desktop only. On a phone the six figures cost most of a screen
+            before the visitor has reached any actual work. */}
+        <div className="hidden sm:block">
+          <StatsBanner />
+        </div>
 
         {/* Credentials & Platforms — split from capability services */}
         <section className="py-24 px-8 bg-warm-neutral border-y border-outline-variant">
@@ -112,15 +119,15 @@ export default function HomeDesktop() {
                 and the platform we ship media assets through.
               </p>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="lg:col-span-8 grid grid-cols-2 gap-3 sm:gap-4">
               <Link
                 to="/about"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+                className="block bg-surface-container p-4 sm:p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
               >
-                <span className="material-symbols-outlined text-primary mb-6 block" style={{ fontSize: "36px" }}>
+                <span className="material-symbols-outlined text-primary mb-3 sm:mb-6 block text-[26px] sm:text-4xl">
                   verified
                 </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                <h4 className="font-headline text-sm sm:text-xl font-bold mb-2 text-title leading-snug">
                   Creative–Technical Director
                 </h4>
                 <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
@@ -132,12 +139,12 @@ export default function HomeDesktop() {
                 href="https://www.imdb.com/name/nm12576040/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+                className="block bg-surface-container p-4 sm:p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
               >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
+                <span className="font-label tracking-widest text-primary mb-2 sm:mb-6 block text-[9px] sm:text-sm uppercase font-bold leading-tight">
                   Imdb credit listing
                 </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                <h4 className="font-headline text-sm sm:text-xl font-bold mb-2 text-title leading-snug">
                   Animation and Visual FX
                 </h4>
                 <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
@@ -149,12 +156,12 @@ export default function HomeDesktop() {
                 href="https://www.einpresswire.com/article/592919633/utherverse-hires-3d-animation-veteran-nandakumar-mohan-to-develop-full-motion-hd-animation-for-metaverse-platform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+                className="block bg-surface-container p-4 sm:p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
               >
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
+                <span className="font-label tracking-widest text-primary mb-2 sm:mb-6 block text-[9px] sm:text-sm uppercase font-bold leading-tight">
                   Utherverse_Press
                 </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                <h4 className="font-headline text-sm sm:text-xl font-bold mb-2 text-title leading-snug">
                   Game Animation / AR / VR
                 </h4>
                 <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
@@ -167,10 +174,10 @@ export default function HomeDesktop() {
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
+                className="block bg-surface-container p-4 sm:p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"
               >
                 <GitHubMark className="w-9 h-9 text-primary mb-6 block" />
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
+                <h4 className="font-headline text-sm sm:text-xl font-bold mb-2 text-title leading-snug">
                   Code &amp; Systems
                 </h4>
                 <p className="hidden md:block font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
@@ -513,49 +520,6 @@ export default function HomeDesktop() {
               <SoftwareGrid />
               {/* Studio capabilities */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a
-                href="/articles/PDF_Scripts_Toolkit.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden"
-              >
-                <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/images/cards/pdf-scripts-toolkit.svg" alt="Scanned pages becoming a searchable PDF" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
-                <span className="block p-8">
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  digitisation · ocr
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  PDF Scripts Toolkit
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  The toolkit behind it. Scanned pages to searchable PDF, with a
-                  vision-language transcription pass for Sanskrit where
-                  conventional OCR fails. Source available.
-                </p>
-                </span>
-              </a>
-              <a
-                href="/articles/UGC_Pipeline.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-surface-container group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30 overflow-hidden"
-              >
-                <span className="block relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}><img src="/images/cards/ugc-pipeline.svg" alt="A spreadsheet row becoming a finished video" loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" /></span>
-                <span className="block p-8">
-                <span className="font-label tracking-widest text-primary mb-6 block text-sm uppercase font-bold">
-                  video factory
-                </span>
-                <h4 className="font-headline text-xl font-bold mb-2 text-title">
-                  UGC Pipeline
-                </h4>
-                <p className="font-body text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
-                  One spreadsheet row in, one finished UGC, ad or podcast video
-                  out. Nine self-contained modules. Script, TTS, lipsync, b-roll,
-                  title cards, overlay, SFX, music and compositing, with a
-                  vision-graded QA pass.
-                </p>
-                </span>
-              </a>
               <Link
                 to="/digital-conversion"
                 className="block bg-surface-container p-8 group hover:bg-surface-bright transition-all duration-300 border border-outline-variant hover:border-primary/30"

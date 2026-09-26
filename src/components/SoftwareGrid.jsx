@@ -19,6 +19,32 @@ import { GitHubMark } from "./GitHubLink";
  */
 const TOOLS = [
   {
+    name: "PDF Scripts Toolkit",
+    tag: "Digitisation · OCR",
+    status: "Source available",
+    icon: "document_scanner",
+    image: "/images/cards/pdf-scripts-toolkit.svg",
+    body:
+      "Scanned pages to searchable PDF, with a vision-language transcription pass " +
+      "for Sanskrit where conventional OCR fails.",
+    href: "/articles/PDF_Scripts_Toolkit.html",
+    cta: "Read the write-up",
+    repo: "https://github.com/NmediaCloud/pdf-scripts-toolkit",
+  },
+  {
+    name: "UGC Pipeline",
+    tag: "Video factory",
+    status: "In progress",
+    icon: "autoplay",
+    image: "/images/cards/ugc-pipeline.svg",
+    body:
+      "One spreadsheet row in, one finished UGC, ad or podcast video out. Nine " +
+      "self-contained modules, with a vision-graded QA pass.",
+    href: "/articles/UGC_Pipeline.html",
+    cta: "Read the write-up",
+    repo: "https://github.com/NmediaCloud/ugc-tools",
+  },
+  {
     name: "CreativeFlow",
     tag: "Campaign automation",
     status: "Open source",
@@ -103,14 +129,14 @@ const TOOLS = [
 function ToolCard({ tool }) {
   const external = tool.href.startsWith("http") || tool.href.endsWith(".html");
   return (
-    <article className="snap-start shrink-0 w-[80vw] max-w-[320px] sm:w-auto sm:max-w-none bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
+    <article className="snap-start shrink-0 w-[58vw] max-w-[230px] sm:w-auto sm:max-w-none bg-surface-container border border-outline-variant hover:border-primary/40 transition-all duration-300 group overflow-hidden flex flex-col">
       {/* The artwork is the biggest target on the card, so it links where the
           card's own call to action does rather than sitting there inert. */}
       <a
         href={tool.href}
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         aria-label={`${tool.name}: ${tool.cta}`}
-        className="block"
+        className="hidden sm:block"
       >
         {tool.image ? (
           <div className="relative w-full bg-surface-container-high overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
@@ -125,17 +151,17 @@ function ToolCard({ tool }) {
         )}
       </a>
 
-      <div className="p-6 flex flex-col flex-1">
+      <div className="p-4 sm:p-6 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-3 mb-2">
           <p className="font-label text-[10px] tracking-[0.25em] uppercase text-primary leading-tight">
             {tool.tag}
           </p>
-          <span className="inline-block border border-outline-variant px-2 py-0.5 font-label text-[9px] tracking-widest uppercase text-on-surface-variant shrink-0">
+          <span className="hidden sm:inline-block border border-outline-variant px-2 py-0.5 font-label text-[9px] tracking-widest uppercase text-on-surface-variant shrink-0">
             {tool.status}
           </span>
         </div>
 
-        <h4 className="font-headline text-lg font-bold mb-2 text-title">
+        <h4 className="font-headline text-sm sm:text-lg font-bold mb-2 sm:mb-2 text-title leading-snug">
           <a
             href={tool.href}
             {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -144,9 +170,9 @@ function ToolCard({ tool }) {
             {tool.name}
           </a>
         </h4>
-        <p className="font-body text-sm text-on-surface-variant leading-relaxed flex-1 line-clamp-2 sm:line-clamp-none">{tool.body}</p>
+        <p className="hidden sm:block font-body text-sm text-on-surface-variant leading-relaxed flex-1">{tool.body}</p>
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3 sm:mt-4">
           <a
             href={tool.href}
             {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -160,7 +186,7 @@ function ToolCard({ tool }) {
               href={tool.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-on-surface-variant hover:text-primary transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-on-surface-variant hover:text-primary transition-colors"
             >
               <GitHubMark className="w-[14px] h-[14px]" />
               Source
@@ -183,7 +209,7 @@ export default function SoftwareGrid() {
       <div
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         className="
-          flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2
+          flex gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-2
           -mx-6 px-6
           [&::-webkit-scrollbar]:hidden
           sm:grid sm:grid-cols-2 sm:overflow-visible sm:snap-none

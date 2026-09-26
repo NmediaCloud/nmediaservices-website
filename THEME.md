@@ -26,6 +26,7 @@ confidence.**
 | Sub-headings `h3`/`h4` | `--text-title` | `#2A2622` | |
 | Body | `--text-primary` | `#4E4A46` | warm charcoal, never pure black |
 | Meta, captions | `--text-secondary` | `#6E6862` | |
+| Display sub-lines | `--text-muted` | `#7C756E` | **large text only — never below 24px** |
 | Hairlines | `--border-primary` | `#DDD6CF` | |
 
 **Balance:** ~65–70% canvas/white, 15–20% warm neutral, 10–15% orange. Orange stays
@@ -45,6 +46,7 @@ surfaces, not from flooding the page with accent colour.
 | Title `#2A2622` on white | 15.01:1 | 4.5 |
 | Body `#4E4A46` on canvas | 8.28:1 | 4.5 |
 | Secondary `#6E6862` on canvas | 5.19:1 | 4.5 |
+| Muted `#7C756E` on canvas, 48px | 4.28:1 | 3.0 |
 | Secondary `#6E6862` on sand | 4.52:1 | 4.5 |
 | Orange `#BF4E10` on canvas | 4.59:1 | 4.5 |
 | Orange `#BF4E10` on white | 4.87:1 | 4.5 |
@@ -61,6 +63,10 @@ These are not stylistic preferences. Each one was a real defect caught by audit:
   on a dark ground the lightness gap is huge and on a light ground there is none.
 - **Never dim text with opacity modifiers.** `text-secondary/50`–`/80` drops
   `#6E6862` to 2.1–3.0:1. Use size and weight for hierarchy instead.
+- **`--border-primary` and `--color-outline` are not text colours.** `#9A918A`
+  measures 2.92:1 on the canvas, below even the 3:1 large-text floor. When a
+  display line needs to sit lighter than `--text-secondary`, stop at
+  `--text-muted` `#7C756E` and keep it above 24px.
 - **Pastel `#E7B79A` is decorative only.** 1.80:1 on white. It must never carry
   text, and nothing white may sit on it — that includes the light end of a gradient.
 - **Orange text on sand or on a tinted orange chip** only reaches 4.01:1. Step down

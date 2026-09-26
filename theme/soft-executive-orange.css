@@ -33,6 +33,7 @@
   --text-title:      #2A2622;  /* h3/h4              15.01:1     */
   --text-primary:    #4E4A46;  /* body                8.28:1     */
   --text-secondary:  #6E6862;  /* meta, captions      5.19:1     */
+  --text-muted:      #7C756E;  /* LARGE TEXT ONLY     4.28:1     */
 
   /* ── Lines ────────────────────────────────────────────  */
   --border-primary:  #DDD6CF;
@@ -73,6 +74,10 @@
   --color-on-background: #4E4A46;
   --color-on-surface: #4E4A46;
   --color-on-surface-variant: #6E6862;
+  /* One tone lighter than -variant, for display text only. It is
+     4.28:1 on the canvas, which clears the 3:1 large-text floor but
+     not the 4.5:1 body floor. Do not use it below 24px. */
+  --color-on-surface-muted: #7C756E;
 
   --color-outline: #9A918A;
   --color-outline-variant: #DDD6CF;

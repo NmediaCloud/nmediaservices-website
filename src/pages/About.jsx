@@ -233,19 +233,21 @@ export default function About() {
             </p>
             <p>
               The current work is model-agnostic by construction. The generation
-              layer runs across{" "}
-              <em className="not-italic text-primary">eight frontier models</em>{" "}
-              rather than betting the pipeline on one. Swapping a provider is a
-              config change, not a rewrite. Since April 2026 that has meant{" "}
-              <em className="not-italic text-primary">61 million generated tokens</em>{" "}
-              across 61,080 model turns, spanning storyboard generation, animatics,
-              vision-graded QA and reel polish.
+              layer spreads across providers rather than betting the pipeline on
+              one, so swapping a provider is a config change and not a rewrite.
+              The orchestration layer is the part that has been metered: since
+              April 2026 it has logged{" "}
+              <em className="not-italic text-primary">61 million output tokens</em>{" "}
+              across 61,080 turns over{" "}
+              <em className="not-italic text-primary">eight Claude models</em>,
+              spanning storyboard generation, animatics, vision-graded QA and
+              reel polish.
             </p>
             <p>
               Some of it is open. {" "}
               <em className="not-italic text-primary">CreativeFlow</em> turns one
               campaign brief into on-brand creatives across every aspect ratio. An{" "}
-              <em className="not-italic text-primary">MCP server</em> puts 15,000+
+              <em className="not-italic text-primary">MCP server</em> puts 18,084
               8K stills and 4K clips directly inside Claude Code, Cursor and Codex.
               The production pipeline itself stays in-house.
             </p>
@@ -320,7 +322,7 @@ export default function About() {
 const DISCIPLINES = [
   // — Creative technology / current —
   { icon: "account_tree",    title: "Pipeline Architecture", body: "Eleven modules, brief to finished reel. Format-aware, cast-locked, operator-runnable from a browser tab." },
-  { icon: "hub",             title: "AI Pipeline Engineering", body: "Model-agnostic generation layers across eight frontier models. Swapping a provider is a config change, not a rewrite." },
+  { icon: "hub",             title: "AI Pipeline Engineering", body: "Model-agnostic generation layers with no single-vendor lock-in. Swapping a provider is a config change, not a rewrite." },
   { icon: "smart_toy",       title: "Agent & MCP Tooling",   body: "MCP servers putting live asset catalogues inside Claude Code, Cursor and Codex. Tools agents can actually drive." },
   { icon: "bolt",            title: "Automation & QA",       body: "Python orchestration, spreadsheet-to-video factories, vision-graded QA. Human review kept where it earns its place." },
   { icon: "code",            title: "Full-Stack Development", body: "React, Vite, Tailwind, Node, FastAPI. The web, data and delivery layer wrapped around the creative work." },
